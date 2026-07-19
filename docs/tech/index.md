@@ -11,4 +11,6 @@ hide:
 
 ## 文章列表
 
-- 暂无内容，敬请期待。
+### 摘抄
+
+- [Dead Poets Society](excerpts/dead-poets-society.md) — 《死亡诗社》摘抄
