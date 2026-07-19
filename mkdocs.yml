@@ -2,7 +2,7 @@
 # 网站基本信息
 # ============================================================
 site_name: 404NotFound                          # 网站名称，显示在浏览器标签页和页头
-site_url: https://404notfound.alight.top/      # 网站最终网址（结尾要有 /）
+site_url: https://alight404.top/               # 网站最终网址（结尾要有 /）
 site_description: 你来啦。                      # 网站描述，用于 SEO
 site_author: Alight                             # 作者名
 
