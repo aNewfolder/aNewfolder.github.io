@@ -1,0 +1,111 @@
+# ============================================================
+# 网站基本信息
+# ============================================================
+site_name: 404NotFound                          # 网站名称，显示在浏览器标签页和页头
+site_url: https://404notfound.alight.top/      # 网站最终网址（结尾要有 /）
+site_description: 你来啦。                      # 网站描述，用于 SEO
+site_author: Alight                             # 作者名
+
+# ============================================================
+# 主题配置
+# ============================================================
+theme:
+  name: material                           # 使用 Material 主题
+  custom_dir: overrides                    # 自定义覆盖目录（首页卡片布局在这里）
+  language: zh                             # 界面语言：中文
+
+  # 调色板 - 支持亮色/暗色切换
+  palette:
+    - scheme: default                      # 亮色模式
+      primary: white                       # 顶栏颜色
+      accent: indigo                       # 强调色（链接、按钮等）
+      toggle:
+        icon: material/brightness-7        # 亮色模式图标（太阳）
+        name: 切换到暗色模式
+    - scheme: slate                        # 暗色模式
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/brightness-4        # 暗色模式图标（月亮）
+        name: 切换到亮色模式
+
+  # 字体
+  font:
+    text: Noto Sans SC                     # 正文字体（思源黑体，中文友好）
+    code: Fira Code                        # 代码字体
+
+  # 功能开关
+  features:
+    - navigation.tabs                      # 顶部导航标签页
+    - navigation.tabs.sticky               # 滚动时导航栏固定
+    - navigation.sections                  # 侧边栏按章节分组
+    - navigation.expand                    # 侧边栏默认展开
+    - navigation.top                       # 显示"回到顶部"按钮
+    - search.highlight                     # 搜索结果高亮
+    - search.suggest                       # 搜索建议
+    - content.code.copy                    # 代码块复制按钮
+
+  # 图标
+  icon:
+    logo: material/home                    # 左上角 logo 图标
+    # 如果想用自定义图片做 logo，注释掉上面两行，改用 theme.logo 指向图片：
+    # logo: images/my-logo.png
+
+# ============================================================
+# 导航结构（路径必须和 docs/ 下的实际文件一一对应）
+# ============================================================
+nav:
+  - 主页: index.md
+  - 随笔:
+    - blog/index.md
+    - 我的第一篇文章: blog/my-first-post.md
+  - 课程总结:
+    - class/index.md
+  - 拓展学习:
+    - tech/index.md
+  - 友链: friends.md
+  - 关于: about.md
+
+# ============================================================
+# 自定义 CSS 和 JavaScript
+# ============================================================
+extra_css:
+  - stylesheets/extra.css                  # 自定义样式文件
+
+extra_javascript:
+  - javascripts/extra.js                   # 自定义脚本文件
+
+# ============================================================
+# Markdown 扩展（增强 Markdown 的功能）
+# ============================================================
+markdown_extensions:
+  - admonition                             # 警告/提示框（如 !!! note）
+  - pymdownx.details                       # 可折叠的提示框
+  - pymdownx.superfences                   # 增强的代码块
+  - pymdownx.tabbed:                       # 选项卡
+      alternate_style: true
+  - attr_list                              # 给元素添加 HTML 属性（如图片宽度）
+  - md_in_html                             # 允许在 HTML 中写 Markdown
+  - pymdownx.emoji:                        # Emoji 支持
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - toc:                                   # 目录
+      permalink: true                      # 标题旁显示永久链接图标
+
+# ============================================================
+# 插件
+# ============================================================
+plugins:
+  - search                                 # 搜索功能
+
+# ============================================================
+# 页脚社交链接和版权信息
+# ============================================================
+# 如需页脚社交链接，取消下面注释并按需修改：
+# extra:
+#   social:
+#     - icon: fontawesome/brands/github
+#       link: https://github.com/aNewfolder
+#       name: GitHub
+
+copyright: Copyright &copy; 2026 Alight    # 页脚版权信息

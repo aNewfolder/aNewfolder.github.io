@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{# 首页使用完全自定义的布局，其他页面使用默认布局 #}
+{% block tabs %}
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+  {% if page.is_homepage %}
+    {# ===== 首页自定义布局 ===== #}
+    <div class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">404NotFound</h1>
+        <p class="hero-subtitle">你来啦。</p>
+      </div>
+      <div class="scroll-indicator">
+        <span>向下滚动</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </div>
+
+    <div class="cards-section">
+      <div class="cards-container">
+
+        <a href="blog/" class="card card-blog">
+          <div class="card-icon">🎨</div>
+          <h2 class="card-title">随笔</h2>
+          <p class="card-desc">记录生活与思考</p>
+        </a>
+
+        <a href="class/" class="card card-class">
+          <div class="card-icon">📝</div>
+          <h2 class="card-title">课程总结</h2>
+          <p class="card-desc">课堂笔记与总结</p>
+        </a>
+
+        <a href="tech/" class="card card-tech">
+          <div class="card-icon">💻</div>
+          <h2 class="card-title">拓展学习</h2>
+          <p class="card-desc">课外学到的技术与工具</p>
+        </a>
+
+        <a href="friends/" class="card card-friends">
+          <div class="card-icon">🔗</div>
+          <h2 class="card-title">友链</h2>
+          <p class="card-desc">志同道合的朋友们</p>
+        </a>
+
+        <a href="about/" class="card card-about">
+          <div class="card-icon">👤</div>
+          <h2 class="card-title">关于</h2>
+          <p class="card-desc">关于我 · 关于这个网站</p>
+        </a>
+
+      </div>
+    </div>
+
+  {% else %}
+    {# ===== 非首页使用默认内容渲染 ===== #}
+    {{ super() }}
+  {% endif %}
+{% endblock %}
