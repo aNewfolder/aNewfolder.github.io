@@ -3,23 +3,68 @@
    ============================================================ */
 :root {
   --hero-height: 100vh;                    /* 首页 hero 区域占满全屏 */
-  --card-radius: 16px;                     /* 卡片圆角 */
-  --card-shadow: 0 4px 24px rgba(0,0,0,0.08);  /* 卡片阴影 */
-  --card-hover-shadow: 0 8px 40px rgba(0,0,0,0.15);  /* 悬停阴影 */
-  --transition-speed: 0.3s;               /* 过渡动画速度 */
+  --card-radius: 18px;                     /* 卡片圆角 */
+  --card-shadow: 0 6px 28px rgba(20, 20, 60, 0.10);   /* 卡片阴影 */
+  --card-hover-shadow: 0 16px 48px rgba(20, 20, 60, 0.22);  /* 悬停阴影 */
+  --transition-speed: 0.35s;               /* 过渡动画速度 */
+  --accent-red: #ff2d55;
+  --accent-purple: #5f27cd;
+}
+
+/* 选中文字 & 滚动条也骚一点 */
+::selection { background: var(--accent-red); color: #fff; }
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff6b6b, #5f27cd);
+  border-radius: 8px;
 }
 
 /* ============================================================
-   首页 Hero 区域（全屏背景 + 标题）
+   顶部导航：默认隐藏，鼠标移到顶部才滑出（桌面端）
+   由 extra.js 给 body 加/减 .chrome-on 类
+   ============================================================ */
+@media screen and (min-width: 60em) {
+  .md-header {
+    position: fixed;
+    transform: translateY(-115%);
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  body.chrome-on .md-header {
+    transform: translateY(0);
+    box-shadow: 0 0 0.2rem rgba(0,0,0,.1), 0 0.2rem 0.4rem rgba(0,0,0,.2);
+  }
+
+  /* header 变成 fixed 后不再占位，给非首页正文顶部留点呼吸感 */
+  body:not(.home-page) .md-main__inner {
+    margin-top: 2.2rem;
+  }
+}
+
+/* ============================================================
+   首页：去掉内容区的默认间距，让 hero 真正占满屏幕
+   ============================================================ */
+.md-main__inner:has(.hero-section) {
+  margin-top: 0;
+  max-width: none;
+}
+
+.md-content__inner:has(> .hero-section) {
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================================
+   首页 Hero 区域（全屏背景 + 大标题 + 动效）
    ============================================================ */
 .hero-section {
   position: relative;
   width: 100%;
   height: var(--hero-height);
-  /* 背景图：图片放在 docs/images/ 下，想换图就替换文件或修改下面的路径 */
-  background: url('../images/background.jpg') center/cover no-repeat;
-  /* 如果想改用渐变背景，注释掉上面那行，取消下面这行的注释： */
-  /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+  min-height: 560px;
+  background: #0b0f1a;                     /* 图片加载前的底色 */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,83 +72,254 @@
   overflow: hidden;
 }
 
+/* 背景图单独一层，方便做缓慢缩放（Ken Burns）动效 */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: -2%;
+  /* 背景图：图片放在 docs/images/ 下，想换图就替换文件或修改下面的路径 */
+  background: url('../images/background.jpg') center/cover no-repeat;
+  animation: heroZoom 26s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
 .hero-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* 半透明遮罩层，让背景图上的文字更清晰 */
-  background: rgba(0, 0, 0, 0.3);
+  inset: 0;
+  /* 流动的彩色半透明遮罩，让文字更清晰、画面更有层次 */
+  background: linear-gradient(115deg,
+    rgba(8, 8, 25, 0.62) 0%,
+    rgba(70, 20, 90, 0.35) 45%,
+    rgba(0, 0, 0, 0.55) 100%);
+  background-size: 220% 220%;
+  animation: overlayShift 14s ease-in-out infinite alternate;
   z-index: 1;
+}
+
+/* 漂浮粒子层（粒子由 extra.js 生成） */
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-particles span {
+  position: absolute;
+  bottom: -8%;
+  opacity: 0;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
+  animation: floatUp linear infinite;
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   text-align: center;
   color: white;
   padding: 0 2rem;
 }
 
+.hero-kicker {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 1.2rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
 .hero-title {
-  font-size: 4rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  letter-spacing: 0.05em;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  font-size: clamp(3.5rem, 11vw, 8.5rem);
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.04em;
+  line-height: 1.05;
+  color: #fff;
+}
+
+/* 故障（Glitch）特效：红/青色重影随机抖动 */
+.glitch {
+  position: relative;
+  display: inline-block;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
   animation: fadeInUp 1s ease-out;
 }
 
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.glitch::before {
+  color: var(--accent-red);
+  z-index: -1;
+  animation: glitchA 2.8s infinite steps(1);
+}
+
+.glitch::after {
+  color: #00e5ff;
+  z-index: -2;
+  animation: glitchB 3.4s infinite steps(1);
+}
+
+/* 打字机副标题 */
 .hero-subtitle {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 2.6vw, 1.9rem);
   font-weight: 300;
-  opacity: 0.9;
-  text-shadow: 0 1px 5px rgba(0,0,0,0.3);
+  min-height: 1.6em;
+  opacity: 0.95;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
   animation: fadeInUp 1s ease-out 0.3s both;
 }
 
-/* 向下滚动提示 */
+.type-cursor {
+  color: var(--accent-red);
+  font-weight: 400;
+  animation: blink 1s steps(1) infinite;
+}
+
+/* 向下滚动提示：鼠标造型 + 滚轮动画 */
 .scroll-indicator {
   position: absolute;
-  bottom: 2rem;
-  z-index: 2;
+  bottom: 2.2rem;
+  z-index: 3;
   color: white;
   text-align: center;
-  animation: bounce 2s infinite;
   cursor: pointer;
+  animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+.scroll-mouse {
+  width: 26px;
+  height: 42px;
+  margin: 0 auto 0.6rem;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 14px;
+  position: relative;
+}
+
+.scroll-wheel {
+  position: absolute;
+  left: 50%;
+  top: 7px;
+  width: 4px;
+  height: 8px;
+  margin-left: -2px;
+  border-radius: 2px;
+  background: var(--accent-red);
+  animation: wheel 1.6s ease-in-out infinite;
 }
 
 .scroll-indicator span {
-  font-size: 0.85rem;
-  opacity: 0.7;
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  opacity: 0.8;
   display: block;
-  margin-bottom: 0.5rem;
-}
-
-.scroll-arrow {
-  width: 24px;
-  height: 24px;
-  margin: 0 auto;
-  border-right: 2px solid white;
-  border-bottom: 2px solid white;
-  transform: rotate(45deg);
-  opacity: 0.7;
+  animation: softPulse 2.2s ease-in-out infinite;
 }
 
 /* ============================================================
-   卡片区域
+   跑马灯分隔条
+   ============================================================ */
+.marquee-strip {
+  background: #11101c;
+  color: #ffd166;
+  overflow: hidden;
+  padding: 0.7rem 0;
+  border-top: 3px solid var(--accent-red);
+  border-bottom: 3px solid var(--accent-red);
+  font-family: 'Fira Code', monospace;
+}
+
+.marquee-inner {
+  display: flex;
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+
+.marquee-inner span {
+  white-space: nowrap;
+  padding-right: 3rem;
+  letter-spacing: 0.15em;
+}
+
+/* ============================================================
+   卡片区域（渐变底色 + 漂浮色块）
    ============================================================ */
 .cards-section {
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  position: relative;
+  padding: 5rem 2rem 6rem;
+  overflow: hidden;
+  background: linear-gradient(180deg, #fdfbff 0%, #f3f0ff 55%, #eef7ff 100%);
+}
+
+/* 两个模糊的彩色大气泡，在背景里慢慢漂 */
+.cards-section::before,
+.cards-section::after {
+  content: '';
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.cards-section::before {
+  top: -120px;
+  left: -120px;
+  background: radial-gradient(circle, #ffb3c1, transparent 70%);
+  animation: blobFloat 13s ease-in-out infinite alternate;
+}
+
+.cards-section::after {
+  bottom: -140px;
+  right: -100px;
+  background: radial-gradient(circle, #9ec9ff, transparent 70%);
+  animation: blobFloat 17s ease-in-out infinite alternate-reverse;
+}
+
+.cards-heading {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 800;
+  margin: 0 0 0.4rem;
+  background: linear-gradient(90deg, #5f27cd, #ff2d55, #ff9f43);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.cards-subheading {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  font-size: 0.95rem;
+  opacity: 0.55;
+  margin: 0 0 3rem;
 }
 
 .cards-container {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .card {
@@ -113,17 +329,26 @@
   text-align: center;
   padding: 2.5rem 2rem;
   border-radius: var(--card-radius);
-  background: var(--md-default-bg-color, #ffffff);
+  background: #ffffff;
   box-shadow: var(--card-shadow);
   text-decoration: none;
   color: var(--md-default-fg-color, #333333);
-  transition: 
+  transition:
     transform var(--transition-speed) ease,
     box-shadow var(--transition-speed) ease;
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  transform-style: preserve-3d;
+  will-change: transform;
 }
+
+/* 每张卡片的专属渐变底色（白 -> 主题色浅晕） */
+.card-blog    { background: linear-gradient(160deg, #ffffff 25%, #ffe9e9); }
+.card-class   { background: linear-gradient(160deg, #ffffff 25%, #fff6dd); }
+.card-tech    { background: linear-gradient(160deg, #ffffff 25%, #e0f7ff); }
+.card-friends { background: linear-gradient(160deg, #ffffff 25%, #e3eeff); }
+.card-about   { background: linear-gradient(160deg, #ffffff 25%, #ecdfFF); }
 
 .card::before {
   content: '';
@@ -131,24 +356,27 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 4px;
+  height: 5px;
   transition: height var(--transition-speed) ease;
 }
 
-/* 每种卡片的顶部色条（类名对应 overrides/main.html 里的卡片 class） */
-.card-blog::before    { background: #ff6b6b; }
-.card-class::before   { background: #feca57; }
-.card-tech::before    { background: #48dbfb; }
-.card-friends::before { background: #54a0ff; }
-.card-about::before   { background: #5f27cd; }
+/* 每种卡片的顶部渐变色条（类名对应 overrides/main.html 里的卡片 class） */
+.card-blog::before    { background: linear-gradient(90deg, #ff6b6b, #ff9f43); }
+.card-class::before   { background: linear-gradient(90deg, #feca57, #ff9f43); }
+.card-tech::before    { background: linear-gradient(90deg, #48dbfb, #1dd1a1); }
+.card-friends::before { background: linear-gradient(90deg, #54a0ff, #5f27cd); }
+.card-about::before   { background: linear-gradient(90deg, #5f27cd, #ff2d55); }
 
 .card:hover {
-  transform: translateY(-8px);
   box-shadow: var(--card-hover-shadow);
 }
 
 .card:hover::before {
-  height: 6px;
+  height: 8px;
+}
+
+.card:hover .card-icon {
+  animation: iconWiggle 0.6s ease-in-out;
 }
 
 .card-icon {
@@ -169,38 +397,12 @@
 }
 
 /* ============================================================
-   动画
-   ============================================================ */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
-}
-
-/* ============================================================
-   让卡片在进入视口时产生动画（配合 extra.js）
+   卡片入场动画（配合 extra.js 的 Intersection Observer）
    ============================================================ */
 .card {
   opacity: 0;
-  transform: translateY(20px);
-  transition: 
+  transform: translateY(24px);
+  transition:
     opacity 0.6s ease,
     transform 0.6s ease,
     box-shadow var(--transition-speed) ease;
@@ -220,59 +422,238 @@
 .card:nth-child(6) { transition-delay: 0.6s; }
 
 /* ============================================================
-   首页隐藏默认的文章内容区（因为首页用自定义模板）
+   点击 ERROR 弹窗（由 extra.js 在光标处生成）
    ============================================================ */
-.md-content__inner > h1:first-child,
-.md-content__inner > p {
-  /* 首页的 markdown 内容被 main.html 覆盖了，
-     但如果有残留文字，这里隐藏它们 */
+.click-error {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  background: #1a0000;
+  color: #ff4d4d;
+  border: 1px solid var(--accent-red);
+  border-radius: 6px;
+  box-shadow: 0 4px 18px rgba(255, 45, 85, 0.45);
+  font-family: 'Fira Code', monospace;
+  font-size: 0.78rem;
+  padding: 0.45rem 0.7rem;
+  white-space: nowrap;
+  animation: errorPop 1.15s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.click-error::before { content: '✖ '; }
+
+/* 样式 2：亮红警报条 */
+.click-error--v2 {
+  background: #d50000;
+  color: #fff;
+  border-color: #ff8a80;
+  box-shadow: 0 4px 18px rgba(213, 0, 0, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+/* 样式 3：黄色警告牌 */
+.click-error--v3 {
+  background: #fff8e1;
+  color: #b26a00;
+  border-color: #ffb300;
+  box-shadow: 0 4px 18px rgba(255, 179, 0, 0.45);
+}
+
+.click-error--v3::before { content: '⚠ '; }
+
+/* 样式 4：蓝屏风 */
+.click-error--v4 {
+  background: #0d47a1;
+  color: #bbdefb;
+  border-color: #42a5f5;
+  box-shadow: 0 4px 18px rgba(13, 71, 161, 0.55);
+  border-radius: 0;
+}
+
+.click-error--v4::before { content: ':( '; }
+
+/* 样式 5：紫红故障描边 */
+.click-error--v5 {
+  background: transparent;
+  color: #ff2d55;
+  border: 2px dashed #5f27cd;
+  box-shadow: 4px 4px 0 rgba(95, 39, 205, 0.35);
+  text-shadow: 1px 0 #00e5ff;
+}
+
+/* ============================================================
+   正文页的小彩蛋：标题装饰线 & 链接下划线动效
+   ============================================================ */
+.md-typeset h2 {
+  position: relative;
+  padding-bottom: 0.3rem;
+}
+
+.md-typeset h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 56px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent-red), var(--accent-purple));
+  transition: width 0.35s ease;
+}
+
+.md-typeset h2:hover::after {
+  width: 130px;
+}
+
+.md-typeset p a,
+.md-typeset li a {
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 0.3s ease;
+}
+
+.md-typeset p a:hover,
+.md-typeset li a:hover {
+  background-size: 100% 2px;
+}
+
+/* ============================================================
+   动画关键帧
+   ============================================================ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroZoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.12); }
+}
+
+@keyframes overlayShift {
+  from { background-position: 0% 0%; }
+  to   { background-position: 100% 100%; }
+}
+
+@keyframes floatUp {
+  0%   { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+  10%  { opacity: 0.9; }
+  85%  { opacity: 0.8; }
+  100% { transform: translate(var(--drift, 30px), -115vh) rotate(340deg); opacity: 0; }
+}
+
+@keyframes glitchA {
+  0%, 86%, 100% { transform: none; opacity: 0; }
+  87% { transform: translate(-6px, 2px); opacity: 0.8; clip-path: inset(10% 0 55% 0); }
+  89% { transform: translate(5px, -2px); opacity: 0.8; clip-path: inset(60% 0 5% 0); }
+  91% { transform: translate(-3px, 1px); opacity: 0.6; clip-path: inset(30% 0 40% 0); }
+  93% { transform: none; opacity: 0; }
+}
+
+@keyframes glitchB {
+  0%, 78%, 100% { transform: none; opacity: 0; }
+  79% { transform: translate(6px, -1px); opacity: 0.7; clip-path: inset(45% 0 20% 0); }
+  82% { transform: translate(-5px, 2px); opacity: 0.7; clip-path: inset(5% 0 70% 0); }
+  85% { transform: none; opacity: 0; }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@keyframes wheel {
+  0%   { transform: translateY(0); opacity: 1; }
+  70%  { transform: translateY(14px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 0; }
+}
+
+@keyframes softPulse {
+  0%, 100% { opacity: 0.5; }
+  50%      { opacity: 0.95; }
+}
+
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+
+@keyframes blobFloat {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(60px, 40px) scale(1.15); }
+}
+
+@keyframes iconWiggle {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  25%      { transform: rotate(-12deg) scale(1.15); }
+  50%      { transform: rotate(10deg) scale(1.2); }
+  75%      { transform: rotate(-6deg) scale(1.1); }
+}
+
+@keyframes errorPop {
+  0%   { transform: translate(-50%, -50%) scale(0.4); opacity: 0; }
+  15%  { transform: translate(-50%, -60%) scale(1.08); opacity: 1; }
+  30%  { transform: translate(-50%, -65%) scale(1); }
+  75%  { opacity: 1; }
+  100% { transform: translate(-50%, -140%) scale(0.9); opacity: 0; }
 }
 
 /* ============================================================
    响应式适配（手机/平板）
    ============================================================ */
 @media screen and (max-width: 768px) {
-  .hero-title {
-    font-size: 2.5rem;
+  .hero-kicker {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
   }
-  
-  .hero-subtitle {
-    font-size: 1.1rem;
-  }
-  
+
   .cards-container {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
-  .cards-section {
-    padding: 2rem 1rem;
-  }
-}
 
-@media screen and (max-width: 480px) {
-  .hero-title {
-    font-size: 2rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1rem;
+  .cards-section {
+    padding: 3rem 1rem 4rem;
   }
 }
 
 /* ============================================================
    暗色模式适配
    ============================================================ */
+[data-md-color-scheme="slate"] .cards-section {
+  background: linear-gradient(180deg, #16121f 0%, #1b1530 100%);
+}
+
+[data-md-color-scheme="slate"] .cards-section::before {
+  background: radial-gradient(circle, rgba(255, 45, 85, 0.35), transparent 70%);
+}
+
+[data-md-color-scheme="slate"] .cards-section::after {
+  background: radial-gradient(circle, rgba(84, 160, 255, 0.35), transparent 70%);
+}
+
 [data-md-color-scheme="slate"] .card {
-  background: var(--md-default-bg-color);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.35);
 }
 
 [data-md-color-scheme="slate"] .card:hover {
-  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55);
 }
 
-[data-md-color-scheme="slate"] .hero-section {
-  /* 暗色模式下可以调整 hero 的渐变颜色 */
-  background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
+[data-md-color-scheme="slate"] .marquee-strip {
+  background: #0a0812;
+}
+
+/* ============================================================
+   尊重"减少动态效果"系统设置
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
