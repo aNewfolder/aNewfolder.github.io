@@ -39,7 +39,7 @@ theme:
     - navigation.tabs                      # 顶部导航标签页
     - navigation.tabs.sticky               # 滚动时导航栏固定
     - navigation.sections                  # 侧边栏按章节分组
-    - navigation.expand                    # 侧边栏默认展开
+    # - navigation.expand                  # 侧边栏默认展开（注释掉则分组可折叠）
     - navigation.top                       # 显示"回到顶部"按钮
     - search.highlight                     # 搜索结果高亮
     - search.suggest                       # 搜索建议
@@ -62,24 +62,68 @@ nav:
       - 我的工高故事（序幕）: blog/while-the-powerful-play-goes-on/prelude.md
   - 课程总结:
     - class/index.md
+    - 大一上:
+      - class/freshman-1/index.md
+    - 大一下:
+      - class/freshman-2/index.md
+    - 大二上:
+      - class/sophomore-1/index.md
+      - 大学物理（甲）Ⅱ: class/sophomore-1/university-physics-a2.md
+      - 大学物理实验: class/sophomore-1/physics-lab.md
+      - 电子电路基础及实验: class/sophomore-1/electronic-circuits.md
+      - 复变函数与积分变换: class/sophomore-1/complex-analysis.md
+      - 偏微分方程: class/sophomore-1/pde.md
+      - 概率论与数理统计: class/sophomore-1/probability-statistics.md
+      - 数学建模: class/sophomore-1/math-modeling.md
+      - 马克思主义基本原理: class/sophomore-1/marxism.md
+      - 社会主义发展史: class/sophomore-1/socialism-history.md
+      - 工程训练: class/sophomore-1/engineering-training.md
+      - 工程导论: class/sophomore-1/intro-to-engineering.md
+      - 光机结构设计: class/sophomore-1/optomechanical-design.md
+      - 英语演讲: class/sophomore-1/english-speech.md
+      - 游泳（中级）: class/sophomore-1/swimming.md
   - 拓展学习:
     - tech/index.md
-    - 摘抄:
-      - Dead Poets Society: tech/excerpts/dead-poets-society.md
-      - Ferryman: tech/excerpts/ferryman.md
-      - 恶之花: tech/excerpts/les-fleurs-du-mal.md
-      - English - Read before tests: tech/excerpts/english-read-before-tests.md
-      - Island of the Blue Dolphins: tech/excerpts/island-of-the-blue-dolphins.md
-      - 要有光: tech/excerpts/yao-you-guang.md
-      - 蛤蟆先生去看心理医生: tech/excerpts/ha-ma-xian-sheng.md
-      - 看见: tech/excerpts/kan-jian.md
-      - 变量8: tech/excerpts/bian-liang-8.md
-      - 房思琪的初恋乐园: tech/excerpts/fang-si-qi.md
-      - 你当像鸟飞往你的山: tech/excerpts/educated.md
-      - 我想做一个能在你的葬礼上描述你一生的人: tech/excerpts/describe-your-life.md
-      - 2046旅店: tech/excerpts/2046-inn.md
-      - 世上为什么要有图书馆: tech/excerpts/why-libraries.md
-      - 散装: tech/excerpts/san-zhuang.md
+    - 中文摘抄:
+      - 恶之花: tech/excerpts/chinese/les-fleurs-du-mal.md
+      - 要有光: tech/excerpts/chinese/yao-you-guang.md
+      - 蛤蟆先生去看心理医生: tech/excerpts/chinese/ha-ma-xian-sheng.md
+      - 看见: tech/excerpts/chinese/kan-jian.md
+      - 变量8: tech/excerpts/chinese/bian-liang-8.md
+      - 房思琪的初恋乐园: tech/excerpts/chinese/fang-si-qi.md
+      - 你当像鸟飞往你的山: tech/excerpts/chinese/educated.md
+      - 我想做一个能在你的葬礼上描述你一生的人: tech/excerpts/chinese/describe-your-life.md
+      - 2046旅店: tech/excerpts/chinese/2046-inn.md
+      - 世上为什么要有图书馆: tech/excerpts/chinese/why-libraries.md
+      - 不能承受的生命之轻: tech/excerpts/chinese/the-unbearable-lightness-of-being.md
+      - 岛上书店: tech/excerpts/chinese/the-storied-life-of-aj-fikry.md
+      - 死亡护理师: tech/excerpts/chinese/death-care.md
+      - 西西弗神话: tech/excerpts/chinese/the-myth-of-sisyphus.md
+      - 树上的男爵: tech/excerpts/chinese/the-baron-in-the-trees.md
+      - 我选择: tech/excerpts/chinese/i-choose.md
+      - 有限与无限的游戏: tech/excerpts/chinese/finite-and-infinite-games.md
+      - 人类群星闪耀时: tech/excerpts/chinese/decisive-moments-in-history.md
+      - 夜色温柔: tech/excerpts/chinese/tender-is-the-night.md
+      - 了不起的盖茨比: tech/excerpts/chinese/the-great-gatsby.md
+      - 云雀叫了一整天: tech/excerpts/chinese/skylark.md
+      - 蔡义江论红楼梦: tech/excerpts/chinese/cai-yijiang-hongloumeng.md
+      - 红楼梦人物论: tech/excerpts/chinese/hongloumeng-characters.md
+      - 我们仨: tech/excerpts/chinese/we-three.md
+    - 英文摘抄:
+      - Dead Poets Society: tech/excerpts/english/dead-poets-society.md
+      - Ferryman: tech/excerpts/english/ferryman.md
+      - Island of the Blue Dolphins: tech/excerpts/english/island-of-the-blue-dolphins.md
+      - Far From the Madding Crowd: tech/excerpts/english/far-from-the-madding-crowd.md
+      - A Dog's Purpose: tech/excerpts/english/a-dogs-purpose.md
+      - The Call of the Wild: tech/excerpts/english/the-call-of-the-wild.md
+      - 教科书摘抄:
+        - English - Read before tests: tech/excerpts/textbook/english-read-before-tests.md
+        - 散装: tech/excerpts/textbook/san-zhuang.md
+        - 全新版大学英语 1: tech/excerpts/textbook/new-college-english-1.md
+        - 大学英语（一）: tech/excerpts/textbook/college-english-1.md
+        - 大学英语（二）: tech/excerpts/textbook/college-english-2.md
+        - 大学英语（三）: tech/excerpts/textbook/college-english-3.md
+        - 大学英语（四）: tech/excerpts/textbook/college-english-4.md
     - 推荐阅读:
       - tech/reading.md
   - 友链: friends.md
