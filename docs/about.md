@@ -12,8 +12,6 @@
 
 ## 留言板
 
-登录 GitHub 账号即可给我留言。留言存储在本站仓库的 GitHub Discussions 中，默认全部公开可见。
-
 <script src="https://giscus.app/client.js"
         data-repo="aNewfolder/aNewfolder.github.io"
         data-repo-id="R_kgDOTc89Yw"

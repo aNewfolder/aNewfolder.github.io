@@ -5,10 +5,10 @@
 {# 安全防护：静态站能加的安全响应头（meta 等效） #}
 {% block extrahead %}
   {{ super() }}
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://avatars.githubusercontent.com; connect-src 'self'; frame-src https://giscus.app; worker-src 'self'; base-uri 'self'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://avatars.githubusercontent.com; connect-src 'self'; frame-src https://giscus.app; worker-src 'self'; object-src 'none'; media-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), bluetooth=(), magnetometer=(), gyroscope=(), accelerometer=()">
 {% endblock %}
 
 {% block tabs %}
@@ -20,9 +20,8 @@
     {# ===== 首页自定义布局 ===== #}
     <div class="hero-section">
       <div class="hero-overlay"></div>
-      <div class="hero-particles" aria-hidden="true"></div>
       <div class="hero-content">
-        <h1 class="hero-title glitch" data-text="404NotFound">404NotFound</h1>
+        <h1 class="hero-title">404NotFound</h1>
         <p class="hero-subtitle"><span id="typewriter"></span><span class="type-cursor">|</span></p>
       </div>
       <div class="scroll-indicator">
