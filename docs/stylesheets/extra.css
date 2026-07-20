@@ -22,24 +22,19 @@
 }
 
 /* ============================================================
-   顶部导航：默认隐藏，鼠标移到顶部才滑出（桌面端）
-   由 extra.js 给 body 加/减 .chrome-on 类
+   顶部导航：仅在首页默认隐藏，鼠标移到顶部才滑出（桌面端）
+   其他页面正常显示。由 extra.js 给 body 加/减 .chrome-on 类
    ============================================================ */
 @media screen and (min-width: 60em) {
-  .md-header {
+  body:has(.hero-section) .md-header {
     position: fixed;
     transform: translateY(-115%);
     transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  body.chrome-on .md-header {
+  body:has(.hero-section).chrome-on .md-header {
     transform: translateY(0);
     box-shadow: 0 0 0.2rem rgba(0,0,0,.1), 0 0.2rem 0.4rem rgba(0,0,0,.2);
-  }
-
-  /* header 变成 fixed 后不再占位，给非首页正文顶部留点呼吸感 */
-  body:not(.home-page) .md-main__inner {
-    margin-top: 2.2rem;
   }
 }
 
@@ -96,7 +91,7 @@
   z-index: 1;
 }
 
-/* 漂浮粒子层（粒子由 extra.js 生成） */
+/* 下雨粒子层（雨滴/闪电由 extra.js 生成） */
 .hero-particles {
   position: absolute;
   inset: 0;
@@ -107,10 +102,24 @@
 
 .hero-particles span {
   position: absolute;
-  bottom: -8%;
+  top: -10%;
   opacity: 0;
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
-  animation: floatUp linear infinite;
+  animation: rainFall linear infinite;
+}
+
+/* 闪电白闪层（由 extra.js 周期性触发 .strike） */
+.lightning-flash {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  background: #eaf4ff;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.lightning-flash.strike {
+  animation: lightning 0.55s ease-out;
 }
 
 .hero-content {
@@ -121,21 +130,11 @@
   padding: 0 2rem;
 }
 
-.hero-kicker {
-  font-family: 'Fira Code', monospace;
-  font-size: 0.8rem;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  opacity: 0.75;
-  margin-bottom: 1.2rem;
-  animation: fadeInUp 0.8s ease-out;
-}
-
 .hero-title {
-  font-size: clamp(3.5rem, 11vw, 8.5rem);
-  font-weight: 800;
+  font-size: clamp(4.5rem, 15vw, 12rem);
+  font-weight: 900;
   margin-bottom: 1.2rem;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   line-height: 1.05;
   color: #fff;
 }
@@ -183,74 +182,55 @@
 }
 
 .type-cursor {
-  color: var(--accent-red);
+  color: #d3d3d3;                          /* 浅灰色光标 */
   font-weight: 400;
   animation: blink 1s steps(1) infinite;
 }
 
-/* 向下滚动提示：鼠标造型 + 滚轮动画 */
+/* 向下滚动提示：白色 V 形箭头，小幅度跳跃 */
 .scroll-indicator {
   position: absolute;
-  bottom: 2.2rem;
+  bottom: 2.4rem;
   z-index: 3;
-  color: white;
-  text-align: center;
   cursor: pointer;
   animation: fadeInUp 1s ease-out 0.8s both;
 }
 
-.scroll-mouse {
-  width: 26px;
-  height: 42px;
-  margin: 0 auto 0.6rem;
-  border: 2px solid rgba(255, 255, 255, 0.85);
-  border-radius: 14px;
-  position: relative;
-}
-
-.scroll-wheel {
-  position: absolute;
-  left: 50%;
-  top: 7px;
-  width: 4px;
-  height: 8px;
-  margin-left: -2px;
-  border-radius: 2px;
-  background: var(--accent-red);
-  animation: wheel 1.6s ease-in-out infinite;
-}
-
-.scroll-indicator span {
-  font-size: 0.8rem;
-  letter-spacing: 0.25em;
-  opacity: 0.8;
-  display: block;
-  animation: softPulse 2.2s ease-in-out infinite;
+.scroll-chevron {
+  width: 34px;
+  height: 34px;
+  border-right: 5px solid #fff;
+  border-bottom: 5px solid #fff;
+  border-radius: 3px;
+  transform: rotate(45deg);
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+  animation: chevronHop 1.5s ease-in-out infinite;
 }
 
 /* ============================================================
-   跑马灯分隔条
+   下滑乱码过渡层（由 extra.js 生成）
    ============================================================ */
-.marquee-strip {
-  background: #11101c;
-  color: #ffd166;
-  overflow: hidden;
-  padding: 0.7rem 0;
-  border-top: 3px solid var(--accent-red);
-  border-bottom: 3px solid var(--accent-red);
+.scramble-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: #07070f;
+  color: #39ff6e;
   font-family: 'Fira Code', monospace;
+  font-size: 11px;
+  line-height: 1.25;
+  letter-spacing: 0.1em;
+  word-break: break-all;
+  white-space: pre-wrap;
+  padding: 10px;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.25s ease;
 }
 
-.marquee-inner {
-  display: flex;
-  width: max-content;
-  animation: marquee 22s linear infinite;
-}
-
-.marquee-inner span {
-  white-space: nowrap;
-  padding-right: 3rem;
-  letter-spacing: 0.15em;
+.scramble-overlay.fade {
+  opacity: 0;
 }
 
 /* ============================================================
@@ -290,28 +270,6 @@
   animation: blobFloat 17s ease-in-out infinite alternate-reverse;
 }
 
-.cards-heading {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-  font-weight: 800;
-  margin: 0 0 0.4rem;
-  background: linear-gradient(90deg, #5f27cd, #ff2d55, #ff9f43);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.cards-subheading {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  font-size: 0.95rem;
-  opacity: 0.55;
-  margin: 0 0 3rem;
-}
-
 .cards-container {
   position: relative;
   z-index: 1;
@@ -348,7 +306,7 @@
 .card-class   { background: linear-gradient(160deg, #ffffff 25%, #fff6dd); }
 .card-tech    { background: linear-gradient(160deg, #ffffff 25%, #e0f7ff); }
 .card-friends { background: linear-gradient(160deg, #ffffff 25%, #e3eeff); }
-.card-about   { background: linear-gradient(160deg, #ffffff 25%, #ecdfFF); }
+.card-about   { background: linear-gradient(160deg, #ffffff 25%, #ecdfff); }
 
 .card::before {
   content: '';
@@ -422,7 +380,7 @@
 .card:nth-child(6) { transition-delay: 0.6s; }
 
 /* ============================================================
-   点击 ERROR 弹窗（由 extra.js 在光标处生成）
+   点击 ERROR 弹窗（由 extra.js 在光标处生成，只有符号没有文字）
    ============================================================ */
 .click-error {
   position: fixed;
@@ -434,22 +392,21 @@
   border-radius: 6px;
   box-shadow: 0 4px 18px rgba(255, 45, 85, 0.45);
   font-family: 'Fira Code', monospace;
-  font-size: 0.78rem;
-  padding: 0.45rem 0.7rem;
+  font-size: 0.95rem;
+  line-height: 1;
+  padding: 0.5rem 0.65rem;
   white-space: nowrap;
   animation: errorPop 1.15s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-.click-error::before { content: '✖ '; }
+.click-error::before { content: '✖'; }
 
-/* 样式 2：亮红警报条 */
+/* 样式 2：亮红警报块 */
 .click-error--v2 {
   background: #d50000;
   color: #fff;
   border-color: #ff8a80;
   box-shadow: 0 4px 18px rgba(213, 0, 0, 0.5);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
 }
 
 /* 样式 3：黄色警告牌 */
@@ -460,7 +417,7 @@
   box-shadow: 0 4px 18px rgba(255, 179, 0, 0.45);
 }
 
-.click-error--v3::before { content: '⚠ '; }
+.click-error--v3::before { content: '⚠'; }
 
 /* 样式 4：蓝屏风 */
 .click-error--v4 {
@@ -471,7 +428,7 @@
   border-radius: 0;
 }
 
-.click-error--v4::before { content: ':( '; }
+.click-error--v4::before { content: ':('; }
 
 /* 样式 5：紫红故障描边 */
 .click-error--v5 {
@@ -539,11 +496,22 @@
   to   { background-position: 100% 100%; }
 }
 
-@keyframes floatUp {
-  0%   { transform: translate(0, 0) rotate(0deg); opacity: 0; }
-  10%  { opacity: 0.9; }
-  85%  { opacity: 0.8; }
-  100% { transform: translate(var(--drift, 30px), -115vh) rotate(340deg); opacity: 0; }
+/* 下雨：从顶部直落底部，轻微横向漂移 */
+@keyframes rainFall {
+  0%   { transform: translate(0, 0); opacity: 0; }
+  8%   { opacity: 0.9; }
+  88%  { opacity: 0.85; }
+  100% { transform: translate(var(--drift, 20px), 125vh); opacity: 0; }
+}
+
+/* 闪电：快速双闪 */
+@keyframes lightning {
+  0%   { opacity: 0; }
+  8%   { opacity: 0.55; }
+  16%  { opacity: 0.08; }
+  26%  { opacity: 0.4; }
+  45%  { opacity: 0; }
+  100% { opacity: 0; }
 }
 
 @keyframes glitchA {
@@ -565,19 +533,10 @@
   50% { opacity: 0; }
 }
 
-@keyframes wheel {
-  0%   { transform: translateY(0); opacity: 1; }
-  70%  { transform: translateY(14px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 0; }
-}
-
-@keyframes softPulse {
-  0%, 100% { opacity: 0.5; }
-  50%      { opacity: 0.95; }
-}
-
-@keyframes marquee {
-  to { transform: translateX(-50%); }
+/* 箭头小幅跳跃（沿箭头指向斜下方轻点） */
+@keyframes chevronHop {
+  0%, 100% { transform: rotate(45deg) translate(0, 0); }
+  50%      { transform: rotate(45deg) translate(7px, 7px); }
 }
 
 @keyframes blobFloat {
@@ -594,7 +553,7 @@
 
 @keyframes errorPop {
   0%   { transform: translate(-50%, -50%) scale(0.4); opacity: 0; }
-  15%  { transform: translate(-50%, -60%) scale(1.08); opacity: 1; }
+  15%  { transform: translate(-50%, -60%) scale(1.15); opacity: 1; }
   30%  { transform: translate(-50%, -65%) scale(1); }
   75%  { opacity: 1; }
   100% { transform: translate(-50%, -140%) scale(0.9); opacity: 0; }
@@ -604,9 +563,11 @@
    响应式适配（手机/平板）
    ============================================================ */
 @media screen and (max-width: 768px) {
-  .hero-kicker {
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
+  .scroll-chevron {
+    width: 26px;
+    height: 26px;
+    border-right-width: 4px;
+    border-bottom-width: 4px;
   }
 
   .cards-container {
@@ -641,10 +602,6 @@
 
 [data-md-color-scheme="slate"] .card:hover {
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55);
-}
-
-[data-md-color-scheme="slate"] .marquee-strip {
-  background: #0a0812;
 }
 
 /* ============================================================

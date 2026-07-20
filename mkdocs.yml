@@ -58,13 +58,16 @@ nav:
   - 主页: index.md
   - 随笔:
     - blog/index.md
-    - 我的第一篇文章: blog/my-first-post.md
+    - While the Powerful Play Goes On:
+      - 我的工高故事（序幕）: blog/while-the-powerful-play-goes-on/prelude.md
   - 课程总结:
     - class/index.md
   - 拓展学习:
     - tech/index.md
     - 摘抄:
       - Dead Poets Society: tech/excerpts/dead-poets-society.md
+      - Ferryman: tech/excerpts/ferryman.md
+      - 恶之花: tech/excerpts/les-fleurs-du-mal.md
   - 友链: friends.md
   - 关于: about.md
 

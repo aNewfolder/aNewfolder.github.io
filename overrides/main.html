@@ -1,6 +1,16 @@
 {% extends "base.html" %}
 
 {# 首页使用完全自定义的布局，其他页面使用默认布局 #}
+
+{# 安全防护：静态站能加的安全响应头（meta 等效） #}
+{% block extrahead %}
+  {{ super() }}
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://avatars.githubusercontent.com; connect-src 'self'; frame-src https://giscus.app; worker-src 'self'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
+{% endblock %}
+
 {% block tabs %}
   {{ super() }}
 {% endblock %}
@@ -12,20 +22,11 @@
       <div class="hero-overlay"></div>
       <div class="hero-particles" aria-hidden="true"></div>
       <div class="hero-content">
-        <p class="hero-kicker">SYSTEM ONLINE · 站点运行正常（大概）</p>
         <h1 class="hero-title glitch" data-text="404NotFound">404NotFound</h1>
         <p class="hero-subtitle"><span id="typewriter"></span><span class="type-cursor">|</span></p>
       </div>
       <div class="scroll-indicator">
-        <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
-        <span>往下瞅瞅</span>
-      </div>
-    </div>
-
-    <div class="marquee-strip" aria-hidden="true">
-      <div class="marquee-inner">
-        <span>⚠ 404 NOT FOUND —— 您访问的快乐已缓存 —— 随便点，坏了算我的 —— 本站由咖啡因驱动 ——&nbsp;</span>
-        <span>⚠ 404 NOT FOUND —— 您访问的快乐已缓存 —— 随便点，坏了算我的 —— 本站由咖啡因驱动 ——&nbsp;</span>
+        <div class="scroll-chevron"></div>
       </div>
     </div>
 
