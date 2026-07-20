@@ -64,8 +64,32 @@ nav:
     - class/index.md
     - 大一上:
       - class/freshman-1/index.md
+      - 军训: class/freshman-1/military-training.md
+      - 微积分（甲）Ⅰ: class/freshman-1/calculus-a1.md
+      - 线性代数（甲）: class/freshman-1/linear-algebra-a.md
+      - C程序设计基础及实验: class/freshman-1/c-programming.md
+      - 大学英语Ⅳ: class/freshman-1/college-english-4.md
+      - 思想道德与法治: class/freshman-1/morality-and-law.md
+      - 军事理论: class/freshman-1/military-theory.md
+      - 乒乓球（初级）: class/freshman-1/table-tennis.md
+      - 电工电子学概论: class/freshman-1/intro-to-ee.md
     - 大一下:
       - class/freshman-2/index.md
+      - 微积分（甲）Ⅱ: class/freshman-2/calculus-a2.md
+      - 大学物理（甲）Ⅰ: class/freshman-2/university-physics-a1.md
+      - 常微分方程: class/freshman-2/ode.md
+      - 人工智能基础（A）: class/freshman-2/intro-to-ai.md
+      - 工程图学: class/freshman-2/engineering-drawing.md
+      - 光电信息科学与工程导论: class/freshman-2/intro-to-optoelectronics.md
+      - 文献综述与科技写作: class/freshman-2/sci-writing.md
+      - 中国近现代史纲要: class/freshman-2/modern-chinese-history.md
+      - 形势与政策Ⅰ: class/freshman-2/situation-and-policy-1.md
+      - 法学基础: class/freshman-2/law-basics.md
+      - 心理学及应用: class/freshman-2/psychology-application.md
+      - 学术英语交流: class/freshman-2/academic-english.md
+      - 英语辩论: class/freshman-2/english-debate.md
+      - 乒乓球（中级）: class/freshman-2/table-tennis-intermediate.md
+      - 身体素质课: class/freshman-2/physical-fitness.md
     - 大二上:
       - class/sophomore-1/index.md
       - 大学物理（甲）Ⅱ: class/sophomore-1/university-physics-a2.md
@@ -116,6 +140,7 @@ nav:
       - Far From the Madding Crowd: tech/excerpts/english/far-from-the-madding-crowd.md
       - A Dog's Purpose: tech/excerpts/english/a-dogs-purpose.md
       - The Call of the Wild: tech/excerpts/english/the-call-of-the-wild.md
+      - Educated: tech/excerpts/english/educated.md
       - 教科书摘抄:
         - English - Read before tests: tech/excerpts/textbook/english-read-before-tests.md
         - 散装: tech/excerpts/textbook/san-zhuang.md

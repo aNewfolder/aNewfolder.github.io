@@ -19,7 +19,7 @@ hide:
     - [看见](excerpts/chinese/kan-jian.md) — 柴静
     - [变量8](excerpts/chinese/bian-liang-8.md)
     - [房思琪的初恋乐园](excerpts/chinese/fang-si-qi.md)
-    - [你当像鸟飞往你的山](excerpts/chinese/educated.md) — 含 Educated 英文原文摘抄
+    - [你当像鸟飞往你的山](excerpts/chinese/educated.md) — 塔拉·韦斯特弗
     - [我想做一个能在你的葬礼上描述你一生的人](excerpts/chinese/describe-your-life.md)
     - [2046旅店](excerpts/chinese/2046-inn.md)
     - [世上为什么要有图书馆](excerpts/chinese/why-libraries.md)
@@ -46,6 +46,7 @@ hide:
     - [Far From the Madding Crowd](excerpts/english/far-from-the-madding-crowd.md) — 《远离尘嚣》摘抄
     - [A Dog's Purpose](excerpts/english/a-dogs-purpose.md) — 《一条狗的使命》摘抄
     - [The Call of the Wild](excerpts/english/the-call-of-the-wild.md) — 《野性的呼唤》摘抄
+    - [Educated](excerpts/english/educated.md) — 《你当像鸟飞往你的山》英文原文摘抄
 
     ??? quote "📖 教科书摘抄"
 
