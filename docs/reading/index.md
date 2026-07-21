@@ -5,7 +5,7 @@ hide:
 
 # 📖 阅读
 
-书页之间，摘抄与欢喜。
+书页之间。
 
 ---
 
@@ -47,9 +47,9 @@ hide:
     - [A Dog's Purpose](excerpts/english/a-dogs-purpose.md) — 《一条狗的使命》摘抄
     - [The Call of the Wild](excerpts/english/the-call-of-the-wild.md) — 《野性的呼唤》摘抄
     - [Educated](excerpts/english/educated.md) — 《你当像鸟飞往你的山》英文原文摘抄
-
+    
     ??? quote "📖 教科书摘抄"
-
+    
         - [English - Read before tests](excerpts/textbook/english-read-before-tests.md) — 英语考前积累
         - [散装](excerpts/textbook/san-zhuang.md)
         - [全新版大学英语 1](excerpts/textbook/new-college-english-1.md)
