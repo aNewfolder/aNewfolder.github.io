@@ -17,6 +17,11 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-07-21</div>
+<div class="update-log-content">拓展学习新增文档《制作一个MkDocs个人网站》：零基础建站全流程指南；修复各页面留言板宽度溢出、显示不全的问题。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-07-21</div>
 <div class="update-log-content">全站功能更新：每页底部新增创建/更新日期标注、标题下新增字数/代码/图片/阅读时长统计、所有页面底部接入留言板、关于页新增更新日志卡片栏。</div>
 </div>
 

@@ -155,6 +155,7 @@ nav:
       - reading/recommended.md
   - 拓展学习:
     - tech/index.md
+    - 制作一个MkDocs个人网站: tech/mkdocs-site-guide.md
   - 友链: friends.md
   - 关于: about.md
 

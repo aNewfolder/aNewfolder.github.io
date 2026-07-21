@@ -317,15 +317,16 @@
   max-width: 92rem;
 }
 
-.md-content__inner:has(.giscus) {
-  width: 100%;
-}
+/* 注意：不要给 .md-content__inner 设 width: 100% —— 它自带左右各 .8rem 的
+   margin，宽度 100% 会叠加 margin 使内容区向右溢出约 1.6rem，导致留言板
+   右侧被截断/页面出现横向滚动条。块级元素默认就会占满可用宽度。 */
 
 .giscus,
 .giscus-frame {
   width: 100% !important;
   max-width: 100% !important;
   display: block;
+  box-sizing: border-box;
 }
 
 .giscus-frame {
