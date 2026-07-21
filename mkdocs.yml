@@ -189,6 +189,14 @@ markdown_extensions:
 # ============================================================
 plugins:
   - search                                 # 搜索功能
+  - git-revision-date-localized:           # 页面底部显示"最后更新 / 创建于"日期（来自 git 历史）
+      enable_creation_date: true           # 同时显示创建日期
+      type: datetime                       # 显示日期+时间
+      timezone: Asia/Shanghai              # 时区
+      locale: zh                           # 中文格式
+      fallback_to_build_date: true         # 无 git 历史时回退到构建时间
+      exclude:                             # 主页不显示日期
+        - index.md
 
 # ============================================================
 # 页脚社交链接和版权信息

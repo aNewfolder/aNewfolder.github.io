@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4               # 拉取代码
+        with:
+          fetch-depth: 0                        # 拉取完整 git 历史（页面创建/更新日期插件需要）
 
       - uses: actions/setup-python@v5           # 安装 Python
         with:
@@ -27,6 +29,6 @@ jobs:
           restore-keys: |
             mkdocs-material-
 
-      - run: pip install mkdocs-material        # 安装依赖
+      - run: pip install mkdocs-material mkdocs-git-revision-date-localized-plugin   # 安装依赖（含页面日期插件）
 
       - run: mkdocs gh-deploy --force           # 构建并部署到 gh-pages 分支
