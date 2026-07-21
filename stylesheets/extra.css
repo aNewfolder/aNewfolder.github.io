@@ -235,6 +235,7 @@
 .card-class   { background: linear-gradient(160deg, #ffffff 25%, #fff6dd); }
 .card-tech    { background: linear-gradient(160deg, #ffffff 25%, #e0f7ff); }
 .card-reading { background: linear-gradient(160deg, #ffffff 25%, #ffe9f3); }
+.card-music   { background: linear-gradient(160deg, #ffffff 25%, #e6fcf3); }
 .card-friends { background: linear-gradient(160deg, #ffffff 25%, #e3eeff); }
 .card-about   { background: linear-gradient(160deg, #ffffff 25%, #ecdfff); }
 
@@ -253,6 +254,7 @@
 .card-class::before   { background: linear-gradient(90deg, #feca57, #ff9f43); }
 .card-tech::before    { background: linear-gradient(90deg, #48dbfb, #1dd1a1); }
 .card-reading::before { background: linear-gradient(90deg, #fd79a8, #e84393); }
+.card-music::before   { background: linear-gradient(90deg, #55efc4, #00b894); }
 .card-friends::before { background: linear-gradient(90deg, #54a0ff, #5f27cd); }
 .card-about::before   { background: linear-gradient(90deg, #5f27cd, #ff2d55); }
 
