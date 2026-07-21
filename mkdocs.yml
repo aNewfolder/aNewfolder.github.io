@@ -51,6 +51,10 @@ theme:
     # 如果想用自定义图片做 logo，注释掉上面两行，改用 theme.logo 指向图片：
     # logo: images/my-logo.png
 
+# 不在导航中显示、但仍会被构建的页面（通过文章内链接访问）
+not_in_nav: |
+  class/freshman-2/assets/paper.md
+
 # ============================================================
 # 导航结构（路径必须和 docs/ 下的实际文件一一对应）
 # ============================================================
@@ -152,7 +156,33 @@ nav:
         - 大学英语（三）: reading/excerpts/textbook/college-english-3.md
         - 大学英语（四）: reading/excerpts/textbook/college-english-4.md
     - 推荐阅读:
-      - reading/recommended.md
+      - 推荐阅读: reading/recommended.md
+      - 推荐书目: reading/book-list.md
+  - 音乐:
+    - music/index.md
+    - 推荐歌单: music/playlist.md
+    - 钢琴:
+      - 加勒比海盗: music/piano/pirates-of-the-caribbean.md
+      - 花之舞: music/piano/flower-dance.md
+      - 星夜钢琴手: music/piano/starry-night-pianist.md
+      - 一步之遥: music/piano/por-una-cabeza.md
+      - 情人的舞会: music/piano/qing-ren-de-wu-hui.md
+      - 家庭时间（天气之子）: music/piano/family-time.md
+      - 约会（你的名字）: music/piano/date-your-name.md
+      - 伴奏作曲: music/piano/accompaniment-composition.md
+    - 架子鼓:
+      - Baby One More Time: music/drums/baby-one-more-time.md
+      - 做自己的光: music/drums/zuo-zi-ji-de-guang.md
+      - 巡光: music/drums/xun-guang.md
+      - 吸引: music/drums/xi-yin.md
+      - 鼓舞中国: music/drums/gu-wu-zhong-guo.md
+      - 拜新年: music/drums/bai-xin-nian.md
+      - Rolling in the Deep: music/drums/rolling-in-the-deep.md
+      - 克罗地亚狂想曲: music/drums/croatian-rhapsody.md
+      - 加勒比海盗: music/drums/pirates-of-the-caribbean.md
+    - 声乐:
+      - 小美满: music/vocal/xiao-mei-man.md
+      - 演唱技巧: music/vocal/singing-techniques.md
   - 拓展学习:
     - tech/index.md
     - 制作一个MkDocs个人网站: tech/mkdocs-site-guide.md

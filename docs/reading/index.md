@@ -61,3 +61,4 @@ hide:
 ??? quote "📖 推荐阅读"
 
     - [推荐阅读](recommended.md) — 一些我很喜欢的文章
+    - [推荐书目](book-list.md) — 书名 · 作者 · 推荐理由

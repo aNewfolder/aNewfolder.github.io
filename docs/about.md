@@ -4,16 +4,27 @@
 
 我是 Alight，欢迎来到我的个人空间。
 
-浙江大学光电信息科学与工程专业大二在读。
+浙江大学光电信息科学与工程专业大二在读，ACEE辅修。
+
+喜欢阅读、偶尔写作，喜欢钢琴、乒乓球、架子鼓，喜欢陈粒，喜欢朋友们。
+
+欢迎联系hpforevermail@163.com. 欢迎留言。
 
 ## 关于这个网站
 
 这个网站使用 [MkDocs](https://www.mkdocs.org/) 搭建，主题为 [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)。Kimi K3 为该网页搭建作出了卓越贡献。
 
+感谢ladygege、咸鱼暄、Savia、Slowist等前辈的个人网站对该网站搭建的启发。
+
 ## 更新日志
 
 <div class="update-log">
 <div class="update-log-list" markdown>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-07-21</div>
+<div class="update-log-content">新增【音乐】板块（推荐歌单 + 钢琴 / 架子鼓 / 声乐三个子栏目）并添加快捷首页卡片；阅读新增《推荐书目》；《学术英语交流》课程总结补充正文与相关资料（最终论文 + 展示海报）。</div>
+</div>
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-07-21</div>
