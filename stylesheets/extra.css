@@ -1,0 +1,469 @@
+/* ============================================================
+   全局样式变量
+   ============================================================ */
+:root {
+  --hero-height: 100vh;                    /* 首页 hero 区域占满全屏 */
+  --card-radius: 18px;                     /* 卡片圆角 */
+  --card-shadow: 0 6px 28px rgba(20, 20, 60, 0.10);   /* 卡片阴影 */
+  --card-hover-shadow: 0 16px 48px rgba(20, 20, 60, 0.22);  /* 悬停阴影 */
+  --transition-speed: 0.35s;               /* 过渡动画速度 */
+  --accent-red: #ff2d55;
+  --accent-purple: #5f27cd;
+}
+
+/* 选中文字 & 滚动条也骚一点 */
+::selection { background: var(--accent-red); color: #fff; }
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff6b6b, #5f27cd);
+  border-radius: 8px;
+}
+
+/* ============================================================
+   顶部导航栏：浅色渐变背景（与卡片区同风格），仅亮色模式
+   ============================================================ */
+[data-md-color-scheme="default"] .md-header {
+  background: linear-gradient(120deg, #fdfbff 0%, #f3f0ff 55%, #eef7ff 100%);
+}
+
+[data-md-color-scheme="default"] .md-tabs {
+  background: transparent;
+}
+
+/* ============================================================
+   顶部导航：仅在首页默认隐藏，鼠标移到顶部才滑出（桌面端）
+   其他页面正常显示。由 extra.js 给 body 加/减 .chrome-on 类
+   ============================================================ */
+@media screen and (min-width: 60em) {
+  body:has(.hero-section) .md-header {
+    position: fixed;
+    transform: translateY(-115%);
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  body:has(.hero-section).chrome-on .md-header {
+    transform: translateY(0);
+    box-shadow: 0 0 0.2rem rgba(0,0,0,.1), 0 0.2rem 0.4rem rgba(0,0,0,.2);
+  }
+}
+
+/* ============================================================
+   首页：去掉内容区的默认间距，让 hero 真正占满屏幕
+   ============================================================ */
+.md-main__inner:has(.hero-section) {
+  margin-top: 0;
+  max-width: none;
+}
+
+.md-content__inner:has(> .hero-section) {
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================================
+   首页 Hero 区域（全屏背景 + 大标题）
+   ============================================================ */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: var(--hero-height);
+  min-height: 560px;
+  background: #0b0f1a;                     /* 图片加载前的底色 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* 背景图单独一层，方便做缓慢缩放（Ken Burns）动效 */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: -2%;
+  /* 背景图：图片放在 docs/images/ 下，想换图就替换文件或修改下面的路径 */
+  background: url('../images/background.jpg') center/cover no-repeat;
+  animation: heroZoom 26s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  /* 流动的彩色半透明遮罩，让文字更清晰、画面更有层次 */
+  background: linear-gradient(115deg,
+    rgba(8, 8, 25, 0.62) 0%,
+    rgba(70, 20, 90, 0.35) 45%,
+    rgba(0, 0, 0, 0.55) 100%);
+  background-size: 220% 220%;
+  animation: overlayShift 14s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: white;
+  padding: 0 2rem;
+}
+
+.hero-title {
+  font-size: clamp(5rem, 17vw, 15rem);
+  font-weight: 900;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.03em;
+  line-height: 1.05;
+  color: #fff;
+  animation: fadeInUp 1s ease-out;
+  /* 多层投影 + 暗色描边，让标题在背景上更醒目 */
+  text-shadow:
+    0 0 18px rgba(0, 0, 0, 0.55),
+    0 4px 30px rgba(0, 0, 0, 0.6),
+    0 2px 4px rgba(0, 0, 0, 0.8);
+  -webkit-text-stroke: 2px rgba(0, 0, 0, 0.25);
+}
+
+/* 打字机副标题 */
+.hero-subtitle {
+  font-size: clamp(1.2rem, 2.6vw, 1.9rem);
+  font-weight: 300;
+  min-height: 1.6em;
+  opacity: 0.95;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.type-cursor {
+  color: #d3d3d3;                          /* 浅灰色光标 */
+  font-weight: 400;
+  animation: blink 1s steps(1) infinite;
+}
+
+/* 向下滚动提示：白色 V 形箭头，小幅度跳跃 */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2.4rem;
+  z-index: 3;
+  cursor: pointer;
+  animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+.scroll-chevron {
+  width: 34px;
+  height: 34px;
+  border-right: 5px solid #fff;
+  border-bottom: 5px solid #fff;
+  border-radius: 3px;
+  transform: rotate(45deg);
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+  animation: chevronHop 1.5s ease-in-out infinite;
+}
+
+/* ============================================================
+   卡片区域（渐变底色 + 漂浮色块）
+   ============================================================ */
+.cards-section {
+  position: relative;
+  padding: 5rem 2rem 6rem;
+  overflow: hidden;
+  background: linear-gradient(180deg, #fdfbff 0%, #f3f0ff 55%, #eef7ff 100%);
+}
+
+/* 两个模糊的彩色大气泡，在背景里慢慢漂 */
+.cards-section::before,
+.cards-section::after {
+  content: '';
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.cards-section::before {
+  top: -120px;
+  left: -120px;
+  background: radial-gradient(circle, #ffb3c1, transparent 70%);
+  animation: blobFloat 13s ease-in-out infinite alternate;
+}
+
+.cards-section::after {
+  bottom: -140px;
+  right: -100px;
+  background: radial-gradient(circle, #9ec9ff, transparent 70%);
+  animation: blobFloat 17s ease-in-out infinite alternate-reverse;
+}
+
+.cards-container {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2.5rem 2rem;
+  border-radius: var(--card-radius);
+  background: #ffffff;
+  box-shadow: var(--card-shadow);
+  text-decoration: none;
+  color: var(--md-default-fg-color, #333333);
+  transition:
+    transform var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* 每张卡片的专属渐变底色（白 -> 主题色浅晕） */
+.card-blog    { background: linear-gradient(160deg, #ffffff 25%, #ffe9e9); }
+.card-class   { background: linear-gradient(160deg, #ffffff 25%, #fff6dd); }
+.card-tech    { background: linear-gradient(160deg, #ffffff 25%, #e0f7ff); }
+.card-reading { background: linear-gradient(160deg, #ffffff 25%, #ffe9f3); }
+.card-friends { background: linear-gradient(160deg, #ffffff 25%, #e3eeff); }
+.card-about   { background: linear-gradient(160deg, #ffffff 25%, #ecdfff); }
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  transition: height var(--transition-speed) ease;
+}
+
+/* 每种卡片的顶部渐变色条（类名对应 overrides/main.html 里的卡片 class） */
+.card-blog::before    { background: linear-gradient(90deg, #ff6b6b, #ff9f43); }
+.card-class::before   { background: linear-gradient(90deg, #feca57, #ff9f43); }
+.card-tech::before    { background: linear-gradient(90deg, #48dbfb, #1dd1a1); }
+.card-reading::before { background: linear-gradient(90deg, #fd79a8, #e84393); }
+.card-friends::before { background: linear-gradient(90deg, #54a0ff, #5f27cd); }
+.card-about::before   { background: linear-gradient(90deg, #5f27cd, #ff2d55); }
+
+.card:hover {
+  box-shadow: var(--card-hover-shadow);
+}
+
+.card:hover::before {
+  height: 8px;
+}
+
+.card:hover .card-icon {
+  animation: iconWiggle 0.6s ease-in-out;
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.card-desc {
+  font-size: 0.95rem;
+  opacity: 0.7;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   卡片入场动画（配合 extra.js 的 Intersection Observer）
+   ============================================================ */
+.card {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease,
+    box-shadow var(--transition-speed) ease;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 每张卡片依次出现的延迟 */
+.card:nth-child(1) { transition-delay: 0.1s; }
+.card:nth-child(2) { transition-delay: 0.2s; }
+.card:nth-child(3) { transition-delay: 0.3s; }
+.card:nth-child(4) { transition-delay: 0.4s; }
+.card:nth-child(5) { transition-delay: 0.5s; }
+.card:nth-child(6) { transition-delay: 0.6s; }
+
+/* ============================================================
+   留言板（giscus）：页面加宽、占满内容区，手机电脑自适应
+   ============================================================ */
+.md-main__inner:has(.giscus) {
+  max-width: 92rem;
+}
+
+.md-content__inner:has(.giscus) {
+  width: 100%;
+}
+
+.giscus,
+.giscus-frame {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: block;
+}
+
+.giscus-frame {
+  border: none;
+  min-height: 320px;
+}
+
+/* ============================================================
+   正文页的小彩蛋：标题装饰线 & 链接下划线动效
+   ============================================================ */
+.md-typeset h2 {
+  position: relative;
+  padding-bottom: 0.3rem;
+}
+
+.md-typeset h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 56px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent-red), var(--accent-purple));
+  transition: width 0.35s ease;
+}
+
+.md-typeset h2:hover::after {
+  width: 130px;
+}
+
+.md-typeset p a,
+.md-typeset li a {
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 0.3s ease;
+}
+
+.md-typeset p a:hover,
+.md-typeset li a:hover {
+  background-size: 100% 2px;
+}
+
+/* ============================================================
+   动画关键帧
+   ============================================================ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroZoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.12); }
+}
+
+@keyframes overlayShift {
+  from { background-position: 0% 0%; }
+  to   { background-position: 100% 100%; }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* 箭头小幅跳跃（沿箭头指向斜下方轻点） */
+@keyframes chevronHop {
+  0%, 100% { transform: rotate(45deg) translate(0, 0); }
+  50%      { transform: rotate(45deg) translate(7px, 7px); }
+}
+
+@keyframes blobFloat {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(60px, 40px) scale(1.15); }
+}
+
+@keyframes iconWiggle {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  25%      { transform: rotate(-12deg) scale(1.15); }
+  50%      { transform: rotate(10deg) scale(1.2); }
+  75%      { transform: rotate(-6deg) scale(1.1); }
+}
+
+/* ============================================================
+   响应式适配（手机/平板）
+   ============================================================ */
+@media screen and (max-width: 768px) {
+  .scroll-chevron {
+    width: 26px;
+    height: 26px;
+    border-right-width: 4px;
+    border-bottom-width: 4px;
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .cards-section {
+    padding: 3rem 1rem 4rem;
+  }
+}
+
+/* ============================================================
+   暗色模式适配
+   ============================================================ */
+[data-md-color-scheme="slate"] .cards-section {
+  background: linear-gradient(180deg, #16121f 0%, #1b1530 100%);
+}
+
+[data-md-color-scheme="slate"] .cards-section::before {
+  background: radial-gradient(circle, rgba(255, 45, 85, 0.35), transparent 70%);
+}
+
+[data-md-color-scheme="slate"] .cards-section::after {
+  background: radial-gradient(circle, rgba(84, 160, 255, 0.35), transparent 70%);
+}
+
+[data-md-color-scheme="slate"] .card {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.35);
+}
+
+[data-md-color-scheme="slate"] .card:hover {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55);
+}
+
+/* ============================================================
+   尊重"减少动态效果"系统设置
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
