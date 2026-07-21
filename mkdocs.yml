@@ -73,6 +73,8 @@ nav:
       - 军事理论: class/freshman-1/military-theory.md
       - 乒乓球（初级）: class/freshman-1/table-tennis.md
       - 电工电子学概论: class/freshman-1/intro-to-ee.md
+      - 中外管理思想史: class/freshman-1/history-of-management-thought.md
+      - 身体素质课: class/freshman-1/physical-fitness.md
     - 大一下:
       - class/freshman-2/index.md
       - 微积分（甲）Ⅱ: class/freshman-2/calculus-a2.md
@@ -106,51 +108,53 @@ nav:
       - 光机结构设计: class/sophomore-1/optomechanical-design.md
       - 英语演讲: class/sophomore-1/english-speech.md
       - 游泳（中级）: class/sophomore-1/swimming.md
+  - 阅读:
+    - reading/index.md
+    - 中文摘抄:
+      - 恶之花: reading/excerpts/chinese/les-fleurs-du-mal.md
+      - 要有光: reading/excerpts/chinese/yao-you-guang.md
+      - 蛤蟆先生去看心理医生: reading/excerpts/chinese/ha-ma-xian-sheng.md
+      - 看见: reading/excerpts/chinese/kan-jian.md
+      - 变量8: reading/excerpts/chinese/bian-liang-8.md
+      - 房思琪的初恋乐园: reading/excerpts/chinese/fang-si-qi.md
+      - 你当像鸟飞往你的山: reading/excerpts/chinese/educated.md
+      - 我想做一个能在你的葬礼上描述你一生的人: reading/excerpts/chinese/describe-your-life.md
+      - 2046旅店: reading/excerpts/chinese/2046-inn.md
+      - 世上为什么要有图书馆: reading/excerpts/chinese/why-libraries.md
+      - 不能承受的生命之轻: reading/excerpts/chinese/the-unbearable-lightness-of-being.md
+      - 岛上书店: reading/excerpts/chinese/the-storied-life-of-aj-fikry.md
+      - 死亡护理师: reading/excerpts/chinese/death-care.md
+      - 西西弗神话: reading/excerpts/chinese/the-myth-of-sisyphus.md
+      - 树上的男爵: reading/excerpts/chinese/the-baron-in-the-trees.md
+      - 我选择: reading/excerpts/chinese/i-choose.md
+      - 有限与无限的游戏: reading/excerpts/chinese/finite-and-infinite-games.md
+      - 人类群星闪耀时: reading/excerpts/chinese/decisive-moments-in-history.md
+      - 夜色温柔: reading/excerpts/chinese/tender-is-the-night.md
+      - 了不起的盖茨比: reading/excerpts/chinese/the-great-gatsby.md
+      - 云雀叫了一整天: reading/excerpts/chinese/skylark.md
+      - 蔡义江论红楼梦: reading/excerpts/chinese/cai-yijiang-hongloumeng.md
+      - 红楼梦人物论: reading/excerpts/chinese/hongloumeng-characters.md
+      - 我们仨: reading/excerpts/chinese/we-three.md
+    - 英文摘抄:
+      - Dead Poets Society: reading/excerpts/english/dead-poets-society.md
+      - Ferryman: reading/excerpts/english/ferryman.md
+      - Island of the Blue Dolphins: reading/excerpts/english/island-of-the-blue-dolphins.md
+      - Far From the Madding Crowd: reading/excerpts/english/far-from-the-madding-crowd.md
+      - A Dog's Purpose: reading/excerpts/english/a-dogs-purpose.md
+      - The Call of the Wild: reading/excerpts/english/the-call-of-the-wild.md
+      - Educated: reading/excerpts/english/educated.md
+      - 教科书摘抄:
+        - English - Read before tests: reading/excerpts/textbook/english-read-before-tests.md
+        - 散装: reading/excerpts/textbook/san-zhuang.md
+        - 全新版大学英语 1: reading/excerpts/textbook/new-college-english-1.md
+        - 大学英语（一）: reading/excerpts/textbook/college-english-1.md
+        - 大学英语（二）: reading/excerpts/textbook/college-english-2.md
+        - 大学英语（三）: reading/excerpts/textbook/college-english-3.md
+        - 大学英语（四）: reading/excerpts/textbook/college-english-4.md
+    - 推荐阅读:
+      - reading/recommended.md
   - 拓展学习:
     - tech/index.md
-    - 中文摘抄:
-      - 恶之花: tech/excerpts/chinese/les-fleurs-du-mal.md
-      - 要有光: tech/excerpts/chinese/yao-you-guang.md
-      - 蛤蟆先生去看心理医生: tech/excerpts/chinese/ha-ma-xian-sheng.md
-      - 看见: tech/excerpts/chinese/kan-jian.md
-      - 变量8: tech/excerpts/chinese/bian-liang-8.md
-      - 房思琪的初恋乐园: tech/excerpts/chinese/fang-si-qi.md
-      - 你当像鸟飞往你的山: tech/excerpts/chinese/educated.md
-      - 我想做一个能在你的葬礼上描述你一生的人: tech/excerpts/chinese/describe-your-life.md
-      - 2046旅店: tech/excerpts/chinese/2046-inn.md
-      - 世上为什么要有图书馆: tech/excerpts/chinese/why-libraries.md
-      - 不能承受的生命之轻: tech/excerpts/chinese/the-unbearable-lightness-of-being.md
-      - 岛上书店: tech/excerpts/chinese/the-storied-life-of-aj-fikry.md
-      - 死亡护理师: tech/excerpts/chinese/death-care.md
-      - 西西弗神话: tech/excerpts/chinese/the-myth-of-sisyphus.md
-      - 树上的男爵: tech/excerpts/chinese/the-baron-in-the-trees.md
-      - 我选择: tech/excerpts/chinese/i-choose.md
-      - 有限与无限的游戏: tech/excerpts/chinese/finite-and-infinite-games.md
-      - 人类群星闪耀时: tech/excerpts/chinese/decisive-moments-in-history.md
-      - 夜色温柔: tech/excerpts/chinese/tender-is-the-night.md
-      - 了不起的盖茨比: tech/excerpts/chinese/the-great-gatsby.md
-      - 云雀叫了一整天: tech/excerpts/chinese/skylark.md
-      - 蔡义江论红楼梦: tech/excerpts/chinese/cai-yijiang-hongloumeng.md
-      - 红楼梦人物论: tech/excerpts/chinese/hongloumeng-characters.md
-      - 我们仨: tech/excerpts/chinese/we-three.md
-    - 英文摘抄:
-      - Dead Poets Society: tech/excerpts/english/dead-poets-society.md
-      - Ferryman: tech/excerpts/english/ferryman.md
-      - Island of the Blue Dolphins: tech/excerpts/english/island-of-the-blue-dolphins.md
-      - Far From the Madding Crowd: tech/excerpts/english/far-from-the-madding-crowd.md
-      - A Dog's Purpose: tech/excerpts/english/a-dogs-purpose.md
-      - The Call of the Wild: tech/excerpts/english/the-call-of-the-wild.md
-      - Educated: tech/excerpts/english/educated.md
-      - 教科书摘抄:
-        - English - Read before tests: tech/excerpts/textbook/english-read-before-tests.md
-        - 散装: tech/excerpts/textbook/san-zhuang.md
-        - 全新版大学英语 1: tech/excerpts/textbook/new-college-english-1.md
-        - 大学英语（一）: tech/excerpts/textbook/college-english-1.md
-        - 大学英语（二）: tech/excerpts/textbook/college-english-2.md
-        - 大学英语（三）: tech/excerpts/textbook/college-english-3.md
-        - 大学英语（四）: tech/excerpts/textbook/college-english-4.md
-    - 推荐阅读:
-      - tech/reading.md
   - 友链: friends.md
   - 关于: about.md
 

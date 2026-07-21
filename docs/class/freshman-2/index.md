@@ -23,4 +23,4 @@ hide:
 - [学术英语交流](academic-english.md) — 闵尚超 · 1.5学分 · 96/5.0
 - [英语辩论](english-debate.md) — Dominic Mark Graham · 1.5学分 · 90/4.5
 - [乒乓球（中级）](table-tennis-intermediate.md) — 叶亚金 · 1.0学分 · 99/5.0
-- [身体素质课](physical-fitness.md) — 董育平 · 暂未出分
+- [身体素质课](physical-fitness.md) — 董育平 · 与体育课同分

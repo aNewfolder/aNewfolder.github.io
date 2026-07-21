@@ -22,6 +22,8 @@ hide:
     - [军事理论](freshman-1/military-theory.md) — 吴周礼 · 90/4.5
     - [乒乓球（初级）](freshman-1/table-tennis.md) — 黄小玲 · 100/5.0
     - [电工电子学概论](freshman-1/intro-to-ee.md) — 赵江萍 · 94/4.8
+    - [中外管理思想史](freshman-1/history-of-management-thought.md) — 张钢 · 91/4.5
+    - [身体素质课](freshman-1/physical-fitness.md) — 楼恒阳 · 与体育课同分
 
 ??? note "2️⃣ 大一下（2025-2026 春夏学期）"
 
@@ -39,7 +41,7 @@ hide:
     - [学术英语交流](freshman-2/academic-english.md) — 闵尚超 · 96/5.0
     - [英语辩论](freshman-2/english-debate.md) — Dominic Mark Graham · 90/4.5
     - [乒乓球（中级）](freshman-2/table-tennis-intermediate.md) — 叶亚金 · 99/5.0
-    - [身体素质课](freshman-2/physical-fitness.md) — 董育平 · 暂未出分
+    - [身体素质课](freshman-2/physical-fitness.md) — 董育平 · 与体育课同分
 
 ??? note "3️⃣ 大二上（2026-2027 秋冬学期）"
 
