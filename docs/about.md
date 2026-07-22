@@ -22,6 +22,16 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-07-23</div>
+<div class="update-log-content">修复《伴奏作曲》知乎链接为标准格式；安全策略（CSP）放行腾讯云 COS 图床域名，PicGo 图床图片可正常渲染。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-07-22</div>
+<div class="update-log-content">（补记）HP0731 生贺文分段排版调整；钢琴《伴奏作曲》正文扩充（和弦知识、织体）并新增配图。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-07-22</div>
 <div class="update-log-content">关于页站点统计精简：删除访客数卡片与统计口径说明，五张卡片一行排开。</div>
 </div>
