@@ -208,4 +208,93 @@ document.addEventListener('DOMContentLoaded', function() {
       applyLogState();
     }
   }
+
+  // ----------------------------------------------------------
+  // 8. 关于页站点统计 + 更新日历板
+  //    数据来自构建钩子生成的 /data/site-stats.json；
+  //    浏览量使用不蒜子（busuanzi），加载失败时显示 "—"
+  // ----------------------------------------------------------
+  var siteStatsEl = document.getElementById('site-stats');
+  var calendarEl = document.getElementById('update-calendar');
+  if (siteStatsEl || calendarEl) {
+    fetch('/data/site-stats.json')
+      .then(function(res) { return res.ok ? res.json() : null; })
+      .then(function(data) {
+        if (!data) throw new Error('no data');
+
+        if (siteStatsEl) {
+          var cards = [
+            { icon: '📄', value: data.pages, label: '个页面' },
+            { icon: '🌀', value: data.words.toLocaleString(), label: '全站总字数' },
+            { icon: '🔁', value: data.totalCommits, label: '次更新提交' },
+            { icon: '📅', value: data.updateDays, label: '天有更新' },
+            { icon: '👀', value: '<span id="busuanzi_value_site_pv">—</span>', label: '总浏览量', raw: true },
+            { icon: '🙋', value: '<span id="busuanzi_value_site_uv">—</span>', label: '访客数', raw: true },
+          ];
+          siteStatsEl.innerHTML = cards.map(function(c) {
+            return '<div class="site-stat-card"><div class="site-stat-icon">' + c.icon +
+              '</div><div class="site-stat-value">' + c.value +
+              '</div><div class="site-stat-label">' + c.label + '</div></div>';
+          }).join('') +
+          (data.firstCommit
+            ? '<p class="site-stats-note">自 ' + data.firstCommit + ' 建站以来 · 字数与更新数据统计口径与页首阅读统计一致（剔除代码块）</p>'
+            : '');
+
+          // 不蒜子浏览量统计（第三方免费计数器，失败则保持 "—"）
+          var bs = document.createElement('script');
+          bs.src = 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js';
+          bs.async = true;
+          document.body.appendChild(bs);
+        }
+
+        if (calendarEl) {
+          var commits = data.commits || {};
+          var today = new Date();
+          today.setHours(0, 0, 0, 0);
+          // 以本周日为终点，向前取满 53 周（GitHub 风格）
+          var end = new Date(today);
+          end.setDate(end.getDate() + (6 - end.getDay()));
+          var start = new Date(end);
+          start.setDate(start.getDate() - 53 * 7 + 1);
+
+          var monthLabels = [];
+          var cells = [];
+          var prevMonth = -1;
+          for (var d = new Date(start), week = 0; d <= end; d.setDate(d.getDate() + 1)) {
+            var dow = d.getDay();
+            if (dow === 0) {
+              if (d.getMonth() !== prevMonth) {
+                monthLabels.push({ week: week, label: (d.getMonth() + 1) + '月' });
+                prevMonth = d.getMonth();
+              }
+              week++;
+            }
+            var key = d.getFullYear() + '-' +
+              String(d.getMonth() + 1).padStart(2, '0') + '-' +
+              String(d.getDate()).padStart(2, '0');
+            var count = commits[key] || 0;
+            var level = count === 0 ? 0 : (count === 1 ? 1 : (count <= 3 ? 2 : 3));
+            var future = d > today;
+            cells.push('<span class="uc-cell uc-lv' + level + (future ? ' uc-future' : '') +
+              '" title="' + key + (count > 0 ? ' · ' + count + ' 次更新' : ' · 无更新') + '"></span>');
+          }
+
+          var monthsHtml = monthLabels.map(function(m) {
+            return '<span class="uc-month" style="grid-column-start:' + (m.week + 1) + '">' + m.label + '</span>';
+          }).join('');
+
+          calendarEl.innerHTML =
+            '<div class="uc-months">' + monthsHtml + '</div>' +
+            '<div class="uc-grid">' + cells.join('') + '</div>' +
+            '<div class="uc-legend"><span>少</span>' +
+            '<span class="uc-cell uc-lv0"></span><span class="uc-cell uc-lv1"></span>' +
+            '<span class="uc-cell uc-lv2"></span><span class="uc-cell uc-lv3"></span>' +
+            '<span>多</span></div>';
+        }
+      })
+      .catch(function() {
+        if (siteStatsEl) siteStatsEl.innerHTML = '<p class="site-stats-note">统计数据暂不可用（本地预览请先构建一次）。</p>';
+        if (calendarEl) calendarEl.innerHTML = '';
+      });
+  }
 });
