@@ -229,16 +229,12 @@ document.addEventListener('DOMContentLoaded', function() {
             { icon: '🔁', value: data.totalCommits, label: '次更新提交' },
             { icon: '📅', value: data.updateDays, label: '天有更新' },
             { icon: '👀', value: '<span id="busuanzi_value_site_pv">—</span>', label: '总浏览量', raw: true },
-            { icon: '🙋', value: '<span id="busuanzi_value_site_uv">—</span>', label: '访客数', raw: true },
           ];
           siteStatsEl.innerHTML = cards.map(function(c) {
             return '<div class="site-stat-card"><div class="site-stat-icon">' + c.icon +
               '</div><div class="site-stat-value">' + c.value +
               '</div><div class="site-stat-label">' + c.label + '</div></div>';
-          }).join('') +
-          (data.firstCommit
-            ? '<p class="site-stats-note">自 ' + data.firstCommit + ' 建站以来 · 字数与更新数据统计口径与页首阅读统计一致（剔除代码块）</p>'
-            : '');
+          }).join('');
 
           // 不蒜子浏览量统计（第三方免费计数器，失败则保持 "—"）
           var bs = document.createElement('script');
