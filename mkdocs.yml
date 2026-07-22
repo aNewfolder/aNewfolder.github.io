@@ -60,10 +60,6 @@ not_in_nav: |
 # ============================================================
 nav:
   - 主页: index.md
-  - 随笔:
-    - blog/index.md
-    - While the Powerful Play Goes On:
-      - 我的工高故事（序幕）: blog/while-the-powerful-play-goes-on/prelude.md
   - 课程总结:
     - class/index.md
     - 大一上:
@@ -112,6 +108,9 @@ nav:
       - 光机结构设计: class/sophomore-1/optomechanical-design.md
       - 英语演讲: class/sophomore-1/english-speech.md
       - 游泳（中级）: class/sophomore-1/swimming.md
+  - 拓展学习:
+    - tech/index.md
+    - 制作一个MkDocs个人网站: tech/mkdocs-site-guide.md
   - 阅读:
     - reading/index.md
     - 中文摘抄:
@@ -183,9 +182,24 @@ nav:
     - 声乐:
       - 小美满: music/vocal/xiao-mei-man.md
       - 演唱技巧: music/vocal/singing-techniques.md
-  - 拓展学习:
-    - tech/index.md
-    - 制作一个MkDocs个人网站: tech/mkdocs-site-guide.md
+  - 体育:
+    - sports/index.md
+    - 乒乓球: sports/table-tennis.md
+    - 游泳: sports/swimming.md
+    - 跑步: sports/running.md
+  - 随笔:
+    - blog/index.md
+    - While the Powerful Play Goes On:
+      - 我的工高故事（序幕）: blog/while-the-powerful-play-goes-on/prelude.md
+    - HP0731:
+      - blog/hp0731/index.md
+      - 2020.07.31: blog/hp0731/2020-07-31.md
+      - 2021.07.31: blog/hp0731/2021-07-31.md
+      - 2022.07.31: blog/hp0731/2022-07-31.md
+      - 2023.07.31: blog/hp0731/2023-07-31.md
+      - 2024.07.31: blog/hp0731/2024-07-31.md
+      - 2025.07.31: blog/hp0731/2025-07-31.md
+      - 2026.07.31: blog/hp0731/2026-07-31.md
   - 友链: friends.md
   - 关于: about.md
 
@@ -214,6 +228,12 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - toc:                                   # 目录
       permalink: true                      # 标题旁显示永久链接图标
+
+# ============================================================
+# 构建钩子（生成站点统计数据：hooks/site_data.py）
+# ============================================================
+hooks:
+  - hooks/site_data.py                  # 每次构建生成 data/site-stats.json（总字数/更新日历）
 
 # ============================================================
 # 插件

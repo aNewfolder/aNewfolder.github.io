@@ -337,11 +337,11 @@
 }
 
 /* ============================================================
-   页面日期区块（git-revision-date 插件）：居中、小号灰字、带图标
+   页面日期区块（git-revision-date 插件）：左对齐、小号灰字、带图标
    ============================================================ */
 .md-source-file {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   gap: 0.6rem 2.2rem;
   margin: 2.8rem 0 1.2rem;
@@ -349,7 +349,7 @@
   border-top: 1px solid rgba(128, 128, 128, 0.22);
   font-size: 0.68rem;
   color: var(--md-default-fg-color--light);
-  text-align: center;
+  text-align: left;
 }
 
 .md-source-file__fact {
@@ -605,3 +605,119 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ============================================================
+   体育卡片（2026-07 新增栏目）
+   ============================================================ */
+.card-sports { background: linear-gradient(160deg, #ffffff 25%, #fff1e6); }
+.card-sports::before { background: linear-gradient(90deg, #ffa502, #ff6348); }
+
+/* 第 7、8 张卡片的入场延迟 */
+.card:nth-child(7) { transition-delay: 0.7s; }
+.card:nth-child(8) { transition-delay: 0.8s; }
+
+/* ============================================================
+   关于页：站点统计卡片 + 更新日历板
+   ============================================================ */
+.site-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 0.9rem;
+  margin: 1rem 0 0.4rem;
+}
+
+.site-stat-card {
+  padding: 1rem 0.8rem;
+  border-radius: 14px;
+  background: linear-gradient(160deg, #ffffff 30%, #f5f1ff);
+  box-shadow: var(--card-shadow);
+  text-align: center;
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.site-stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--card-hover-shadow);
+}
+
+.site-stat-icon { font-size: 1.4rem; }
+
+.site-stat-value {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--accent-purple);
+  margin: 0.2rem 0 0.1rem;
+}
+
+.site-stat-label {
+  font-size: 0.68rem;
+  color: var(--md-default-fg-color--light);
+}
+
+.site-stats-note {
+  font-size: 0.68rem;
+  color: var(--md-default-fg-color--light);
+  margin: 0.5rem 0 0;
+}
+
+/* 更新日历板：GitHub 风格 53 周 x 7 天，更新日标红 */
+.update-calendar {
+  margin: 1.2rem 0 0.6rem;
+  overflow-x: auto;
+  padding-bottom: 0.4rem;
+}
+
+.uc-months {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc(11px + 3px);
+  font-size: 0.6rem;
+  color: var(--md-default-fg-color--light);
+  margin-bottom: 0.25rem;
+}
+
+.uc-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(7, 11px);
+  grid-auto-columns: 11px;
+  gap: 3px;
+  width: max-content;
+}
+
+.uc-cell {
+  width: 11px;
+  height: 11px;
+  border-radius: 2px;
+  background: rgba(128, 128, 128, 0.14);
+}
+
+.uc-cell.uc-lv1 { background: #ff9e9e; }
+.uc-cell.uc-lv2 { background: #ff5252; }
+.uc-cell.uc-lv3 { background: #c62828; }
+.uc-cell.uc-future { opacity: 0.35; }
+
+.uc-legend {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-top: 0.5rem;
+  font-size: 0.6rem;
+  color: var(--md-default-fg-color--light);
+  justify-content: flex-end;
+}
+
+.uc-legend .uc-cell { display: inline-block; }
+.uc-legend span:first-child,
+.uc-legend span:last-child { margin: 0 0.25rem; }
+
+/* 暗色模式适配 */
+[data-md-color-scheme="slate"] .site-stat-card {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.35);
+}
+
+[data-md-color-scheme="slate"] .uc-cell { background: rgba(255, 255, 255, 0.10); }
+[data-md-color-scheme="slate"] .uc-cell.uc-lv1 { background: #ff9e9e; }
+[data-md-color-scheme="slate"] .uc-cell.uc-lv2 { background: #ff5252; }
+[data-md-color-scheme="slate"] .uc-cell.uc-lv3 { background: #c62828; }

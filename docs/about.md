@@ -22,6 +22,11 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-07-22</div>
+<div class="update-log-content">随笔新增子栏目 HP0731（2020-2026 七年哈利波特生贺合集）；新增【体育】栏目（乒乓球/游泳/跑步）并添加首页卡片；全站导航与首页卡片重排为 课程总结-拓展学习-阅读-音乐-体育-随笔-友链-关于；页面底部日期改为左对齐；关于页新增站点统计与更新日历板；《微积分（甲）Ⅱ》课程总结补充正文。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-07-21</div>
 <div class="update-log-content">新增【音乐】板块（推荐歌单 + 钢琴 / 架子鼓 / 声乐三个子栏目）并添加快捷首页卡片；阅读新增《推荐书目》；《学术英语交流》课程总结补充正文与相关资料（最终论文 + 展示海报）。</div>
 </div>
@@ -94,3 +99,11 @@
 </div>
 <button class="update-log-toggle" type="button">展开全部 ▾</button>
 </div>
+
+## 站点统计
+
+<div class="site-stats" id="site-stats">统计加载中…</div>
+
+### 更新日历
+
+<div class="update-calendar" id="update-calendar">更新日历加载中…</div>

@@ -17,3 +17,10 @@
 1. **音乐板块** `docs/music/`：`index.md`（仿阅读 index，`??? quote` 折叠块）+ `playlist.md`（推荐歌单，表格：歌名/演唱/它的故事）+ 三个平级子栏目 `piano/`、`drums/`、`vocal/`。nav 中位于"阅读"与"拓展学习"之间；首页卡片 `card-music`（🎵，薄荷绿 `#55efc4/#00b894`），描述"没有美术天赋，音乐有一点"。子栏目内文件命名：有通行英文名的用英文（如 `pirates-of-the-caribbean.md`），其余用拼音（如 `xun-guang.md`）。
 2. **文章附件**：非图片附件（PDF/PPTX 等）放文章就近的 `assets/` 子目录，正文用 markdown 链接引用；`.md` 附件须在 `mkdocs.yml` 顶层 `not_in_nav:` 登记，否则 strict 构建报错。首例：`docs/class/freshman-2/assets/`（paper.md + research_poster.pptx，从 academic-english.md 链接）。
 3. **推送时带上用户本地改动**：推送前 `git status`，用户自己改过的文件一并提交推送。
+
+## 2026-07-22 · 体育栏目、HP0731 子栏目与站点统计
+
+1. **体育栏目** `docs/sports/`：`index.md`（hide toc + 简介"督促自己认真锻炼" + 文章列表）+ `table-tennis.md` / `swimming.md` / `running.md`。首页卡片 `card-sports`（🏃，橙红 `#ffa502/#ff6348`，底色 `#fff1e6`）。全站栏目顺序固定为：课程总结 → 拓展学习 → 阅读 → 音乐 → 体育 → 随笔 → 友链 → 关于（nav 与首页卡片一致）。
+2. **HP0731 子栏目** `docs/blog/hp0731/`：哈利波特生贺合集，`index.md` + 每年一个 `YYYY-07-31.md`（2020 起逐年），正文为英文生贺文，按原说说分段排版，引用原文用斜体。
+3. **站点统计与更新日历（关于页）**：构建钩子 `hooks/site_data.py`（已在 mkdocs.yml `hooks:` 登记）每次构建生成 `site/data/site-stats.json`（页面数/总字数/提交日历，不入库、勿手工编辑）；`extra.js` 第 8 段在关于页渲染统计卡片 + GitHub 风格更新日历（有提交的日子标红）；浏览量/访客数用不蒜子（CSP 已放行 `busuanzi.ibruce.info`）。重装 MkDocs 环境无需额外依赖。
+4. **页面日期左对齐**：`.md-source-file` 改为 `flex-start` 左对齐（2026-07-22 起）。

@@ -13,4 +13,5 @@ hide:
 
 ## 最新文章
 
-- **[我的工高故事（序幕）](while-the-powerful-play-goes-on/prelude.md)** — 2026-04-17 · While the Powerful Play Goes On · 
+- **[HP0731](hp0731/index.md)** — 每年 7 月 31 日的哈利波特生贺合集 · 2020 起
+- **[我的工高故事（序幕）](while-the-powerful-play-goes-on/prelude.md)** — 2026-04-17 · While the Powerful Play Goes On ·
