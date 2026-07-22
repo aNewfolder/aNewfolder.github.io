@@ -23,6 +23,11 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-07-22</div>
+<div class="update-log-content">关于页站点统计精简：删除访客数卡片与统计口径说明，五张卡片一行排开。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-07-22</div>
 <div class="update-log-content">随笔新增子栏目 HP0731（2020-2026 七年哈利波特生贺合集）；新增【体育】栏目（乒乓球/游泳/跑步）并添加首页卡片；全站导航与首页卡片重排为 课程总结-拓展学习-阅读-音乐-体育-随笔-友链-关于；页面底部日期改为左对齐；关于页新增站点统计与更新日历板；《微积分（甲）Ⅱ》课程总结补充正文。</div>
 </div>
 
