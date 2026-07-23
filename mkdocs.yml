@@ -159,7 +159,7 @@ nav:
       - 推荐书目: reading/book-list.md
   - 音乐:
     - music/index.md
-    - 推荐歌单: music/playlist.md
+    - 单曲循环: music/playlist.md
     - 钢琴:
       - 加勒比海盗: music/piano/pirates-of-the-caribbean.md
       - 花之舞: music/piano/flower-dance.md

@@ -29,3 +29,12 @@
 
 1. **更新日志覆盖范围**：更新日志卡片不仅要写助手本次任务做的修改，也要写 `git status` 发现的用户本地自行修改；不清楚具体改动时至少写明哪些文件/内容变了。非同一天的改动可单独插"（补记）"卡片，日期填实际提交日，保持最新在上。
 2. **图床外链（PicGo + 腾讯云 COS）**：文章中可直接用 `https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com` 图床链接插图；该域名已在 `overrides/main.html` 的 CSP `img-src` 白名单中放行。换新图床域名时必须同步加入 CSP 白名单，否则浏览器拦截、图片渲染不出来。
+
+## 2026-07-23 · PDF 内嵌渲染约定
+
+1. **页面内直接渲染 PDF**：PDF 放文章同级 `assets/`，正文用 `<embed src="assets/文件名.pdf" type="application/pdf" width="100%" height="800px">` 内嵌，下面附一行普通链接做下载/新标签页打开兜底；文件名含空格时 src 里空格写成 `%20`。PDF 是静态文件原样复制，无需 `not_in_nav` 登记。
+2. **CSP 配套**：`overrides/main.html` 的 `object-src` 已从 `'none'` 改为 `'self'`（2026-07-23 起），这是 embed 能渲染的前提；重建/改 CSP 时必须保留 `object-src 'self'`，否则全站 PDF 内嵌失效。
+
+## 2026-07-23 · 音乐板块【推荐歌单】更名【单曲循环】
+
+1. `docs/music/playlist.md` 页面标题、音乐 index 折叠块与 nav 条目统一更名为【单曲循环】；文件路径 `music/playlist.md` 不变。

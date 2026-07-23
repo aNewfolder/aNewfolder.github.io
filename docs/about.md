@@ -23,7 +23,12 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-07-23</div>
-<div class="update-log-content">修复《伴奏作曲》知乎链接为标准格式；安全策略（CSP）放行腾讯云 COS 图床域名，PicGo 图床图片可正常渲染。</div>
+<div class="update-log-content">音乐板块【推荐歌单】更名为【单曲循环】（页面与导航同步更新）；钢琴五篇（加勒比海盗 / 花之舞 / 一步之遥 / 家庭时间 / 约会）与《演唱技巧》正文补全并新增配图，新增一批琴谱附件；《工程图学基础》课程总结补全；体育三篇（乒乓球 / 游泳 / 跑步）正文补全。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-07-23</div>
+<div class="update-log-content">修复《伴奏作曲》知乎链接为标准格式；安全策略（CSP）放行腾讯云 COS 图床域名，PicGo 图床图片可正常渲染；CSP 放行本站 PDF 内嵌渲染，《花之舞》新增 Flower Dance 琴谱 PDF 在线预览。</div>
 </div>
 
 <div class="update-log-card" markdown>
