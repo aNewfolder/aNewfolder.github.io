@@ -210,6 +210,8 @@ extra_css:
   - stylesheets/extra.css                  # 自定义样式文件
 
 extra_javascript:
+  - javascripts/mathjax.js                 # MathJax 配置（必须先于 MathJax 库加载）
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js  # MathJax 库（公式渲染）
   - javascripts/extra.js                   # 自定义脚本文件
 
 # ============================================================
@@ -223,6 +225,8 @@ markdown_extensions:
       alternate_style: true
   - attr_list                              # 给元素添加 HTML 属性（如图片宽度）
   - md_in_html                             # 允许在 HTML 中写 Markdown
+  - pymdownx.arithmatex:                   # 数学公式（$...$ / $$...$$，配合 MathJax 渲染）
+      generic: true
   - pymdownx.emoji:                        # Emoji 支持
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg

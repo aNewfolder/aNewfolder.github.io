@@ -23,6 +23,11 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-07-27</div>
+<div class="update-log-content">全站新增数学公式渲染：配置 pymdownx.arithmatex + MathJax（unpkg CDN），正文中的 $...$ 行内公式与 $$...$$ 独立公式现可在网页正常显示；CSP 同步放行 unpkg.com 脚本与字体。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-07-27</div>
 <div class="update-log-content">大一下课程总结补全：英语辩论、人工智能导论、光电信息导论、法学基础、中国近现代史纲要、常微分方程、大学物理（甲）Ⅰ、心理学应用、科技写作九门课新增「分数构成 / 是否点名」内容，心理学应用与科技写作学期标注修正；身体素质课教师与学分信息修正；《花之舞》琴谱改为图床图片展示；乒乓球正文扩充技术要点；HP0731 2026 生贺文占位文案更新。</div>
 </div>
 
