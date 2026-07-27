@@ -10,6 +10,16 @@
 
 ## 琴谱
 
-<embed src="assets/Flower%20Dance.pdf" type="application/pdf" width="100%" height="800px">
-[在新标签页打开 / 下载琴谱](assets/Flower%20Dance.pdf)
+![](https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/img/20260723225211329.jpg)
 
+![](https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/img/20260723225227963.jpg)
+
+![](https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/img/20260723225235803.jpg)
+
+![](https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/img/20260723225245861.jpg)
+
+![5](https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/img/20260723225257729.jpg)
+
+![](https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/img/20260723225310085.jpg)
+
+![](https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/img/20260723225319508.jpg)

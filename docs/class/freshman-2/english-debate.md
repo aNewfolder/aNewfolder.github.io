@@ -7,4 +7,20 @@
 
 ---
 
-> 课程总结撰写中，敬请期待。
+## 分数构成
+
+- Attendance：5%
+- General Participation：35%
+- Group Presentations：10%
+- Final Examination：50%
+
+## 是否点名
+
+口头点名，老师会叫每个人的英文名，很喜欢的环节。
+
+## 课程总结与建议 & 教师评价
+
+
+
+## 相关资料
+
