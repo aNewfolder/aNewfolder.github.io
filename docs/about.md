@@ -22,6 +22,11 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-07-28</div>
+<div class="update-log-content">友链页迎来第一位朋友：新增 zhizhi（zhi1pan.github.io）链接，友链表按时间顺序排列。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-07-27</div>
 <div class="update-log-content">全站新增数学公式渲染：配置 pymdownx.arithmatex + MathJax（unpkg CDN），正文中的 $...$ 行内公式与 $$...$$ 独立公式现可在网页正常显示；CSP 同步放行 unpkg.com 脚本与字体。</div>
 </div>
