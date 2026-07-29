@@ -58,7 +58,14 @@ MkDocs 网站里的每一篇文章，都是用 **Markdown** 这种轻量标记�
         ```
     
         显示类似 `v22.x.x` 的版本号，再输入 `npm -v` 也显示版本号，就说明装好了。
-    
+        注意这里可能会出现报错，报错内容是“因为在该系统上禁止运行脚本”，如果出现此报错，先关闭当前的powershell窗口，然后在电脑自带的搜索栏搜索[powershell]，右键，[以管理员身份打开]，执行以下命令：
+        
+        ```
+        Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+        ```
+	    
+	    然后输入Y确认。确认后关闭这个窗口，重新按上述方法打开普通powershell窗口，重试指令。
+	    
     ### 3. 安装 Opencode
     
     在同一个黑色终端窗口里，输入下面这行并回车：
@@ -69,10 +76,10 @@ MkDocs 网站里的每一篇文章，都是用 **Markdown** 这种轻量标记�
     
     等它跑完（看到 `added x packages` 之类的提示）。然后输入 `opencode --version` 回车，**显示版本号就说明安装成功了**。
     
-    可能遇到的两个小问题：
+    可能遇到的小问题：
     
     - **下载特别慢或卡住**：先执行 `npm config set registry https://registry.npmmirror.com`（换成国内镜像源），再重新执行安装命令。
-    - **PowerShell 报"禁止运行脚本"的红字**：在开始菜单搜索 PowerShell，右键"以管理员身份运行"，执行 `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`，回车后输入 `Y` 确认。
+
     
     ### 4. 获取 DeepSeek API Key
     
@@ -80,9 +87,9 @@ MkDocs 网站里的每一篇文章，都是用 **Markdown** 这种轻量标记�
     2. 在左侧菜单找到 **API keys**，点进去，点 **创建 API key**。
     3. 给它起个名字（随便起，比如 `opencode`），点创建。
     4. 页面会弹出一串以 `sk-` 开头的 Key——**马上复制并保存到备忘录里，它只显示这一次**，关掉就再也看不到了（丢了只能重新创建一个）。
-    5. 回到左侧菜单，点 **充值**：支持支付宝/微信，先充 20 元就够你玩很久。
+    5. 回到左侧菜单，点 **充值**：支持支付宝/微信，先充 10 元就够你玩很久。
     
-    ### 5. 认真考虑一下 Coding Plan
+    ### 5. 考虑一下 Coding Plan
     
     除了上面这种"按量付费"的方式，各大模型厂商还提供 **Coding Plan（编程套餐）**：包月付费，额度很大，而且能用上各家**最强**的模型。比如智谱的 GLM Coding Plan、Kimi、MiniMax 等都有类似套餐，一般几十元一个月起。
     
@@ -90,9 +97,10 @@ MkDocs 网站里的每一篇文章，都是用 **Markdown** 这种轻量标记�
     
     ### 6. 把 DeepSeek 接到 Opencode
     
-    1. 在终端输入 `opencode` 回车，会进入一个全屏的对话界面（这叫 TUI）。
-    2. 输入 `/connect` 回车，在列表里找到 **DeepSeek**，按提示粘贴你刚才保存的 API Key。
-    3. 输入 `/models` 回车，选择你想用的模型（比如 `deepseek-v4-pro`）。
+    6. 在终端输入 `opencode` 回车，会进入一个全屏的对话界面（这叫 TUI）。
+    7. 输入 `/connect` 回车，在列表里找到 **DeepSeek**，按提示粘贴你刚才保存的 API Key。
+    8. 输入 `/models` 回车，选择你想用的模型（比如 `deepseek-v4-pro`）。
+    9. 如果有思考强度的选项，选择max就可以，
     
     ### 7. 确认自己成功了 + 基本用法
     
@@ -108,6 +116,8 @@ MkDocs 网站里的每一篇文章，都是用 **Markdown** 这种轻量标记�
 ---
 
 ## 第 2 步：网站初始化
+
+**提醒：现在你已经拥有 Agent 了，在之后的步骤中无论遇到什么问题，都可以语言描述或截图交由 Agent 解决，一般来说，它能解决绝大多数问题。**
 
 ### 2.1 建一个文件夹
 
@@ -142,6 +152,8 @@ MkDocs 网站里的每一篇文章，都是用 **Markdown** 这种轻量标记�
 ### 2.3 本地预览
 
 智能体启动 `mkdocs serve` 后，会告诉你一个网址。用浏览器打开它——恭喜，你的网站已经在自己电脑上跑起来了！
+
+这里有概率出现网址打不开的情况，如果有问题，让 Agent 帮你修。
 
 现在随便逛逛，哪里不满意就直接用自然语言告诉智能体，比如"主页标题再大一点""导航栏换成蓝色"，它会改到你满意为止。预览看够了，回到终端按 `Ctrl + C` 可以停止预览。
 
@@ -178,15 +190,59 @@ my-website/
 ??? info "还没有 GitHub 账号？先展开这里注册"
 
     GitHub 是全球最大的代码托管网站，我们的网站文件就存在它那里。访问 GitHub 一般需要科学上网；如果你还不会，可以到 **CC98**上搜相关教程，有很多详细的新手帖。
+	如果仍有困难，可参考科学上网的具体步骤：找到一个平台（ikuuu、GW树洞等），注册，登录，选择套餐并充值，下载客户端，打开客户端并登录，选择节点并连接。
+	连接后，没有特殊情况的话，在你对网站进行搭建/修改的时候，可以长期保持“规则”模式连接。
     
-    注册步骤：
+    Github注册步骤：
     
     1. 打开 [github.com](https://github.com/)，点右上角 **Sign up**。
     2. 输入邮箱 → 设置密码 → 设置用户名。
     3. **用户名会出现在你将来的网址里**（`用户名.github.io`），建议起一个好记、好看的英文ID。
     4. 按提示完成人机验证和邮箱验证，免费账号即可，注册完成！
 
-有了 GitHub 账号后，剩下的事依然可以交给智能体。把下面这段发给它（记得把方括号里的内容换成你的）：
+??? info "电脑还没有安装 git ？先展开这里安装"
+
+	如果不确定自己有没有安装：先打开一个powershell窗口，输入
+	
+	```
+	git --version
+	```
+	
+	如果出现类似 git version 2.52.x.windows.1 的字样，则说明曾经安装过，可以先进行下一步，如果出现问题再根据Agent的指令解决。
+	
+	如果之前没有安装过，参照以下步骤安装（此步骤交给Agent有案例表明可能会报错较多，还是推荐手动操作，且它并不十分麻烦，相信自己，已经马上就要完成了）：
+	
+	1. 完成科学上网步骤，保持【规则】状态连接。
+	2. 复制链接 https://git-scm.com/install/windows 到浏览器打开（以windows电脑为例，mac可以咨询Agent有哪些相应变化）。
+	3. 点击图中红色框选区域下载到任意位置，路径尽量不要包含中文，没有特殊情况可以保持默认。
+    ![](https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/img/20260729224149626.png)
+	4. 找到刚才下载的位置，双击打开安装包。许可协议next，安装路径next，选择组件（Select Components）如果**Add a Git Bash Profile to Windows Terminal**没有默认勾选的话把它勾上，其他不用动next，Choosing the default editor直接next，Adjusting the name of the initial branch 这个选择第二个**Override the default branch name for new repositories**，并在框内填入main，Adjusting your PATH environment选择有recommended的中间项，Configuring the line ending conversions选第一个**Checkout Windows-style, commit Unix-style line endings**，后面一路next到底，最后install。
+	5. 接下来我们需要配置环境，告诉git我们是谁。在开始菜单搜索 Git Bash 并单击打开。
+	6. 在黑色的窗口里，依次输入以下命令（注意空格，每次复制一行，把引号里的内容换成你的，注意git bash里面有可能会出现部分敏感信息不显示的情况，只要保证自己复制/输入上了就果断回车就可以。还有一个小技巧：git bash、Powershell等命令行工具中大多可以采用鼠标右键粘贴）：
+	
+	```
+	# 配置用户名git config --global user.name "你刚才设置的github用户名"
+	# 配置邮箱git config --global user.email "你刚才注册github所用的邮箱"
+	```
+	
+	7. 输入以下命令检查是否成功：
+	
+	```
+	git config --global --list
+	```
+	
+	如果你看到了刚才输入的 user.name 和 user.email，说明配置成功！
+	8. 最终验证：打开一个Powershell界面，输入 
+	
+	```
+	git --version
+	```
+	
+	如果出现类似 git version 2.52.x.windows.1 的字样，恭喜你！Git 安装成功，且环境变量配置正确。
+
+接下来我们保持科学上网工具连接状态，打开登录好的 github，点击右上边栏加号-new repository，仓库命名为【你刚刚注册 github 设置的用户名.github.io】，其他全部保持默认即可，点击创建。
+
+剩下的事依然可以交给智能体。把下面这段发给它（记得把方括号里的内容换成你刚刚设置的用户名）：
 
 ```
 请帮我把这个网站部署到 GitHub Pages，步骤如下：
@@ -196,11 +252,9 @@ my-website/
 2. 创建 .github/workflows/ci.yml：一个 GitHub Actions 工作流，
    效果是每次 push 到 main 分支，就自动安装 mkdocs-material、
    运行 mkdocs build 并把构建结果发布到 gh-pages 分支。
-3. 教我在 GitHub 网页上新建一个名为【我的用户名.github.io】的公开仓库，
-   然后帮我把本地代码关联并推送到这个仓库。
-4. 推送后告诉我：在仓库的 Settings → Pages 里应该把 Source 设为
+3. 推送后告诉我：如何在仓库的 Settings → Pages 里把 Source 设为
    从 gh-pages 分支发布（如果工作流用的是官方 Pages 部署方式，则帮我确认对应设置）。
-5. 最后告诉我大概等多久、访问哪个网址就能看到网站。
+4. 最后告诉我大概等多久、访问哪个网址就能看到网站。
 ```
 
 过程中有两件事可能需要你亲自动手：
@@ -278,8 +332,12 @@ git push
 
 推送成功后等 1~3 分钟，到你的网站刷新，就能看到最新内容。
 
+当然如果你像我一样懒完全可以直接告诉 Agent，我想要改什么，如何改，最后把我的修改推送到 github。
+
 ### 拓展功能？交给你的智能体
 
 想要留言板、背景图、首页动效、暗色模式……**不需要自己研究**，直接用自然语言告诉智能体你想要什么，让它去实现、你负责验收就行。
 
 祝建站愉快 🎉
+
+感谢 CuteJigglypuff、zhizhi 等在该教程修订中提供的灵感。

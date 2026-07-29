@@ -22,6 +22,11 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-07-29</div>
+<div class="update-log-content">《MkDocs 建站教程》大幅修订：Node.js 安装补充 PowerShell 执行策略报错处理，新增 Git 安装与配置详细步骤、科学上网说明与 GitHub 建仓指引，部署流程精简，多处步骤提示优化，文末致谢 CuteJigglypuff、zhizhi；推荐阅读书单清空示例条目（《活着》）改为待填。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-07-28</div>
 <div class="update-log-content">友链页迎来第一位朋友：新增 zhizhi（zhi1pan.github.io）链接，友链表按时间顺序排列。</div>
 </div>
