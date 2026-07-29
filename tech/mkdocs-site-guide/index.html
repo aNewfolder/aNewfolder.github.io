@@ -2164,7 +2164,7 @@
   <a href="#5-coding-plan" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. 认真考虑一下 Coding Plan
+        5. 考虑一下 Coding Plan
       
     </span>
   </a>
@@ -5441,7 +5441,7 @@
   <a href="#5-coding-plan" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. 认真考虑一下 Coding Plan
+        5. 考虑一下 Coding Plan
       
     </span>
   </a>
@@ -5701,7 +5701,11 @@
 <p>装完验证：按 <code>Win + R</code>，输入 <code>powershell</code> 回车，打开黑色窗口（这叫"终端"），输入下面这行并回车：</p>
 <div class="highlight"><pre><span></span><code>node -v
 </code></pre></div>
-<p>显示类似 <code>v22.x.x</code> 的版本号，再输入 <code>npm -v</code> 也显示版本号，就说明装好了。</p>
+<p>显示类似 <code>v22.x.x</code> 的版本号，再输入 <code>npm -v</code> 也显示版本号，就说明装好了。
+注意这里可能会出现报错，报错内容是“因为在该系统上禁止运行脚本”，如果出现此报错，先关闭当前的powershell窗口，然后在电脑自带的搜索栏搜索[powershell]，右键，[以管理员身份打开]，执行以下命令：</p>
+<div class="highlight"><pre><span></span><code>Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+</code></pre></div>
+<p>然后输入Y确认。确认后关闭这个窗口，重新按上述方法打开普通powershell窗口，重试指令。</p>
 </li>
 </ol>
 <h3 id="3-opencode">3. 安装 Opencode<a class="headerlink" href="#3-opencode" title="Permanent link">&para;</a></h3>
@@ -5709,10 +5713,9 @@
 <div class="highlight"><pre><span></span><code>npm install -g opencode-ai
 </code></pre></div>
 <p>等它跑完（看到 <code>added x packages</code> 之类的提示）。然后输入 <code>opencode --version</code> 回车，<strong>显示版本号就说明安装成功了</strong>。</p>
-<p>可能遇到的两个小问题：</p>
+<p>可能遇到的小问题：</p>
 <ul>
 <li><strong>下载特别慢或卡住</strong>：先执行 <code>npm config set registry https://registry.npmmirror.com</code>（换成国内镜像源），再重新执行安装命令。</li>
-<li><strong>PowerShell 报"禁止运行脚本"的红字</strong>：在开始菜单搜索 PowerShell，右键"以管理员身份运行"，执行 <code>Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</code>，回车后输入 <code>Y</code> 确认。</li>
 </ul>
 <h3 id="4-deepseek-api-key">4. 获取 DeepSeek API Key<a class="headerlink" href="#4-deepseek-api-key" title="Permanent link">&para;</a></h3>
 <ol>
@@ -5720,9 +5723,9 @@
 <li>在左侧菜单找到 <strong>API keys</strong>，点进去，点 <strong>创建 API key</strong>。</li>
 <li>给它起个名字（随便起，比如 <code>opencode</code>），点创建。</li>
 <li>页面会弹出一串以 <code>sk-</code> 开头的 Key——<strong>马上复制并保存到备忘录里，它只显示这一次</strong>，关掉就再也看不到了（丢了只能重新创建一个）。</li>
-<li>回到左侧菜单，点 <strong>充值</strong>：支持支付宝/微信，先充 20 元就够你玩很久。</li>
+<li>回到左侧菜单，点 <strong>充值</strong>：支持支付宝/微信，先充 10 元就够你玩很久。</li>
 </ol>
-<h3 id="5-coding-plan">5. 认真考虑一下 Coding Plan<a class="headerlink" href="#5-coding-plan" title="Permanent link">&para;</a></h3>
+<h3 id="5-coding-plan">5. 考虑一下 Coding Plan<a class="headerlink" href="#5-coding-plan" title="Permanent link">&para;</a></h3>
 <p>除了上面这种"按量付费"的方式，各大模型厂商还提供 <strong>Coding Plan（编程套餐）</strong>：包月付费，额度很大，而且能用上各家<strong>最强</strong>的模型。比如智谱的 GLM Coding Plan、Kimi、MiniMax 等都有类似套餐，一般几十元一个月起。</p>
 <p>为什么推荐：<strong>模型越强，智能体干活越省心——少出错、少返工、少生气</strong>。如果你打算长期用智能体做事，买一个 coding plan 是性价比很高的投资。买好之后，配置方式和下面第 6 步类似，只是把 DeepSeek 换成对应厂商的 Key 和模型名，照着该厂商给的接入文档做即可（也可以直接问智能体："我买了 GLM Coding Plan，这是 Key，帮我配置好"）。</p>
 <h3 id="6-deepseek-opencode">6. 把 DeepSeek 接到 Opencode<a class="headerlink" href="#6-deepseek-opencode" title="Permanent link">&para;</a></h3>
@@ -5730,6 +5733,7 @@
 <li>在终端输入 <code>opencode</code> 回车，会进入一个全屏的对话界面（这叫 TUI）。</li>
 <li>输入 <code>/connect</code> 回车，在列表里找到 <strong>DeepSeek</strong>，按提示粘贴你刚才保存的 API Key。</li>
 <li>输入 <code>/models</code> 回车，选择你想用的模型（比如 <code>deepseek-v4-pro</code>）。</li>
+<li>如果有思考强度的选项，选择max就可以，</li>
 </ol>
 <h3 id="7">7. 确认自己成功了 + 基本用法<a class="headerlink" href="#7" title="Permanent link">&para;</a></h3>
 <p>在对话框里随便发一句"你好，介绍一下你自己"，<strong>有回复就说明一切就绪，你拥有智能体了！</strong></p>
@@ -5743,6 +5747,7 @@
 </details>
 <hr />
 <h2 id="2">第 2 步：网站初始化<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p><strong>提醒：现在你已经拥有 Agent 了，在之后的步骤中无论遇到什么问题，都可以语言描述或截图交由 Agent 解决，一般来说，它能解决绝大多数问题。</strong></p>
 <h3 id="21">2.1 建一个文件夹<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
 <p>在电脑上选一个你找得到的位置（比如"文档"里，或者 D 盘根目录），新建一个文件夹，名字叫 <code>my-website</code>（<strong>建议用英文小写、不要带空格和中文</strong>，能避开很多莫名其妙的坑）。</p>
 <p>然后在这个文件夹里启动智能体：打开文件夹，在空白处<strong>右键 → 在终端中打开</strong>，输入 <code>opencode</code> 回车。</p>
@@ -5767,6 +5772,7 @@
 <p>智能体接到任务后会自己跑起来：装环境、建文件、写配置。期间它可能会问你问题或让你确认某个操作，照着回答/确认就行。</p>
 <h3 id="23">2.3 本地预览<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
 <p>智能体启动 <code>mkdocs serve</code> 后，会告诉你一个网址。用浏览器打开它——恭喜，你的网站已经在自己电脑上跑起来了！</p>
+<p>这里有概率出现网址打不开的情况，如果有问题，让 Agent 帮你修。</p>
 <p>现在随便逛逛，哪里不满意就直接用自然语言告诉智能体，比如"主页标题再大一点""导航栏换成蓝色"，它会改到你满意为止。预览看够了，回到终端按 <code>Ctrl + C</code> 可以停止预览。</p>
 <h3 id="24">2.4 认识一下文件结构（以后手动改要用）<a class="headerlink" href="#24" title="Permanent link">&para;</a></h3>
 <p>让智能体干完活后，你的文件夹大概长这样（可能会因上面的微调有变化，但总体架构不变）：</p>
@@ -5793,8 +5799,10 @@
 <p>本地预览只有你自己能看到。要让全世界都能访问，我们把网站免费托管到 <strong>GitHub Pages</strong> 上。</p>
 <details class="info">
 <summary>还没有 GitHub 账号？先展开这里注册</summary>
-<p>GitHub 是全球最大的代码托管网站，我们的网站文件就存在它那里。访问 GitHub 一般需要科学上网；如果你还不会，可以到 <strong>CC98</strong>上搜相关教程，有很多详细的新手帖。</p>
-<p>注册步骤：</p>
+<p>GitHub 是全球最大的代码托管网站，我们的网站文件就存在它那里。访问 GitHub 一般需要科学上网；如果你还不会，可以到 <strong>CC98</strong>上搜相关教程，有很多详细的新手帖。
+如果仍有困难，可参考科学上网的具体步骤：找到一个平台（ikuuu、GW树洞等），注册，登录，选择套餐并充值，下载客户端，打开客户端并登录，选择节点并连接。
+连接后，没有特殊情况的话，在你对网站进行搭建/修改的时候，可以长期保持“规则”模式连接。</p>
+<p>Github注册步骤：</p>
 <ol>
 <li>打开 <a href="https://github.com/">github.com</a>，点右上角 <strong>Sign up</strong>。</li>
 <li>输入邮箱 → 设置密码 → 设置用户名。</li>
@@ -5802,7 +5810,38 @@
 <li>按提示完成人机验证和邮箱验证，免费账号即可，注册完成！</li>
 </ol>
 </details>
-<p>有了 GitHub 账号后，剩下的事依然可以交给智能体。把下面这段发给它（记得把方括号里的内容换成你的）：</p>
+<details class="info">
+<summary>电脑还没有安装 git ？先展开这里安装</summary>
+<p>如果不确定自己有没有安装：先打开一个powershell窗口，输入</p>
+<div class="highlight"><pre><span></span><code>git --version
+</code></pre></div>
+<p>如果出现类似 git version 2.52.x.windows.1 的字样，则说明曾经安装过，可以先进行下一步，如果出现问题再根据Agent的指令解决。</p>
+<p>如果之前没有安装过，参照以下步骤安装（此步骤交给Agent有案例表明可能会报错较多，还是推荐手动操作，且它并不十分麻烦，相信自己，已经马上就要完成了）：</p>
+<ol>
+<li>完成科学上网步骤，保持【规则】状态连接。</li>
+<li>复制链接 https://git-scm.com/install/windows 到浏览器打开（以windows电脑为例，mac可以咨询Agent有哪些相应变化）。</li>
+<li>点击图中红色框选区域下载到任意位置，路径尽量不要包含中文，没有特殊情况可以保持默认。
+<img alt="" src="https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/img/20260729224149626.png" /></li>
+<li>找到刚才下载的位置，双击打开安装包。许可协议next，安装路径next，选择组件（Select Components）如果<strong>Add a Git Bash Profile to Windows Terminal</strong>没有默认勾选的话把它勾上，其他不用动next，Choosing the default editor直接next，Adjusting the name of the initial branch 这个选择第二个<strong>Override the default branch name for new repositories</strong>，并在框内填入main，Adjusting your PATH environment选择有recommended的中间项，Configuring the line ending conversions选第一个<strong>Checkout Windows-style, commit Unix-style line endings</strong>，后面一路next到底，最后install。</li>
+<li>接下来我们需要配置环境，告诉git我们是谁。在开始菜单搜索 Git Bash 并单击打开。</li>
+<li>在黑色的窗口里，依次输入以下命令（注意空格，每次复制一行，把引号里的内容换成你的，注意git bash里面有可能会出现部分敏感信息不显示的情况，只要保证自己复制/输入上了就果断回车就可以。还有一个小技巧：git bash、Powershell等命令行工具中大多可以采用鼠标右键粘贴）：</li>
+</ol>
+<div class="highlight"><pre><span></span><code># 配置用户名git config --global user.name &quot;你刚才设置的github用户名&quot;
+# 配置邮箱git config --global user.email &quot;你刚才注册github所用的邮箱&quot;
+</code></pre></div>
+<ol>
+<li>输入以下命令检查是否成功：</li>
+</ol>
+<div class="highlight"><pre><span></span><code>git config --global --list
+</code></pre></div>
+<p>如果你看到了刚才输入的 user.name 和 user.email，说明配置成功！
+8. 最终验证：打开一个Powershell界面，输入 </p>
+<div class="highlight"><pre><span></span><code>git --version
+</code></pre></div>
+<p>如果出现类似 git version 2.52.x.windows.1 的字样，恭喜你！Git 安装成功，且环境变量配置正确。</p>
+</details>
+<p>接下来我们保持科学上网工具连接状态，打开登录好的 github，点击右上边栏加号-new repository，仓库命名为【你刚刚注册 github 设置的用户名.github.io】，其他全部保持默认即可，点击创建。</p>
+<p>剩下的事依然可以交给智能体。把下面这段发给它（记得把方括号里的内容换成你刚刚设置的用户名）：</p>
 <div class="highlight"><pre><span></span><code>请帮我把这个网站部署到 GitHub Pages，步骤如下：
 
 1. 在当前文件夹初始化 git 仓库并提交全部文件；创建 .gitignore，
@@ -5810,11 +5849,9 @@
 2. 创建 .github/workflows/ci.yml：一个 GitHub Actions 工作流，
    效果是每次 push 到 main 分支，就自动安装 mkdocs-material、
    运行 mkdocs build 并把构建结果发布到 gh-pages 分支。
-3. 教我在 GitHub 网页上新建一个名为【我的用户名.github.io】的公开仓库，
-   然后帮我把本地代码关联并推送到这个仓库。
-4. 推送后告诉我：在仓库的 Settings → Pages 里应该把 Source 设为
+3. 推送后告诉我：如何在仓库的 Settings → Pages 里把 Source 设为
    从 gh-pages 分支发布（如果工作流用的是官方 Pages 部署方式，则帮我确认对应设置）。
-5. 最后告诉我大概等多久、访问哪个网址就能看到网站。
+4. 最后告诉我大概等多久、访问哪个网址就能看到网站。
 </code></pre></div>
 <p>过程中有两件事可能需要你亲自动手：</p>
 <ul>
@@ -5876,9 +5913,11 @@ git commit -m &quot;这里用一句话写你改了什么&quot;
 git push
 </code></pre></div>
 <p>推送成功后等 1~3 分钟，到你的网站刷新，就能看到最新内容。</p>
+<p>当然如果你像我一样懒完全可以直接告诉 Agent，我想要改什么，如何改，最后把我的修改推送到 github。</p>
 <h3 id="_5">拓展功能？交给你的智能体<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>想要留言板、背景图、首页动效、暗色模式……<strong>不需要自己研究</strong>，直接用自然语言告诉智能体你想要什么，让它去实现、你负责验收就行。</p>
 <p>祝建站愉快 🎉</p>
+<p>感谢 CuteJigglypuff、zhizhi 等在该教程修订中提供的灵感。</p>
 
 
 
@@ -5901,7 +5940,7 @@ git push
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年7月21日 14:32:32 CST">2026年7月21日 14:32:32</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年7月29日 23:20:15 CST">2026年7月29日 23:20:15</span>
   </span>
 
     
