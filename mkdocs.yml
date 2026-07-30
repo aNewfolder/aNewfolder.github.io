@@ -224,6 +224,7 @@ markdown_extensions:
   - pymdownx.tabbed:                       # 选项卡
       alternate_style: true
   - attr_list                              # 给元素添加 HTML 属性（如图片宽度）
+  - pymdownx.mark                          # ==高亮== 语法（渲染为 <mark> 黄色高亮）
   - md_in_html                             # 允许在 HTML 中写 Markdown
   - pymdownx.arithmatex:                   # 数学公式（$...$ / $$...$$，配合 MathJax 渲染）
       generic: true

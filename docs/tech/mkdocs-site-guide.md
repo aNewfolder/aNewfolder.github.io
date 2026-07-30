@@ -225,14 +225,15 @@ my-website/
 	# 配置邮箱git config --global user.email "你刚才注册github所用的邮箱"
 	```
 	
-	7. 输入以下命令检查是否成功：
+	输入以下命令检查是否成功：
 	
 	```
 	git config --global --list
 	```
 	
 	如果你看到了刚才输入的 user.name 和 user.email，说明配置成功！
-	8. 最终验证：打开一个Powershell界面，输入 
+	
+	最终验证：打开一个Powershell界面，输入 
 	
 	```
 	git --version
