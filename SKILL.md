@@ -38,3 +38,11 @@
 ## 2026-07-23 · 音乐板块【推荐歌单】更名【单曲循环】
 
 1. `docs/music/playlist.md` 页面标题、音乐 index 折叠块与 nav 条目统一更名为【单曲循环】；文件路径 `music/playlist.md` 不变。
+
+## 2026-08-01 · 活点地图重设计（首页架构全换）
+
+1. **新分类必须同步 WALKERS**：首页不再有卡片色条，栏目入口是 extra.js 脚印引擎里的 `WALKERS` 数组（格式 `{ name, href, spots: [[x,y]×5] }`，坐标为视口百分比，每名牌 5 个随机落点）。新增/删除/改名栏目时同步改 WALKERS 与 nav；spots 若不足 5 个可复用邻近坐标微调。
+2. **首页背景 = `docs/images/parchment.jpg`**（活点地图实拍图，CC BY 2.0），不再是旧 background.jpg；深色首页用 `parchment-hero-dark.jpg`（PIL 预混合的烛光变体，非 CSS filter）。换背景须同法预混合，勿在 CSS 里叠半透明层压正文。
+3. **配色**：朱砂 `#9c3a24` 是唯一强调色（`--md-accent-fg-color`），不要再引回旧紫红渐变；正文页浅色 = 纯白 #fff，深色 = 纯黑 #000（slate 下 body 与 .md-header 都是纯黑），首页仍铺羊皮纸。
+4. **字体**：展示字体全部走 `docs/stylesheets/extra.css` 顶部 @import（Noto Serif SC / Ma Shan Zheng / Long Cang / Zhi Mang Xing，Google Fonts）；标题/名牌用 Long Cang / Ma Shan Zheng，正文 Noto Serif SC。不要再加其他字体源。
+5. 本次重设计的回滚基线：tag `pre-redesign-20260801`。

@@ -23,6 +23,11 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-08-01</div>
+<div class="update-log-content">全站前端重设计「活点地图」：首页改为整张羊皮纸地图——随机脚印引路、行草手写名牌点击跳转栏目，中央保留打字机「你来啦。」；正文页纯白（暗色模式纯黑）+ 随机脚印点缀；标题体系换手抄本字体（h1/h2 行书、h3 钢笔手写、地图名牌行草）；全站强调色统一为朱砂，废弃紫红渐变与渐变卡片。羊皮纸纹理：Caleb Kimbrough（CC BY 2.0）。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-08-01</div>
 <div class="update-log-content">《光电信息科学与工程导论》参考资料新增实验报告 md 模板和 latex-light 主题的下载链接。同时提交用户本地修改：HP0731 生贺文新增配图、《人工智能导论》课程总结补全、《光电信息科学与工程导论》课程总结补全。</div>
 </div>
 
