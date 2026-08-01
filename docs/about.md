@@ -22,6 +22,11 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-08-01</div>
+<div class="update-log-content">《光电信息科学与工程导论》参考资料新增实验报告 md 模板和 latex-light 主题的下载链接。同时提交用户本地修改：HP0731 生贺文新增配图、《人工智能导论》课程总结补全、《光电信息科学与工程导论》课程总结补全。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-07-30</div>
 <div class="update-log-content">启用 ==高亮== Markdown 语法（pymdownx.mark 扩展，全站生效）。同时提交用户本地修改：HP0731《2026.07.31》生贺文上线、《英语辩论》课程总结补全、友链新增 cutejigglypuff、《MkDocs 建站教程》Git 配置步骤微调。</div>
 </div>
