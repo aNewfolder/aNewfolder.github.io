@@ -2,11 +2,11 @@
 // 404NotFound 站点动效脚本
 // 1. 顶部导航：仅首页默认隐藏，鼠标移到顶部滑出（桌面端）
 // 2. 首页副标题打字机（循环"你来啦。"）
-// 3. 卡片入场动画 + 3D 倾斜
-// 4. 向下箭头：平滑滚动到卡片区
-// 5. 文章统计：标题下注入 字数 / 代码行 / 图片数 / 阅读时长
-// 6. 留言板：所有非首页自动注入 giscus（宽度与关于页一致）
-// 7. 更新日志：默认折叠只显示最新 3 条，按钮展开/收起
+// 3. 活点地图 & 全站脚印引擎：首页脚印引路 + 名牌跳转；正文页随机脚印点缀
+// 4. 文章统计：标题下注入 字数 / 代码行 / 图片数 / 阅读时长
+// 5. 留言板：所有非首页自动注入 giscus（宽度与关于页一致）
+// 6. 更新日志：默认折叠只显示最新 3 条，按钮展开/收起
+// 7. 关于页站点统计 + 更新日历板
 // ============================================================
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -54,67 +54,236 @@ document.addEventListener('DOMContentLoaded', function() {
         tw.textContent = phrase.slice(0, charIndex);
         if (charIndex === phrase.length) {
           deleting = true;
-          setTimeout(typeLoop, 2600);   // 打完停留一会儿
+          setTimeout(typeLoop, 4200);   // 打完停留一会儿
           return;
         }
-        setTimeout(typeLoop, 140 + Math.random() * 100);
+        setTimeout(typeLoop, 220 + Math.random() * 140);
       } else {
         charIndex--;
         tw.textContent = phrase.slice(0, charIndex);
         if (charIndex === 0) {
           deleting = false;
-          setTimeout(typeLoop, 700);
+          setTimeout(typeLoop, 1200);
           return;
         }
-        setTimeout(typeLoop, 55);
+        setTimeout(typeLoop, 80);
       }
     }
     typeLoop();
   }
 
   // ----------------------------------------------------------
-  // 3. 卡片：入场动画（Intersection Observer）+ 3D 倾斜
+  // 3. 活点地图 & 全站脚印引擎
+  //    首页：每个板块 = 一串带弧度的随机脚印 + 一个手写名牌（可点击），
+  //         随机位置 / 随机方向 / 随机步数 / 随机弯度；
+  //    正文页：随机位置偶尔走过的脚印（无文字，纯点缀）。
+  //    共同规则：逐个落下、逐个隐去（先出现的先消失）。
   // ----------------------------------------------------------
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // 只触发一次
+  var FP_STRIDE = 28;      // 固定步长（px）：约一个脚印长 + 半个脚印间隔
+  var FP_STEP_MS = 360;    // 落步间隔
+  var FP_FADE_MS = 1300;   // 单个脚印隐去耗时（与 CSS .fp.fade 对应）
+  var FP_HOLD_MS = 500;    // 走完后停留时间
+
+  // 生成带弧度的轨迹：anchorIdx 处为锚点（px），向前递推来路、向后递推延伸
+  function fpTrail(lx, ly, anchorIdx, total, dir, turnDeg) {
+    var pts = new Array(total);
+    var turn = turnDeg * Math.PI / 180;
+    var angles = new Array(total);
+    angles[anchorIdx] = dir;
+    pts[anchorIdx] = { x: lx, y: ly };
+    var j, ang = dir, px = lx, py = ly;
+    // 来路：逆着走，方向逐步回转
+    for (j = anchorIdx - 1; j >= 0; j--) {
+      ang -= turn;
+      px -= Math.cos(ang) * FP_STRIDE;
+      py -= Math.sin(ang) * FP_STRIDE;
+      pts[j] = { x: px, y: py };
+      angles[j] = ang;
+    }
+    // 延伸：顺着走，方向逐步偏转
+    ang = dir; px = lx; py = ly;
+    for (j = anchorIdx + 1; j < total; j++) {
+      ang += turn;
+      px += Math.cos(ang) * FP_STRIDE;
+      py += Math.sin(ang) * FP_STRIDE;
+      pts[j] = { x: px, y: py };
+      angles[j] = ang;
+    }
+    for (j = 0; j < total; j++) {
+      pts[j].rot = angles[j] * 180 / Math.PI + 90;   // 脚印图形朝上为 0°
+    }
+    return pts;
+  }
+
+  function fpOut(pts, W, H, top) {
+    for (var j = 0; j < pts.length; j++) {
+      if (pts[j].x < 24 || pts[j].x > W - 24 || pts[j].y < top || pts[j].y > H - 40) return true;
+    }
+    return false;
+  }
+
+  // 在 layer 上按 pts 跑一串脚印
+  // opts: { label: 元素|null, labelAt: 名牌所在的步序, holdMs, onDone }
+  function fpRun(layer, pts, opts) {
+    var prints = [];
+    var j;
+    for (j = 0; j < pts.length; j++) {
+      (function(j) {
+        setTimeout(function() {
+          var p = document.createElement('span');
+          p.className = 'fp';
+          p.style.left = pts[j].x + 'px';
+          p.style.top = pts[j].y + 'px';
+          p.style.transform = 'rotate(' + pts[j].rot + 'deg) scaleX(' + (j % 2 ? -1 : 1) + ')';
+          layer.appendChild(p);
+          prints.push(p);
+          requestAnimationFrame(function() { p.classList.add('on'); });
+          if (opts.label && j === opts.labelAt) opts.label.classList.add('on');
+        }, j * FP_STEP_MS);
+      })(j);
+    }
+    // 走完停留后：逐个隐去（先出现的先消失），名牌随它所在的那步隐去
+    setTimeout(function() {
+      for (j = 0; j < pts.length; j++) {
+        (function(j) {
+          setTimeout(function() {
+            var p = prints[j];
+            p.classList.remove('on');
+            p.classList.add('fade');
+            if (opts.label && j === opts.labelAt) opts.label.classList.remove('on');
+            if (j === pts.length - 1) {
+              setTimeout(function() {
+                prints.forEach(function(q) { q.remove(); });
+                if (opts.onDone) opts.onDone();
+              }, FP_FADE_MS);
+            }
+          }, j * FP_STEP_MS);
+        })(j);
       }
-    });
-  }, { threshold: 0.1 });
+    }, pts.length * FP_STEP_MS + (opts.holdMs != null ? opts.holdMs : FP_HOLD_MS));
+  }
 
-  document.querySelectorAll('.card').forEach(function(card) {
-    observer.observe(card);
+  var mapLayer = document.querySelector('.map-layer');
+  if (mapLayer) {
+    // ===== 首页：活点地图 =====
+    // 每个板块 5 个候选位置（%，覆盖全页），每轮随机选一个
+    var WALKERS = [
+      { name: '课程总结', href: 'class/',   spots: [[12,16],[78,20],[10,52],[30,80],[64,10]] },
+      { name: '拓展学习', href: 'tech/',    spots: [[75,12],[14,30],[84,50],[24,72],[50,88]] },
+      { name: '阅读',     href: 'reading/', spots: [[8,38],[70,78],[20,12],[86,30],[44,74]] },
+      { name: '音乐',     href: 'music/',   spots: [[82,36],[12,64],[58,16],[28,44],[76,86]] },
+      { name: '体育',     href: 'sports/',  spots: [[18,74],[66,28],[10,22],[84,64],[40,16]] },
+      { name: '随笔',     href: 'blog/',    spots: [[64,82],[16,46],[80,56],[34,12],[52,68]] },
+      { name: '友链',     href: 'friends/', spots: [[38,10],[72,44],[14,84],[88,22],[26,58]] },
+      { name: '关于',     href: 'about/',   spots: [[34,88],[60,58],[12,26],[78,66],[48,24]] },
+    ];
+    var liveTrails = [];   // 当前页面上的脚印轨迹，用于避免大片重叠
 
-    // 3D 倾斜：跟着鼠标微微转动
-    card.addEventListener('mousemove', function(e) {
-      var rect = card.getBoundingClientRect();
-      var px = (e.clientX - rect.left) / rect.width - 0.5;   // -0.5 ~ 0.5
-      var py = (e.clientY - rect.top) / rect.height - 0.5;
-      card.style.transform =
-        'perspective(700px) rotateX(' + (-py * 10) + 'deg) rotateY(' + (px * 10) + 'deg) translateY(-8px)';
+    WALKERS.forEach(function(w, i) {
+      var label = document.createElement('a');
+      label.className = 'map-name';
+      label.href = w.href;
+      label.textContent = w.name;
+      mapLayer.appendChild(label);
+      w.el = label;
+      w.lastSpot = -1;
+      // 初始时序岔开，之后每轮的间隔也是随机的，
+      // 任意时刻页面上大约只有 2~4 个名牌
+      setTimeout(function() { walk(w); }, i * 1500 + Math.random() * 800);
     });
-    card.addEventListener('mouseleave', function() {
-      card.style.transform = '';
-    });
-  });
 
-  // ----------------------------------------------------------
-  // 4. 向下箭头：平滑滚动到卡片区
-  // ----------------------------------------------------------
-  var scrollIndicator = document.querySelector('.scroll-indicator');
-  if (scrollIndicator) {
-    scrollIndicator.addEventListener('click', function() {
-      var cardsSection = document.querySelector('.cards-section');
-      if (cardsSection) {
-        cardsSection.scrollIntoView({ behavior: 'smooth' });
+    function fpOverlap(pts) {
+      var hits = 0;
+      for (var i = 0; i < liveTrails.length; i++) {
+        var other = liveTrails[i];
+        for (var a = 0; a < pts.length; a++) {
+          for (var b = 0; b < other.length; b++) {
+            var dx = pts[a].x - other[b].x;
+            var dy = pts[a].y - other[b].y;
+            if (dx * dx + dy * dy < 56 * 56) { hits++; break; }
+          }
+        }
       }
-    });
+      return hits > 2;
+    }
+
+    function walk(w) {
+      var W = mapLayer.clientWidth;
+      var H = mapLayer.clientHeight;
+      // 随机步数：2~7 步走来 + 3~6 步延伸（24 种组合随机触发）
+      var approach = 2 + Math.floor(Math.random() * 6);
+      var beyond = 3 + Math.floor(Math.random() * 4);
+      var total = approach + beyond;
+      var labelAt = approach - 1;
+      // 随机弯度：0~7° 整度数、随机左右转
+      var turnDeg = Math.floor(Math.random() * 8) * (Math.random() < 0.5 ? -1 : 1);
+
+      // 选位置并生成轨迹，尽量避开现有脚印，避免大片重叠
+      var pts = null, si = -1, lx = 0, ly = 0;
+      for (var attempt = 0; attempt < w.spots.length; attempt++) {
+        var candSi = Math.floor(Math.random() * w.spots.length);
+        if (w.spots.length > 1 && candSi === w.lastSpot) continue;
+        var cx = w.spots[candSi][0] / 100 * W;
+        var cy = w.spots[candSi][1] / 100 * H;
+        var base = Math.atan2(H * 0.5 - cy, W * 0.5 - cx);
+        var dir = base + (Math.random() * 150 - 75) * Math.PI / 180;
+        var cand = fpTrail(cx, cy, labelAt, total, dir, turnDeg);
+        if (fpOut(cand, W, H, 64)) {
+          cand = fpTrail(cx, cy, labelAt, total, dir + Math.PI, -turnDeg);
+          if (fpOut(cand, W, H, 64)) {
+            cand = fpTrail(cx, cy, labelAt, total, base, 0);
+          }
+        }
+        if (!fpOverlap(cand)) { pts = cand; si = candSi; lx = cx; ly = cy; break; }
+      }
+      if (!pts) {   // 页面上脚印太多，过会儿再来
+        setTimeout(function() { walk(w); }, 3000);
+        return;
+      }
+      w.lastSpot = si;
+      w.el.style.left = lx + 'px';
+      w.el.style.top = ly + 'px';
+      w.el.style.transform = 'translate(-50%,-50%) rotate(' + (Math.random() * 6 - 3).toFixed(1) + 'deg)';
+
+      liveTrails.push(pts);
+      fpRun(mapLayer, pts, {
+        label: w.el,
+        labelAt: labelAt,
+        onDone: function() {
+          var idx = liveTrails.indexOf(pts);
+          if (idx >= 0) liveTrails.splice(idx, 1);
+          // 随机间隔后换个位置、换个方向、换种步数再来
+          setTimeout(function() { walk(w); }, 8000 + Math.random() * 8000);
+        }
+      });
+    }
+  } else {
+    // ===== 正文页：随机脚印点缀（无文字），规则与首页相同 =====
+    var fpLayer = document.createElement('div');
+    fpLayer.className = 'fp-layer';
+    document.body.appendChild(fpLayer);
+
+    function ambientWalk() {
+      var W = window.innerWidth;
+      var H = window.innerHeight;
+      var total = 4 + Math.floor(Math.random() * 7);      // 4~10 步随机
+      var turnDeg = Math.floor(Math.random() * 8) * (Math.random() < 0.5 ? -1 : 1);
+      var pts = null;
+      for (var attempt = 0; attempt < 4; attempt++) {
+        var lx = W * (0.08 + Math.random() * 0.84);
+        var ly = H * (0.14 + Math.random() * 0.72);
+        var dir = Math.random() * Math.PI * 2;             // 方向完全随机
+        var cand = fpTrail(lx, ly, 0, total, dir, turnDeg);
+        if (!fpOut(cand, W, H, 70)) { pts = cand; break; }
+      }
+      if (pts) fpRun(fpLayer, pts, {});
+      setTimeout(ambientWalk, 6000 + Math.random() * 8000);
+    }
+    setTimeout(ambientWalk, 2500);
   }
 
   // ----------------------------------------------------------
-  // 5. 文章统计：在标题（h1）下注入 字数/代码行/图片数/阅读时长
+  // 4. 文章统计：在标题（h1）下注入 字数/代码行/图片数/阅读时长
   //    每次构建后随内容自动变化（统计基于渲染后的页面文本）
   // ----------------------------------------------------------
   var article = document.querySelector('.md-content__inner');
@@ -126,8 +295,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var text = clone.textContent || '';
 
     // 字数 = 中日韩字符数 + 英文单词数
-    var cjk = (text.match(/[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff]/g) || []).length;
-    var latinWords = (text.replace(/[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff]/g, ' ')
+    var cjk = (text.match(/[぀-ヿ㐀-䶿一-鿿豈-﫿]/g) || []).length;
+    var latinWords = (text.replace(/[぀-ヿ㐀-䶿一-鿿豈-﫿]/g, ' ')
                           .match(/[A-Za-z0-9]+/g) || []).length;
     var wordCount = cjk + latinWords;
 
@@ -157,7 +326,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // ----------------------------------------------------------
-  // 6. 留言板：所有非首页自动注入 giscus
+  // 5. 留言板：所有非首页自动注入 giscus
   //    （配置与关于页一致，宽度样式走 extra.css 的 .giscus 段）
   // ----------------------------------------------------------
   if (article && !isHome && !document.querySelector('.giscus, .giscus-frame, script[src*="giscus.app"]')) {
@@ -185,7 +354,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // ----------------------------------------------------------
-  // 7. 更新日志：默认折叠只显示最新 3 条，按钮切换展开/收起
+  // 6. 更新日志：默认折叠只显示最新 3 条，按钮切换展开/收起
   // ----------------------------------------------------------
   var logList = document.querySelector('.update-log-list');
   var logToggle = document.querySelector('.update-log-toggle');
@@ -210,7 +379,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // ----------------------------------------------------------
-  // 8. 关于页站点统计 + 更新日历板
+  // 7. 关于页站点统计 + 更新日历板
   //    数据来自构建钩子生成的 /data/site-stats.json；
   //    浏览量使用不蒜子（busuanzi），加载失败时显示 "—"
   // ----------------------------------------------------------

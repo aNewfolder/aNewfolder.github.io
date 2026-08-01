@@ -1,31 +1,124 @@
 /* ============================================================
+   404NotFound 自定义样式 —— 「活点地图 / 手抄本」设计语言
+   首页：一张会动的羊皮纸地图（脚印引路 + 手写名牌跳转）。
+   正文页：极浅羊皮纸底，墨色手写标题，朱砂点缀。
+   羊皮纸纹理：Parchment.00.jpg，作者 Caleb Kimbrough，CC BY 2.0
+   来源 https://www.flickr.com/photos/calebkimbrough/4691644631
+   ============================================================ */
+
+/* 手抄本字体：Noto Serif SC（标题衬线）+ Ma Shan Zheng（行书）
+   + Long Cang（钢笔手写）+ Zhi Mang Xing（行草，地图名牌） */
+@import url('https://fonts.googleapis.com/css2?family=Long+Cang&family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700;900&family=Zhi+Mang+Xing&display=swap');
+
+/* ============================================================
    全局样式变量
    ============================================================ */
 :root {
   --hero-height: 100vh;                    /* 首页 hero 区域占满全屏 */
-  --card-radius: 18px;                     /* 卡片圆角 */
-  --card-shadow: 0 6px 28px rgba(20, 20, 60, 0.10);   /* 卡片阴影 */
-  --card-hover-shadow: 0 16px 48px rgba(20, 20, 60, 0.22);  /* 悬停阴影 */
   --transition-speed: 0.35s;               /* 过渡动画速度 */
-  --accent-red: #ff2d55;
-  --accent-purple: #5f27cd;
+
+  /* 手抄本配色：羊皮纸 + 墨色 + 朱砂 */
+  --paper: #f5f0e3;                        /* 正文页纸色基调（极浅纹理的底色） */
+  --ink: #3a2d1c;                          /* 暖调墨色（不用纯黑） */
+  --ink-soft: rgba(58, 45, 28, 0.62);      /* 次要文字：墨色的淡化 */
+  --cinnabar: #9c3a24;                     /* 朱砂红：唯一点缀色，小面积使用 */
+  --hairline: rgba(58, 45, 28, 0.24);      /* 墨线分隔 */
+  --map-ink: #4a3620;                      /* 地图上的手写墨迹 */
+
+  /* MkDocs Material 强调色接管：链接、选中态等一律朱砂 */
+  --md-accent-fg-color: #9c3a24;
+  --md-accent-fg-color--transparent: rgba(156, 58, 36, 0.12);
+
+  /* 字体 */
+  --font-serif: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
+  --font-calligraphy: 'Ma Shan Zheng', 'Noto Serif SC', serif;
+  --font-handwriting: 'Long Cang', 'Ma Shan Zheng', cursive;
+  --font-map: 'Zhi Mang Xing', 'Ma Shan Zheng', cursive;
+
+  /* 卡片（更新日志 / 统计卡片共用） */
+  --card-bg: rgba(255, 251, 240, 0.8);
+  --card-border: var(--hairline);
+  --card-shadow: 0 3px 14px rgba(58, 45, 28, 0.12);
+  --card-hover-shadow: 0 8px 26px rgba(58, 45, 28, 0.2);
 }
 
-/* 选中文字 & 滚动条也骚一点 */
-::selection { background: var(--accent-red); color: #fff; }
+/* 暗色模式：正文页纯深色（阅读优先），首页为烛光下的地图 */
+[data-md-color-scheme="slate"] {
+  --paper: #211c12;
+  --ink: #e8ddc4;
+  --ink-soft: rgba(232, 221, 196, 0.6);
+  --cinnabar: #cf7a52;
+  --hairline: rgba(232, 221, 196, 0.22);
+  --map-ink: #d8c49a;
 
-::-webkit-scrollbar { width: 10px; }
+  --md-accent-fg-color: #cf7a52;
+  --md-accent-fg-color--transparent: rgba(207, 122, 82, 0.15);
+
+  --card-bg: rgba(255, 250, 235, 0.05);
+  --card-shadow: 0 3px 14px rgba(0, 0, 0, 0.35);
+  --card-hover-shadow: 0 8px 26px rgba(0, 0, 0, 0.5);
+}
+
+/* 选中文字：朱砂底白字 */
+::selection { background: var(--cinnabar); color: #fff; }
+
+/* 滚动条：克制的墨色细条 */
+::-webkit-scrollbar { width: 9px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #ff6b6b, #5f27cd);
+  background: rgba(120, 100, 70, 0.4);
   border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(120, 100, 70, 0.6);
 }
 
 /* ============================================================
-   顶部导航栏：浅色渐变背景（与卡片区同风格），仅亮色模式
+   全站纸底
+   正文页：纯白（阅读优先，点缀交给随机脚印）
+   首页：全浓度羊皮纸（活点地图本体）
+   暗色正文页：纯色无纹理；暗色首页：烛光地图
+   ============================================================ */
+body {
+  background: #ffffff;
+}
+
+[data-md-color-scheme="slate"] body {
+  background: #000000;
+}
+
+/* 首页换成全浓度地图 */
+body:has(.hero-section) {
+  background-image: url('../images/parchment.jpg');
+}
+
+[data-md-color-scheme="slate"] body:has(.hero-section) {
+  background-image: url('../images/parchment-hero-dark.jpg');
+}
+
+/* ============================================================
+   顶部导航栏：正文页 = 纯白 + 墨线；首页 = 半透明纸色 + 磨砂
    ============================================================ */
 [data-md-color-scheme="default"] .md-header {
-  background: linear-gradient(120deg, #fdfbff 0%, #f3f0ff 55%, #eef7ff 100%);
+  background: #ffffff;
+  border-bottom: 1px solid var(--hairline);
+}
+
+[data-md-color-scheme="default"] body:has(.hero-section) .md-header {
+  background: rgba(241, 233, 212, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+[data-md-color-scheme="slate"] .md-header {
+  background: #000000;
+  border-bottom: 1px solid var(--hairline);
+}
+
+[data-md-color-scheme="slate"] body:has(.hero-section) .md-header {
+  background: rgba(38, 32, 21, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 [data-md-color-scheme="default"] .md-tabs {
@@ -45,7 +138,7 @@
 
   body:has(.hero-section).chrome-on .md-header {
     transform: translateY(0);
-    box-shadow: 0 0 0.2rem rgba(0,0,0,.1), 0 0.2rem 0.4rem rgba(0,0,0,.2);
+    box-shadow: 0 0.2rem 0.5rem rgba(40, 28, 12, 0.25);
   }
 }
 
@@ -63,254 +156,196 @@
 }
 
 /* ============================================================
-   首页 Hero 区域（全屏背景 + 大标题）
+   首页 Hero：活点地图（整张羊皮纸 + 脚印 + 手写名牌）
    ============================================================ */
 .hero-section {
   position: relative;
   width: 100%;
   height: var(--hero-height);
   min-height: 560px;
-  background: #0b0f1a;                     /* 图片加载前的底色 */
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
+  /* 陈旧的纸边暗角，让视线聚到中央 */
+  background: radial-gradient(ellipse at center,
+    transparent 52%,
+    rgba(43, 30, 14, 0.16) 100%);
 }
 
-/* 背景图单独一层，方便做缓慢缩放（Ken Burns）动效 */
-.hero-section::before {
-  content: '';
-  position: absolute;
-  inset: -2%;
-  /* 背景图：图片放在 docs/images/ 下，想换图就替换文件或修改下面的路径 */
-  background: url('../images/background.jpg') center/cover no-repeat;
-  animation: heroZoom 26s ease-in-out infinite alternate;
-  z-index: 0;
-}
-
-.hero-overlay {
+/* 动效层：脚印与名牌由 extra.js 动态生成 */
+.map-layer {
   position: absolute;
   inset: 0;
-  /* 流动的彩色半透明遮罩，让文字更清晰、画面更有层次 */
-  background: linear-gradient(115deg,
-    rgba(8, 8, 25, 0.62) 0%,
-    rgba(70, 20, 90, 0.35) 45%,
-    rgba(0, 0, 0, 0.55) 100%);
-  background-size: 220% 220%;
-  animation: overlayShift 14s ease-in-out infinite alternate;
   z-index: 1;
+  pointer-events: none;
+}
+
+/* 小脚印：SVG 蒙版，颜色跟随 --map-ink，JS 控制逐个起落 */
+.fp {
+  position: absolute;
+  width: 12px;
+  height: 19px;
+  background-color: var(--map-ink);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 32'%3E%3Cellipse cx='10' cy='11' rx='7' ry='11'/%3E%3Ccircle cx='10' cy='27' r='4.5'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 32'%3E%3Cellipse cx='10' cy='11' rx='7' ry='11'/%3E%3Ccircle cx='10' cy='27' r='4.5'/%3E%3C/svg%3E") center/contain no-repeat;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.fp.on {
+  opacity: 0.85;
+}
+
+/* 隐去：放慢，像墨迹慢慢淡掉 */
+.fp.fade {
+  opacity: 0;
+  transition: opacity 1.3s ease-out;
+}
+
+/* 正文页的随机脚印层（fixed，覆盖视口，不拦截点击） */
+.fp-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* 手写名牌：行草墨迹直接写在地图上（电影里名字就写在纸上），点击跳转 */
+.map-name {
+  position: absolute;
+  font-family: var(--font-map);
+  font-size: 1.55rem;
+  line-height: 1.3;
+  text-decoration: none;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* 名字是墨迹不是链接：强制墨色（压过主题的链接色） */
+.md-typeset .map-name,
+.md-typeset .map-name:visited,
+.md-typeset .map-name:hover {
+  color: #2a2015;
+  text-decoration: none;
+}
+
+.map-name.on {
+  opacity: 1;
+}
+
+/* 刊头：地图顶部一行，左刊名右网址，下方一根墨线 */
+.hero-masthead {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1.3rem 2.2rem 0.9rem;
+  border-bottom: 1px solid var(--hairline);
+  color: var(--map-ink);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  animation: heroReveal 1s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+}
+
+.masthead-brand {
+  font-family: var(--font-serif);
+  font-weight: 700;
 }
 
 .hero-content {
   position: relative;
   z-index: 3;
   text-align: center;
-  color: white;
+  color: var(--ink);
   padding: 0 2rem;
 }
 
-.hero-title {
-  font-size: clamp(5rem, 17vw, 15rem);
-  font-weight: 900;
-  margin-bottom: 1.2rem;
-  letter-spacing: 0.03em;
-  line-height: 1.05;
-  color: #fff;
-  animation: fadeInUp 1s ease-out;
-  /* 多层投影 + 暗色描边，让标题在背景上更醒目 */
-  text-shadow:
-    0 0 18px rgba(0, 0, 0, 0.55),
-    0 4px 30px rgba(0, 0, 0, 0.6),
-    0 2px 4px rgba(0, 0, 0, 0.8);
-  -webkit-text-stroke: 2px rgba(0, 0, 0, 0.25);
-}
-
-/* 打字机副标题 */
+/* 打字机标语：行书，像手写题字 */
 .hero-subtitle {
-  font-size: clamp(1.2rem, 2.6vw, 1.9rem);
-  font-weight: 300;
+  font-family: var(--font-calligraphy);
+  font-size: clamp(2rem, 4.4vw, 3rem);
+  font-weight: 400;
   min-height: 1.6em;
-  opacity: 0.95;
-  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-  animation: fadeInUp 1s ease-out 0.3s both;
+  color: var(--ink);
+  animation: heroReveal 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
 }
 
 .type-cursor {
-  color: #d3d3d3;                          /* 浅灰色光标 */
+  color: var(--ink-soft);
   font-weight: 400;
   animation: blink 1s steps(1) infinite;
 }
 
-/* 向下滚动提示：白色 V 形箭头，小幅度跳跃 */
-.scroll-indicator {
-  position: absolute;
-  bottom: 2.4rem;
-  z-index: 3;
-  cursor: pointer;
-  animation: fadeInUp 1s ease-out 0.8s both;
-}
-
-.scroll-chevron {
-  width: 34px;
-  height: 34px;
-  border-right: 5px solid #fff;
-  border-bottom: 5px solid #fff;
-  border-radius: 3px;
-  transform: rotate(45deg);
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
-  animation: chevronHop 1.5s ease-in-out infinite;
-}
-
 /* ============================================================
-   卡片区域（渐变底色 + 漂浮色块）
+   正文页排版：手抄本化的标题体系
    ============================================================ */
-.cards-section {
-  position: relative;
-  padding: 5rem 2rem 6rem;
-  overflow: hidden;
-  background: linear-gradient(180deg, #fdfbff 0%, #f3f0ff 55%, #eef7ff 100%);
+
+/* 文章大标题：行书（含各板块 index 页标题） */
+.md-typeset h1 {
+  font-family: var(--font-calligraphy);
+  font-weight: 400;
+  letter-spacing: 0.03em;
 }
 
-/* 两个模糊的彩色大气泡，在背景里慢慢漂 */
-.cards-section::before,
-.cards-section::after {
+/* 二级标题：行书；三级标题：钢笔手写；四级标题：衬线 */
+.md-typeset h2 {
+  font-family: var(--font-calligraphy);
+  font-weight: 400;
+}
+
+.md-typeset h3 {
+  font-family: var(--font-handwriting);
+}
+
+.md-typeset h4 {
+  font-family: var(--font-serif);
+}
+
+/* h2 的编辑细线：朱砂短线，悬停微延伸 */
+.md-typeset h2 {
+  position: relative;
+  padding-bottom: 0.35rem;
+}
+
+.md-typeset h2::after {
   content: '';
   position: absolute;
-  width: 420px;
-  height: 420px;
-  border-radius: 50%;
-  filter: blur(90px);
-  opacity: 0.5;
-  pointer-events: none;
-}
-
-.cards-section::before {
-  top: -120px;
-  left: -120px;
-  background: radial-gradient(circle, #ffb3c1, transparent 70%);
-  animation: blobFloat 13s ease-in-out infinite alternate;
-}
-
-.cards-section::after {
-  bottom: -140px;
-  right: -100px;
-  background: radial-gradient(circle, #9ec9ff, transparent 70%);
-  animation: blobFloat 17s ease-in-out infinite alternate-reverse;
-}
-
-.cards-container {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 2.5rem 2rem;
-  border-radius: var(--card-radius);
-  background: #ffffff;
-  box-shadow: var(--card-shadow);
-  text-decoration: none;
-  color: var(--md-default-fg-color, #333333);
-  transition:
-    transform var(--transition-speed) ease,
-    box-shadow var(--transition-speed) ease;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transform-style: preserve-3d;
-  will-change: transform;
-}
-
-/* 每张卡片的专属渐变底色（白 -> 主题色浅晕） */
-.card-blog    { background: linear-gradient(160deg, #ffffff 25%, #ffe9e9); }
-.card-class   { background: linear-gradient(160deg, #ffffff 25%, #fff6dd); }
-.card-tech    { background: linear-gradient(160deg, #ffffff 25%, #e0f7ff); }
-.card-reading { background: linear-gradient(160deg, #ffffff 25%, #ffe9f3); }
-.card-music   { background: linear-gradient(160deg, #ffffff 25%, #e6fcf3); }
-.card-friends { background: linear-gradient(160deg, #ffffff 25%, #e3eeff); }
-.card-about   { background: linear-gradient(160deg, #ffffff 25%, #ecdfff); }
-
-.card::before {
-  content: '';
-  position: absolute;
-  top: 0;
   left: 0;
-  width: 100%;
-  height: 5px;
-  transition: height var(--transition-speed) ease;
+  bottom: 0;
+  height: 2px;
+  width: 44px;
+  background: var(--cinnabar);
+  transition: width 0.35s ease;
 }
 
-/* 每种卡片的顶部渐变色条（类名对应 overrides/main.html 里的卡片 class） */
-.card-blog::before    { background: linear-gradient(90deg, #ff6b6b, #ff9f43); }
-.card-class::before   { background: linear-gradient(90deg, #feca57, #ff9f43); }
-.card-tech::before    { background: linear-gradient(90deg, #48dbfb, #1dd1a1); }
-.card-reading::before { background: linear-gradient(90deg, #fd79a8, #e84393); }
-.card-music::before   { background: linear-gradient(90deg, #55efc4, #00b894); }
-.card-friends::before { background: linear-gradient(90deg, #54a0ff, #5f27cd); }
-.card-about::before   { background: linear-gradient(90deg, #5f27cd, #ff2d55); }
-
-.card:hover {
-  box-shadow: var(--card-hover-shadow);
+.md-typeset h2:hover::after {
+  width: 96px;
 }
 
-.card:hover::before {
-  height: 8px;
+/* 链接下划线动效 */
+.md-typeset p a,
+.md-typeset li a {
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 0.3s ease;
 }
 
-.card:hover .card-icon {
-  animation: iconWiggle 0.6s ease-in-out;
+.md-typeset p a:hover,
+.md-typeset li a:hover {
+  background-size: 100% 2px;
 }
-
-.card-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.card-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.card-desc {
-  font-size: 0.95rem;
-  opacity: 0.7;
-  line-height: 1.6;
-}
-
-/* ============================================================
-   卡片入场动画（配合 extra.js 的 Intersection Observer）
-   ============================================================ */
-.card {
-  opacity: 0;
-  transform: translateY(24px);
-  transition:
-    opacity 0.6s ease,
-    transform 0.6s ease,
-    box-shadow var(--transition-speed) ease;
-}
-
-.card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* 每张卡片依次出现的延迟 */
-.card:nth-child(1) { transition-delay: 0.1s; }
-.card:nth-child(2) { transition-delay: 0.2s; }
-.card:nth-child(3) { transition-delay: 0.3s; }
-.card:nth-child(4) { transition-delay: 0.4s; }
-.card:nth-child(5) { transition-delay: 0.5s; }
-.card:nth-child(6) { transition-delay: 0.6s; }
 
 /* ============================================================
    留言板（giscus）：页面加宽、占满内容区，手机电脑自适应
@@ -337,7 +372,7 @@
 }
 
 /* ============================================================
-   页面日期区块（git-revision-date 插件）：左对齐、小号灰字、带图标
+   页面日期区块（git-revision-date 插件）：左对齐、小字、带图标
    ============================================================ */
 .md-source-file {
   display: flex;
@@ -346,9 +381,9 @@
   gap: 0.6rem 2.2rem;
   margin: 2.8rem 0 1.2rem;
   padding-top: 1.1rem;
-  border-top: 1px solid rgba(128, 128, 128, 0.22);
+  border-top: 1px solid var(--hairline);
   font-size: 0.68rem;
-  color: var(--md-default-fg-color--light);
+  color: var(--ink-soft);
   text-align: left;
 }
 
@@ -375,7 +410,7 @@
   gap: 0.4rem 1.4rem;
   margin: 0.2rem 0 1.6rem;
   font-size: 0.72rem;
-  color: var(--md-default-fg-color--light);
+  color: var(--ink-soft);
   opacity: 0.95;
 }
 
@@ -387,7 +422,7 @@
 }
 
 /* ============================================================
-   更新日志（关于页）：卡片列表，默认折叠显示最新 3 条
+   更新日志（关于页）：纸面卡片列表，默认折叠显示最新 3 条
    ============================================================ */
 .update-log-list {
   display: flex;
@@ -398,26 +433,16 @@
 
 .update-log-card {
   position: relative;
-  padding: 1.1rem 1.4rem 1.1rem 1.6rem;
-  border-radius: 14px;
-  background: linear-gradient(160deg, #ffffff 30%, #f5f1ff);
+  padding: 1.1rem 1.4rem;
+  border-radius: 10px;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
   box-shadow: var(--card-shadow);
-  overflow: hidden;
   transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
 }
 
-.update-log-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 5px;
-  height: 100%;
-  background: linear-gradient(180deg, #5f27cd, #ff2d55);
-}
-
 .update-log-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   box-shadow: var(--card-hover-shadow);
 }
 
@@ -425,14 +450,13 @@
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.04em;
-  color: var(--accent-purple);
+  color: var(--cinnabar);
   margin-bottom: 0.3rem;
 }
 
 .update-log-content {
   font-size: 0.82rem;
   line-height: 1.7;
-  color: var(--md-default-fg-color);
 }
 
 /* 折叠状态：第 4 条起隐藏（extra.js 加/减这个类） */
@@ -444,9 +468,9 @@
   display: block;
   margin: 0.4rem auto 0;
   padding: 0.45rem 1.6rem;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 999px;
-  background: linear-gradient(90deg, #5f27cd, #ff2d55);
+  background: var(--cinnabar);
   color: #fff;
   font-size: 0.72rem;
   font-weight: 600;
@@ -461,138 +485,37 @@
   box-shadow: var(--card-hover-shadow);
 }
 
-/* 暗色模式适配 */
-[data-md-color-scheme="slate"] .update-log-card {
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
-  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.35);
-}
-
-[data-md-color-scheme="slate"] .update-log-card:hover {
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55);
-}
-
-/* ============================================================
-   正文页的小彩蛋：标题装饰线 & 链接下划线动效
-   ============================================================ */
-.md-typeset h2 {
-  position: relative;
-  padding-bottom: 0.3rem;
-}
-
-.md-typeset h2::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 4px;
-  width: 56px;
-  border-radius: 2px;
-  background: linear-gradient(90deg, var(--accent-red), var(--accent-purple));
-  transition: width 0.35s ease;
-}
-
-.md-typeset h2:hover::after {
-  width: 130px;
-}
-
-.md-typeset p a,
-.md-typeset li a {
-  text-decoration: none;
-  background-image: linear-gradient(currentColor, currentColor);
-  background-size: 0% 2px;
-  background-repeat: no-repeat;
-  background-position: 0 100%;
-  transition: background-size 0.3s ease;
-}
-
-.md-typeset p a:hover,
-.md-typeset li a:hover {
-  background-size: 100% 2px;
-}
-
 /* ============================================================
    动画关键帧
    ============================================================ */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
 
-@keyframes heroZoom {
-  from { transform: scale(1); }
-  to   { transform: scale(1.12); }
-}
-
-@keyframes overlayShift {
-  from { background-position: 0% 0%; }
-  to   { background-position: 100% 100%; }
+/* 揭幕动效：模糊到清晰 + 上移 */
+@keyframes heroReveal {
+  from { opacity: 0; transform: translateY(26px); filter: blur(8px); }
+  to   { opacity: 1; transform: translateY(0);  filter: blur(0); }
 }
 
 @keyframes blink {
   50% { opacity: 0; }
 }
 
-/* 箭头小幅跳跃（沿箭头指向斜下方轻点） */
-@keyframes chevronHop {
-  0%, 100% { transform: rotate(45deg) translate(0, 0); }
-  50%      { transform: rotate(45deg) translate(7px, 7px); }
-}
-
-@keyframes blobFloat {
-  from { transform: translate(0, 0) scale(1); }
-  to   { transform: translate(60px, 40px) scale(1.15); }
-}
-
-@keyframes iconWiggle {
-  0%, 100% { transform: rotate(0deg) scale(1); }
-  25%      { transform: rotate(-12deg) scale(1.15); }
-  50%      { transform: rotate(10deg) scale(1.2); }
-  75%      { transform: rotate(-6deg) scale(1.1); }
-}
-
 /* ============================================================
    响应式适配（手机/平板）
    ============================================================ */
 @media screen and (max-width: 768px) {
-  .scroll-chevron {
-    width: 26px;
-    height: 26px;
-    border-right-width: 4px;
-    border-bottom-width: 4px;
+  .hero-masthead {
+    padding: 1rem 1.2rem 0.7rem;
+    font-size: 0.64rem;
   }
 
-  .cards-container {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+  .map-name {
+    font-size: 1.05rem;
   }
 
-  .cards-section {
-    padding: 3rem 1rem 4rem;
+  .fp {
+    width: 9px;
+    height: 14px;
   }
-}
-
-/* ============================================================
-   暗色模式适配
-   ============================================================ */
-[data-md-color-scheme="slate"] .cards-section {
-  background: linear-gradient(180deg, #16121f 0%, #1b1530 100%);
-}
-
-[data-md-color-scheme="slate"] .cards-section::before {
-  background: radial-gradient(circle, rgba(255, 45, 85, 0.35), transparent 70%);
-}
-
-[data-md-color-scheme="slate"] .cards-section::after {
-  background: radial-gradient(circle, rgba(84, 160, 255, 0.35), transparent 70%);
-}
-
-[data-md-color-scheme="slate"] .card {
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
-  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.35);
-}
-
-[data-md-color-scheme="slate"] .card:hover {
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55);
 }
 
 /* ============================================================
@@ -607,16 +530,6 @@
 }
 
 /* ============================================================
-   体育卡片（2026-07 新增栏目）
-   ============================================================ */
-.card-sports { background: linear-gradient(160deg, #ffffff 25%, #fff1e6); }
-.card-sports::before { background: linear-gradient(90deg, #ffa502, #ff6348); }
-
-/* 第 7、8 张卡片的入场延迟 */
-.card:nth-child(7) { transition-delay: 0.7s; }
-.card:nth-child(8) { transition-delay: 0.8s; }
-
-/* ============================================================
    关于页：站点统计卡片 + 更新日历板
    ============================================================ */
 .site-stats {
@@ -628,15 +541,16 @@
 
 .site-stat-card {
   padding: 1rem 0.8rem;
-  border-radius: 14px;
-  background: linear-gradient(160deg, #ffffff 30%, #f5f1ff);
+  border-radius: 10px;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
   box-shadow: var(--card-shadow);
   text-align: center;
   transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
 }
 
 .site-stat-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   box-shadow: var(--card-hover-shadow);
 }
 
@@ -645,22 +559,22 @@
 .site-stat-value {
   font-size: 1.15rem;
   font-weight: 700;
-  color: var(--accent-purple);
+  color: var(--cinnabar);
   margin: 0.2rem 0 0.1rem;
 }
 
 .site-stat-label {
   font-size: 0.68rem;
-  color: var(--md-default-fg-color--light);
+  color: var(--ink-soft);
 }
 
 .site-stats-note {
   font-size: 0.68rem;
-  color: var(--md-default-fg-color--light);
+  color: var(--ink-soft);
   margin: 0.5rem 0 0;
 }
 
-/* 更新日历板：GitHub 风格 53 周 x 7 天，更新日标红 */
+/* 更新日历板：GitHub 风格 53 周 x 7 天，更新日标朱砂 */
 .update-calendar {
   margin: 1.2rem 0 0.6rem;
   overflow-x: auto;
@@ -672,7 +586,7 @@
   grid-auto-flow: column;
   grid-auto-columns: calc(11px + 3px);
   font-size: 0.6rem;
-  color: var(--md-default-fg-color--light);
+  color: var(--ink-soft);
   margin-bottom: 0.25rem;
 }
 
@@ -689,12 +603,12 @@
   width: 11px;
   height: 11px;
   border-radius: 2px;
-  background: rgba(128, 128, 128, 0.14);
+  background: rgba(120, 100, 70, 0.18);
 }
 
-.uc-cell.uc-lv1 { background: #ff9e9e; }
-.uc-cell.uc-lv2 { background: #ff5252; }
-.uc-cell.uc-lv3 { background: #c62828; }
+.uc-cell.uc-lv1 { background: #dcbd95; }
+.uc-cell.uc-lv2 { background: #b8763f; }
+.uc-cell.uc-lv3 { background: #8a3a20; }
 .uc-cell.uc-future { opacity: 0.35; }
 
 .uc-legend {
@@ -703,21 +617,10 @@
   gap: 3px;
   margin-top: 0.5rem;
   font-size: 0.6rem;
-  color: var(--md-default-fg-color--light);
+  color: var(--ink-soft);
   justify-content: flex-end;
 }
 
 .uc-legend .uc-cell { display: inline-block; }
 .uc-legend span:first-child,
 .uc-legend span:last-child { margin: 0 0.25rem; }
-
-/* 暗色模式适配 */
-[data-md-color-scheme="slate"] .site-stat-card {
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
-  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.35);
-}
-
-[data-md-color-scheme="slate"] .uc-cell { background: rgba(255, 255, 255, 0.10); }
-[data-md-color-scheme="slate"] .uc-cell.uc-lv1 { background: #ff9e9e; }
-[data-md-color-scheme="slate"] .uc-cell.uc-lv2 { background: #ff5252; }
-[data-md-color-scheme="slate"] .uc-cell.uc-lv3 { background: #c62828; }
