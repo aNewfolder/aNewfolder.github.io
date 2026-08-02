@@ -638,9 +638,13 @@ body:has(.hero-section) {
 .uc-legend span:last-child { margin: 0 0.25rem; }
 
 /* ============================================================
-   顶部标题栏：站点名 / 页面名 / 导航标签用钢笔手写体（Long Cang）
+   顶部标题栏：站点名 / 页面名用行书（Ma Shan Zheng，与首页「你来啦。」一致）
+   导航标签用钢笔手写体（Long Cang）
    ============================================================ */
-.md-header__title,
+.md-header__title {
+  font-family: var(--font-calligraphy);
+}
+
 .md-tabs__link {
   font-family: var(--font-handwriting);
 }

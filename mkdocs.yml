@@ -1,7 +1,7 @@
 # ============================================================
 # 网站基本信息
 # ============================================================
-site_name: 404NotFound                          # 网站名称，显示在浏览器标签页和页头
+site_name: 你来啦。                           # 网站名称，显示在浏览器标签页和页头
 site_url: https://alight404.top/               # 网站最终网址（结尾要有 /）
 site_description: 你来啦。                      # 网站描述，用于 SEO
 site_author: Alight                             # 作者名
@@ -183,6 +183,11 @@ nav:
     - 声乐:
       - 小美满: music/vocal/xiao-mei-man.md
       - 演唱技巧: music/vocal/singing-techniques.md
+    - 作词:
+      - 看见（See）: music/lyrics/see.md
+      - 起风了（The Wind Stirs）: music/lyrics/the-wind-stirs.md
+      - 搁浅（Whisper）: music/lyrics/whisper.md
+      - 笼（未完结）: music/lyrics/long.md
   - 体育:
     - sports/index.md
     - 乒乓球: sports/table-tennis.md

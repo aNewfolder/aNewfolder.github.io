@@ -23,6 +23,11 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-08-02</div>
+<div class="update-log-content">顶部标题栏站名「404NotFound」改为「你来啦。」，字体与首页打字机一致（Ma Shan Zheng 行书，导航标签仍为钢笔手写体）；友链卡片改为默认展开；音乐板块新增与声乐并列的【作词】子栏目，收录《看见（See）》《起风了（The Wind Stirs，第一版/第二版同页）》《搁浅（Whisper）》《笼（未完结）》四篇英中同行为一行的译词，nav 与音乐目录页同步登记；《心理学及应用》相关资料新增期末模拟试题五套 PDF（点击直接下载）。同时提交用户本地修改：《文献综述与科技写作》《形势与政策Ⅰ》《乒乓球（中级）》《大学物理（甲）Ⅰ》课程内容补充。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-08-02</div>
 <div class="update-log-content">全站清理：所有 index 页标题与折叠块中的 emoji 全部移除（维护规范新增「全站禁用 emoji」）；友链页改为折叠卡片样式（名称即链接、简介括注，名称用钢笔手写体）；顶部标题栏与导航标签换 Long Cang 钢笔手写体；深色模式正文页改为纯黑底纯白字；《光电信息科学与工程导论》参考资料改为 zip 一键打包下载。同时提交用户本地修改：《法学基础》《中国近现代史纲要》《常微分方程》《身体素质课》课程总结补全。</div>
 </div>
 

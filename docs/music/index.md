@@ -42,3 +42,10 @@ hide:
 
     - [小美满](vocal/xiao-mei-man.md)
     - [演唱技巧](vocal/singing-techniques.md)
+
+??? quote "作词"
+
+    - [看见（See）](lyrics/see.md)
+    - [起风了（The Wind Stirs）](lyrics/the-wind-stirs.md) — 第一版 / 第二版
+    - [搁浅（Whisper）](lyrics/whisper.md)
+    - [笼（未完结）](lyrics/long.md)
