@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# 📖 阅读
+# 阅读
 
 书页之间。
 
@@ -11,7 +11,7 @@ hide:
 
 ## 文章列表
 
-??? quote "📚 中文摘抄"
+??? quote "中文摘抄"
 
     - [恶之花](excerpts/chinese/les-fleurs-du-mal.md) — 波德莱尔《恶之花》摘抄
     - [要有光](excerpts/chinese/yao-you-guang.md)
@@ -38,7 +38,7 @@ hide:
     - [红楼梦人物论](excerpts/chinese/hongloumeng-characters.md) — 王昆仑
     - [我们仨](excerpts/chinese/we-three.md) — 杨绛
 
-??? quote "🔤 英文摘抄"
+??? quote "英文摘抄"
 
     - [Dead Poets Society](excerpts/english/dead-poets-society.md) — 《死亡诗社》摘抄
     - [Ferryman](excerpts/english/ferryman.md) — 《摆渡人》摘抄
@@ -48,7 +48,7 @@ hide:
     - [The Call of the Wild](excerpts/english/the-call-of-the-wild.md) — 《野性的呼唤》摘抄
     - [Educated](excerpts/english/educated.md) — 《你当像鸟飞往你的山》英文原文摘抄
     
-    ??? quote "📖 教科书摘抄"
+    ??? quote "教科书摘抄"
     
         - [English - Read before tests](excerpts/textbook/english-read-before-tests.md) — 英语考前积累
         - [散装](excerpts/textbook/san-zhuang.md)
@@ -58,7 +58,7 @@ hide:
         - [大学英语（三）](excerpts/textbook/college-english-3.md)
         - [大学英语（四）](excerpts/textbook/college-english-4.md)
 
-??? quote "📖 推荐阅读"
+??? quote "推荐阅读"
 
     - [推荐阅读](recommended.md) — 一些我很喜欢的文章
     - [推荐书目](book-list.md) — 书名 · 作者 · 推荐理由

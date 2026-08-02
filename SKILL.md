@@ -46,3 +46,11 @@
 3. **配色**：朱砂 `#9c3a24` 是唯一强调色（`--md-accent-fg-color`），不要再引回旧紫红渐变；正文页浅色 = 纯白 #fff，深色 = 纯黑 #000（slate 下 body 与 .md-header 都是纯黑），首页仍铺羊皮纸。
 4. **字体**：展示字体全部走 `docs/stylesheets/extra.css` 顶部 @import（Noto Serif SC / Ma Shan Zheng / Long Cang / Zhi Mang Xing，Google Fonts）；标题/名牌用 Long Cang / Ma Shan Zheng，正文 Noto Serif SC。不要再加其他字体源。
 5. 本次重设计的回滚基线：tag `pre-redesign-20260801`。
+
+## 2026-08-02 · 全站禁用 emoji、深色模式纯黑白字与友链卡片
+
+1. **全站禁用 emoji**：网站任何页面标题、正文、折叠块标题、nav、首页名牌一律不加 emoji；存量已清除（所有 index 页、友链、关于页标题），新增内容默认遵守。
+2. **深色模式纯黑底纯白字**：slate 下 `--md-default-bg-color` / `--md-typeset-color` 等 Material 变量统一接管为纯黑 `#000` + 纯白 `#fff`（index 页与正文页一致），定义在 `extra.css` 的 slate 块；首页仍为烛光地图。
+3. **顶部标题栏钢笔手写体**：`.md-header__title` 与 `.md-tabs__link` 用 `--font-handwriting`（Long Cang），仅顶栏，侧边栏不变。
+4. **友链页卡片样式**：`docs/friends.md` 用 `??? success "朋友们！"` 折叠卡片，名称为链接、简介以全角括号括注；名称链接用 Long Cang（`.friends-list a`，仅该页生效）。
+5. **附件打包下载**：多个相关附件直接下载的场景用 zip 打包放 `assets/`（首例：`docs/class/freshman-2/assets/光电导参考资料.zip`），避免 .md 附件被构建成页面、.css 附件在浏览器内打开的问题。

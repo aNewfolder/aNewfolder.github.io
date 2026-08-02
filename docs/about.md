@@ -1,4 +1,4 @@
-# 👤 关于我
+# 关于我
 
 ## 你好！
 
@@ -20,6 +20,11 @@
 
 <div class="update-log">
 <div class="update-log-list" markdown>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-08-02</div>
+<div class="update-log-content">全站清理：所有 index 页标题与折叠块中的 emoji 全部移除（维护规范新增「全站禁用 emoji」）；友链页改为折叠卡片样式（名称即链接、简介括注，名称用钢笔手写体）；顶部标题栏与导航标签换 Long Cang 钢笔手写体；深色模式正文页改为纯黑底纯白字；《光电信息科学与工程导论》参考资料改为 zip 一键打包下载。同时提交用户本地修改：《法学基础》《中国近现代史纲要》《常微分方程》《身体素质课》课程总结补全。</div>
+</div>
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-08-01</div>

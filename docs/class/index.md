@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# 📝 课程总结
+# 课程总结
 
 课堂笔记与课程总结。
 
@@ -11,7 +11,7 @@ hide:
 
 ## 课程列表
 
-??? note "1️⃣ 大一上（2025-2026 秋冬学期）"
+??? note "大一上（2025-2026 秋冬学期）"
 
     - [军训](freshman-1/military-training.md) — 浙江大学 · 95/5.0
     - [微积分（甲）Ⅰ](freshman-1/calculus-a1.md) — 童雯雯 · 87/4.2
@@ -25,7 +25,7 @@ hide:
     - [中外管理思想史](freshman-1/history-of-management-thought.md) — 张钢 · 91/4.5
     - [身体素质课](freshman-1/physical-fitness.md) — 楼恒阳 · 与体育课同分
 
-??? note "2️⃣ 大一下（2025-2026 春夏学期）"
+??? note "大一下（2025-2026 春夏学期）"
 
     - [微积分（甲）Ⅱ](freshman-2/calculus-a2.md) — 卢兴江 · 87/4.2
     - [大学物理（甲）Ⅰ](freshman-2/university-physics-a1.md) — 严大东 · 81/3.6
@@ -43,7 +43,7 @@ hide:
     - [乒乓球（中级）](freshman-2/table-tennis-intermediate.md) — 叶亚金 · 99/5.0
     - [身体素质课](freshman-2/physical-fitness.md) — 董育平 · 与体育课同分
 
-??? note "3️⃣ 大二上（2026-2027 秋冬学期）"
+??? note "大二上（2026-2027 秋冬学期）"
 
     - [大学物理（甲）Ⅱ](sophomore-1/university-physics-a2.md) — 鲁定辉
     - [大学物理实验](sophomore-1/physics-lab.md) — 肖婷

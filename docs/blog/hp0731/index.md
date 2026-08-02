@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# 🎂 HP0731
+# HP0731
 
  7 月 31 日是Harry Potter的生日。
 

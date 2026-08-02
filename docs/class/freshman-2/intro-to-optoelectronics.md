@@ -35,6 +35,7 @@
 
 附上自己做的一个实验报告 md 模板，因为 AI 改 word 不方便，latex 语法我还不能完全掌握，改起来会略麻烦，尽可能复刻了 word 模板的样式。我用的是 typora 的一个 latex-light 的主题，css 文件顺便附上，放到 typora 的主题文件夹里就可以。
 
-- [实验报告模板_光电导.md](assets/实验报告模板_光电导.md)
-- [latex-light.css](assets/latex-light.css)
+两个文件打包好了，点击直接下载：
+
+- [实验报告模板 + latex-light 主题（zip 打包下载）](assets/光电导参考资料.zip)
 

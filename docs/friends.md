@@ -1,13 +1,12 @@
-# 🔗 友链
+# 友链
 
-终于有人找我了！
+??? success "朋友们！"
 
-以下按照时间顺序排列~
+    （欢迎友链！）
 
----
+    <div class="friends-list" markdown>
 
-| 名称             | 网址                                        | 简介                          |
-| -------------- | ----------------------------------------- | --------------------------- |
-| zhizhi         | [点击访问](https://zhi1pan.github.io/)        | 小兔老师！拯救了我空空如也的友链\\\\        |
-| cutejigglypuff | [点击访问](https://cutejigglypuff.github.io/) | 小猫老师的前端好好看哦！被我连哄带骗做出来的 hhhh |
+    - [zhizhi](https://zhi1pan.github.io/)（小兔老师！拯救了我空空如也的友链）
+    - [cutejigglypuff](https://cutejigglypuff.github.io/)（小猫老师的前端好好看哦！被我连哄带骗做出来的 hhhh）
 
+    </div>
