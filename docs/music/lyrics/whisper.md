@@ -46,3 +46,7 @@ Open my eyes to find nothing left　我睁开双眼看着空白
 Forget what you had expected　忘记你对我的期待  
 Oh please don’t expect　读完了依赖  
 I’ve left you on that night　我很快就离开
+
+
+
+半直译最成功的作品，其实半直译看似把直译翻不出来的东西换掉了，应该简单一些，但同时也需要想到替换的意象，这首歌应该来自当时左边的同学经常在教室放声大唱《搁浅》的副歌，于是听强基无事就翻译的，选词和押韵都不错。

@@ -137,3 +137,13 @@ At close I returned my youth back to her　我终将青春还给了她
 Along with summer round fingertip　连同指尖弹出的盛夏  
 When I have dream, then let it go with winds　心之所动 就随风去了  
 In the name of love, would you promise once more　以爱之名 你还愿意吗
+
+
+
+第一版用了直译，显然译不好。
+
+第二版大概是在高一上学期某一次培训的时候，一点一点打磨，主歌在讲《摆渡人》，副歌基本是半直译，倒数第二段插入了《白夜行》的结尾，两部非常非常喜欢的作品。
+
+但节奏掌握的一般，实际想唱的话很多字会被吞掉，押韵也做的不好。
+
+不过当时在只有一个非联网词典笔的情况下能做到这样我觉得很不错了。

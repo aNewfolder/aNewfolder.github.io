@@ -58,3 +58,7 @@ Oh see me so proud of my feat　我看见 那骄傲的你
 Being a weed but still going for peak　倔强地寻找着心中炽热  
 **Will you see me, someday one tree**　会看见啊 一样的我  
 **Will you see me, someday one tree**　会看见啊 一样的我
+
+
+
+电影《中国青年：我和我的青春》其中一个插曲，很喜欢那个部分。印象中这部电影是高一当时一个人自习的时候溜到隔壁班看的。
