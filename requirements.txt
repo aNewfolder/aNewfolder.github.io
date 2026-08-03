@@ -1,0 +1,5 @@
+# 网站构建依赖（本地可工作版本，2026-08-03 pip show 核实）
+# mkdocs 必须锁在 2.0 以下：MkDocs 2.0 会破坏现有插件/主题体系
+mkdocs>=1.6.1,<2.0
+mkdocs-material==9.7.6
+mkdocs-git-revision-date-localized-plugin==1.5.3

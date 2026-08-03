@@ -22,13 +22,18 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
-<div class="update-log-date">2026-08-02</div>
-<div class="update-log-content">作词栏目四篇译词补全创作背景与译者后记：《看见》注明电影出处与观看场景；《起风了》说明两版翻译思路（主歌《摆渡人》、副歌半直译、末段融入《白夜行》结尾）及创作条件；《搁浅》评价为半直译最成功的作品并简述灵感来源；《笼（未完结）》补充双空格分词排版并新增创作背景（2023 年末第三人称视角赠友生日礼物）。音乐目录页作词区块新增引言说明。</div>
+<div class="update-log-date">2026-08-03</div>
+<div class="update-log-content">修复深色模式正文白底问题（黑纸白字生效）；清理约 41MB 无引用旧资源；CI 构建锁定依赖版本并启用严格模式。</div>
 </div>
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-08-02</div>
-<div class="update-log-content">顶部标题栏站名「404NotFound」改为「你来啦。」，字体与首页打字机一致（Ma Shan Zheng 行书，导航标签仍为钢笔手写体）；友链卡片改为默认展开；音乐板块新增与声乐并列的【作词】子栏目，收录《看见（See）》《起风了（The Wind Stirs，第一版/第二版同页）》《搁浅（Whisper）》《笼（未完结）》四篇英中同行为一行的译词，nav 与音乐目录页同步登记；《心理学及应用》相关资料新增期末模拟试题五套 PDF（点击直接下载）。同时提交用户本地修改：《文献综述与科技写作》《形势与政策Ⅰ》《乒乓球（中级）》《大学物理（甲）Ⅰ》课程内容补充。</div>
+<div class="update-log-content">作词栏目四篇译词补全创作背景与译者后记。音乐目录页作词区块新增引言说明。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-08-02</div>
+<div class="update-log-content">顶部标题栏站名「404NotFound」改为「你来啦。」，字体与首页打字机一致（Ma Shan Zheng 行书，导航标签仍为钢笔手写体）；友链卡片改为默认展开；音乐板块新增与声乐并列的【作词】子栏目，收录四篇英中同行为一行的译词，nav 与音乐目录页同步登记；《心理学及应用》相关资料新增期末模拟试题五套 PDF。同时提交用户本地修改：《文献综述与科技写作》《形势与政策Ⅰ》《乒乓球（中级）》《大学物理（甲）Ⅰ》课程内容补充。</div>
 </div>
 
 <div class="update-log-card" markdown>

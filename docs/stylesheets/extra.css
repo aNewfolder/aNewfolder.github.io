@@ -95,7 +95,9 @@ body {
   background: #ffffff;
 }
 
-[data-md-color-scheme="slate"] body {
+/* 注意：data-md-color-scheme 挂在 <body> 自己身上，body 级规则必须用
+   body[data-md-color-scheme="slate"]（后代选择器 [data-md-color-scheme] body 永远匹配不到） */
+body[data-md-color-scheme="slate"] {
   background: #000000;
 }
 
@@ -104,7 +106,7 @@ body:has(.hero-section) {
   background-image: url('../images/parchment.jpg');
 }
 
-[data-md-color-scheme="slate"] body:has(.hero-section) {
+body[data-md-color-scheme="slate"]:has(.hero-section) {
   background-image: url('../images/parchment-hero-dark.jpg');
 }
 

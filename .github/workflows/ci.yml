@@ -20,15 +20,6 @@ jobs:
         with:
           python-version: 3.x
 
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+      - run: pip install -r requirements.txt   # 安装锁定版本依赖（见 requirements.txt，含页面日期插件）
 
-      - uses: actions/cache@v4                  # 缓存依赖，加速后续构建
-        with:
-          key: mkdocs-material-${{ env.cache_id }}
-          path: .cache
-          restore-keys: |
-            mkdocs-material-
-
-      - run: pip install mkdocs-material mkdocs-git-revision-date-localized-plugin   # 安装依赖（含页面日期插件）
-
-      - run: mkdocs gh-deploy --force           # 构建并部署到 gh-pages 分支
+      - run: mkdocs gh-deploy --force --strict  # 严格模式构建并部署到 gh-pages 分支（警告即失败）

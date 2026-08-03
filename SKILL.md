@@ -54,3 +54,10 @@
 3. **顶部标题栏钢笔手写体**：`.md-header__title` 与 `.md-tabs__link` 用 `--font-handwriting`（Long Cang），仅顶栏，侧边栏不变。
 4. **友链页卡片样式**：`docs/friends.md` 用 `??? success "朋友们！"` 折叠卡片，名称为链接、简介以全角括号括注；名称链接用 Long Cang（`.friends-list a`，仅该页生效）。
 5. **附件打包下载**：多个相关附件直接下载的场景用 zip 打包放 `assets/`（首例：`docs/class/freshman-2/assets/光电导参考资料.zip`），避免 .md 附件被构建成页面、.css 附件在浏览器内打开的问题。
+
+## 2026-08-03 · 深色模式选择器修正、更新日志简洁化与 CI 锁版本
+
+1. **深色模式选择器陷阱**：`data-md-color-scheme` 挂在 `<body>` 自己身上，body 级规则必须写 `body[data-md-color-scheme="slate"]`；后代写法 `[data-md-color-scheme="slate"] body` 永远匹配不到（深色正文白底 bug 的根因，已修复；深色首页烛光地图同法修复）。
+2. **更新日志卡片简洁化**：卡片内容一句话概括改动即可，几十个字以内，不逐条罗列细节；用户本地改动一句话带过。细节看 git 提交记录。
+3. **CI 锁版本**：构建依赖固定在 `requirements.txt`（mkdocs<2、mkdocs-material==9.7.6、日期插件==1.5.3，2026-08-03 pip show 核实），`ci.yml` 用 `pip install -r requirements.txt` 安装、`mkdocs gh-deploy --force --strict` 部署（警告即失败）；actions/cache 空缓存步骤已删除，不要加回。
+4. **死资源清理**：`docs/music/piano/assets/`（钢琴谱已迁 COS 图床）、`background.jpg`、`parchment-dark.jpg`、`parchment-light.jpg`、`实验报告模板_光电导.md`、`latex-light.css` 已删除（约 41MB，全站零引用）；删资源前先 grep 复核原文名与 URL 编码名均无引用。
