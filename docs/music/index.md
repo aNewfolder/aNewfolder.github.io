@@ -46,8 +46,12 @@ hide:
 ??? quote "作词"
 
     大概都是初三-高二竞赛/强基培训听不下去的稚嫩作品，虽然现在AI可以轻松做的更好，但是呢，这是我自己写的。
-	而且其实每首歌还是有一些自己的故事的。
-	- [看见（See）](lyrics/see.md)
+
+    而且其实每首歌还是有一些自己的故事的。
+
+    - [看见（See）](lyrics/see.md)
     - [起风了（The Wind Stirs）](lyrics/the-wind-stirs.md) — 第一版 / 第二版
     - [搁浅（Whisper）](lyrics/whisper.md)
     - [笼（未完结）](lyrics/long.md)
+    - [无名之辈（The Nameless Ones）](lyrics/the-nameless-ones.md)
+    - [夜空中最亮的星（On the Night Sky Brightest Star）](lyrics/on-the-night-sky-brightest-star.md)

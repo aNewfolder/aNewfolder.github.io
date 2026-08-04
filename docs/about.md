@@ -22,6 +22,11 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-08-04</div>
+<div class="update-log-content">作词栏目新增《无名之辈》《夜空中最亮的星》两篇译词；修复音乐目录页作词区块缩进导致的分行异常。同时提交用户本地修改：MkDocs 建站教程更新。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-08-03</div>
 <div class="update-log-content">修复深色模式正文白底问题（黑纸白字生效）；清理约 41MB 无引用旧资源；CI 构建锁定依赖版本并启用严格模式。</div>
 </div>
