@@ -23,6 +23,11 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-08-04</div>
+<div class="update-log-content">钢琴板块新增《诀别书》，正文与琴谱配图已补全。同时提交用户本地修改：友链新增 LadyGege。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-08-04</div>
 <div class="update-log-content">作词栏目新增《无名之辈》《夜空中最亮的星》两篇译词；修复音乐目录页作词区块缩进导致的分行异常。同时提交用户本地修改：MkDocs 建站教程更新。</div>
 </div>
 

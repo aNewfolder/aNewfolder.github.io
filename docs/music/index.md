@@ -25,6 +25,7 @@ hide:
     - [家庭时间（天气之子）](piano/family-time.md)
     - [约会（你的名字）](piano/date-your-name.md)
     - [伴奏作曲](piano/accompaniment-composition.md)
+    - [诀别书](piano/jue-bie-shu.md)
 
 ??? quote "架子鼓"
 
