@@ -23,6 +23,11 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-08-10</div>
+<div class="update-log-content">《伴奏作曲》插入 1645 即兴演奏录音，可在线试听与下载。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-08-10</div>
 <div class="update-log-content">新增中文摘抄《白夜行》，顺带提交《诀别书》正文补充。</div>
 </div>
 
