@@ -23,6 +23,11 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-08-10</div>
+<div class="update-log-content">顺带提交《伴奏作曲》织体清单新增「颤音」，并更新维护约定（音频 faststart 与附件路径规则）。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-08-10</div>
 <div class="update-log-content">修复《伴奏作曲》录音无法在线试听的问题（音频元数据前置 + 播放器路径修正）。</div>
 </div>
 
