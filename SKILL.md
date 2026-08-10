@@ -61,3 +61,9 @@
 2. **更新日志卡片简洁化**：卡片内容一句话概括改动即可，几十个字以内，不逐条罗列细节；用户本地改动一句话带过。细节看 git 提交记录。
 3. **CI 锁版本**：构建依赖固定在 `requirements.txt`（mkdocs<2、mkdocs-material==9.7.6、日期插件==1.5.3，2026-08-03 pip show 核实），`ci.yml` 用 `pip install -r requirements.txt` 安装、`mkdocs gh-deploy --force --strict` 部署（警告即失败）；actions/cache 空缓存步骤已删除，不要加回。
 4. **死资源清理**：`docs/music/piano/assets/`（钢琴谱已迁 COS 图床）、`background.jpg`、`parchment-dark.jpg`、`parchment-light.jpg`、`实验报告模板_光电导.md`、`latex-light.css` 已删除（约 41MB，全站零引用）；删资源前先 grep 复核原文名与 URL 编码名均无引用。
+
+
+## 2026-08-10 · 音频插入约定与原始 HTML 附件路径修正
+
+1. **音频插入（在线试听 + 下载）**：音频放文章就近 `assets/`；**上传前必须 faststart**——手机录音的 moov 元数据在文件末尾，浏览器需整段下载才能播，大文件等于无法试听。用 imageio-ffmpeg 自带 ffmpeg 无损重封装：`ffmpeg -i 原文件 -c:a copy -movflags +faststart 输出`（`pip install imageio-ffmpeg`，验证：文件头 4KB 内有 `moov`）。正文用 `<audio controls preload="none">` + markdown 下载链接；CSP `media-src 'self'` 已放行，无需改配置。首例：`docs/music/piano/accompaniment-composition.md` 1645 即兴录音。
+2. **原始 HTML 里的附件路径要写 `../assets/`**（修正 2026-07-23 PDF 内嵌约定）：markdown 链接会被 MkDocs 自动改写适配页面 URL，原始 HTML（`<embed src>`、`<audio src>`）不会被改写；目录式 URL 下页面比源码深一级，写 `assets/` 会被浏览器解析成 `页面/assets/` 而 404（本次录音无法播放的根因）。今后 PDF 内嵌 embed 同样用 `../assets/`；存量 embed 若失效按此修正。
