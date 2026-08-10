@@ -22,6 +22,11 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-08-10</div>
+<div class="update-log-content">新增中文摘抄《白夜行》，顺带提交《诀别书》正文补充。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-08-04</div>
 <div class="update-log-content">钢琴板块新增《诀别书》，正文与琴谱配图已补全。同时提交用户本地修改：友链新增 LadyGege。</div>
 </div>
