@@ -23,7 +23,7 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-08-10</div>
-<div class="update-log-content">修复《伴奏作曲》录音无法在线试听的问题（音频元数据前置，无需整段下载即可播放）。</div>
+<div class="update-log-content">修复《伴奏作曲》录音无法在线试听的问题（音频元数据前置 + 播放器路径修正）。</div>
 </div>
 
 <div class="update-log-card" markdown>
