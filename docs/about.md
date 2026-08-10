@@ -23,6 +23,11 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-08-10</div>
+<div class="update-log-content">修复《伴奏作曲》录音无法在线试听的问题（音频元数据前置，无需整段下载即可播放）。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-08-10</div>
 <div class="update-log-content">《伴奏作曲》插入 1645 即兴演奏录音，可在线试听与下载。</div>
 </div>
 
