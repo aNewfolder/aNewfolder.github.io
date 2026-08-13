@@ -22,6 +22,11 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-08-13</div>
+<div class="update-log-content">《伴奏作曲》插入 6251 即兴演奏录音（在线试听 + 下载）。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-08-10</div>
 <div class="update-log-content">顺带提交《伴奏作曲》织体清单新增「颤音」，并更新维护约定（音频 faststart 与附件路径规则）。</div>
 </div>
