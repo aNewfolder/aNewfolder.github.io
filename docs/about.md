@@ -23,6 +23,11 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-08-13</div>
+<div class="update-log-content">即兴演奏录音迁至腾讯云 COS 并压缩至 64kbps，修复在线播放与下载卡顿；本地音频移出仓库。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-08-13</div>
 <div class="update-log-content">《伴奏作曲》插入 6251 即兴演奏录音（在线试听 + 下载）。</div>
 </div>
 
