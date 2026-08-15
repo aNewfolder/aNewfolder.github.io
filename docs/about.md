@@ -22,6 +22,11 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-08-15</div>
+<div class="update-log-content">《伴奏作曲》插入 6415 即兴演奏录音（2026-08-14，COS 托管）；顺带提交《蒋勋说红楼梦》中文摘抄与乒乓球页更新。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-08-13</div>
 <div class="update-log-content">即兴演奏录音迁至腾讯云 COS 并压缩至 64kbps，修复在线播放与下载卡顿；本地音频移出仓库。</div>
 </div>

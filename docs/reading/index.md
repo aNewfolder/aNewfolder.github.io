@@ -38,6 +38,7 @@ hide:
     - [红楼梦人物论](excerpts/chinese/hongloumeng-characters.md) — 王昆仑
     - [我们仨](excerpts/chinese/we-three.md) — 杨绛
     - [白夜行](excerpts/chinese/white-night.md) — 东野圭吾
+    - [蒋勋说红楼梦](excerpts/chinese/jiang-xun.md) — 蒋勋
 
 ??? quote "英文摘抄"
 
