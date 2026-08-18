@@ -14,3 +14,4 @@ hide:
 - [乒乓球](table-tennis.md)
 - [游泳](swimming.md)
 - [跑步](running.md)
+- [匹克球](pickleball.md)
