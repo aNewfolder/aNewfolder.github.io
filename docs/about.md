@@ -23,6 +23,11 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-08-23</div>
+<div class="update-log-content">恢复《学术英语》《光电导论》的相关资料下载区（论文、海报、实验报告模板 zip），下载链接加 download 属性。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-08-23</div>
 <div class="update-log-content">友链新增 CONSCIENT；游泳课笔记更新至 Lesson 4；移除两篇课程总结的附件下载区。</div>
 </div>
 
