@@ -22,6 +22,11 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-08-23</div>
+<div class="update-log-content">友链新增 CONSCIENT；游泳课笔记更新至 Lesson 4；移除两篇课程总结的附件下载区。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-08-18</div>
 <div class="update-log-content">《伴奏作曲》插入 6251 A大调 即兴演奏录音（COS 托管）；体育栏目新增《匹克球》。</div>
 </div>
