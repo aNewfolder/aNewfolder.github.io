@@ -22,6 +22,11 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-08-26</div>
+<div class="update-log-content">随笔新增子栏目 XFL 并发布首篇文章《Painting the dream》；《伴奏作曲》插入 6251 G大调即兴演奏录音；顺带提交游泳、乒乓球笔记本地更新。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-08-23</div>
 <div class="update-log-content">恢复《学术英语》《光电导论》的相关资料下载区（论文、海报、实验报告模板 zip），下载链接加 download 属性。</div>
 </div>
