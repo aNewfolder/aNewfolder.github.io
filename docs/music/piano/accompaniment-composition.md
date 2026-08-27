@@ -318,3 +318,10 @@ C-E-G --> E-G-C
 <audio controls preload="none" src="https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/audio/6251_G_26.8.26.m4a" style="width: 100%;">您的浏览器不支持在线播放，可点击下方链接下载收听。</audio>
 
 [下载录音：6251 G大调 即兴演奏（14 分钟，2026-08-26）](https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/audio/6251_G_26.8.26.m4a)
+
+---
+
+找了好几个调没找到《五十年以后》比较和谐的调，上面标的是降 B 但是总感觉不太和谐，也可能是我弹的音还是不对。
+
+---
+
