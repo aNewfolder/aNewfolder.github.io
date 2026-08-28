@@ -15,3 +15,5 @@ hide:
 - [游泳](swimming.md)
 - [跑步](running.md)
 - [匹克球](pickleball.md)
+- [台球](billiard.md)
+- [网球](tennis.md)
