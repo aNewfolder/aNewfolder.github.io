@@ -23,6 +23,11 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-08-30</div>
+<div class="update-log-content">随笔新增「新年贺词」「Age」两个系列，收录新年献词一篇与生日贺信《Eighteen》《Nineteen》（Word 原文转 md）。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-08-30</div>
 <div class="update-log-content">「世界读书日」栏目在随笔导航中移至 XFL 与 HP0731 之间。</div>
 </div>
 
