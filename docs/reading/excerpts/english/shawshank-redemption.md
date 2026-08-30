@@ -6,6 +6,8 @@
 
 看过原著，但觉得不如电影的表现力好，更喜欢电影，所以以下内容摘自电影台词。
 
+---
+
 
 And that's how it came to pass
 
@@ -51,7 +53,7 @@ I think he did it just to feel normal again
 
 if only for a short while.
 
-
+---
 
 Pleased to see you reading this.
 
@@ -73,7 +75,7 @@ Ye that followeth me shall have the light of life."
 
 John, chapter 8, verse 12.
 
-
+---
 
 
 I almost forgot.
@@ -96,7 +98,7 @@ My wife made that in church group.
 
 Very nice, sir.
 
-
+---
 
 
 But I tell you these walls are funny.
@@ -111,7 +113,7 @@ you get so you depend on them.
 
 That's "institutionalized."
 
-
+---
 
 
 That's the beauty of music. They
@@ -164,7 +166,7 @@ It's got no use on the inside.
 
 You'd better get used to that idea.
 
-
+---
 
 
 A river of dirty money running through here.
@@ -181,7 +183,7 @@ I send it out into the real world, and when it comes back
 
 -Clean as a virgin's honeypot, huh? -Cleaner
 
-
+---
 
 He's a phantom, an apparition. Second cousin to Harvey the Rabbit.
 
@@ -191,7 +193,7 @@ out of thin air.
 
 He doesn't exist, except on paper.
 
-
+---
 
 I guess it comes down to a simple choice.
 
@@ -199,7 +201,7 @@ Get busy living
 
 or get busy dying.
 
-
+---
 
 Sometimes it makes me sad, though
 
@@ -219,11 +221,11 @@ the place you live in is that much more drab and empty that they're gone.
 
 I guess I just miss my friend.
 
-
+---
 
 Much obliged, sir.
 
-
+---
 
 Dear Red:
 
@@ -255,7 +257,7 @@ Your friend
 
 Andy.
 
-
+---
 
 
 "Get busy living
@@ -264,7 +266,7 @@ or get busy dying."
 
 That's goddamn right.
 
-
+---
 
 For the second time in my life
 
@@ -294,6 +296,6 @@ I hope the Pacific is as blue as it has been in my dreams.
 
 I hope.
 
-
+---
 
 [The Shawshank Redemption (1994) 英文剧本.pdf（点击下载）](assets/shawshank-redemption-1994-script.pdf){: download="The Shawshank Redemption (1994)英文剧本.pdf" }
