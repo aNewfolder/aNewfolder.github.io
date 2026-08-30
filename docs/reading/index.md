@@ -50,6 +50,7 @@ hide:
     - [The Call of the Wild](excerpts/english/the-call-of-the-wild.md) — 《野性的呼唤》摘抄
     - [Educated](excerpts/english/educated.md) — 《你当像鸟飞往你的山》英文原文摘抄
     - [The Shawshank Redemption](excerpts/english/shawshank-redemption.md) — 《肖申克的救赎》电影台词摘抄，附英文剧本下载
+    - [The Legend of 1900](excerpts/english/the-legend-of-1900.md) — 《海上钢琴师》英文剧本，可在线阅读与下载
     
     ??? quote "教科书摘抄"
     

@@ -23,6 +23,11 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-08-30</div>
+<div class="update-log-content">阅读新增《海上钢琴师》英文剧本页，剧本支持在线阅读与下载；顺带提交科研日报简介精简。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-08-30</div>
 <div class="update-log-content">阅读新增《肖申克的救赎》英文摘抄，附英文剧本点击下载；钢琴新增《梦中的婚礼》练习笔记。</div>
 </div>
 
