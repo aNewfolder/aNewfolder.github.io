@@ -5,7 +5,7 @@ hide:
 
 # 阅读
 
-书页之间。
+书页之间与银幕之上。
 
 ---
 
@@ -62,7 +62,8 @@ hide:
         - [大学英语（三）](excerpts/textbook/college-english-3.md)
         - [大学英语（四）](excerpts/textbook/college-english-4.md)
 
-??? quote "推荐阅读"
+??? quote "记录与推荐"
 
+    - [阅读记录](records.md) — 按读书年倒序 · 满分 10 分
+    - [影片记录](films.md) — 按读书年倒序 · 满分 10 分
     - [推荐阅读](recommended.md) — 一些我很喜欢的文章
-    - [推荐书目](book-list.md) — 书名 · 作者 · 推荐理由

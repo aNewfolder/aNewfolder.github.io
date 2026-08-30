@@ -159,9 +159,10 @@ nav:
         - 大学英语（二）: reading/excerpts/textbook/college-english-2.md
         - 大学英语（三）: reading/excerpts/textbook/college-english-3.md
         - 大学英语（四）: reading/excerpts/textbook/college-english-4.md
-    - 推荐阅读:
+    - 记录与推荐:
+      - 阅读记录: reading/records.md
+      - 影片记录: reading/films.md
       - 推荐阅读: reading/recommended.md
-      - 推荐书目: reading/book-list.md
   - 音乐:
     - music/index.md
     - 单曲循环: music/playlist.md

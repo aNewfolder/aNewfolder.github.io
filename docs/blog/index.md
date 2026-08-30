@@ -15,4 +15,5 @@ hide:
 
 - **[Painting the dream](xfl/painting-the-dream.md)** — 2026-08-26 · XFL · 学发联的一年
 - **[HP0731](hp0731/index.md)** — Harry Potter生贺合集
+- **[世界读书日](world-reading-day/index.md)** — 4.23 历年读书记录合集
 - **[我的工高故事（序幕）](while-the-powerful-play-goes-on/prelude.md)** — 2026-04-17 · While the Powerful Play Goes On ·

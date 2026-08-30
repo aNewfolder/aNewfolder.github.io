@@ -23,6 +23,11 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-08-30</div>
+<div class="update-log-content">推荐书目改为阅读记录（附高中阅读记录），新增影片记录页，均按读书年倒序排列；阅读页标语改为「书页之间与银幕之上」。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-08-30</div>
 <div class="update-log-content">修复《海上钢琴师》剧本在线阅读被浏览器拦截的问题（安全策略 frame-src 放行同源）。</div>
 </div>
 
