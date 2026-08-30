@@ -26,6 +26,7 @@ hide:
     - [约会（你的名字）](piano/date-your-name.md)
     - [伴奏作曲](piano/accompaniment-composition.md)
     - [诀别书](piano/jue-bie-shu.md)
+    - [梦中的婚礼](piano/wedding-in-the-dream.md)
 
 ??? quote "架子鼓"
 
