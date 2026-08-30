@@ -23,7 +23,7 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-08-30</div>
-<div class="update-log-content">推荐书目改为阅读记录（附高中阅读记录），新增影片记录页，均按读书年倒序排列；阅读页标语改为「书页之间与银幕之上」。</div>
+<div class="update-log-content">随笔新增「世界读书日」历年文章栏目（2024-2026）并登记导航；推荐书目改为阅读记录（附高中阅读记录），新增影片记录页，均按读书年倒序排列；阅读页标语改为「书页之间与银幕之上」。</div>
 </div>
 
 <div class="update-log-card" markdown>
