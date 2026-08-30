@@ -73,3 +73,8 @@
 1. **音频一律放 COS，不进仓库**：GitHub Pages 国内带宽极小，assets 里几十 MB 的音频播放/下载必卡，faststart 救不了带宽（1645/6251 录音多次卡顿的根因）。新流程：ffmpeg 转 64 kbps AAC + faststart（`-c:a aac -b:a 64k -movflags +faststart`）→ 用 `cos-python-sdk-v5` 上传到图床桶 `audio/` 前缀（凭据在 `%APPDATA%\picgo\data.json` 的 `picBed.tcyun`）→ 正文 `<audio>` 与下载链接都写 COS 完整 URL。CSP `media-src` 已放行 COS 域名（2026-08-13 起）。
 2. **原始录音备份**：上传 COS 后音频文件从仓库移除；未压缩原件备份到仓库外 `E:\Obsidian\仓库\Notes\Me\McDocs\录音备份\`。
 3. 存量 1645/6251 两段即兴录音均已迁移到 COS；`docs/music/piano/assets/` 目录已删。
+
+## 2026-08-30 · CSP frame-src 必须放行同源（PDF 内嵌在 Chromium 被拦的根因）
+
+1. **Chromium 系浏览器（Chrome/Edge/360se）把 `<embed>`/`<object>` 内嵌 PDF 的加载归入 `frame-src` 检查**（内置 PDF viewer 以 frame/plugin 方式实现，偏离 CSP 规范；Firefox/Safari 才按 `object-src`）。因此 PDF 内嵌要正常渲染，**`frame-src` 与 `object-src` 必须同时含 `'self'`**——只有 `object-src 'self'` 时，浏览器显示"该内容被屏蔽了。请联系网站所有者以解决此问题。"（Chromium 拦截 frame 的标准文案）。2026-08-30 已把 `overrides/main.html` CSP 的 `frame-src` 从 `https://giscus.app` 改为 `'self' https://giscus.app`；重建/改 CSP 时两条都必须保留。
+2. 排查手法：CSP 拦截可在页面里挂 `securitypolicyviolation` 事件监听后重新插入被拦元素直接验证；无 PDF 插件的内核（如 ZCode 内嵌浏览器）对 embed PDF 只渲染空白、不触发事件，无法复现此类拦截，须在用户真实浏览器里验证。

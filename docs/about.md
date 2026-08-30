@@ -23,6 +23,11 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-08-30</div>
+<div class="update-log-content">修复《海上钢琴师》剧本在线阅读被浏览器拦截的问题（安全策略 frame-src 放行同源）。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-08-30</div>
 <div class="update-log-content">阅读新增《海上钢琴师》英文剧本页，剧本支持在线阅读与下载；顺带提交科研日报简介精简。</div>
 </div>
 
