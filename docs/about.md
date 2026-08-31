@@ -22,6 +22,11 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-08-31</div>
+<div class="update-log-content">《光机结构设计》课程笔记开写：录入 8.31 首课记录（SolidWorks 课堂作业、大作业要求与首日心得）。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-08-30</div>
 <div class="update-log-content">随笔新增「新年贺词」「Age」两个系列，收录新年献词一篇与生日贺信《Eighteen》《Nineteen》（Word 原文转 md）。</div>
 </div>
