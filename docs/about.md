@@ -22,6 +22,11 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-09-01</div>
+<div class="update-log-content">《光机结构设计》课程笔记新增 9.1 记录；游泳页新增 Training 1 游泳记录。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-08-31</div>
 <div class="update-log-content">《光机结构设计》课程笔记开写：录入 8.31 首课记录（SolidWorks 课堂作业、大作业要求与首日心得）。</div>
 </div>
