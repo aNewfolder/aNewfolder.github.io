@@ -22,6 +22,11 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-09-02</div>
+<div class="update-log-content">音乐板块新增钢琴文章《歌曲串烧》；顺带提交《光机结构设计》9.2 笔记与钢琴两页练琴记录。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-09-01</div>
 <div class="update-log-content">《光机结构设计》课程笔记新增 9.1 记录；游泳页新增 Training 1 游泳记录。</div>
 </div>

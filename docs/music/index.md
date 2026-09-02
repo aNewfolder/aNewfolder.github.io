@@ -27,6 +27,7 @@ hide:
     - [伴奏作曲](piano/accompaniment-composition.md)
     - [诀别书](piano/jue-bie-shu.md)
     - [梦中的婚礼](piano/wedding-in-the-dream.md)
+    - [歌曲串烧](piano/medley.md)
 
 ??? quote "架子鼓"
 

@@ -3,6 +3,8 @@
 
 前奏太经典了吧。
 
+第二天把左手也顺到底了，确实音相对固定，想摸清规律可能需要更熟，想肌肉记忆就更久了。
+
 ![](https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/img/20260830120934488.jpg)
 ![](https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/img/20260830121153909.jpg)
 ![](https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/img/20260830121212910.jpg)
