@@ -22,6 +22,11 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-09-06</div>
+<div class="update-log-content">音乐板块新增「即兴」分类，《伴奏作曲》更名为《探索》移入其中，新建《前进》搭好栏目；顺带提交《光机结构设计》9.3 笔记、游泳 Training 2 与乒乓球发球笔记。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-09-02</div>
 <div class="update-log-content">音乐板块新增钢琴文章《歌曲串烧》；顺带提交《光机结构设计》9.2 笔记与钢琴两页练琴记录。</div>
 </div>

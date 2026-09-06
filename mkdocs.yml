@@ -165,6 +165,9 @@ nav:
       - 推荐阅读: reading/recommended.md
   - 音乐:
     - music/index.md
+    - 即兴:
+      - 探索: music/improvisation/tan-suo.md
+      - 前进: music/improvisation/qian-jin.md
     - 单曲循环: music/playlist.md
     - 钢琴:
       - 加勒比海盗: music/piano/pirates-of-the-caribbean.md
@@ -174,7 +177,6 @@ nav:
       - 情人的舞会: music/piano/qing-ren-de-wu-hui.md
       - 家庭时间（天气之子）: music/piano/family-time.md
       - 约会（你的名字）: music/piano/date-your-name.md
-      - 伴奏作曲: music/piano/accompaniment-composition.md
       - 诀别书: music/piano/jue-bie-shu.md
       - 梦中的婚礼: music/piano/wedding-in-the-dream.md
       - 歌曲串烧: music/piano/medley.md

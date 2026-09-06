@@ -11,6 +11,11 @@ hide:
 
 ## 文章列表
 
+??? quote "即兴"
+
+    - [探索](improvisation/tan-suo.md)
+    - [前进](improvisation/qian-jin.md)
+
 ??? quote "单曲循环"
 
     - [单曲循环](playlist.md) — 歌名 · 演唱 · 它的故事
@@ -24,7 +29,6 @@ hide:
     - [情人的舞会](piano/qing-ren-de-wu-hui.md)
     - [家庭时间（天气之子）](piano/family-time.md)
     - [约会（你的名字）](piano/date-your-name.md)
-    - [伴奏作曲](piano/accompaniment-composition.md)
     - [诀别书](piano/jue-bie-shu.md)
     - [梦中的婚礼](piano/wedding-in-the-dream.md)
     - [歌曲串烧](piano/medley.md)
