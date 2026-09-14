@@ -22,6 +22,11 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-09-14</div>
+<div class="update-log-content">《前进》插入《好久不见》录音，支持在线播放与下载；顺带提交《前进》9.6 课程笔记、单曲循环新增《好久不见》、游泳 Training 3/4。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-09-06</div>
 <div class="update-log-content">音乐板块新增「即兴」分类，《伴奏作曲》更名为《探索》移入其中，新建《前进》搭好栏目；顺带提交《光机结构设计》9.3 笔记、游泳 Training 2 与乒乓球发球笔记。</div>
 </div>
