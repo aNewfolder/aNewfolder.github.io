@@ -22,6 +22,21 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-09-15</div>
+<div class="update-log-content">《英语演讲》录入 Week 1 评分标准 PPT（五大项构成与各子项要点完整提取）；顺带提交马原首课笔记、游泳/跑步微调等本地改动。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-09-15</div>
+<div class="update-log-content">《大学物理（甲）Ⅱ》录入 9.15 首课笔记（分数构成、电荷、库仑定律、电场强度及典型连续分布例题）。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-09-14</div>
+<div class="update-log-content">《电子电路基础及实验》录入 9.14 首课笔记，补全示波器、阻抗匹配、电桥法测电阻、阿秒激光等 FA 条目。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-09-14</div>
 <div class="update-log-content">《前进》插入《好久不见》录音，支持在线播放与下载；顺带提交《前进》9.6 课程笔记、单曲循环新增《好久不见》、游泳 Training 3/4。</div>
 </div>
