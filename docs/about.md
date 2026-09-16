@@ -22,6 +22,11 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-09-16</div>
+<div class="update-log-content">复变函数、概率统计首次录入 9.16 笔记（复数、复运算、概率公理与事件运算），电子电路基础新增 9.16 电路物理量与 R/L/C 元件笔记。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-09-15</div>
 <div class="update-log-content">《英语演讲》录入 Week 1 评分标准 PPT（五大项构成与各子项要点完整提取）；顺带提交马原首课笔记、游泳/跑步微调等本地改动。</div>
 </div>

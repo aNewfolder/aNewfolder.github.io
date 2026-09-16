@@ -176,3 +176,207 @@ $$P(\mathrm{dBm}) = 10\,\lg\,\frac{P}{1\,\mathrm{mW}}$$
 **与这门课的呼应**：示波器把不可见的电压波形变成可见图像，阿秒激光把不可见的电子运动变成可测量的过程——给超快过程装"时域快门"，是测量科学共同的思想。
 
 </details>
+
+### 2026.9.16
+
+#### 2.1 电路中的基本物理量
+
+<details open markdown="1">
+<summary><strong>【电流与电压的参考方向】</strong></summary>
+
+- **电流参考方向**：箭头表示；**电压参考方向**：单独箭头或 $+$、$-$ 极性表示。
+- 参考方向是人为任意假定的正方向：计算结果为正，实际方向与参考方向相同；为负则相反。
+
+</details>
+
+<details open markdown="1">
+<summary><strong>【关联参考方向】</strong></summary>
+
+$U$、$I$ 参考方向一致（电流从电压参考方向的 $+$ 端流入元件）称为关联参考方向。此时标注其中一个即可推出另一个（标一个即可）。
+
+</details>
+
+<details open markdown="1">
+<summary><strong>【一端口电路（功率结论的适用前提）】</strong></summary>
+
+两个引出端钮，从一个端钮流入的电流与从另一端钮流出的电流相同（同一电流贯穿），称为一端口电路；吸收/发出功率的结论适用于一端口电路。
+
+</details>
+
+<details open markdown="1">
+<summary><strong>【功率：吸收还是发出】</strong></summary>
+
+- **关联参考方向**下 $p = ui$ 视为**吸收**的功率：$p > 0$ ～ 负载 ～ 吸收功率；$p < 0$ ～ 电源 ～ 发出功率（笔记：关联 ～ 功率为正 ～ 负载 ～ 吸收；负 ～ 电源 ～ 发出）。
+- **非关联参考方向**下 $p = ui$ 视为**发出**的功率：$p > 0$ ～ 电源 ～ 发出功率。
+- 笔记图：电压源 $U_S$（左 $+$ 右 $-$），电流 $I$ 的参考方向自 $+$ 端流出——对电源而言 $U_S$ 与 $I$ 非关联。
+- **简化判断**：看实际方向——实际电压方向（$+ \to -$）与实际电流方向相同 ～ 吸收功率，相反 ～ 发出功率。
+
+</details>
+
+<details open markdown="1">
+<summary><strong>【例：电阻串联电压源支路的电压】</strong></summary>
+
+图：一条支路，电流 $I$ 自左向右，先经电阻 $R$，再经电压源 $U_S$（左 $+$ 右 $-$），支路总电压 $U$ 的参考极性取左 $+$ 右 $-$。
+
+解：电阻 $R$ 的电压与 $I$ 关联，压降取正 $IR$（非关联则为负）；$U_S$ 的参考方向与 $U$ 相同为加：
+
+$$U = IR + U_S$$
+
+规则：各部分电压与总电压 $U$ 方向相同为加、相反为减。
+
+</details>
+
+#### 2.3 电路元件及其特性
+
+（1）电阻
+
+<details open markdown="1">
+<summary><strong>【电阻与电导】</strong></summary>
+
+电导 $G = \dfrac{1}{R}$，单位 S（西门子）。补充：电阻单位为 Ω（欧姆）；关联方向下线性电阻满足欧姆定律 $u = Ri$，电导越大导电能力越强。
+
+</details>
+
+（2）电容
+
+<details open markdown="1">
+<summary><strong>【电容的分类：线性/非线性、时变/非时变】</strong></summary>
+
+- 1° 线性电容：$q = Cu_C$（电荷与电压成正比，$C$ 为常数）；
+- 2° 非线性电容：$C$ 与 $u$ 有关（库伏特性不是过原点的直线）；
+- 3° 时变/非时变电容：看**库伏特性**（$q$-$u$ 特性）是否随时间变化。
+
+</details>
+
+<details open markdown="1">
+<summary><strong>【电容的伏安关系（重点）】</strong></summary>
+
+在关联方向下：
+
+$$i_C(t) = \frac{\mathrm{d}q}{\mathrm{d}t} \;\xrightarrow{\ \text{线性、非时变}\ }\; C\,\frac{\mathrm{d}u_C(t)}{\mathrm{d}t}$$
+
+电压对时间求导，意味着电流与电压**变化率**成正比：直流稳态下电压不变，$i_C = 0$，**直流不能通过**电容（隔直通交）。
+
+</details>
+
+<details open markdown="1">
+<summary><strong>【电容电压的积分形式：记忆元件】</strong></summary>
+
+对伏安关系积分得：
+
+$$u_C(t) = u_C(t_0) + \frac{1}{C}\int_{t_0}^{t} i_C(\xi)\,\mathrm{d}\xi$$
+
+$u_C(t)$ 与 $t_0$ 时刻的电压有关（依赖历史），故电容称为**记忆元件**。
+
+</details>
+
+<details open markdown="1">
+<summary><strong>【电容充电过程中吸收的能量】</strong></summary>
+
+$$W_C = \int_{t_0}^{t} u_C(\xi)\,i_C(\xi)\,\mathrm{d}\xi = \frac{1}{2}C\left[u_C^2(t) - u_C^2(t_0)\right]$$
+
+当 $u_C(t_0) = 0$ 时：
+
+$$W_C = \frac{1}{2}Cu_C^2 = \frac{1}{2}qu_C = \frac{1}{2}\frac{q^2}{C}$$
+
+补充：能量储存在电容的电场中；理想电容只储能不耗能，放电时把储存的能量全部放回电路。
+
+</details>
+
+（3）电感（体现磁场储能）
+
+<details open markdown="1">
+<summary><strong>【线性电感与磁链】</strong></summary>
+
+1° 线性电感：磁链 $\psi$（单位 Wb 韦伯，读音 psi）与电流成比例：
+
+$$\psi = Li_L$$
+
+电感 $L$ 单位 H（亨利）。
+
+</details>
+
+<details open markdown="1">
+<summary><strong>【非线性/时变电感】</strong></summary>
+
+- 2° 非线性电感：$L$ 可变（$\psi$-$i$ 特性不是过原点的直线）；
+- 3° 时变/非时变电感：看**韦安特性**（$\psi$-$i$ 特性）是否随时间变化。
+
+</details>
+
+<details open markdown="1">
+<summary><strong>【电感的伏安关系】</strong></summary>
+
+关联方向条件下：
+
+$$u_L(t) = \frac{\mathrm{d}\psi(t)}{\mathrm{d}t} \;\xrightarrow{\ \text{线性、非时变}\ }\; L\,\frac{\mathrm{d}i_L(t)}{\mathrm{d}t}$$
+
+电压与电流**变化率**成正比：直流稳态时 $u_L = 0$，电感相当于**短接**（通直隔交）。
+
+</details>
+
+<details open markdown="1">
+<summary><strong>【电感电流的积分形式：记忆元件】</strong></summary>
+
+积分得：
+
+$$i_L(t) = i_L(t_0) + \frac{1}{L}\int_{t_0}^{t} u_L(\xi)\,\mathrm{d}\xi$$
+
+$i_L(t)$ 与 $t_0$ 时刻的电流有关，故电感也是**记忆元件**。
+
+</details>
+
+<details open markdown="1">
+<summary><strong>【电感储存的能量】</strong></summary>
+
+当 $i_L(t_0) = 0$（从零电流充磁到 $i_L$）时，储能：
+
+$$W_L = \frac{1}{2}Li_L^2$$
+
+补充：能量储存在电感的磁场中；理想电感只储能不耗能。
+
+</details>
+
+<details open markdown="1">
+<summary><strong>【FA：电感的应用——浪涌抑制】</strong></summary>
+
+**为什么有浪涌**：电感电流不能突变。含电感电路（继电器线圈、电机绕组等）被开关突然断开时 $\dfrac{\mathrm{d}i_L}{\mathrm{d}t}$ 极大，由 $u = L\dfrac{\mathrm{d}i}{\mathrm{d}t}$ 产生远高于电源电压的电压尖峰（可达几十至几百倍），会烧蚀开关触点、击穿半导体器件并产生强烈电磁干扰。
+
+**抑制手段**：
+
+- **续流二极管**：与线圈反向并联。断电后电感电流经二极管续流、缓慢衰减，尖峰被钳位在约一个二极管导通压降——继电器/电磁阀驱动电路最常用；
+- **RC 吸收（缓冲）电路**：与触点或线圈并联，电容吸收瞬时能量、电阻把它耗散掉；
+- **压敏电阻（MOV）/ TVS 二极管**：把浪涌电压钳位在安全值以内；
+- **滤波电感/共模电感**：利用感抗随频率升高而增大，滤除电网浪涌与高频干扰。
+
+**本质**：利用电感"电流不能突变"的特性，为突变电流提供缓变或泄放通路、限制 $\dfrac{\mathrm{d}i}{\mathrm{d}t}$，从而把浪涌电压限制在安全范围。
+
+</details>
+
+（4）独立电源
+
+<details open markdown="1">
+<summary><strong>【电压源/电流源与理想电压源/理想电流源】</strong></summary>
+
+笔记：实际电压/流源 $\neq$ 理想电压/流源。
+
+- **理想电压源**：端电压恒为 $u_S$，与流过的电流无关（内阻为零）；
+- **理想电流源**：输出电流恒为 $i_S$，与端电压无关（内阻无穷大）；
+- **实际电源有内阻**：实际电压源 = 理想电压源**串联**内阻 $R_S$（端电压随输出电流增大而下降）；实际电流源 = 理想电流源**并联**内阻 $R_S$（输出电流随端电压升高而减小）。
+
+</details>
+
+<details open markdown="1">
+<summary><strong>【FA：独立电源与受控电源的区别】</strong></summary>
+
+- **独立电源**：源电压 $u_S$ / 源电流 $i_S$ 由电源自身决定，与电路其他支路的电压电流无关，作为电路的输入（激励）；符号为圆形（电压源标 $+$/$-$，电流源标箭头）。
+- **受控电源**：提供的电压或电流受电路中**某处的电压或电流（控制量）控制**，随控制量变化；符号为菱形。按控制量与被控量分四种：
+
+  - VCVS（电压控制电压源）：$u = \mu u_c$
+  - VCCS（电压控制电流源）：$i = g\,u_c$
+  - CCVS（电流控制电压源）：$u = r\,i_c$
+  - CCCS（电流控制电流源）：$i = \beta\, i_c$
+
+- **关键区别**：独立源"无条件"提供规定的电压/电流；受控源的输出完全由控制量决定——控制量为零则输出为零。受控源用来刻画晶体管、运放等器件内部的放大/控制关系；电路分析中受控源既可以吸收也可以发出功率，但不能独立作为激励。
+
+</details>
