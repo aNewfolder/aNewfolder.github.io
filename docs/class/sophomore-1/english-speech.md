@@ -57,5 +57,3 @@
 - Rubric:（评分细则）
   - 10% for delivery and content (same as regular speech assignments).（10% 表达与内容，与平时演讲作业相同）
   - 5% for overall improvement since the beginning of the course (progress in delivery, confidence, organization, etc.).（5% 开课以来的整体进步：表达、自信、结构组织等方面）
-
-

@@ -23,6 +23,11 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-09-16</div>
+<div class="update-log-content">课程笔记格式改版：笔记正文直接书写，FA（For AI，AI 补充）条目改为默认折叠，大二上四门课程已全部迁移。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-09-16</div>
 <div class="update-log-content">复变函数、概率统计首次录入 9.16 笔记（复数、复运算、概率公理与事件运算），电子电路基础新增 9.16 电路物理量与 R/L/C 元件笔记。</div>
 </div>
 

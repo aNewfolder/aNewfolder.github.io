@@ -11,28 +11,22 @@
 
 ## 课堂笔记
 
-> 【FA】= For AI，笔记中留给 AI 补充的条目；对应答案由 AI 撰写，请重点复核。
+> 【FA】= For AI，即笔记中标注（FA）留给 AI 补充的条目；AI 补充内容以默认折叠的 details 块呈现，请重点复核。
 
 ### 2026.9.14
 
 #### 1.1 电路等效
 
-<details open markdown="1">
-<summary><strong>【电容与电感：隔直通交、通直隔交】</strong></summary>
+**电容与电感：隔直通交、通直隔交**
 
 - **电容：隔直通交**。直流稳态下 $i = C\dfrac{\mathrm{d}u}{\mathrm{d}t} = 0$，电容相当于开路，隔断直流；交流频率越高容抗越小，交流越容易通过。
 - **电感：通直隔交**。电感是线圈，直流下 $u = L\dfrac{\mathrm{d}i}{\mathrm{d}t} = 0$，直流近似短路；交流频率越高感抗越大，交流越难通过。
 
-</details>
-
-<details open markdown="1">
-<summary><strong>【阻抗】</strong></summary>
+**阻抗**
 
 复阻抗 $Z = R + \mathrm{j}X$（笔记记作 $Z = R + X\mathrm{j}$）：实部 $R$ 为电阻，虚部 $X$ 为电抗，电抗可分为容抗、感抗。对 R、L、C 串联支路 $Z = R + \mathrm{j}\left(\omega L - \dfrac{1}{\omega C}\right)$，其中感抗 $X_L = \omega L$，容抗 $X_C = \dfrac{1}{\omega C}$；模与阻抗角为 $|Z| = \sqrt{R^2 + X^2}$，$\varphi = \arctan\dfrac{X}{R}$，单位为 Ω。适用条件：正弦稳态电路（相量法）。
 
-</details>
-
-<details open markdown="1">
+<details markdown="1">
 <summary><strong>【FA：阻抗匹配是什么】</strong></summary>
 
 **定义**：通过合理安排源内阻、负载阻抗与传输线特性阻抗之间的关系，使系统达到预期目标的电路设计手段，主要有两种目标：
@@ -46,7 +40,7 @@
 
 </details>
 
-<details open markdown="1">
+<details markdown="1">
 <summary><strong>【FA：示波器】</strong></summary>
 
 **是什么**：示波器是时域测量仪器，把电压随时间的变化画成波形（横轴时间、纵轴电压），可直接观察波形形状并测量峰峰值 $V_{pp}$、周期与频率、上升时间、两路信号的相位差等。它测的是电压，测电流要先经采样电阻或电流探头转换成电压。
@@ -65,7 +59,7 @@
 
 </details>
 
-<details open markdown="1">
+<details markdown="1">
 <summary><strong>【FA：示波器输入/输出阻抗的量级及其与阻抗匹配原理的关系】</strong></summary>
 
 - **示波器输入阻抗量级**：高阻模式下为 $1\ \mathrm{M\Omega}$ 电阻并联约 10~25 pF 输入电容；经 10× 无源探头后约 $10\ \mathrm{M\Omega}$；示波器还提供 $50\ \Omega$ 低阻输入档，供高频测量选用。
@@ -78,7 +72,7 @@
 
 </details>
 
-<details open markdown="1">
+<details markdown="1">
 <summary><strong>【FA：电桥法测电阻】</strong></summary>
 
 **电路结构**（惠斯通电桥）：四个桥臂连成四边形——设 A、B、C、D 为四个顶点，AB 间为 R1、BC 间为 R2、AD 间为 R3、DC 间为待测电阻 Rx；电源接在一对对角顶点 A、C 之间，灵敏检流计 G 接在另一对对角顶点 B、D 之间。
@@ -95,8 +89,7 @@ $$\frac{R_1}{R_2} = \frac{R_3}{R_x} \quad\Rightarrow\quad R_x = \frac{R_2 R_3}{R
 
 </details>
 
-<details open markdown="1">
-<summary><strong>【高频电阻等效电路：串联等效与并联等效】</strong></summary>
+**高频电阻等效电路：串联等效与并联等效**
 
 实际电阻器在高频下不再是纯电阻，必须计及寄生电容与寄生电感，有两种常用等效模型（笔记原图）：
 
@@ -107,28 +100,19 @@ $$\frac{R_1}{R_2} = \frac{R_3}{R_x} \quad\Rightarrow\quad R_x = \frac{R_2 R_3}{R
 
 **低频退化为纯电阻**：低频（近似直流）时 $\omega L$ 与 $1/(\omega C)$ 都不起作用，两种等效都退化为纯电阻 R；频率升高后 C、L 的作用凸显，等效阻抗显著偏离标称值（见下一条 LCR 表的实测规律）。具体选用哪种等效模型取决于电阻类型与工作频段，模型参数由实测拟合确定。
 
-</details>
-
-<details open markdown="1">
-<summary><strong>【LCR 表（RCL 表）测量的频率效应】</strong></summary>
+**LCR 表（RCL 表）测量的频率效应**
 
 **笔记结论**：用 RCL 表测电阻，测试频率越高，测得的等效电阻越小，因为 C、L 的作用凸显；低频（近似直流）时 C、L 作用不明显，测得的才是纯电阻。
 
 **解释**：以并联寄生电容为例，频率升高时容抗 $\dfrac{1}{\omega C}$ 变小，电容支路的分流增大，整体等效阻抗随之减小；对低阻值电阻则是串联寄生电感的感抗 $\omega L$ 随频率上升逐渐占主导。因此 LCR 表通常提供 100 Hz / 1 kHz / 10 kHz / 100 kHz 等多档测试频率，使用时读数必须注明测试频率和等效模型（串联/并联），否则数值没有可比性。
 
-</details>
-
-<details open markdown="1">
-<summary><strong>【导线的高频等效电路】</strong></summary>
+**导线的高频等效电路**
 
 一段实际导线在高频下等效为电阻 R 与电感 L 的串联（笔记原图：电阻 R 与电感 L 串联成一条支路）。导线本身有微小电阻；同时任何载流导线周围都存在磁场、储存磁能，表现为分布电感（直导线约 1 nH/mm 量级）。导线缠绕成线圈后磁通叠加、电感显著增大——"导线缠绕即电感"正是电感器的构造原理。因此频率足够高时，一根导线不再等于短路：PCB 走线、杜邦线、过孔都会显现电感效应，影响电路工作。
 
-</details>
-
 #### 1.2 电路抽象
 
-<details open markdown="1">
-<summary><strong>【集总参数元件抽象原则】</strong></summary>
+**集总参数元件抽象原则**
 
 把实际电磁器件抽象为集总参数元件（理想 R、C、L 加理想导线），需要满足四条（集总事物约定）：
 
@@ -139,12 +123,9 @@ $$\frac{R_1}{R_2} = \frac{R_3}{R_x} \quad\Rightarrow\quad R_x = \frac{R_2 R_3}{R
 
 四条都满足，才能把系统抽象为集总电路并用 KCL/KVL 分析；否则必须进入分布参数（传输线）或电磁场层面的分析。（背景补充：该抽象对应 Agarwal & Lang《模拟和数字电子电路基础》第 1 章"电路抽象"的"集总事物约定"。）
 
-</details>
-
 #### 功率的分贝表示
 
-<details open markdown="1">
-<summary><strong>【功率单位 dBm】</strong></summary>
+**功率单位 dBm**
 
 dBm 是以 1 mW 为基准功率的绝对功率电平单位：
 
@@ -152,11 +133,9 @@ $$P(\mathrm{dBm}) = 10\,\lg\,\frac{P}{1\,\mathrm{mW}}$$
 
 即笔记公式 a mW = 10 lg a dBm。常用换算：1 mW → 0 dBm；0.1 mW → -10 dBm；2 mW → 3 dBm；10 mW → 10 dBm；1 W → 30 dBm。dBm 值可直接加减：功率经过增益 n dB 的放大器，dBm 值加 n；经过衰减 n dB 的网络，dBm 值减 n。适用：射频与通信系统中习惯用 dBm 表示绝对功率大小（相对比值则用无量纲的 dB）。
 
-</details>
-
 #### 拓展（FA）：2023 年诺贝尔物理学奖——阿秒激光
 
-<details open markdown="1">
+<details markdown="1">
 <summary><strong>【FA：2023 年诺贝尔物理学奖——阿秒激光详细介绍】</strong></summary>
 
 **授奖情况**：2023 年 10 月 3 日，瑞典皇家科学院把诺贝尔物理学奖授予三位激光物理学家——Pierre Agostini（美国俄亥俄州立大学）、Ferenc Krausz（德国马克斯·普朗克量子光学研究所）、Anne L'Huillier（瑞典隆德大学），表彰他们"产生阿秒光脉冲、用于研究物质中电子动力学的实验方法"。
@@ -181,40 +160,27 @@ $$P(\mathrm{dBm}) = 10\,\lg\,\frac{P}{1\,\mathrm{mW}}$$
 
 #### 2.1 电路中的基本物理量
 
-<details open markdown="1">
-<summary><strong>【电流与电压的参考方向】</strong></summary>
+**电流与电压的参考方向**
 
 - **电流参考方向**：箭头表示；**电压参考方向**：单独箭头或 $+$、$-$ 极性表示。
 - 参考方向是人为任意假定的正方向：计算结果为正，实际方向与参考方向相同；为负则相反。
 
-</details>
-
-<details open markdown="1">
-<summary><strong>【关联参考方向】</strong></summary>
+**关联参考方向**
 
 $U$、$I$ 参考方向一致（电流从电压参考方向的 $+$ 端流入元件）称为关联参考方向。此时标注其中一个即可推出另一个（标一个即可）。
 
-</details>
-
-<details open markdown="1">
-<summary><strong>【一端口电路（功率结论的适用前提）】</strong></summary>
+**一端口电路（功率结论的适用前提）**
 
 两个引出端钮，从一个端钮流入的电流与从另一端钮流出的电流相同（同一电流贯穿），称为一端口电路；吸收/发出功率的结论适用于一端口电路。
 
-</details>
-
-<details open markdown="1">
-<summary><strong>【功率：吸收还是发出】</strong></summary>
+**功率：吸收还是发出**
 
 - **关联参考方向**下 $p = ui$ 视为**吸收**的功率：$p > 0$ ～ 负载 ～ 吸收功率；$p < 0$ ～ 电源 ～ 发出功率（笔记：关联 ～ 功率为正 ～ 负载 ～ 吸收；负 ～ 电源 ～ 发出）。
 - **非关联参考方向**下 $p = ui$ 视为**发出**的功率：$p > 0$ ～ 电源 ～ 发出功率。
 - 笔记图：电压源 $U_S$（左 $+$ 右 $-$），电流 $I$ 的参考方向自 $+$ 端流出——对电源而言 $U_S$ 与 $I$ 非关联。
 - **简化判断**：看实际方向——实际电压方向（$+ \to -$）与实际电流方向相同 ～ 吸收功率，相反 ～ 发出功率。
 
-</details>
-
-<details open markdown="1">
-<summary><strong>【例：电阻串联电压源支路的电压】</strong></summary>
+**例：电阻串联电压源支路的电压**
 
 图：一条支路，电流 $I$ 自左向右，先经电阻 $R$，再经电压源 $U_S$（左 $+$ 右 $-$），支路总电压 $U$ 的参考极性取左 $+$ 右 $-$。
 
@@ -224,32 +190,23 @@ $$U = IR + U_S$$
 
 规则：各部分电压与总电压 $U$ 方向相同为加、相反为减。
 
-</details>
-
 #### 2.3 电路元件及其特性
 
 （1）电阻
 
-<details open markdown="1">
-<summary><strong>【电阻与电导】</strong></summary>
+**电阻与电导**
 
 电导 $G = \dfrac{1}{R}$，单位 S（西门子）。补充：电阻单位为 Ω（欧姆）；关联方向下线性电阻满足欧姆定律 $u = Ri$，电导越大导电能力越强。
 
-</details>
-
 （2）电容
 
-<details open markdown="1">
-<summary><strong>【电容的分类：线性/非线性、时变/非时变】</strong></summary>
+**电容的分类：线性/非线性、时变/非时变**
 
 - 1° 线性电容：$q = Cu_C$（电荷与电压成正比，$C$ 为常数）；
 - 2° 非线性电容：$C$ 与 $u$ 有关（库伏特性不是过原点的直线）；
 - 3° 时变/非时变电容：看**库伏特性**（$q$-$u$ 特性）是否随时间变化。
 
-</details>
-
-<details open markdown="1">
-<summary><strong>【电容的伏安关系（重点）】</strong></summary>
+**电容的伏安关系（重点）**
 
 在关联方向下：
 
@@ -257,10 +214,7 @@ $$i_C(t) = \frac{\mathrm{d}q}{\mathrm{d}t} \;\xrightarrow{\ \text{线性、非�
 
 电压对时间求导，意味着电流与电压**变化率**成正比：直流稳态下电压不变，$i_C = 0$，**直流不能通过**电容（隔直通交）。
 
-</details>
-
-<details open markdown="1">
-<summary><strong>【电容电压的积分形式：记忆元件】</strong></summary>
+**电容电压的积分形式：记忆元件**
 
 对伏安关系积分得：
 
@@ -268,10 +222,7 @@ $$u_C(t) = u_C(t_0) + \frac{1}{C}\int_{t_0}^{t} i_C(\xi)\,\mathrm{d}\xi$$
 
 $u_C(t)$ 与 $t_0$ 时刻的电压有关（依赖历史），故电容称为**记忆元件**。
 
-</details>
-
-<details open markdown="1">
-<summary><strong>【电容充电过程中吸收的能量】</strong></summary>
+**电容充电过程中吸收的能量**
 
 $$W_C = \int_{t_0}^{t} u_C(\xi)\,i_C(\xi)\,\mathrm{d}\xi = \frac{1}{2}C\left[u_C^2(t) - u_C^2(t_0)\right]$$
 
@@ -281,12 +232,9 @@ $$W_C = \frac{1}{2}Cu_C^2 = \frac{1}{2}qu_C = \frac{1}{2}\frac{q^2}{C}$$
 
 补充：能量储存在电容的电场中；理想电容只储能不耗能，放电时把储存的能量全部放回电路。
 
-</details>
-
 （3）电感（体现磁场储能）
 
-<details open markdown="1">
-<summary><strong>【线性电感与磁链】</strong></summary>
+**线性电感与磁链**
 
 1° 线性电感：磁链 $\psi$（单位 Wb 韦伯，读音 psi）与电流成比例：
 
@@ -294,18 +242,12 @@ $$\psi = Li_L$$
 
 电感 $L$ 单位 H（亨利）。
 
-</details>
-
-<details open markdown="1">
-<summary><strong>【非线性/时变电感】</strong></summary>
+**非线性/时变电感**
 
 - 2° 非线性电感：$L$ 可变（$\psi$-$i$ 特性不是过原点的直线）；
 - 3° 时变/非时变电感：看**韦安特性**（$\psi$-$i$ 特性）是否随时间变化。
 
-</details>
-
-<details open markdown="1">
-<summary><strong>【电感的伏安关系】</strong></summary>
+**电感的伏安关系**
 
 关联方向条件下：
 
@@ -313,10 +255,7 @@ $$u_L(t) = \frac{\mathrm{d}\psi(t)}{\mathrm{d}t} \;\xrightarrow{\ \text{线性�
 
 电压与电流**变化率**成正比：直流稳态时 $u_L = 0$，电感相当于**短接**（通直隔交）。
 
-</details>
-
-<details open markdown="1">
-<summary><strong>【电感电流的积分形式：记忆元件】</strong></summary>
+**电感电流的积分形式：记忆元件**
 
 积分得：
 
@@ -324,10 +263,7 @@ $$i_L(t) = i_L(t_0) + \frac{1}{L}\int_{t_0}^{t} u_L(\xi)\,\mathrm{d}\xi$$
 
 $i_L(t)$ 与 $t_0$ 时刻的电流有关，故电感也是**记忆元件**。
 
-</details>
-
-<details open markdown="1">
-<summary><strong>【电感储存的能量】</strong></summary>
+**电感储存的能量**
 
 当 $i_L(t_0) = 0$（从零电流充磁到 $i_L$）时，储能：
 
@@ -335,9 +271,7 @@ $$W_L = \frac{1}{2}Li_L^2$$
 
 补充：能量储存在电感的磁场中；理想电感只储能不耗能。
 
-</details>
-
-<details open markdown="1">
+<details markdown="1">
 <summary><strong>【FA：电感的应用——浪涌抑制】</strong></summary>
 
 **为什么有浪涌**：电感电流不能突变。含电感电路（继电器线圈、电机绕组等）被开关突然断开时 $\dfrac{\mathrm{d}i_L}{\mathrm{d}t}$ 极大，由 $u = L\dfrac{\mathrm{d}i}{\mathrm{d}t}$ 产生远高于电源电压的电压尖峰（可达几十至几百倍），会烧蚀开关触点、击穿半导体器件并产生强烈电磁干扰。
@@ -355,8 +289,7 @@ $$W_L = \frac{1}{2}Li_L^2$$
 
 （4）独立电源
 
-<details open markdown="1">
-<summary><strong>【电压源/电流源与理想电压源/理想电流源】</strong></summary>
+**电压源/电流源与理想电压源/理想电流源**
 
 笔记：实际电压/流源 $\neq$ 理想电压/流源。
 
@@ -364,9 +297,7 @@ $$W_L = \frac{1}{2}Li_L^2$$
 - **理想电流源**：输出电流恒为 $i_S$，与端电压无关（内阻无穷大）；
 - **实际电源有内阻**：实际电压源 = 理想电压源**串联**内阻 $R_S$（端电压随输出电流增大而下降）；实际电流源 = 理想电流源**并联**内阻 $R_S$（输出电流随端电压升高而减小）。
 
-</details>
-
-<details open markdown="1">
+<details markdown="1">
 <summary><strong>【FA：独立电源与受控电源的区别】</strong></summary>
 
 - **独立电源**：源电压 $u_S$ / 源电流 $i_S$ 由电源自身决定，与电路其他支路的电压电流无关，作为电路的输入（激励）；符号为圆形（电压源标 $+$/$-$，电流源标箭头）。
