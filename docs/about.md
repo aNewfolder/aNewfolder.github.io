@@ -23,6 +23,11 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-09-16</div>
+<div class="update-log-content">马克思主义基本原理首课 PPT 图片转文字：小论文三选一选题书单与格式要求录入文档，移除图床图片引用。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-09-16</div>
 <div class="update-log-content">课程笔记格式改版：笔记正文直接书写，FA（For AI，AI 补充）条目改为默认折叠，大二上四门课程已全部迁移。</div>
 </div>
 
