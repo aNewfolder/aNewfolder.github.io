@@ -6797,7 +6797,8 @@
 <p>笔记：圆锥内穿入面和穿出面（的通量）为 0，抵消了。（FA：没懂）</p>
 <details>
 <summary><strong>【FA：图 9.10 课本证明用图】</strong></summary>
-<p>课本图 9.10「高斯定理证明用图」（本次提供了该页课本照片，据图整理）：</p>
+<p><img alt="课本图9.10 高斯定理证明用图：面内电荷与面外电荷的立体角分析，含笔记批注（立体角、穿入、穿出）" src="https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/img/20260917211026371.jpg" /></p>
+<p>课本图 9.10「高斯定理证明用图」（原图见上，据图整理）：</p>
 <ul>
 <li><strong>面内电荷 <span class="arithmatex">\(q\)</span></strong>：从 <span class="arithmatex">\(q\)</span> 出发的窄圆锥（对应立体角 <span class="arithmatex">\(\mathrm{d}\Omega\)</span>）与曲面交于面元 <span class="arithmatex">\(\mathrm{d}s\)</span>，<span class="arithmatex">\(\mathrm{d}s\)</span> 距 <span class="arithmatex">\(q\)</span> 为 <span class="arithmatex">\(r\)</span>，该处外法线 <span class="arithmatex">\(\vec{e}_n\)</span>，<span class="arithmatex">\(\vec{E}\)</span> 与 <span class="arithmatex">\(\vec{e}_n\)</span> 夹角 <span class="arithmatex">\(\theta\)</span>。</li>
 <li><strong>面外电荷 <span class="arithmatex">\(q'\)</span></strong>：从 <span class="arithmatex">\(q'\)</span> 出发的圆锥（立体角 <span class="arithmatex">\(\mathrm{d}\Omega'\)</span>）与曲面相交两次——先<strong>穿入</strong>（面元 <span class="arithmatex">\(\mathrm{d}s_2\)</span>，场 <span class="arithmatex">\(\vec{E}_2\)</span> 与该处外法线 <span class="arithmatex">\(\vec{e}_n\)</span> 夹钝角 <span class="arithmatex">\(\theta_2\)</span>），后<strong>穿出</strong>（面元 <span class="arithmatex">\(\mathrm{d}s_1\)</span>，场 <span class="arithmatex">\(\vec{E}_1\)</span> 与外法线夹锐角 <span class="arithmatex">\(\theta_1\)</span>）。</li>
@@ -7003,6 +7004,7 @@
 <p><strong>例：上方改为不均匀</strong></p>
 <p>笔记原话："上方改为不均匀"，即把上一题（有厚度板）的电荷分布改为不均匀。（AI 补充：若 <span class="arithmatex">\(\rho\)</span> 只沿厚度方向变化、记 <span class="arithmatex">\(\rho(x)\)</span>，对称性仍保持，做法完全一样，只是"数面内电荷"换成积分：板内 <span class="arithmatex">\(q_{内} = S\displaystyle\int_{-|x|}^{|x|}\rho(x')\,\mathrm{d}x'\)</span>，板外 <span class="arithmatex">\(q_{内} = S\displaystyle\int_{-d/2}^{d/2}\rho(x')\,\mathrm{d}x'\)</span>，再代 <span class="arithmatex">\(2ES = q_{内}/\varepsilon_0\)</span>。若 <span class="arithmatex">\(\rho\)</span> 还沿平行板面的方向变化，平面对称性被破坏，这套高斯面就不能用了。）（说明由AI补全）</p>
 <p><strong>例（综例，PPT）：均匀带电球内挖球形空腔，求腔内场强</strong>（FA：图片）</p>
+<p><img alt="综例PPT：半径R的均匀带电球，电荷体密度ρ，球内有一半径r的球形空腔，空腔中心距球心为a，求空腔内任一点P的电场强度" src="https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/img/20260917211026402.jpg" /></p>
 <p>题目（PPT）：半径 <span class="arithmatex">\(R\)</span> 的均匀带电球，电荷体密度 <span class="arithmatex">\(\rho\)</span>，球内有一半径 <span class="arithmatex">\(r\)</span> 的球形空腔，空腔中心距离球心为 <span class="arithmatex">\(a\)</span>，求空腔内任一点 <span class="arithmatex">\(P\)</span> 的电场强度。</p>
 <p>图（PPT）：大球心与腔心相距 <span class="arithmatex">\(a\)</span>；<span class="arithmatex">\(P\)</span> 在腔内，<span class="arithmatex">\(\vec{r}_1\)</span> 从大球心指向 <span class="arithmatex">\(P\)</span>，<span class="arithmatex">\(\vec{r}_2\)</span> 从腔心指向 <span class="arithmatex">\(P\)</span>。PPT 提问：对称性？</p>
 <p>思路（笔记原话）：看成大球（密度 <span class="arithmatex">\(\rho\)</span>）和小球（密度 <span class="arithmatex">\(-\rho\)</span>）的叠加。腔内为均匀场！</p>
@@ -7047,7 +7049,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年9月17日 21:07:19 CST">2026年9月17日 21:07:19</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年9月17日 21:15:10 CST">2026年9月17日 21:15:10</span>
   </span>
 
     
