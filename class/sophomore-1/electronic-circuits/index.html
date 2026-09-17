@@ -6564,37 +6564,29 @@
 <p>复阻抗 <span class="arithmatex">\(Z = R + \mathrm{j}X\)</span>（笔记记作 <span class="arithmatex">\(Z = R + X\mathrm{j}\)</span>）：实部 <span class="arithmatex">\(R\)</span> 为电阻，虚部 <span class="arithmatex">\(X\)</span> 为电抗，电抗可分为容抗、感抗。对 R、L、C 串联支路 <span class="arithmatex">\(Z = R + \mathrm{j}\left(\omega L - \dfrac{1}{\omega C}\right)\)</span>，其中感抗 <span class="arithmatex">\(X_L = \omega L\)</span>，容抗 <span class="arithmatex">\(X_C = \dfrac{1}{\omega C}\)</span>；模与阻抗角为 <span class="arithmatex">\(|Z| = \sqrt{R^2 + X^2}\)</span>，<span class="arithmatex">\(\varphi = \arctan\dfrac{X}{R}\)</span>，单位为 Ω。适用条件：正弦稳态电路（相量法）。</p>
 <details>
 <summary><strong>【FA：阻抗匹配是什么】</strong></summary>
-<p><strong>定义</strong>：通过合理安排源内阻、负载阻抗与传输线特性阻抗之间的关系，使系统达到预期目标的电路设计手段，主要有两种目标：</p>
+<p>一句话：让前后两级电路的阻抗"搭配好"，信号才能传得好。两个目的：</p>
 <ul>
-<li><strong>共轭匹配（最大功率传输）</strong>：源内阻抗为 <span class="arithmatex">\(Z_S = R_S + \mathrm{j}X_S\)</span> 时，取负载 <span class="arithmatex">\(Z_L = Z_S^{*}\)</span>（即 <span class="arithmatex">\(R_L = R_S\)</span>、<span class="arithmatex">\(X_L = -X_S\)</span>），负载可从源获得最大功率；此时一半功率消耗在源内阻上，传输效率只有 50%。</li>
-<li><strong>无反射匹配（传输线匹配）</strong>：传输线特性阻抗为 <span class="arithmatex">\(Z_0\)</span>（射频/通信系统惯用 50 Ω，电视天线系统 75 Ω），当负载 <span class="arithmatex">\(Z_L = Z_0\)</span> 时反射系数 <span class="arithmatex">\(\Gamma = \dfrac{Z_L - Z_0}{Z_L + Z_0} = 0\)</span>，信号在连接点不发生反射，无驻波、波形完整。</li>
+<li><strong>传最大功率</strong>：负载电阻等于电源内阻（<span class="arithmatex">\(R_L = R_S\)</span>）时，负载分到的功率最大。直观理解：<span class="arithmatex">\(R_L\)</span> 太大电流太小，太小电压又被内阻分掉，中间取等号最好（射频里推广为负载阻抗 = 源内阻抗的共轭，且效率只有 50%）。</li>
+<li><strong>信号不反射</strong>：信号沿电缆传到终端，若负载阻抗和电缆特性阻抗（常用 50 Ω）不相等，一部分信号会反射回来叠在原波形上，出现台阶、振铃；相等就没有反射。</li>
 </ul>
-<p><strong>常用实现手段</strong>：电阻衰减器（有损、宽频带）；L 形、π 形、T 形电抗网络（无损、窄频带）；变压器；四分之一波长阻抗变换器（<span class="arithmatex">\(Z_{in} = Z_0^2 / Z_L\)</span>）等。</p>
-<p><strong>典型场景</strong>：功放与天线之间、射频仪器接口、高速数字电路的端接电阻、音频功放与扬声器的匹配。</p>
+<p>低频、短线主要关心前者；高频（电缆长度与波长可比）主要关心后者——示波器高阻档/50 Ω 档的选择就是这个原理的应用。</p>
 </details>
 <details>
 <summary><strong>【FA：示波器】</strong></summary>
-<p><strong>是什么</strong>：示波器是时域测量仪器，把电压随时间的变化画成波形（横轴时间、纵轴电压），可直接观察波形形状并测量峰峰值 <span class="arithmatex">\(V_{pp}\)</span>、周期与频率、上升时间、两路信号的相位差等。它测的是电压，测电流要先经采样电阻或电流探头转换成电压。</p>
-<p><strong>三大基本系统</strong>：</p>
-<ul>
-<li>垂直系统：通道增益与耦合方式（DC / AC / GND），V/div 决定纵向刻度；</li>
-<li>水平系统：时基扫描速度，s/div 决定横向刻度；</li>
-<li>触发系统：设定触发电平与边沿，让每次扫描都从波形的同一起点开始，波形才能稳定显示（不触发则波形左右"跑动"）。</li>
-</ul>
-<p><strong>探头</strong>：常用无源探头分 1× 与 10× 两档。10× 探头内串联 9 MΩ 电阻，与示波器 1 MΩ 输入电阻构成 10:1 分压，把探针端等效输入阻抗提高到约 10 MΩ、等效输入电容降到约 10 pF，明显减小对被测电路的负载效应，代价是读数幅度需乘 10；使用前要在探头补偿校准端（1 kHz 方波）上调补偿电容，使方波平顶平直。</p>
-<p><strong>主要指标</strong>：带宽（正弦幅值衰减到 -3 dB 即 70.7% 的频率，要测得准要求带宽不低于信号最高频率的 3~5 倍；上升时间 <span class="arithmatex">\(t_r \approx 0.35 / BW\)</span>）、采样率、存储深度、通道数。</p>
-<p><strong>基本操作流程</strong>：接探头并校准，选择耦合方式，调垂直/水平刻度使波形充满屏幕，调触发电平使波形稳定，再用自动测量（Measure）或光标（Cursor）读数。</p>
+<p><strong>是什么</strong>：把电压随时间的变化画成波形的时域测量仪器，可直接读峰峰值 <span class="arithmatex">\(V_{pp}\)</span>、周期/频率、上升时间、两路信号的相位差。它测的是电压，测电流要先经采样电阻转成电压。</p>
+<p><strong>三个基本系统</strong>：垂直系统定纵向刻度（V/div）和耦合方式（DC/AC/GND）；水平系统定横向扫描速度（s/div）；触发系统让每次扫描都从波形的同一起点开始，波形才稳定、不左右"跑动"。</p>
+<p><strong>探头</strong>：常用 10× 无源探头——内串 9 MΩ 电阻，与示波器 1 MΩ 输入电阻构成 10:1 分压，等效输入阻抗升到约 10 MΩ，减小对被测电路的干扰，代价是读数要乘 10；使用前在 1 kHz 方波校准端调补偿电容，把方波顶调平。</p>
+<p><strong>主要指标</strong>：带宽（幅值衰减到 70.7% 的频率；测得准要求带宽 ≥ 信号最高频率的 3~5 倍）、采样率、通道数。</p>
+<p><strong>基本操作</strong>：接探头并校准 → 选耦合方式 → 调垂直/水平刻度让波形充满屏幕 → 调触发电平让波形稳定 → 自动测量或光标读数。</p>
 </details>
 <details>
-<summary><strong>【FA：示波器输入/输出阻抗的量级及其与阻抗匹配原理的关系】</strong></summary>
+<summary><strong>【FA：示波器输入/输出阻抗的量级与阻抗匹配的关系】</strong></summary>
 <ul>
-<li><strong>示波器输入阻抗量级</strong>：高阻模式下为 <span class="arithmatex">\(1\ \mathrm{M\Omega}\)</span> 电阻并联约 10~25 pF 输入电容；经 10× 无源探头后约 <span class="arithmatex">\(10\ \mathrm{M\Omega}\)</span>；示波器还提供 <span class="arithmatex">\(50\ \Omega\)</span> 低阻输入档，供高频测量选用。</li>
-<li><strong>输入阻抗为什么做得很大</strong>：测电压时示波器并联接入电路，相当于在被测点对地挂了一个负载；输入阻抗远大于被测点的源内阻（<span class="arithmatex">\(1\ \mathrm{M\Omega}\)</span> 远大于常见电路的几十 Ω~kΩ）时，分流/分压效应可以忽略，示波器读到的就是被测点的真实电压。这正是"电压测量要尽量不从电路取电流"的阻抗思想。</li>
-<li><strong>输入电容限制高频</strong>：输入阻抗并非在所有频率下都大——并联电容的容抗 <span class="arithmatex">\(1/(\omega C)\)</span> 随频率下降。取 <span class="arithmatex">\(1\ \mathrm{M\Omega}\)</span> 并联 15 pF，转折频率 <span class="arithmatex">\(f_c = \dfrac{1}{2\pi RC} \approx 10\ \mathrm{kHz}\)</span>，此后输入阻抗显著变小；所以高频测量要么用 10× 探头（电容更小），要么切换 50 Ω 输入档。</li>
-<li><strong>信号源输出阻抗量级</strong>：函数信号发生器等仪器的输出阻抗典型为 50 Ω，与同轴电缆特性阻抗一致。源幅度按"接 50 Ω 负载"标定：若负载是高阻（如示波器 1 MΩ 档），端口实际输出幅度约为设定值的 2 倍（50 Ω 内阻与负载分压的结果），读数时要留意。</li>
-<li><strong>与阻抗匹配原理的关系</strong>：低频时电缆长度远小于波长，反射可忽略，示波器用 1 MΩ 高阻档，尽量不打扰被测电路；当频率高到电缆长度与波长可比（或信号边沿极快）时，1 MΩ 输入对 50 Ω 电缆近似开路端，<span class="arithmatex">\(\Gamma \approx +1\)</span>，入射波几乎全反射并与后续波形叠加，形成台阶、振铃，波形失真。此时应把示波器输入设为 50 Ω，与电缆特性阻抗匹配（<span class="arithmatex">\(\Gamma = 0\)</span>），波形才真实。</li>
+<li><strong>示波器输入阻抗</strong>：高阻档约 <span class="arithmatex">\(1\ \mathrm{M\Omega}\)</span> 并联十几 pF；经 10× 探头后约 <span class="arithmatex">\(10\ \mathrm{M\Omega}\)</span>。做得很大是为了"不打扰"被测电路——并联进去几乎不取电流，测到的才是电路里的真实电压。</li>
+<li><strong>信号源输出阻抗</strong>：函数信号发生器等仪器典型为 <span class="arithmatex">\(50\ \Omega\)</span>，且幅度按"接 50 Ω 负载"标定。若实际接高阻（1 MΩ 档），50 Ω 内阻几乎不分压，端口实际幅度约为设定值的 2 倍，读数要留意。</li>
+<li><strong>两者的关系就是阻抗匹配</strong>：低频用 1 MΩ 档（少取电流）；频率高到电缆长度与波长可比时，1 MΩ 对 50 Ω 电缆近似开路端，信号几乎全反射、波形出现台阶和振铃，这时要切到 50 Ω 输入档与电缆匹配，波形才真实。</li>
 </ul>
-<p>一句话总结：<strong>1 MΩ 的量级是为"不打扰被测电路"（高阻电压测量）服务的，50 Ω 的量级是为"吃掉反射"（与传输线匹配）服务的；档位的选择正是阻抗匹配原理的应用。</strong></p>
+<p>一句话：<strong>1 MΩ 是为"不打扰电路"服务的，50 Ω 是为"吃掉反射"服务的。</strong></p>
 </details>
 <details>
 <summary><strong>【FA：电桥法测电阻】</strong></summary>
@@ -6602,8 +6594,8 @@
 <p><strong>平衡条件</strong>：调节可调桥臂（如 R3）使检流计示零，此时 B、D 两点等电位，有</p>
 <div class="arithmatex">\[\frac{R_1}{R_2} = \frac{R_3}{R_x} \quad\Rightarrow\quad R_x = \frac{R_2 R_3}{R_1}\]</div>
 <p>待测电阻由三个已知（精密）电阻算出，结果与电源电压、电源内阻无关。</p>
-<p><strong>为什么准确</strong>：采用"零示法"，平衡时检流计支路无电流，读数不依赖电表精度，只取决于三个标准电阻的精度和检流计的灵敏度；这也是一种"等效"思想——平衡电桥的对角线支路两端等电位，去掉或短接它都不改变其余支路的电流电压（既可等效为开路，也可等效为短路）。</p>
-<p><strong>延伸</strong>：开尔文双臂电桥用于测毫欧级小电阻，消除引线电阻与接触电阻的影响；把桥臂换成复阻抗的交流电桥（如麦克斯韦电桥测电感）可测电感和电容，平衡条件推广为复阻抗的模与辐角同时相等——正好呼应"阻抗"与"等效"两个概念。</p>
+<p><strong>为什么准确</strong>：零示法——平衡时检流计支路无电流，读数不依赖电表精度，只取决于三个标准电阻的精度；平衡时对角线支路两端等电位，去掉或短接都不影响其余支路（等效思想）。</p>
+<p><strong>延伸一句</strong>：开尔文双臂电桥测毫欧级小电阻（消除引线电阻影响）；桥臂换成复阻抗的交流电桥可测电感、电容。</p>
 </details>
 <p><strong>高频电阻等效电路：串联等效与并联等效</strong></p>
 <p>实际电阻器在高频下不再是纯电阻，必须计及寄生电容与寄生电感，有两种常用等效模型（笔记原图）：</p>
@@ -6635,18 +6627,10 @@
 <p>即笔记公式 a mW = 10 lg a dBm。常用换算：1 mW → 0 dBm；0.1 mW → -10 dBm；2 mW → 3 dBm；10 mW → 10 dBm；1 W → 30 dBm。dBm 值可直接加减：功率经过增益 n dB 的放大器，dBm 值加 n；经过衰减 n dB 的网络，dBm 值减 n。适用：射频与通信系统中习惯用 dBm 表示绝对功率大小（相对比值则用无量纲的 dB）。</p>
 <h4 id="fa2023">拓展（FA）：2023 年诺贝尔物理学奖——阿秒激光<a class="headerlink" href="#fa2023" title="Permanent link">&para;</a></h4>
 <details>
-<summary><strong>【FA：2023 年诺贝尔物理学奖——阿秒激光详细介绍】</strong></summary>
-<p><strong>授奖情况</strong>：2023 年 10 月 3 日，瑞典皇家科学院把诺贝尔物理学奖授予三位激光物理学家——Pierre Agostini（美国俄亥俄州立大学）、Ferenc Krausz（德国马克斯·普朗克量子光学研究所）、Anne L'Huillier（瑞典隆德大学），表彰他们"产生阿秒光脉冲、用于研究物质中电子动力学的实验方法"。</p>
-<p><strong>阿秒有多短</strong>：<span class="arithmatex">\(1\ \mathrm{as} = 10^{-18}\ \mathrm{s}\)</span>，一秒钟里有约 <span class="arithmatex">\(10^{18}\)</span> 个阿秒——与宇宙大爆炸至今经过的秒数同一量级。原子中电子绕核运动的时间尺度恰好就是阿秒级（约 150 as）；而此前最快的飞秒激光（<span class="arithmatex">\(10^{-15}\ \mathrm{s}\)</span>）只能"冻结"分子中原子核的运动，看不清快上千倍的电子运动。阿秒脉冲第一次为电子世界装上了"快门"。</p>
-<p><strong>关键突破（获奖工作）</strong>：</p>
-<ul>
-<li>1987 年，L'Huillier 发现把红外激光束穿过稀有气体，出射光中会出现激光频率整数倍（3、5、7 倍……）的"泛音"（高次谐波），且不同谐波的相位可以彼此同步、叠加增强——这是通往阿秒脉冲的大门。</li>
-<li>2001 年，Agostini 团队把多个高次谐波叠加，产生并首次表征了一系列连续的阿秒光脉冲（阿秒脉冲链），每个脉冲仅 250 as，测量方法称为 RABBITT（双光子干涉阿秒拍频重构）。</li>
-<li>同年，Krausz 团队用选通技术从脉冲链中分离出单个 650 as 的光脉冲，并用于追踪氪原子中电子被激光场"拽出"的全过程——人类第一次"拍到"电子的逃逸。</li>
-</ul>
-<p><strong>基本原理（高次谐波产生的三步模型）</strong>：强激光场先把原子最外层电子通过隧穿电离拉出势垒；被释放的电子在光场中被加速、获得能量；当光场反向时部分电子被推回母离子附近并复合，把累积的能量以极紫外波段光子的形式一次性放出。大量相位锁定的高次谐波在时域上相干叠加，就压缩成阿秒量级的超短脉冲。</p>
-<p><strong>能做什么</strong>：直接测量电子电离的"迟到时间"（几十阿秒量级）、观察分子内的电荷迁移、追踪半导体与介质中电流通断的真实过程；为太阳能电池、光电子器件、医学电子学等方向提供原子尺度的理解工具。</p>
-<p><strong>与这门课的呼应</strong>：示波器把不可见的电压波形变成可见图像，阿秒激光把不可见的电子运动变成可测量的过程——给超快过程装"时域快门"，是测量科学共同的思想。</p>
+<summary><strong>【FA：2023 年诺贝尔物理学奖——阿秒激光】</strong></summary>
+<p><strong>是什么</strong>：2023 年诺贝尔物理学奖授予 Agostini、Krausz、L'Huillier 三人，表彰他们产生<strong>阿秒</strong>（<span class="arithmatex">\(10^{-18}\)</span> 秒）光脉冲、用来观察电子运动。原子中电子绕核运动恰好就是上百阿秒的尺度——以前的飞秒激光（<span class="arithmatex">\(10^{-15}\)</span> 秒）只能"冻结"原子核的运动，阿秒脉冲第一次让人看清电子怎么动。</p>
+<p><strong>怎么造的（三步模型）</strong>：强激光把原子最外层电子拉出来 → 电子在光场中被加速、获得能量 → 光场反向时把电子推回母原子、复合，能量以一个极紫外光子放出。让大量这样的过程相位同步地叠加，就压缩成阿秒脉冲（1987 年发现高次谐波，2001 年产生并表征阿秒脉冲链、分离出单个阿秒脉冲）。</p>
+<p><strong>能干什么</strong>：直接测量电子电离、分子内电荷迁移、电流通断等超快过程。和示波器把电压波形变成可见图像是一个思想——给快过程装"时域快门"。</p>
 </details>
 <h3 id="2026916">2026.9.16<a class="headerlink" href="#2026916" title="Permanent link">&para;</a></h3>
 <h4 id="21">2.1 电路中的基本物理量<a class="headerlink" href="#21" title="Permanent link">&para;</a></h4>
@@ -6719,15 +6703,13 @@
 <p>补充：能量储存在电感的磁场中；理想电感只储能不耗能。</p>
 <details>
 <summary><strong>【FA：电感的应用——浪涌抑制】</strong></summary>
-<p><strong>为什么有浪涌</strong>：电感电流不能突变。含电感电路（继电器线圈、电机绕组等）被开关突然断开时 <span class="arithmatex">\(\dfrac{\mathrm{d}i_L}{\mathrm{d}t}\)</span> 极大，由 <span class="arithmatex">\(u = L\dfrac{\mathrm{d}i}{\mathrm{d}t}\)</span> 产生远高于电源电压的电压尖峰（可达几十至几百倍），会烧蚀开关触点、击穿半导体器件并产生强烈电磁干扰。</p>
-<p><strong>抑制手段</strong>：</p>
+<p><strong>为什么有浪涌</strong>：电感电流不能突变。开关突然断开含电感电路（继电器线圈、电机绕组等）时 <span class="arithmatex">\(\dfrac{\mathrm{d}i}{\mathrm{d}t}\)</span> 极大，由 <span class="arithmatex">\(u = L\dfrac{\mathrm{d}i}{\mathrm{d}t}\)</span> 产生远高于电源电压的电压尖峰，会烧蚀触点、击穿器件。</p>
+<p><strong>怎么办——给电流留一条缓变的通路</strong>：</p>
 <ul>
-<li><strong>续流二极管</strong>：与线圈反向并联。断电后电感电流经二极管续流、缓慢衰减，尖峰被钳位在约一个二极管导通压降——继电器/电磁阀驱动电路最常用；</li>
-<li><strong>RC 吸收（缓冲）电路</strong>：与触点或线圈并联，电容吸收瞬时能量、电阻把它耗散掉；</li>
-<li><strong>压敏电阻（MOV）/ TVS 二极管</strong>：把浪涌电压钳位在安全值以内；</li>
-<li><strong>滤波电感/共模电感</strong>：利用感抗随频率升高而增大，滤除电网浪涌与高频干扰。</li>
+<li><strong>续流二极管</strong>：与线圈反向并联，断电后电流经二极管慢慢衰减，尖峰被压在约一个二极管压降——继电器驱动最常用；</li>
+<li>也可以用 RC 吸收电路、压敏电阻/TVS 钳位，或用滤波电感挡住电网浪涌。</li>
 </ul>
-<p><strong>本质</strong>：利用电感"电流不能突变"的特性，为突变电流提供缓变或泄放通路、限制 <span class="arithmatex">\(\dfrac{\mathrm{d}i}{\mathrm{d}t}\)</span>，从而把浪涌电压限制在安全范围。</p>
+<p>本质：限制 <span class="arithmatex">\(\dfrac{\mathrm{d}i}{\mathrm{d}t}\)</span>，浪涌电压就上不去。</p>
 </details>
 <p>（4）独立电源</p>
 <p><strong>电压源/电流源与理想电压源/理想电流源</strong></p>
@@ -6779,7 +6761,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年9月16日 19:31:52 CST">2026年9月16日 19:31:52</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年9月17日 21:07:19 CST">2026年9月17日 21:07:19</span>
   </span>
 
     
