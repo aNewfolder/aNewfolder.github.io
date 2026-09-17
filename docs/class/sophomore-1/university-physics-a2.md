@@ -252,7 +252,9 @@ $$\Phi_E = \oint_S \vec{E}\cdot\mathrm{d}\vec{S} = \oint_S k\frac{q}{r^2}\,\vec{
 <details markdown="1">
 <summary><strong>【FA：图 9.10 课本证明用图】</strong></summary>
 
-课本图 9.10「高斯定理证明用图」（本次提供了该页课本照片，据图整理）：
+![课本图9.10 高斯定理证明用图：面内电荷与面外电荷的立体角分析，含笔记批注（立体角、穿入、穿出）](https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/img/20260917211026371.jpg)
+
+课本图 9.10「高斯定理证明用图」（原图见上，据图整理）：
 
 - **面内电荷 $q$**：从 $q$ 出发的窄圆锥（对应立体角 $\mathrm{d}\Omega$）与曲面交于面元 $\mathrm{d}s$，$\mathrm{d}s$ 距 $q$ 为 $r$，该处外法线 $\vec{e}_n$，$\vec{E}$ 与 $\vec{e}_n$ 夹角 $\theta$。
 - **面外电荷 $q'$**：从 $q'$ 出发的圆锥（立体角 $\mathrm{d}\Omega'$）与曲面相交两次——先**穿入**（面元 $\mathrm{d}s_2$，场 $\vec{E}_2$ 与该处外法线 $\vec{e}_n$ 夹钝角 $\theta_2$），后**穿出**（面元 $\mathrm{d}s_1$，场 $\vec{E}_1$ 与外法线夹锐角 $\theta_1$）。
@@ -593,6 +595,8 @@ $$2ES = \frac{\rho d S}{\varepsilon_0} \Rightarrow E = \frac{\rho d}{2\varepsilo
 笔记原话："上方改为不均匀"，即把上一题（有厚度板）的电荷分布改为不均匀。（AI 补充：若 $\rho$ 只沿厚度方向变化、记 $\rho(x)$，对称性仍保持，做法完全一样，只是"数面内电荷"换成积分：板内 $q_{内} = S\displaystyle\int_{-|x|}^{|x|}\rho(x')\,\mathrm{d}x'$，板外 $q_{内} = S\displaystyle\int_{-d/2}^{d/2}\rho(x')\,\mathrm{d}x'$，再代 $2ES = q_{内}/\varepsilon_0$。若 $\rho$ 还沿平行板面的方向变化，平面对称性被破坏，这套高斯面就不能用了。）（说明由AI补全）
 
 **例（综例，PPT）：均匀带电球内挖球形空腔，求腔内场强**（FA：图片）
+
+![综例PPT：半径R的均匀带电球，电荷体密度ρ，球内有一半径r的球形空腔，空腔中心距球心为a，求空腔内任一点P的电场强度](https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/img/20260917211026402.jpg)
 
 题目（PPT）：半径 $R$ 的均匀带电球，电荷体密度 $\rho$，球内有一半径 $r$ 的球形空腔，空腔中心距离球心为 $a$，求空腔内任一点 $P$ 的电场强度。
 

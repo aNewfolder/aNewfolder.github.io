@@ -23,6 +23,11 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-09-17</div>
+<div class="update-log-content">大物Ⅱ笔记嵌入两张图床图片（课本图 9.10、空腔综例 PPT），确立笔记配图走 PicGo 图床、文档只放图床链接的约定。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-09-17</div>
 <div class="update-log-content">顺带提交用户本地改动：工程训练（考核比例、着装要求）、物理实验（选课推荐避雷与 18 项实验清单）、即兴演奏课 9.17 Lesson 2 笔记。</div>
 </div>
 
