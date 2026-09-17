@@ -22,6 +22,11 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-09-17</div>
+<div class="update-log-content">大物Ⅱ笔记更新：9.17 高斯定理（电通量、证明与球对称应用，FA 条目补全详解）；顺带提交工程训练、物理实验两篇笔记的本地修改。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-09-16</div>
 <div class="update-log-content">马克思主义基本原理首课 PPT 图片转文字：小论文三选一选题书单与格式要求录入文档，移除图床图片引用。</div>
 </div>
