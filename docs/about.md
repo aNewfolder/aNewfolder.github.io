@@ -23,6 +23,11 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-09-17</div>
+<div class="update-log-content">大物Ⅱ补录 9.17 高斯定理后半（轴对称、平面对称，例题全推导），补全大物经典例题推导；简化电基冗长 FA 表述。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-09-17</div>
 <div class="update-log-content">大物Ⅱ笔记更新：9.17 高斯定理（电通量、证明与球对称应用，FA 条目补全详解）；顺带提交工程训练、物理实验两篇笔记的本地修改。</div>
 </div>
 

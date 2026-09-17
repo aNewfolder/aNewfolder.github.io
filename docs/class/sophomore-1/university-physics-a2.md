@@ -93,6 +93,47 @@ $$\vec{E} = \frac{1}{4\pi\varepsilon_0}\int \frac{dq}{r^2}\,\vec{e}_r$$
 
 （以上例题解答由 AI 补全，请复核。）
 
+<details markdown="1">
+<summary><strong>【FA：上面五个经典结果的完整推导】</strong></summary>
+
+**带电直线段**：场点 $P$ 到直线的垂距为 $a$，以垂足为原点、直线为 $x$ 轴。电荷元在 $x$ 处：$\mathrm{d}q = \lambda\,\mathrm{d}x$，到 $P$ 的距离 $r = \sqrt{x^2+a^2}$，$\mathrm{d}\vec{E}$ 方向由 $\mathrm{d}q$ 指向 $P$，即沿 $(-x,\ a)$ 方向。设两端坐标为 $x_1, x_2$，则
+
+$$E_{\parallel} = k\lambda\left[\frac{1}{\sqrt{x^2+a^2}}\right]_{x_1}^{x_2}, \qquad E_{\perp} = \frac{k\lambda}{a}\left[\frac{x}{\sqrt{x^2+a^2}}\right]_{x_1}^{x_2}$$
+
+（积分用了 $\displaystyle\int\frac{x\,\mathrm{d}x}{(x^2+a^2)^{3/2}} = -\frac{1}{\sqrt{x^2+a^2}}$，$\displaystyle\int\frac{\mathrm{d}x}{(x^2+a^2)^{3/2}} = \frac{x}{a^2\sqrt{x^2+a^2}}$。）引入垂线到两端连线的夹角 $\theta_1, \theta_2$（即 $\dfrac{x}{\sqrt{x^2+a^2}} = \sin\theta$，$\dfrac{a}{\sqrt{x^2+a^2}} = \cos\theta$），就得到上面的紧凑形式。两个重要极限：
+
+- 无限长直线（$x_1\to-\infty$，$x_2\to+\infty$）：$E_{\parallel} = 0$，$E_{\perp} = \dfrac{2k\lambda}{a} = \dfrac{\lambda}{2\pi\varepsilon_0 a}$；
+- 半无限长（一端与垂足平齐，$x_1 = 0$，$x_2\to+\infty$）：$E_{\parallel} = -\dfrac{k\lambda}{a}$，$E_{\perp} = \dfrac{k\lambda}{a}$，合场 $E = \sqrt{2}\,\dfrac{k\lambda}{a}$，与直线成 45°。
+
+**圆环轴线**：半径 $R$、电量 $Q$，场点在轴上距环心 $x$ 处。对称性：各电荷元的横向分量成对抵消，只剩轴向分量。每个 $\mathrm{d}q$ 到场点距离都是 $r = \sqrt{x^2+R^2}$，其场与轴向的夹角余弦为 $\dfrac{x}{r}$，故
+
+$$E = \int \frac{k\,\mathrm{d}q}{r^2}\cdot\frac{x}{r} = \frac{kQx}{(x^2+R^2)^{3/2}}$$
+
+环心 $x = 0$ 处 $E = 0$；$x \gg R$ 时退化为点电荷 $kQ/x^2$。
+
+**圆盘轴线**：半径 $R$、面密度 $\sigma$，切成细圆环：半径 $r'$、宽 $\mathrm{d}r'$ 的环带电量 $\mathrm{d}Q = \sigma\cdot 2\pi r'\,\mathrm{d}r'$，代入圆环结果并积分：
+
+$$E = 2\pi k\sigma x\int_0^R \frac{r'\,\mathrm{d}r'}{(x^2+r'^2)^{3/2}} = 2\pi k\sigma x\left(\frac{1}{x} - \frac{1}{\sqrt{x^2+R^2}}\right) = \frac{\sigma}{2\varepsilon_0}\left(1 - \frac{x}{\sqrt{x^2+R^2}}\right)$$
+
+$R\to\infty$ 得无限大平面 $E = \dfrac{\sigma}{2\varepsilon_0}$（匀强）；$x\to\infty$ 退化为点电荷。
+
+**电偶极子**（$\pm q$ 相距 $l$，$\vec{p} = q\vec{l}$，远场 $r\gg l$）：
+
+- 轴线延长线上：两点电荷到场点距离为 $r \mp l/2$，
+
+$$E = kq\left[\frac{1}{(r-l/2)^2} - \frac{1}{(r+l/2)^2}\right] = \frac{2kqrl}{(r^2-l^2/4)^2} \approx \frac{2kp}{r^3}$$
+
+沿 $\vec{p}$ 方向。
+- 中垂线上：两电荷的场大小均为 $\dfrac{kq}{r^2+l^2/4}$，垂直于轴的分量抵消、沿轴分量相加：
+
+$$E = 2\cdot\frac{kq}{r^2+l^2/4}\cdot\frac{l/2}{\sqrt{r^2+l^2/4}} = \frac{kql}{(r^2+l^2/4)^{3/2}} \approx \frac{kp}{r^3}$$
+
+方向与 $\vec{p}$ 相反。
+
+**偶极子在均匀电场中**：两电荷受力 $+q\vec{E}$、$-q\vec{E}$，合力为零；对中心的力矩为 $2\cdot qE\cdot\dfrac{l}{2}\sin\theta = pE\sin\theta$，矢量式 $\vec{M} = \vec{p}\times\vec{E}$，力矩把 $\vec{p}$ 转向 $\vec{E}$。由 $M = -\dfrac{\mathrm{d}W}{\mathrm{d}\theta}$ 积分得势能 $W = -pE\cos\theta = -\vec{p}\cdot\vec{E}$（取 $\theta = \pi/2$ 为零点）。
+
+</details>
+
 **后续方法预告：先求电势，再求梯度**
 
 笔记原话：后续先求电势，电势求梯度得场强。即先用标量积分 $V = \dfrac{1}{4\pi\varepsilon_0}\displaystyle\int \dfrac{dq}{r}$（标量积分比矢量积分简单），再由 $\vec{E} = -\nabla V$ 求场强。（AI 补充：这是静电场第二条计算路线，下一节展开。）
@@ -295,7 +336,7 @@ $$\nabla\cdot\vec{E} = \frac{\rho}{\varepsilon_0}$$
 
 **散度的物理意义**：$\nabla\cdot\vec{E}$ 表示该点"单位体积发出的净电通量"（通量的体密度）。$\rho > 0$ 处电场线由此"喷出"（源），$\rho < 0$ 处电场线"汇入"（汇）；无电荷处（$\rho = 0$）散度为零，电场线只穿过、不增不减。
 
-**结论**：静电场是**有源场**——电荷就是电场的源。（点电荷所在点除外：该处 $\rho \to \infty$、场发散，用 $\delta$ 函数可写成 $\nabla\cdot\vec{E} = q\,\delta(\vec{r})/\varepsilon_0$。）
+**结论**：静电场是**有源场**——哪里有电荷，哪里就是电场线的"喷出口"。（点电荷所在的那一点除外：该处场发散，公式不再适用。）
 
 </details>
 
@@ -392,6 +433,164 @@ $$E = \frac{Q + 2\pi A(b^2-a^2)}{4\pi\varepsilon_0 r^2} = \frac{Q}{4\pi\varepsil
 （等效于全部电荷集中在球心的点电荷。）（解答由AI补全）
 
 </details>
+
+#### 高斯定理应用：轴对称
+
+**例：无限长均匀带电直线（电线），线密度 $\lambda$，求距导线 $r$ 处的场强**（FA）
+
+笔记：取半径 $r$、高 $h$ 的圆柱面为高斯面。圆柱面分三片：$S = S_1 + S_2 + S_3$（侧面、上底、下底），结果 $E = \dfrac{\lambda}{2\pi\varepsilon_0 r}$。
+
+<details markdown="1">
+<summary><strong>【FA：无限长带电直线（完整推导）】</strong></summary>
+
+**第一步（对称性）**：电荷分布轴对称 → 场只能沿垂直于导线的径向（轴向、绕轴切向的分量都被对称性抵消），且同一圆柱面上各点 $E$ 大小相等。
+
+**第二步（选高斯面）**：过场点作与导线同轴的圆柱面（半径 $r$、高 $h$），加上下两个底面。
+
+**第三步（分片算通量）**：
+
+- 侧面 $S_1$：$\vec{E}$ 与 $\mathrm{d}\vec{S}$ 同向、$E$ 处处相等 → $\Phi_1 = E\cdot 2\pi r h$；
+- 上下底面 $S_2, S_3$：$\vec{E}$ 沿径向，与底面法线（沿轴向）垂直 → 无贡献。
+
+$$\oint \vec{E}\cdot\mathrm{d}\vec{S} = E\cdot 2\pi r h$$
+
+**第四步（数面内电荷）**：面内包住的导线长 $h$，电荷 $q_{内} = \lambda h$。
+
+**第五步（解出 $E$）**：
+
+$$E\cdot 2\pi r h = \frac{\lambda h}{\varepsilon_0} \Rightarrow E = \frac{\lambda}{2\pi\varepsilon_0 r}$$
+
+方向沿径向（$\lambda > 0$ 时背离导线）。特点：$E \propto 1/r$，比点电荷的 $1/r^2$ 衰减得慢。（解答由AI补全）
+
+</details>
+
+**例：均匀带电圆柱面（半径 $R$）的电场**（FA）
+
+笔记骨架：$E = \begin{cases} 0, & r < R \\ \cdots, & r > R \end{cases}$
+
+<details markdown="1">
+<summary><strong>【FA：均匀带电圆柱面（完整推导）】</strong></summary>
+
+与球面完全平行，只是高斯面换成同轴圆柱面（半径 $r$、高 $h$）。设轴向单位长度电荷为 $\lambda$（若给总电荷 $Q$、长 $L$，则 $\lambda = Q/L$）。
+
+① $r < R$：高斯面内无电荷 → $E = 0$（圆柱面内是"无场区"）。
+
+② $r > R$：通量仍为 $E\cdot 2\pi r h$（上下底面无贡献，理由同上一题），面内电荷 $\lambda h$：
+
+$$E\cdot 2\pi r h = \frac{\lambda h}{\varepsilon_0} \Rightarrow E = \frac{\lambda}{2\pi\varepsilon_0 r}$$
+
+即圆柱面外等效于电荷全部集中到轴线上；$r = R$ 处场强跳变。（解答由AI补全）
+
+</details>
+
+**例：均匀带电圆柱体（半径 $R$）**（FA）
+
+<details markdown="1">
+<summary><strong>【FA：均匀带电圆柱体（完整推导）】</strong></summary>
+
+体密度 $\rho$，轴向单位长度电荷 $\lambda = \rho\pi R^2$。
+
+① $r > R$：与上一题相同，$E = \dfrac{\lambda}{2\pi\varepsilon_0 r}$。
+
+② $r < R$：高斯面只包住半径 $r$ 的圆柱核，面内电荷
+
+$$q_{内} = \rho\cdot\pi r^2 h = \lambda h\cdot\frac{r^2}{R^2}$$
+
+$$E\cdot 2\pi r h = \frac{\lambda h r^2}{\varepsilon_0 R^2} \Rightarrow E = \frac{\lambda r}{2\pi\varepsilon_0 R^2} = \frac{\rho r}{2\varepsilon_0}$$
+
+$E \propto r$，随 $r$ 线性增长——与均匀带电球体内部 $E\propto r$ 的结论形式一致。（解答由AI补全）
+
+</details>
+
+#### 高斯定理应用：平面分布
+
+**例：无限大均匀带电平面，面密度 $\sigma$**（FA）
+
+笔记：电场在平面两侧对称，且垂直于带电平面；取一个柱面为高斯面（轴线垂直于平面、两底对称跨在平面两侧）；侧面无贡献，底面贡献。结果 $E = \dfrac{\sigma}{2\varepsilon_0}$。
+
+图：轴线垂直于带电平面的圆柱高斯面，两底面分别位于平面两侧。
+
+<details markdown="1">
+<summary><strong>【FA：无限大带电平面（完整推导）】</strong></summary>
+
+**对称性**：平面无限大、各点地位相同 → 场垂直于平面（任何平行于平面的分量都会被"镜像"电荷抵消）；两侧对称，$\sigma > 0$ 时都背离平面；大小与到平面的距离无关。
+
+**高斯面**：轴线垂直于平面、底面积 $S$ 的柱面，两底到平面的距离相等。
+
+**分片算通量**：
+
+- 侧面：$\vec{E}$ 与侧面平行（垂直于侧面法线）→ 无贡献；
+- 两个底面：各贡献 $E\cdot S$，共 $2ES$。
+
+$$2ES = \frac{\sigma S}{\varepsilon_0} \Rightarrow E = \frac{\sigma}{2\varepsilon_0}$$
+
+两侧都是匀强场、与距离无关——和点电荷、直线的"随距离衰减"完全不同。（解答由AI补全）
+
+</details>
+
+**例：两块无限大均匀带电平行板（$+\sigma$、$-\sigma$）**（FA）
+
+笔记：板间加强，板外抵消。
+
+<details markdown="1">
+<summary><strong>【FA：平行板对（完整推导）】</strong></summary>
+
+每块板单独都产生 $\dfrac{\sigma}{2\varepsilon_0}$ 的匀强场（正板两侧的场背离自己，负板两侧的场指向自己），直接矢量叠加：
+
+- **板间**：$+\sigma$ 板的场指向右、$-\sigma$ 板的场也指向右（指向负板），同向相加：
+
+$$E = \frac{\sigma}{2\varepsilon_0} + \frac{\sigma}{2\varepsilon_0} = \frac{\sigma}{\varepsilon_0}$$
+
+方向由 $+\sigma$ 板指向 $-\sigma$ 板。
+
+- **板外**：两场一个向左一个向右、大小相等 → 抵消为零。
+
+电场全部集中在板间——这正是平行板电容器的情形（板间近似匀强场，外部无场）。
+
+</details>
+
+**例：三块带电板（电荷同/不同）**（FA）
+
+<details markdown="1">
+<summary><strong>【FA：三块板（方法与推导）】</strong></summary>
+
+**方法**：还是叠加。每块板都贡献 $\dfrac{\sigma_i}{2\varepsilon_0}$ 的匀强场（$\sigma_i$ 带符号），某区域的合场 = 左边所有板的贡献（向右为正）$-$ 右边所有板的贡献。设三块板从左到右面密度为 $\sigma_1, \sigma_2, \sigma_3$，四个区域（以向右为正）：
+
+- 最左区域：$E = -\dfrac{\sigma_1+\sigma_2+\sigma_3}{2\varepsilon_0}$；
+- 板 1、2 之间：$E = \dfrac{\sigma_1-\sigma_2-\sigma_3}{2\varepsilon_0}$；
+- 板 2、3 之间：$E = \dfrac{\sigma_1+\sigma_2-\sigma_3}{2\varepsilon_0}$；
+- 最右区域：$E = \dfrac{\sigma_1+\sigma_2+\sigma_3}{2\varepsilon_0}$。
+
+同号、异号只影响 $\sigma_i$ 的正负，套同一个公式。例：三块板面密度均为 $\sigma$（同号）时，最左 $E = \dfrac{3\sigma}{2\varepsilon_0}$ 向左，两个板间区域均为 $\dfrac{\sigma}{2\varepsilon_0}$ 向右，最右 $\dfrac{3\sigma}{2\varepsilon_0}$ 向右。（解答由AI补全）
+
+</details>
+
+**例：无限大均匀带电有厚度板（厚 $d$，体密度 $\rho$）**（FA）
+
+笔记：分板内、板外讨论。
+
+<details markdown="1">
+<summary><strong>【FA：有厚度板（完整推导）】</strong></summary>
+
+以板的中面为 $x = 0$。对称性与无限大平面相同：场垂直于板面、关于中面对称（两侧等距离处大小相等）。高斯面：轴线垂直于板、底面积 $S$、两底对称分布在中面两侧距中面 $|x|$ 处的柱面。通量恒为 $2ES$（侧面无贡献、两底各 $ES$），两个区域只差"面内电荷怎么数"：
+
+**板内（$|x| < d/2$）**：高斯面只包住厚度 $2|x|$ 的中间层，$q_{内} = \rho\cdot 2|x|\,S$：
+
+$$2ES = \frac{2\rho|x|S}{\varepsilon_0} \Rightarrow E = \frac{\rho|x|}{\varepsilon_0}$$
+
+$E$ 随 $|x|$ 线性增长，中面处 $E = 0$。
+
+**板外（$|x| > d/2$）**：高斯面包住整块板厚，$q_{内} = \rho d S$：
+
+$$2ES = \frac{\rho d S}{\varepsilon_0} \Rightarrow E = \frac{\rho d}{2\varepsilon_0}$$
+
+把厚度压扁成面密度 $\sigma = \rho d$，就回到无限大平面的结果——板外是与距离无关的匀强场。（解答由AI补全）
+
+</details>
+
+**例：上方改为不均匀**
+
+笔记原话："上方改为不均匀"，即把上一题（有厚度板）的电荷分布改为不均匀。（AI 补充：若 $\rho$ 只沿厚度方向变化、记 $\rho(x)$，对称性仍保持，做法完全一样，只是"数面内电荷"换成积分：板内 $q_{内} = S\displaystyle\int_{-|x|}^{|x|}\rho(x')\,\mathrm{d}x'$，板外 $q_{内} = S\displaystyle\int_{-d/2}^{d/2}\rho(x')\,\mathrm{d}x'$，再代 $2ES = q_{内}/\varepsilon_0$。若 $\rho$ 还沿平行板面的方向变化，平面对称性被破坏，这套高斯面就不能用了。）（说明由AI补全）
 
 **例（综例，PPT）：均匀带电球内挖球形空腔，求腔内场强**（FA：图片）
 
