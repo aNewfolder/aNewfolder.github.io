@@ -1679,6 +1679,78 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#202691795" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026.9.17（9.5 高斯定理）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2026.9.17（9.5 高斯定理）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        库仑定律复习
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        为什么需要高斯定理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        电通量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        高斯定理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        高斯定理应用：球对称
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -6416,6 +6488,78 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#202691795" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026.9.17（9.5 高斯定理）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2026.9.17（9.5 高斯定理）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        库仑定律复习
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        为什么需要高斯定理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        电通量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        高斯定理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        高斯定理应用：球对称
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -6519,6 +6663,203 @@
 <p>（以上例题解答由 AI 补全，请复核。）</p>
 <p><strong>后续方法预告：先求电势，再求梯度</strong></p>
 <p>笔记原话：后续先求电势，电势求梯度得场强。即先用标量积分 <span class="arithmatex">\(V = \dfrac{1}{4\pi\varepsilon_0}\displaystyle\int \dfrac{dq}{r}\)</span>（标量积分比矢量积分简单），再由 <span class="arithmatex">\(\vec{E} = -\nabla V\)</span> 求场强。（AI 补充：这是静电场第二条计算路线，下一节展开。）</p>
+<h3 id="202691795">2026.9.17（9.5 高斯定理）<a class="headerlink" href="#202691795" title="Permanent link">&para;</a></h3>
+<h4 id="_3">库仑定律复习<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<p><strong>例：半径 <span class="arithmatex">\(R\)</span> 的圆环，上半圆均匀带 <span class="arithmatex">\(+Q\)</span>、下半圆均匀带 <span class="arithmatex">\(-Q\)</span>，求圆心处的场强</strong>（FA）</p>
+<p>图：半径 <span class="arithmatex">\(R\)</span> 的圆环，上半圆带 <span class="arithmatex">\(+Q\)</span>、下半圆带 <span class="arithmatex">\(-Q\)</span>，在环上取角元 <span class="arithmatex">\(\mathrm{d}\theta\)</span>。</p>
+<p>笔记提示：</p>
+<ul>
+<li>线密度 <span class="arithmatex">\(\lambda = \dfrac{Q}{\pi R}\)</span>，最后要代回（不要把 <span class="arithmatex">\(\lambda\)</span> 留在答案里）；</li>
+<li>叠加时注意方向——建坐标系，把 <span class="arithmatex">\(\mathrm{d}\vec{E}\)</span> 按单位矢量（如 <span class="arithmatex">\(\vec{e}_x\)</span>）投影后再相加。</li>
+</ul>
+<details>
+<summary><strong>【FA：半圆环圆心场强（完整步骤）】</strong></summary>
+<p><strong>建系</strong>：圆心为原点 <span class="arithmatex">\(O\)</span>，<span class="arithmatex">\(x\)</span> 轴沿上、下半圆的分界直径（水平），<span class="arithmatex">\(y\)</span> 轴竖直向上（指向 <span class="arithmatex">\(+Q\)</span> 一侧）。上、下半圆电荷线密度大小均为</p>
+<div class="arithmatex">\[\lambda = \frac{Q}{\pi R}\]</div>
+<p><strong>第一步（取电荷元）</strong>：在上半圆取极角 <span class="arithmatex">\(\theta\)</span>（自 <span class="arithmatex">\(x\)</span> 轴量起，<span class="arithmatex">\(0 \le \theta \le \pi\)</span>）处的角元 <span class="arithmatex">\(\mathrm{d}\theta\)</span>，弧长 <span class="arithmatex">\(\mathrm{d}l = R\,\mathrm{d}\theta\)</span>，电荷元</p>
+<div class="arithmatex">\[\mathrm{d}q = \lambda R\,\mathrm{d}\theta\]</div>
+<p><strong>第二步（写电荷元的场）</strong>：电荷元到圆心的距离恒为 <span class="arithmatex">\(R\)</span>，故</p>
+<div class="arithmatex">\[\mathrm{d}E = \frac{k\,\mathrm{d}q}{R^2} = \frac{k\lambda}{R}\,\mathrm{d}\theta\]</div>
+<p>正电荷的场由电荷元指向场点，即由 <span class="arithmatex">\(\mathrm{d}q\)</span> 指向 <span class="arithmatex">\(O\)</span>，与 <span class="arithmatex">\(\mathrm{d}q\)</span> 的位置矢量 <span class="arithmatex">\((R\cos\theta,\ R\sin\theta)\)</span> 反向：</p>
+<div class="arithmatex">\[\mathrm{d}\vec{E} = -\frac{k\lambda}{R}(\cos\theta\,\vec{e}_x + \sin\theta\,\vec{e}_y)\,\mathrm{d}\theta\]</div>
+<p><strong>第三步（投影、积分——上半圆）</strong>：</p>
+<div class="arithmatex">\[E_x^{上} = -\frac{k\lambda}{R}\int_0^{\pi}\cos\theta\,\mathrm{d}\theta = 0, \qquad E_y^{上} = -\frac{k\lambda}{R}\int_0^{\pi}\sin\theta\,\mathrm{d}\theta = -\frac{2k\lambda}{R}\]</div>
+<p><strong>第四步（下半圆）</strong>：下半圆电荷为 <span class="arithmatex">\(-Q\)</span>，线密度大小仍为 <span class="arithmatex">\(\lambda\)</span>。负电荷的场由场点指向电荷元，即由 <span class="arithmatex">\(O\)</span> 指向 <span class="arithmatex">\(\mathrm{d}q\)</span>。对 <span class="arithmatex">\(\varphi \in [\pi, 2\pi]\)</span> 投影积分：</p>
+<div class="arithmatex">\[E_x^{下} = \frac{k\lambda}{R}\int_{\pi}^{2\pi}\cos\varphi\,\mathrm{d}\varphi = 0, \qquad E_y^{下} = \frac{k\lambda}{R}\int_{\pi}^{2\pi}\sin\varphi\,\mathrm{d}\varphi = -\frac{2k\lambda}{R}\]</div>
+<p>（也可用镜像对称看：上、下半圆逐对镜像的电荷元符号相反，<span class="arithmatex">\(x\)</span> 分量成对抵消、<span class="arithmatex">\(y\)</span> 分量成对加强。）</p>
+<p><strong>第五步（叠加并代回 <span class="arithmatex">\(\lambda\)</span>）</strong>：</p>
+<div class="arithmatex">\[E_y = -\frac{4k\lambda}{R} = -\frac{4kQ}{\pi R^2}, \qquad E = \frac{4kQ}{\pi R^2} = \frac{Q}{\pi^2\varepsilon_0 R^2}\]</div>
+<p>方向沿 <span class="arithmatex">\(-y\)</span>：由 <span class="arithmatex">\(+Q\)</span> 半圆指向 <span class="arithmatex">\(-Q\)</span> 半圆（沿对称轴向"下"）。（解答由AI补全）</p>
+</details>
+<p><strong>例：半径 <span class="arithmatex">\(R\)</span> 的带电球面，面密度 <span class="arithmatex">\(\sigma = \sigma_0\cos\theta\)</span>，求球心处的电场</strong>（FA）</p>
+<p>思路（笔记原话）：分解为细圆环场强的叠加。结果：<span class="arithmatex">\(E_z = -\dfrac{\sigma_0}{3\varepsilon_0}\)</span>。</p>
+<details>
+<summary><strong>【FA：余弦分布球面球心场强（完整步骤）】</strong></summary>
+<p><strong>建系</strong>：球心为原点，<span class="arithmatex">\(z\)</span> 轴为极轴（<span class="arithmatex">\(\theta = 0\)</span> 的极点在 <span class="arithmatex">\(+z\)</span> 方向）。<span class="arithmatex">\(\theta\)</span> 处 <span class="arithmatex">\(\sigma = \sigma_0\cos\theta\)</span>：北半球带正电、南半球带负电。</p>
+<p><strong>第一步（切细圆环）</strong>：取极角 <span class="arithmatex">\(\theta \sim \theta + \mathrm{d}\theta\)</span> 的环带。环半径 <span class="arithmatex">\(a = R\sin\theta\)</span>，带宽 <span class="arithmatex">\(R\,\mathrm{d}\theta\)</span>，面积与电荷元为</p>
+<div class="arithmatex">\[\mathrm{d}S = 2\pi R^2\sin\theta\,\mathrm{d}\theta, \qquad \mathrm{d}q = \sigma_0\cos\theta \cdot 2\pi R^2\sin\theta\,\mathrm{d}\theta\]</div>
+<p>（<span class="arithmatex">\(\mathrm{d}q\)</span> 是带符号的：<span class="arithmatex">\(\theta &gt; \pi/2\)</span> 时为负。）</p>
+<p><strong>第二步（用细圆环轴线场强公式）</strong>：9.15 已推得半径 <span class="arithmatex">\(a\)</span>、电量 <span class="arithmatex">\(q\)</span> 的细圆环，在轴上距环心 <span class="arithmatex">\(x\)</span> 处的场 <span class="arithmatex">\(E_x = \dfrac{kqx}{(x^2+a^2)^{3/2}}\)</span>（<span class="arithmatex">\(x\)</span> 为带符号的轴向坐标，公式自动给出正确方向）。</p>
+<p>此处环心位于 <span class="arithmatex">\(z = R\cos\theta\)</span>，场点（球心）相对环心的轴向坐标为 <span class="arithmatex">\(x = -R\cos\theta\)</span>，且 <span class="arithmatex">\(x^2 + a^2 = R^2\)</span>，所以</p>
+<div class="arithmatex">\[\mathrm{d}E_z = \frac{k\,\mathrm{d}q\cdot(-R\cos\theta)}{R^3} = -\frac{k\cos\theta}{R^2}\,\mathrm{d}q = -2\pi k\sigma_0\cos^2\theta\sin\theta\,\mathrm{d}\theta\]</div>
+<p><strong>第三步（积分）</strong>：换元 <span class="arithmatex">\(u = \cos\theta\)</span>，<span class="arithmatex">\(\int_0^{\pi}\cos^2\theta\sin\theta\,\mathrm{d}\theta = \dfrac{2}{3}\)</span>，故</p>
+<div class="arithmatex">\[E_z = -2\pi k\sigma_0\cdot\frac{2}{3} = -\frac{4\pi k\sigma_0}{3} = -\frac{4\pi\sigma_0}{3\cdot 4\pi\varepsilon_0} = -\frac{\sigma_0}{3\varepsilon_0}\]</div>
+<p>与笔记结果一致。物理图像：每个环带无论带电正负，在球心产生的场都指向 <span class="arithmatex">\(-z\)</span>（正电荷环的场背离环、负电荷环的场指向环），故总场沿 <span class="arithmatex">\(-z\)</span>——由 <span class="arithmatex">\(\sigma\)</span> 为正的极指向 <span class="arithmatex">\(\sigma\)</span> 为负的极。（步骤为 AI 细化，请复核。）</p>
+</details>
+<p><strong>缺口问题</strong></p>
+<p>笔记原话：总 <span class="arithmatex">\(-\)</span> 缺；缺口很小的话可以近似为点电荷。</p>
+<p>即 <span class="arithmatex">\(\vec{E}_{实际} = \vec{E}_{完整} - \vec{E}_{缺口}\)</span>：完整体的场往往由对称性直接得出（如完整圆环中心的场为零），缺口线度很小时其电荷元近似为点电荷。（AI 补充示例：均匀带电圆环（<span class="arithmatex">\(Q, R\)</span>）挖去一小段 <span class="arithmatex">\(\Delta l\)</span>，圆心场强近似等于缺口电荷元 <span class="arithmatex">\(q' = \dfrac{Q\Delta l}{2\pi R}\)</span> 视作点电荷在圆心的场，<span class="arithmatex">\(E = \dfrac{kq'}{R^2}\)</span>；因 <span class="arithmatex">\(\vec{E}_{完整} = 0\)</span>，故 <span class="arithmatex">\(\vec{E}_{实际} = -\vec{E}_{缺口}\)</span>，方向由圆心指向缺口。）（示例由AI补全）</p>
+<h4 id="_4">为什么需要高斯定理<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>笔记原话：电荷分布不确定，（也要能求场；高斯定理）既适用静电场，也适用时变电场。（AI 补充：用库仑定律 + 叠加原则上总能算场，但要求电荷分布已知且积分可行；高斯定理是麦克斯韦方程组之一，对任意电荷分布、含时电磁场普遍成立，而且配合对称性可把积分化为乘法，是求场的新路线。）</p>
+<h4 id="_5">电通量<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<ul>
+<li>匀强场中、面与 <span class="arithmatex">\(\vec{E}\)</span> 垂直时：<span class="arithmatex">\(\Phi_E = ES\)</span>。单位 <span class="arithmatex">\(\mathrm{V\cdot m}\)</span>；标量。曲面法线正方向可任意选定，通量可正可负。</li>
+<li>面与 <span class="arithmatex">\(\vec{E}\)</span> 不垂直：<span class="arithmatex">\(\mathrm{d}\Phi_e = \vec{E}\cdot\mathrm{d}\vec{S}\)</span>，<span class="arithmatex">\(\Phi_e = \displaystyle\int_S \vec{E}\cdot\mathrm{d}\vec{S}\)</span>。</li>
+<li>闭合曲面：规定向外法线为正方向（穿出为正、穿入为负）。</li>
+</ul>
+<h4 id="_6">高斯定理<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p><strong>内容</strong>：通过任意闭合曲面（高斯面）的电通量，等于面内所包围电荷的代数和除以 <span class="arithmatex">\(\varepsilon_0\)</span>：</p>
+<div class="arithmatex">\[\Phi_e = \oint_S \vec{E}\cdot\mathrm{d}\vec{S} = \frac{1}{\varepsilon_0}\sum_i q_i\]</div>
+<p><strong>注①：点电荷 <span class="arithmatex">\(q\)</span> 位于球面（半径 <span class="arithmatex">\(r\)</span>）中心</strong></p>
+<div class="arithmatex">\[\Phi_E = \oint_S \vec{E}\cdot\mathrm{d}\vec{S} = \oint_S k\frac{q}{r^2}\,\vec{e}_r\cdot\mathrm{d}\vec{S} = \frac{1}{4\pi\varepsilon_0}\cdot\frac{q}{r^2}\cdot 4\pi r^2 = \frac{q}{\varepsilon_0}\]</div>
+<p>笔记强调：<strong>必须加 <span class="arithmatex">\(\vec{e}_r\)</span> !!}</strong> —— 通量是点乘，正是 <span class="arithmatex">\(\vec{e}_r\cdot\vec{e}_r = 1\)</span> 才能把积分化成 <span class="arithmatex">\(E\cdot 4\pi r^2\)</span>。</p>
+<p><strong>注②：点电荷位于任意闭合曲面外</strong>（FA：图 9.10）</p>
+<p>笔记：圆锥内穿入面和穿出面（的通量）为 0，抵消了。（FA：没懂）</p>
+<details>
+<summary><strong>【FA：图 9.10 课本证明用图】</strong></summary>
+<p>课本图 9.10「高斯定理证明用图」（本次提供了该页课本照片，据图整理）：</p>
+<ul>
+<li><strong>面内电荷 <span class="arithmatex">\(q\)</span></strong>：从 <span class="arithmatex">\(q\)</span> 出发的窄圆锥（对应立体角 <span class="arithmatex">\(\mathrm{d}\Omega\)</span>）与曲面交于面元 <span class="arithmatex">\(\mathrm{d}s\)</span>，<span class="arithmatex">\(\mathrm{d}s\)</span> 距 <span class="arithmatex">\(q\)</span> 为 <span class="arithmatex">\(r\)</span>，该处外法线 <span class="arithmatex">\(\vec{e}_n\)</span>，<span class="arithmatex">\(\vec{E}\)</span> 与 <span class="arithmatex">\(\vec{e}_n\)</span> 夹角 <span class="arithmatex">\(\theta\)</span>。</li>
+<li><strong>面外电荷 <span class="arithmatex">\(q'\)</span></strong>：从 <span class="arithmatex">\(q'\)</span> 出发的圆锥（立体角 <span class="arithmatex">\(\mathrm{d}\Omega'\)</span>）与曲面相交两次——先<strong>穿入</strong>（面元 <span class="arithmatex">\(\mathrm{d}s_2\)</span>，场 <span class="arithmatex">\(\vec{E}_2\)</span> 与该处外法线 <span class="arithmatex">\(\vec{e}_n\)</span> 夹钝角 <span class="arithmatex">\(\theta_2\)</span>），后<strong>穿出</strong>（面元 <span class="arithmatex">\(\mathrm{d}s_1\)</span>，场 <span class="arithmatex">\(\vec{E}_1\)</span> 与外法线夹锐角 <span class="arithmatex">\(\theta_1\)</span>）。</li>
+<li>笔记蓝笔批注：立体角、穿入、穿出，另有一处写作"<span class="arithmatex">\(\mathrm{d}s \perp \vec{e}_n\)</span>"【?】（疑指取面元在与场线/锥轴垂直方向上的投影面积，即 <span class="arithmatex">\(\mathrm{d}s\cos\theta = r^2\,\mathrm{d}\Omega\)</span>，未能完全确认）。</li>
+</ul>
+</details>
+<details>
+<summary><strong>【FA：没懂——面外电荷通量为什么是零（穿入穿出抵消）】</strong></summary>
+<p>关键是<strong>立体角</strong>。取以 <span class="arithmatex">\(q'\)</span> 为顶点、张开立体角 <span class="arithmatex">\(\mathrm{d}\Omega\)</span> 的一根窄锥管，它在曲面上截出两块面元：穿入的 <span class="arithmatex">\(\mathrm{d}s_2\)</span>（距 <span class="arithmatex">\(q'\)</span> 为 <span class="arithmatex">\(r_2\)</span>）与穿出的 <span class="arithmatex">\(\mathrm{d}s_1\)</span>（距 <span class="arithmatex">\(q'\)</span> 为 <span class="arithmatex">\(r_1\)</span>）。</p>
+<p><strong>穿出端</strong>：<span class="arithmatex">\(\mathrm{d}\Phi_1 = \vec{E}_1\cdot\mathrm{d}\vec{S}_1 = E_1\,\mathrm{d}s_1\cos\theta_1\)</span>。把 <span class="arithmatex">\(\mathrm{d}s_1\)</span> 投影到与锥轴垂直的平面上，投影面积恰为 <span class="arithmatex">\(\mathrm{d}s_1\cos\theta_1 = r_1^2\,\mathrm{d}\Omega\)</span>（距离平方 × 立体角），而 <span class="arithmatex">\(E_1 = kq'/r_1^2\)</span>，于是</p>
+<div class="arithmatex">\[\mathrm{d}\Phi_1 = \frac{kq'}{r_1^2}\cdot r_1^2\,\mathrm{d}\Omega = kq'\,\mathrm{d}\Omega\]</div>
+<p><strong>穿入端</strong>：场线由外向内穿入，<span class="arithmatex">\(\vec{E}_2\)</span> 与外法线夹钝角，同样算法得 <span class="arithmatex">\(\mathrm{d}\Phi_2 = -kq'\,\mathrm{d}\Omega\)</span>。</p>
+<p><strong>成对抵消</strong>：<span class="arithmatex">\(\mathrm{d}\Phi_1 + \mathrm{d}\Phi_2 = 0\)</span>，整根锥管净通量为零。全部锥管（立体角共 <span class="arithmatex">\(4\pi\)</span>）铺满曲面，故总通量 <span class="arithmatex">\(\Phi = 0\)</span>。</p>
+<p>注意"距离被消掉"：面元离 <span class="arithmatex">\(q'\)</span> 越远场越弱，但同一锥管截出的面元投影越大（<span class="arithmatex">\(\propto r^2\)</span>），两者恰好抵消——这正是任意形状曲面（不只是球面）结论仍成立的原因。</p>
+</details>
+<p><strong>注③：点电荷位于任意闭合曲面内</strong></p>
+<p>笔记：等于点电荷在内球面（同心球面）的通量。（FA：没懂）</p>
+<details>
+<summary><strong>【FA：没懂——面内电荷为什么等于"内球面的通量"】</strong></summary>
+<p>同一套立体角计算：从面内电荷 <span class="arithmatex">\(q\)</span> 作立体角 <span class="arithmatex">\(\mathrm{d}\Omega\)</span> 的锥管，与曲面交于 <span class="arithmatex">\(\mathrm{d}s\)</span>（距 <span class="arithmatex">\(q\)</span> 为 <span class="arithmatex">\(r\)</span>，<span class="arithmatex">\(\vec{E}\)</span> 与 <span class="arithmatex">\(\vec{e}_n\)</span> 夹角 <span class="arithmatex">\(\theta\)</span>）：</p>
+<div class="arithmatex">\[\mathrm{d}\Phi = E\,\mathrm{d}s\cos\theta = \frac{kq}{r^2}\cdot\underbrace{r^2\,\mathrm{d}\Omega}_{\mathrm{d}s\cos\theta} = kq\,\mathrm{d}\Omega\]</div>
+<p>每根锥管贡献 <span class="arithmatex">\(kq\,\mathrm{d}\Omega\)</span>，<strong>与 <span class="arithmatex">\(r\)</span>、与曲面形状都无关</strong>（曲面形状复杂时锥管可能穿入穿出多次，多算的部分成对抵消，最后恰剩一份"净穿出"）。对整个立体角积分：</p>
+<div class="arithmatex">\[\Phi = kq\oint\mathrm{d}\Omega = kq\cdot 4\pi = \frac{q}{\varepsilon_0}\]</div>
+<p>而以 <span class="arithmatex">\(q\)</span> 为心、半径 <span class="arithmatex">\(r_0\)</span> 的同心球面（"内球面"）的通量为 <span class="arithmatex">\(\dfrac{q}{4\pi\varepsilon_0 r_0^2}\cdot 4\pi r_0^2 = \dfrac{q}{\varepsilon_0}\)</span>，完全相同。这就是"任意闭合曲面的通量 = 内球面的通量"：两者在每根锥管上贡献的都是同一份 <span class="arithmatex">\(kq\,\mathrm{d}\Omega\)</span>。</p>
+</details>
+<p><strong>注④：<span class="arithmatex">\(N\)</span> 个点电荷</strong></p>
+<p>笔记：只和闭合曲面内的电荷有关。（FA：没懂）</p>
+<details>
+<summary><strong>【FA：没懂——为什么只与面内电荷有关】</strong></summary>
+<p>叠加原理对积分是线性的：<span class="arithmatex">\(\vec{E} = \sum_i \vec{E}_i \Rightarrow \Phi = \sum_i \Phi_i\)</span>（每个电荷的通量贡献可以分开算）。</p>
+<ul>
+<li>面外电荷：由注②，<span class="arithmatex">\(\Phi_i = 0\)</span>；</li>
+<li>面内电荷：由注③，<span class="arithmatex">\(\Phi_i = q_i/\varepsilon_0\)</span>。</li>
+</ul>
+<div class="arithmatex">\[\Phi = \frac{1}{\varepsilon_0}\sum_{\text{面内}} q_i\]</div>
+<p>两个容易混淆的点：</p>
+<ol>
+<li>高斯面上的 <span class="arithmatex">\(\vec{E}\)</span> 是<strong>所有</strong>电荷（含面外）共同产生的总场——面外电荷会改变通量在面上的<strong>分布</strong>（某处穿多一些、别处穿少一些），但不改变<strong>总和</strong>。</li>
+<li>求和只对面内电荷取<strong>代数和</strong>：面内净电荷为零时通量为零，但面上 <span class="arithmatex">\(\vec{E}\)</span> 未必为零（例如面内有一对正负电荷的情形）。</li>
+</ol>
+</details>
+<p><strong>连续分布电荷</strong>（积分形式）</p>
+<div class="arithmatex">\[\oint_S \vec{E}\cdot\mathrm{d}\vec{S} = \frac{1}{\varepsilon_0}\int_V \rho\,\mathrm{d}V\]</div>
+<p>（FA：微积分形式、散度）</p>
+<details>
+<summary><strong>【FA：微分形式与散度】</strong></summary>
+<p><strong>数学工具（高斯散度定理）</strong>：对任意矢量场，闭合面通量 = 散度的体积分：</p>
+<div class="arithmatex">\[\oint_S \vec{E}\cdot\mathrm{d}\vec{S} = \int_V (\nabla\cdot\vec{E})\,\mathrm{d}V\]</div>
+<p><strong>对比得微分形式</strong>：把它与高斯定理积分形式 <span class="arithmatex">\(\displaystyle\oint_S \vec{E}\cdot\mathrm{d}\vec{S} = \frac{1}{\varepsilon_0}\int_V \rho\,\mathrm{d}V\)</span> 对比。由于这对<strong>任意</strong>体积 <span class="arithmatex">\(V\)</span> 都成立，被积函数必须逐点相等：</p>
+<div class="arithmatex">\[\nabla\cdot\vec{E} = \frac{\rho}{\varepsilon_0}\]</div>
+<p><strong>散度的物理意义</strong>：<span class="arithmatex">\(\nabla\cdot\vec{E}\)</span> 表示该点"单位体积发出的净电通量"（通量的体密度）。<span class="arithmatex">\(\rho &gt; 0\)</span> 处电场线由此"喷出"（源），<span class="arithmatex">\(\rho &lt; 0\)</span> 处电场线"汇入"（汇）；无电荷处（<span class="arithmatex">\(\rho = 0\)</span>）散度为零，电场线只穿过、不增不减。</p>
+<p><strong>结论</strong>：静电场是<strong>有源场</strong>——电荷就是电场的源。（点电荷所在点除外：该处 <span class="arithmatex">\(\rho \to \infty\)</span>、场发散，用 <span class="arithmatex">\(\delta\)</span> 函数可写成 <span class="arithmatex">\(\nabla\cdot\vec{E} = q\,\delta(\vec{r})/\varepsilon_0\)</span>。）</p>
+</details>
+<p>说明：静电场为有源场。</p>
+<h4 id="_7">高斯定理应用：球对称<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p><strong>例：均匀带电球面（<span class="arithmatex">\(Q, R\)</span>）的场强分布</strong></p>
+<p>对称性分析：电荷分布球对称 <span class="arithmatex">\(\Rightarrow\)</span> 场沿径向、大小只与 <span class="arithmatex">\(r\)</span> 有关，同一同心球面上 <span class="arithmatex">\(E\)</span> 值相等、径向向外。故取同心球面为高斯面，<span class="arithmatex">\(\displaystyle\oint_S \vec{E}\cdot\mathrm{d}\vec{S} = E\cdot 4\pi r^2\)</span>（面上 <span class="arithmatex">\(\vec{E}\)</span> 与 <span class="arithmatex">\(\mathrm{d}\vec{S}\)</span> 同向、<span class="arithmatex">\(E\)</span> 处处相等）。</p>
+<p>① <span class="arithmatex">\(r &gt; R\)</span>：高斯面内为全部电荷 <span class="arithmatex">\(Q\)</span>：</p>
+<div class="arithmatex">\[E\cdot 4\pi r^2 = \frac{1}{\varepsilon_0}\int\mathrm{d}q = \frac{Q}{\varepsilon_0} \Rightarrow E = \frac{Q}{4\pi\varepsilon_0 r^2} = \frac{kQ}{r^2}\]</div>
+<p>（等效于电荷全部集中在球心的点电荷。）</p>
+<p>② <span class="arithmatex">\(r &lt; R\)</span>：高斯面内无电荷，<span class="arithmatex">\(E = 0\)</span>。</p>
+<p>图：<span class="arithmatex">\(E\)</span>–<span class="arithmatex">\(r\)</span> 曲线——<span class="arithmatex">\(r&lt;R\)</span> 段贴横轴（<span class="arithmatex">\(E = 0\)</span>），<span class="arithmatex">\(r = R\)</span> 处跳变到最大值 <span class="arithmatex">\(kQ/R^2\)</span>，<span class="arithmatex">\(r&gt;R\)</span> 段按 <span class="arithmatex">\(1/r^2\)</span> 衰减。</p>
+<p><strong>例：均匀带电球体（<span class="arithmatex">\(Q, R\)</span>）</strong></p>
+<p>① <span class="arithmatex">\(r &gt; R\)</span>：同上，<span class="arithmatex">\(E = \dfrac{kQ}{r^2}\)</span>。</p>
+<p>② <span class="arithmatex">\(r &lt; R\)</span>：高斯面只包住半径 <span class="arithmatex">\(r\)</span> 的球核：</p>
+<div class="arithmatex">\[\int\mathrm{d}q = \rho\cdot\frac{4}{3}\pi r^3 = Q\cdot\frac{r^3}{R^3} \Rightarrow E\cdot 4\pi r^2 = \frac{Qr^3}{\varepsilon_0 R^3} \Rightarrow E = \frac{Qr}{4\pi\varepsilon_0 R^3} = \frac{kQr}{R^3}\]</div>
+<p>（<span class="arithmatex">\(E \propto r\)</span>，随 <span class="arithmatex">\(r\)</span> 线性增长。）</p>
+<p>图：<span class="arithmatex">\(E\)</span>–<span class="arithmatex">\(r\)</span> 曲线——<span class="arithmatex">\(r&lt;R\)</span> 段为过原点的直线，<span class="arithmatex">\(r = R\)</span> 处达最大值 <span class="arithmatex">\(kQ/R^2\)</span>，<span class="arithmatex">\(r&gt;R\)</span> 段按 <span class="arithmatex">\(1/r^2\)</span> 下降；两段在 <span class="arithmatex">\(R\)</span> 处连续（球面内外公式在 <span class="arithmatex">\(r = R\)</span> 给出同值）。</p>
+<p><strong>例：均匀带电厚球壳（内半径 <span class="arithmatex">\(a\)</span>、外半径 <span class="arithmatex">\(b\)</span>）</strong></p>
+<ul>
+<li>方法 1°（补偿法）：大球 <span class="arithmatex">\(-\)</span> 小球——看成密度 <span class="arithmatex">\(\rho\)</span> 的完整大球（半径 <span class="arithmatex">\(b\)</span>）叠加密度 <span class="arithmatex">\(-\rho\)</span> 的同心小球（半径 <span class="arithmatex">\(a\)</span>），用球体结果逐区域相减。</li>
+<li>方法 2°（高斯定理）：算哪个地方，就把高斯面取到哪里。（FA）</li>
+</ul>
+<details>
+<summary><strong>【FA：算哪个地方，就把高斯面取到哪里】</strong></summary>
+<p>高斯定理本身对任何闭合面都成立，但<strong>能解出 <span class="arithmatex">\(E\)</span></strong> 的前提是把 <span class="arithmatex">\(\oint \vec{E}\cdot\mathrm{d}\vec{S}\)</span> 化成 <span class="arithmatex">\(E \times S\)</span>。这要求高斯面<strong>穿过待求场点</strong>，且按对称性选取，使面上（或分片面上）满足：</p>
+<ol>
+<li><span class="arithmatex">\(E\)</span> 大小处处相等（才能提出积分号）；</li>
+<li><span class="arithmatex">\(\vec{E}\)</span> 方向处处与面法线平行（<span class="arithmatex">\(\vec{E}\cdot\mathrm{d}\vec{S} = E\,\mathrm{d}S\)</span>）或垂直（该片贡献为零）。</li>
+</ol>
+<p>"算哪个地方，就把高斯面取到哪里"：待求场点在半径 <span class="arithmatex">\(r\)</span> 处，就取半径为 <span class="arithmatex">\(r\)</span> 的高斯面，再数一数面内电荷。三类典型对称性：</p>
+<ul>
+<li>球对称（点电荷、球面、球体、厚球壳）→ 同心球面；</li>
+<li>柱对称（无限长直线、圆柱、圆筒）→ 同轴圆柱面（上下底面上 <span class="arithmatex">\(\vec{E}\perp\mathrm{d}\vec{S}\)</span> 不贡献通量）；</li>
+<li>面对称（无限大平面、厚平板）→ 横跨平板的柱状盒。</li>
+</ul>
+<p><strong>示范（方法 2° 解均匀厚球壳，<span class="arithmatex">\(\rho\)</span> 为常量）</strong>：对 <span class="arithmatex">\(a &lt; r &lt; b\)</span> 处半径 <span class="arithmatex">\(r\)</span> 的高斯面，<span class="arithmatex">\(q_{内} = \rho\cdot\dfrac{4}{3}\pi(r^3 - a^3)\)</span>，</p>
+<div class="arithmatex">\[E\cdot 4\pi r^2 = \frac{\rho(r^3-a^3)}{3\varepsilon_0} \Rightarrow E = \frac{\rho(r^3-a^3)}{3\varepsilon_0 r^2}\]</div>
+<p>同理 <span class="arithmatex">\(r&lt;a\)</span> 时 <span class="arithmatex">\(E = 0\)</span>；<span class="arithmatex">\(r&gt;b\)</span> 时 <span class="arithmatex">\(E = \dfrac{\rho(b^3-a^3)}{3\varepsilon_0 r^2}\)</span>。（解答由AI补全）</p>
+</details>
+<p><strong>例：厚球壳 <span class="arithmatex">\(\rho(r) = \dfrac{A}{r}\)</span>，球心有点电荷 <span class="arithmatex">\(Q\)</span>，求各区域场强</strong>（内半径 <span class="arithmatex">\(a\)</span>、外半径 <span class="arithmatex">\(b\)</span>）（整个题 FA）</p>
+<p>取同心球面为高斯面；区域划分：① <span class="arithmatex">\(r&lt;a\)</span>；② <span class="arithmatex">\(a&lt;r&lt;b\)</span>；③ <span class="arithmatex">\(r&gt;b\)</span>。笔记已给出 ② 的结果——要算上内部所有电荷（含球心 <span class="arithmatex">\(Q\)</span>），薄层 <span class="arithmatex">\(\mathrm{d}q = \rho(r')\cdot 4\pi r'^2\,\mathrm{d}r'\)</span>，</p>
+<div class="arithmatex">\[E = \frac{Q}{4\pi\varepsilon_0 r^2} + \frac{A}{2\varepsilon_0}\left(1 - \frac{a^2}{r^2}\right)\]</div>
+<details>
+<summary><strong>【FA：$\rho = A/r$ 厚球壳（完整解答）】</strong></summary>
+<p><strong>对称性</strong>：<span class="arithmatex">\(\rho(r)\)</span> 只与 <span class="arithmatex">\(r\)</span> 有关，加上球心点电荷，整体仍球对称 → 场沿径向、同心球面上大小相等 → 取半径 <span class="arithmatex">\(r\)</span> 的同心球面为高斯面，<span class="arithmatex">\(\oint\vec{E}\cdot\mathrm{d}\vec{S} = E\cdot 4\pi r^2\)</span>。</p>
+<p><strong>第一步（薄层法算面内电荷）</strong>：<span class="arithmatex">\(\rho\)</span> 随 <span class="arithmatex">\(r\)</span> 变，不能直接用体积乘密度，要在壳内取半径 <span class="arithmatex">\(r' \sim r' + \mathrm{d}r'\)</span> 的薄球壳：</p>
+<div class="arithmatex">\[\mathrm{d}q = \rho(r')\cdot 4\pi r'^2\,\mathrm{d}r' = \frac{A}{r'}\cdot 4\pi r'^2\,\mathrm{d}r' = 4\pi A\,r'\,\mathrm{d}r'\]</div>
+<p><strong>区域②（<span class="arithmatex">\(a &lt; r &lt; b\)</span>）</strong>：高斯面内电荷 = 球心 <span class="arithmatex">\(Q\)</span> + 从 <span class="arithmatex">\(a\)</span> 积到 <span class="arithmatex">\(r\)</span> 的全部薄层（笔记强调：要算上内部所有电荷，含球心 <span class="arithmatex">\(Q\)</span>）：</p>
+<div class="arithmatex">\[q_{内}(r) = Q + \int_a^r 4\pi A\,r'\,\mathrm{d}r' = Q + 2\pi A(r^2 - a^2)\]</div>
+<p>代入高斯定理：</p>
+<div class="arithmatex">\[E\cdot 4\pi r^2 = \frac{Q + 2\pi A(r^2-a^2)}{\varepsilon_0} \Rightarrow E = \frac{Q}{4\pi\varepsilon_0 r^2} + \frac{A(r^2-a^2)}{2\varepsilon_0 r^2} = \frac{Q}{4\pi\varepsilon_0 r^2} + \frac{A}{2\varepsilon_0}\left(1 - \frac{a^2}{r^2}\right)\]</div>
+<p>与笔记结果一致。</p>
+<p><strong>区域①（<span class="arithmatex">\(r &lt; a\)</span>）</strong>：高斯面在壳的内腔中，只包住球心点电荷：</p>
+<div class="arithmatex">\[E = \frac{Q}{4\pi\varepsilon_0 r^2}\]</div>
+<p><strong>区域③（<span class="arithmatex">\(r &gt; b\)</span>）</strong>：薄层积满整个壳，<span class="arithmatex">\(q_{内} = Q + 2\pi A(b^2 - a^2)\)</span>：</p>
+<div class="arithmatex">\[E = \frac{Q + 2\pi A(b^2-a^2)}{4\pi\varepsilon_0 r^2} = \frac{Q}{4\pi\varepsilon_0 r^2} + \frac{A(b^2-a^2)}{2\varepsilon_0 r^2}\]</div>
+<p>（等效于全部电荷集中在球心的点电荷。）（解答由AI补全）</p>
+</details>
+<p><strong>例（综例，PPT）：均匀带电球内挖球形空腔，求腔内场强</strong>（FA：图片）</p>
+<p>题目（PPT）：半径 <span class="arithmatex">\(R\)</span> 的均匀带电球，电荷体密度 <span class="arithmatex">\(\rho\)</span>，球内有一半径 <span class="arithmatex">\(r\)</span> 的球形空腔，空腔中心距离球心为 <span class="arithmatex">\(a\)</span>，求空腔内任一点 <span class="arithmatex">\(P\)</span> 的电场强度。</p>
+<p>图（PPT）：大球心与腔心相距 <span class="arithmatex">\(a\)</span>；<span class="arithmatex">\(P\)</span> 在腔内，<span class="arithmatex">\(\vec{r}_1\)</span> 从大球心指向 <span class="arithmatex">\(P\)</span>，<span class="arithmatex">\(\vec{r}_2\)</span> 从腔心指向 <span class="arithmatex">\(P\)</span>。PPT 提问：对称性？</p>
+<p>思路（笔记原话）：看成大球（密度 <span class="arithmatex">\(\rho\)</span>）和小球（密度 <span class="arithmatex">\(-\rho\)</span>）的叠加。腔内为均匀场！</p>
+<details>
+<summary><strong>【FA：空腔综例（完整解答）】</strong></summary>
+<p><strong>对称性？</strong> 挖掉空腔后，系统对大球心不再球对称，不能直接用高斯定理——所以用补偿法（挖补法）。</p>
+<p><strong>第一步（拆分）</strong>：把"带空腔的球"看成两个完整球的叠加：</p>
+<ul>
+<li>大球：半径 <span class="arithmatex">\(R\)</span>、密度 <span class="arithmatex">\(+\rho\)</span>，球心 <span class="arithmatex">\(O_1\)</span>；</li>
+<li>补偿小球：半径 <span class="arithmatex">\(r\)</span>（恰好填满空腔）、密度 <span class="arithmatex">\(-\rho\)</span>，球心 <span class="arithmatex">\(O_2\)</span>（<span class="arithmatex">\(|O_1O_2| = a\)</span>）。</li>
+</ul>
+<p>两者叠加后空腔区域净密度恰为零，与原题一致。</p>
+<p><strong>第二步（预备结论：均匀带电球内部的场）</strong>：把 <span class="arithmatex">\(Q = \rho\cdot\dfrac{4}{3}\pi R^3\)</span> 代入前面球体例题的 <span class="arithmatex">\(r&lt;R\)</span> 结果 <span class="arithmatex">\(E = \dfrac{Qs}{4\pi\varepsilon_0 R^3}\)</span>，得距球心 <span class="arithmatex">\(s\)</span> 处</p>
+<div class="arithmatex">\[\vec{E} = \frac{\rho}{3\varepsilon_0}\vec{s} \qquad (\vec{s}\ \text{从球心指向场点})\]</div>
+<p><strong>第三步（设矢量）</strong>：记 <span class="arithmatex">\(\vec{r}_1 = \overrightarrow{O_1P}\)</span>，<span class="arithmatex">\(\vec{r}_2 = \overrightarrow{O_2P}\)</span>，<span class="arithmatex">\(\vec{a} = \overrightarrow{O_1O_2}\)</span>，由三角形关系 <span class="arithmatex">\(\vec{r}_1 = \vec{a} + \vec{r}_2\)</span>。<span class="arithmatex">\(P\)</span> 在腔内，同时位于大球内部与小球内部，两个结果都可用。</p>
+<p><strong>第四步（分别求场并叠加）</strong>：</p>
+<div class="arithmatex">\[\vec{E}_1 = \frac{\rho}{3\varepsilon_0}\vec{r}_1 \ (+\rho\ \text{大球})， \qquad \vec{E}_2 = -\frac{\rho}{3\varepsilon_0}\vec{r}_2 \ (-\rho\ \text{补偿球})\]</div>
+<div class="arithmatex">\[\vec{E} = \vec{E}_1 + \vec{E}_2 = \frac{\rho}{3\varepsilon_0}(\vec{r}_1 - \vec{r}_2) = \frac{\rho}{3\varepsilon_0}\vec{a}\]</div>
+<p><strong>结论</strong>：</p>
+<div class="arithmatex">\[\vec{E} = \frac{\rho}{3\varepsilon_0}\vec{a}\]</div>
+<p>腔内任一点场强完全相同——<strong>均匀场</strong>（印证笔记"腔内为均匀场！"）：大小 <span class="arithmatex">\(\dfrac{\rho a}{3\varepsilon_0}\)</span>，方向沿 <span class="arithmatex">\(O_1 \to O_2\)</span>（<span class="arithmatex">\(\rho &gt; 0\)</span>）。结果与 <span class="arithmatex">\(P\)</span> 的位置无关，也与 <span class="arithmatex">\(R\)</span>、空腔半径 <span class="arithmatex">\(r\)</span> 无关（只需空腔完全在球内）。（解答由AI补全）</p>
+</details>
 
 
 
@@ -6541,7 +6882,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年9月16日 19:31:52 CST">2026年9月16日 19:31:52</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年9月17日 10:17:40 CST">2026年9月17日 10:17:40</span>
   </span>
 
     
