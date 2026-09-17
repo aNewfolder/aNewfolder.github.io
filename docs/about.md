@@ -23,6 +23,11 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-09-17</div>
+<div class="update-log-content">顺带提交用户本地改动：工程训练（考核比例、着装要求）、物理实验（选课推荐避雷与 18 项实验清单）、即兴演奏课 9.17 Lesson 2 笔记。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-09-17</div>
 <div class="update-log-content">大物Ⅱ补录 9.17 高斯定理后半（轴对称、平面对称，例题全推导），补全大物经典例题推导；简化电基冗长 FA 表述。</div>
 </div>
 
