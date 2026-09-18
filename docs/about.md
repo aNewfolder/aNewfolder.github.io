@@ -22,6 +22,16 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-09-18</div>
+<div class="update-log-content">复变函数录入 9.16–9.18 笔记：2.1 复变函数（曲线映射例题、极限连续）、2.2 解析函数、2.3 C-R 充要条件，补全各例题推导与 FA 详解。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-09-17</div>
+<div class="update-log-content">（补记）顺带提交跑步打卡更新：9.17 3 km 5′42″ 与引体负重硬拉 8。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-09-17</div>
 <div class="update-log-content">大物Ⅱ笔记嵌入两张图床图片（课本图 9.10、空腔综例 PPT），确立笔记配图走 PicGo 图床、文档只放图床链接的约定。</div>
 </div>
