@@ -22,6 +22,21 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-09-20</div>
+<div class="update-log-content">大学物理Ⅱ新增 9.20 课堂笔记：环路定理、电势与场强关系，文末附电偶极子等 PPT 详解。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-09-19</div>
+<div class="update-log-content">大二上新增课程：中国现代文学经典选读。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-09-20</div>
+<div class="update-log-content">（补记）顺带提交本地修改：物理实验分数构成更正（平时70%期末30%）与即兴演奏 9.17 课笔记补充。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-09-18</div>
 <div class="update-log-content">复变函数录入 9.16–9.18 笔记：2.1 复变函数（曲线映射例题、极限连续）、2.2 解析函数、2.3 C-R 充要条件，补全各例题推导与 FA 详解。</div>
 </div>

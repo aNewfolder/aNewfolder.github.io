@@ -5,6 +5,17 @@
 
 ---
 
+平时 70% 期末 30%
+
+上课要带空白 A4 纸记录原始数据
+
+![](https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/img/20260918105006560.jpg)
+
+![](https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/img/20260918105023004.jpg)
+
+![|720x540](https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/img/20260918105040430.jpg)
+
+
 选实验优先级：
 必做：示波器 1，分光计 1，标 G 的光学 1（最后做）
 - 光的偏振 G

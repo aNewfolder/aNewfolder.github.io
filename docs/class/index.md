@@ -59,3 +59,4 @@ hide:
     - [光机结构设计](sophomore-1/optomechanical-design.md) — 章岳光 / 边美娟 / 马耀光
     - [英语演讲](sophomore-1/english-speech.md) — 陈艳华
     - [游泳（中级）](sophomore-1/swimming.md) — 赵峰
+    - [中国现代文学经典选读](sophomore-1/modern-chinese-literature-classics.md)

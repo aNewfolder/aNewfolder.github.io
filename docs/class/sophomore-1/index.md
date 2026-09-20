@@ -23,3 +23,4 @@ hide:
 - [光机结构设计](optomechanical-design.md) — 章岳光 / 边美娟 / 马耀光
 - [英语演讲](english-speech.md) — 陈艳华
 - [游泳（中级）](swimming.md) — 赵峰
+- [中国现代文学经典选读](modern-chinese-literature-classics.md)

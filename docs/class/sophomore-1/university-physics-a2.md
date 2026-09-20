@@ -636,3 +636,307 @@ $$\vec{E} = \frac{\rho}{3\varepsilon_0}\vec{a}$$
 
 </details>
 
+### 2026.9.20（9.6 静电场的环路定理 · 9.7 电势 · 9.8 场强与电势的关系）
+
+**复习与引入**
+
+- 复习：高斯定理是普适的，但若没有对称性则没法用（微分形式可用）。
+- 引入：静电场为保守场，所以可引入电势，由电势的梯度得场强。
+
+#### 9.6 静电场的环路定理
+
+**电场力做功（点电荷的电场）**
+
+电荷 $q_0$ 从 $a$ 移到 $b$，电场力做的功——先取微元（$\theta$ 为 $\vec{E}$ 与 $\mathrm{d}\vec{l}$ 的夹角，径向场中 $\mathrm{d}l\cos\theta = \mathrm{d}r$）：
+
+$$\mathrm{d}A = \vec{F}\cdot\mathrm{d}\vec{l} = q_0\vec{E}\cdot\mathrm{d}\vec{l} = q_0 E\,\mathrm{d}l\cos\theta = q_0 E\,\mathrm{d}r = \frac{q_0 q}{4\pi\varepsilon_0 r^2}\,\mathrm{d}r$$
+
+$$A_{ab} = \int_a^b \mathrm{d}A = \frac{q_0 q}{4\pi\varepsilon_0}\left(\frac{1}{r_a} - \frac{1}{r_b}\right)$$
+
+结果只与起点、终点的 $r_a$、$r_b$ 有关，**路径无关** → 保守场 → 可引入"势"。任意带电体产生的静电场同理，各电荷叠加即可。
+
+**静电场的环路定理**
+
+沿 $acb$、$adb$ 两条路径从 $a$ 到 $b$ 做功相等，而 $bda$ 是 $adb$ 的逆向走法：
+
+$$\int_{acb} q_0\vec{E}\cdot\mathrm{d}\vec{l} = \int_{adb} q_0\vec{E}\cdot\mathrm{d}\vec{l} = -\int_{bda} q_0\vec{E}\cdot\mathrm{d}\vec{l}$$
+
+两项合起来正是沿闭合回路 $acbda$ 的环量，得环路定理：
+
+$$\oint_L \vec{E}\cdot\mathrm{d}\vec{l} = 0$$
+
+即静电场基本定理（两条）：
+
+- 高斯定理：有源；
+- 环路定理：有势、无旋。
+
+由 Stokes 定理（FA，不会了）：
+
+$$\oint_L \vec{E}\cdot\mathrm{d}\vec{l} = \iint_\Sigma (\nabla\times\vec{E})\cdot\mathrm{d}\vec{S}$$
+
+持续缩小回路，得旋度 $\nabla\times\vec{E} = 0$：无涡旋。
+
+<details markdown="1">
+<summary><strong>【FA：Stokes 定理与"无旋"（不会了 → 讲清楚）】</strong></summary>
+
+- **Stokes 定理说什么**：对任意一张以闭合回路 $L$ 为边界的曲面 $\Sigma$，场沿 $L$ 的环量等于场的旋度穿过 $\Sigma$ 的通量，即上式。方向约定用右手定则配套：四指沿回路绕向弯曲，拇指指向面元 $\mathrm{d}\vec{S}$ 的法向。
+- **怎么从"环量恒为零"推出 $\nabla\times\vec{E} = 0$**：静电场对**任何**闭合回路环量都是零，所以对**任何**曲面 $\Sigma$ 都有 $\iint_\Sigma(\nabla\times\vec{E})\cdot\mathrm{d}\vec{S} = 0$。假如某点旋度不为零，就过该点取一个法向与 $\nabla\times\vec{E}$ 同向的小回路，小面元上的积分 $\approx |\nabla\times\vec{E}|\,\Delta S \neq 0$，矛盾。这就是笔记说的"持续缩小回路"：回路缩到一点，环量就缩成该点的 $\nabla\times\vec{E}\cdot\mathrm{d}\vec{S}$，处处为零只能说明每一点的旋度都是零。
+- **"无涡旋"的直观**：旋度度量场的"打转"程度（类比水流里的漩涡：旋度就是漩涡强度）。$\nabla\times\vec{E} = 0$ 意味着静电场处处不打转，电场线不会自己闭合成圈。
+- **一句话总结**：$\oint_L\vec{E}\cdot\mathrm{d}\vec{l} = 0$ 是环路定理的**积分形式**（对一整条回路说的话），$\nabla\times\vec{E} = 0$ 是**微分形式**（对每一点说的话），Stokes 定理是两者之间的翻译官。对比预告：后面电磁感应里的感生电场 $\nabla\times\vec{E} = -\partial\vec{B}/\partial t \neq 0$，其电场线恰是闭合涡旋。（解答由AI补全）
+
+</details>
+
+**数学：散度、旋度、梯度**
+
+散度（笔记已给）：
+
+$$\nabla\cdot\vec{E} = \frac{\partial E_x}{\partial x} + \frac{\partial E_y}{\partial y} + \frac{\partial E_z}{\partial z}$$
+
+旋度（FA，补充）：
+
+<details markdown="1">
+<summary><strong>【FA：旋度公式（补充）】</strong></summary>
+
+直角坐标系中的展开式（行列式记法最好记）：
+
+$$\nabla\times\vec{E} = \begin{vmatrix} \vec{i} & \vec{j} & \vec{k} \\ \dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{\partial}{\partial z} \\ E_x & E_y & E_z \end{vmatrix} = \vec{i}\left(\frac{\partial E_z}{\partial y} - \frac{\partial E_y}{\partial z}\right) + \vec{j}\left(\frac{\partial E_x}{\partial z} - \frac{\partial E_z}{\partial x}\right) + \vec{k}\left(\frac{\partial E_y}{\partial x} - \frac{\partial E_x}{\partial y}\right)$$
+
+- 展开：按第一行展开行列式，"正对角线"取正、"反对角线"取负。
+- 每个分量的含义：$x$ 分量 $(\partial E_z/\partial y - \partial E_y/\partial z)$ 度量场在 $yz$ 平面内的"环量密度"（单位面积的环量），其余分量同理。
+- 对照记忆：散度 $\nabla\cdot\vec{E}$ 是**标量**（源的强度），旋度 $\nabla\times\vec{E}$ 是**矢量**（涡的强度）。静电场：$\nabla\cdot\vec{E} = \rho/\varepsilon_0$（有源）、$\nabla\times\vec{E} = 0$（无旋）。（解答由AI补全）
+
+</details>
+
+梯度（FA，补充）：
+
+<details markdown="1">
+<summary><strong>【FA：∇ 算子与"三件套"（补充）】</strong></summary>
+
+$\nabla$（读 nabla）本身不是场，是一套"求偏导"的指令，写出来像矢量：
+
+$$\nabla \equiv \vec{i}\frac{\partial}{\partial x} + \vec{j}\frac{\partial}{\partial y} + \vec{k}\frac{\partial}{\partial z}$$
+
+三种用法对应矢量分析三件套：
+
+| 用法 | 作用对象 | 结果 | 静电场中的身份 |
+| --- | --- | --- | --- |
+| $\nabla U$ 梯度 | 标量场 | 矢量 | $\vec{E} = -\nabla U$（见 9.8） |
+| $\nabla\cdot\vec{E}$ 散度 | 矢量场 | 标量 | $= \rho/\varepsilon_0$（高斯定理微分形式） |
+| $\nabla\times\vec{E}$ 旋度 | 矢量场 | 矢量 | $= 0$（环路定理微分形式） |
+
+记忆：点乘出标量（散度），叉乘出矢量（旋度），直接打在标量上出梯度。（解答由AI补全）
+
+</details>
+
+#### 9.7 电势
+
+**电势能**
+
+$$A_{ab} = \int_a^b q_0\vec{E}\cdot\mathrm{d}\vec{l} = -(W_b - W_a) = -\Delta W$$
+
+（负号很重要：电场力做的功 = 电势能的减少。）
+
+电势能（选参考点为零）：
+
+$$W_P = q_0\int_P^{\text{参考点}\,(P_0,\,+\infty)} \vec{E}\cdot\mathrm{d}\vec{l}$$
+
+**电势**
+
+$$U_P = \frac{W_P}{q_0} = \int_P^{+\infty}\vec{E}\cdot\mathrm{d}\vec{l}$$
+
+（笔记原话：单给 $q$ 没说符号，按正的做。）
+
+**电压**
+
+$$U_{ab} = \int_a^b \vec{E}\cdot\mathrm{d}\vec{l}$$
+
+**电场力做功**
+
+$$A_{ab} = q_0\int_a^b \vec{E}\cdot\mathrm{d}\vec{l} = q_0(U_a - U_b) \qquad (\text{FA：梳理何时 } a\!\to\! b\text{，何时 } b\!\to\! a)$$
+
+<details markdown="1">
+<summary><strong>【FA：做功方向梳理——何时 a→b、何时 b→a】</strong></summary>
+
+1. **定义自带方向**：$U_{ab} \equiv U_a - U_b = \displaystyle\int_a^b\vec{E}\cdot\mathrm{d}\vec{l}$，下标顺序就是积分路径方向（从第一个下标积到第二个）。$U_{ab} > 0$ 即 $a$ 点电势高。
+2. **顺路做功**：电荷 $q_0$ 从 $a$ 移到 $b$，$A_{ab} = q_0(U_a - U_b)$。正电荷从高电势到低电势（顺电场线"下坡"）→ $A_{ab} > 0$，电场力推它走；从低到高（"爬坡"）→ $A_{ab} < 0$，此时说"外力克服电场力做功"，外力做的功 $-A_{ab}$ 全部存成电势能。
+3. **反着搬**：从 $b$ 到 $a$ 则 $A_{ba} = q_0(U_b - U_a) = -A_{ab}$——做功与路径无关、只看始末，方向反过来就差一个负号。
+4. **口诀**：题目问"从 X 到 Y"，就写 $A_{XY} = q_0(U_X - U_Y)$，正负用"正电荷顺场线做正功"判断。这也正是上面 $A_{ab} = -(W_b - W_a)$ 中那个"很重要"的负号。（解答由AI补全）
+
+</details>
+
+**零点（参考点）选择**
+
+- 有限带电体系：一般取无限远 / 地面为零点；
+- 无限带电体系：任选一个有限点。
+
+**电势叠加原理**
+
+**1. 点电荷电场的电势**（默认零点为沿矢径方向的无限远；换参照点要重算）：
+
+$$U_P = \int_P^{+\infty}\vec{E}\cdot\mathrm{d}\vec{l} = \int_r^{+\infty}\frac{q}{4\pi\varepsilon_0 r^2}\,\mathrm{d}r = \frac{q}{4\pi\varepsilon_0 r}$$
+
+若选 $r = a$ 处为零点：
+
+$$U_P = \int_P^{P_0}\vec{E}\cdot\mathrm{d}\vec{l} = \frac{q}{4\pi\varepsilon_0 r} - \frac{q}{4\pi\varepsilon_0 a}$$
+
+**2. 均匀带电球壳的电势**：场强分段
+
+$$\vec{E} = \begin{cases} 0, & r < R \\ \dfrac{Q}{4\pi\varepsilon_0 r^2}\hat{r}, & r > R \end{cases}$$
+
+电势分段积分（球壳内 $E = 0$，第一段积分贡献为零）：
+
+$$U = \begin{cases} \displaystyle\int_r^R E\,\mathrm{d}r + \int_R^{+\infty}\frac{Q}{4\pi\varepsilon_0 r^2}\,\mathrm{d}r = \dfrac{Q}{4\pi\varepsilon_0 R}, & r < R \\[3ex] \displaystyle\int_r^{+\infty}\frac{Q}{4\pi\varepsilon_0 r^2}\,\mathrm{d}r = \dfrac{Q}{4\pi\varepsilon_0 r}, & r \geq R \end{cases}$$
+
+图：$U$–$r$ 曲线——$r < R$ 段是水平直线（常数 $\frac{Q}{4\pi\varepsilon_0 R}$），$r > R$ 段从同一高度按 $\frac{1}{r}$ 衰减，在 $R$ 处平滑衔接。
+
+场强在表面突变，但电势是连续的——适合分析复杂带电体系。
+
+**3. 无限长均匀带电直线的电势**（线密度 $\lambda$，求垂直距离 $r$ 处 $P$ 点电势）：
+
+不能选无限远为零点，设 $r_0$ 处 $P_0$ 点电势为零。高斯面选圆柱，轴对称场强由高斯定理得
+
+$$E = \frac{\lambda}{2\pi\varepsilon_0 r} \qquad (\text{FA：推导，见下方说明})$$
+
+$$U_P = \int_P^{P_0}\vec{E}\cdot\mathrm{d}\vec{l} = \int_r^{r_0}\frac{\lambda}{2\pi\varepsilon_0 r}\,\mathrm{d}r = \frac{\lambda}{2\pi\varepsilon_0}\ln\frac{r_0}{r}$$
+
+$r_0$ 随便选，因为电势都是相对的，比如选 $r_0 = 1\,\mathrm{m}$。
+
+（该场强公式的完整高斯面推导已收录于 2026.9.17 笔记【FA：无限长带电直线（完整推导）】，此处不重复。顺带补一句"为什么不能选无限远为零点"：$\int_r^{+\infty}\frac{\mathrm{d}r}{r}$ 积分发散，电势会跑到无穷大，所以只能选有限参考点。）
+
+**4. 点电荷系电场的电势**：由场强叠加原理，
+
+$$U_P = \int_P^{+\infty}\vec{E}\cdot\mathrm{d}\vec{l} = \int_P^{+\infty}(\vec{E}_1 + \vec{E}_2 + \cdots + \vec{E}_n)\cdot\mathrm{d}\vec{l} = U_{P_1} + U_{P_2} + \cdots + U_{P_n} = \sum_{i=1}^{n}\frac{q_i}{4\pi\varepsilon_0 r_i}$$
+
+仅**标量**叠加，可以绕过场强（免去矢量合成的麻烦）。对连续带电体：
+
+$$U = \int\mathrm{d}U = \int\frac{\mathrm{d}q}{4\pi\varepsilon_0 r}$$
+
+也可以由电势求场强（求导）。参考点取有限远点时依然成立。
+
+综上，求电势的两条路：1. 首先求 $\vec{E}$，再积分；2. 电荷分布已知，直接电势叠加。
+
+#### 9.8 场强与电势的关系
+
+**等势面**
+
+规定相邻等势面电势差相同；画图约定等势面用虚线（电场线为实线）。性质：
+
+1. 等势面与电场线处处正交。（证：沿等势面从 $a$ 移到 $b$ 电场力不做功，即 $W_{ab} = 0 = q_0\displaystyle\int_a^b\vec{E}\cdot\mathrm{d}\vec{l}$，而等势面上的路径任意，只能 $\vec{E}$ 与 $\mathrm{d}\vec{l}$ 处处垂直。）
+2. 场强指向电势下降方向，且正比于同方向电势的变化率。
+3. 等势面密集处场强大。
+4. （空间内）场强为零的连通区域电势相等。
+
+**已知电势分布求场强（证明）**
+
+$$U_a - U_b = \int_a^{P_0}\vec{E}\cdot\mathrm{d}\vec{l} - \int_b^{P_0}\vec{E}\cdot\mathrm{d}\vec{l} = \int_a^b\vec{E}\cdot\mathrm{d}\vec{l}$$
+
+将单位电荷沿 $x$ 轴移动 $\mathrm{d}x$，即 $A(x,y,z) \to B(x+\mathrm{d}x,y,z)$，在 $\mathrm{d}x$ 内认为 $\vec{E}$ 不变：
+
+$$-\mathrm{d}U = U_a - U_b = \int_a^b\vec{E}\cdot\mathrm{d}\vec{l} = E_x\,\mathrm{d}x$$
+
+得 $E_x = -\dfrac{\partial U}{\partial x}$；同理 $E_y = -\dfrac{\partial U}{\partial y}$，$E_z = -\dfrac{\partial U}{\partial z}$。于是
+
+$$\vec{E} = E_x\vec{i} + E_y\vec{j} + E_z\vec{k} = -\left(\vec{i}\frac{\partial U}{\partial x} + \vec{j}\frac{\partial U}{\partial y} + \vec{k}\frac{\partial U}{\partial z}\right) = -\nabla U \ (\text{梯度}) \qquad (\text{必须注意负号})$$
+
+**数学：矢量微分算子与方向导数**
+
+$$\nabla \equiv \vec{i}\frac{\partial}{\partial x} + \vec{j}\frac{\partial}{\partial y} + \vec{k}\frac{\partial}{\partial z}$$
+
+方向导数（位移方向 $l$ 与等势面法线 $n$ 成 $\theta$ 角）：
+
+$$\frac{\mathrm{d}U}{\mathrm{d}l} = \frac{\mathrm{d}U}{\mathrm{d}n}\cos\theta$$
+
+法线方向变化率最大，即梯度：
+
+$$\nabla U = \mathrm{grad}\,U = \frac{\mathrm{d}U}{\mathrm{d}n}\,\vec{n}$$
+
+**总结：求场强方法**
+
+1. 库仑定律 + 叠加；2. 高斯定理；3. 电势求梯度。
+
+**例：外半径 $R_2$ 的均匀带电圆盘（面密度 $\sigma$），中心挖去半径 $R_1$ 的圆，求轴线上 $P$ 点的电势与场强**
+
+图：带孔圆盘（垫圈形），过盘心垂直于盘面的轴线上有场点 $P$（距盘心 $x$）。
+
+取微元圆环：半径 $r$、宽 $\mathrm{d}r$，$\mathrm{d}q = \sigma\cdot 2\pi r\,\mathrm{d}r$，则
+
+$$\mathrm{d}U = \frac{\mathrm{d}q}{4\pi\varepsilon_0\sqrt{r^2+x^2}}$$
+
+代入 $\mathrm{d}q$ 积分：
+
+$$U_P = \int_{R_1}^{R_2}\frac{\sigma r\,\mathrm{d}r}{2\varepsilon_0\sqrt{r^2+x^2}} = \frac{\sigma}{2\varepsilon_0}\left(\sqrt{R_2^2+x^2} - \sqrt{R_1^2+x^2}\right)$$
+
+场强只有 $x$ 分量：
+
+$$E = E_x = -\frac{\partial U}{\partial x} = \frac{\sigma}{2\varepsilon_0}\left(\frac{x}{\sqrt{R_1^2+x^2}} - \frac{x}{\sqrt{R_2^2+x^2}}\right)$$
+
+#### PPT 补充：电偶极子 · 不同坐标系下的梯度（详细讲解）
+
+> 本次两页 PPT 的文字提取如下（按要求放在最后），逐行讲解见各折叠块。
+
+**PPT 一：例——电偶极子的电场**
+
+- $U = U_+ + U_- = -k\dfrac{\vec{p}\cdot\vec{r}}{r^3}$，偶极矩 $\vec{p} \equiv q\vec{l}$
+- $\vec{E} = -\nabla U = k\left(\dfrac{3\vec{p}\cdot\vec{r}}{r^5}\vec{r} - \dfrac{\vec{p}}{r^3}\right)$
+- 配图：等量异号点电荷的电场线（实线）与等势线（虚线）分布（课本 Fig. 4-13）
+
+**PPT 二：例——在均匀外电场中，电偶极子的电势能**
+
+- $W = q(U_+ - U_-) = -qEl\cos\theta = -\vec{p}\cdot\vec{E}$
+- 在外电场中，偶极矩趋向转向场强
+- 复杂静电问题，解泊松方程：$\vec{\nabla}\cdot\vec{E} = \dfrac{\rho_e}{\varepsilon_0}$、$\vec{E} = -\nabla\phi$，得 $\nabla^2\phi = -\dfrac{\rho}{\varepsilon}$
+
+<details markdown="1">
+<summary><strong>【FA：电偶极子两例 + 泊松方程（逐行讲解）】</strong></summary>
+
+**① 模型与偶极矩**：电偶极子 = 相距 $l$ 的一对等量异号点电荷 $+q$、$-q$，且只在 $r \gg l$ 的远处看它（把这一对电荷当"一个东西"）。偶极矩 $\vec{p} = q\vec{l}$，$\vec{l}$ 从 $-q$ 指向 $+q$，所以 $\vec{p}$ 指向正电荷一侧。
+
+**② 电势**：$U = U_+ + U_- = kq\left(\dfrac{1}{r_+} - \dfrac{1}{r_-}\right)$。以偶极子中心为原点、$\vec{p}$ 沿极轴，场点到中心距离 $r$、方向与 $\vec{p}$ 夹角 $\theta$，则 $r_+ \approx r - \frac{l}{2}\cos\theta$、$r_- \approx r + \frac{l}{2}\cos\theta$（离 $+q$ 近一点就远一点），通分：
+
+$$U \approx kq\,\frac{\left(r+\frac{l}{2}\cos\theta\right)-\left(r-\frac{l}{2}\cos\theta\right)}{r^2} = k\frac{p\cos\theta}{r^2} = k\frac{\vec{p}\cdot\vec{r}}{r^3}$$
+
+注意：PPT 上 $U$ 那行带负号（$-k\,\vec{p}\cdot\vec{r}/r^3$），疑为笔误——沿 $\vec{p}$ 方向的远点离 $+q$ 更近、电势应为正；而且只有取正号，下一步求梯度才能得到 PPT 自己写的 $\vec{E}$。
+
+**③ 场强**（由电势求梯度，$U$ 只依赖 $r$、$\theta$）：
+
+$$E_r = -\frac{\partial U}{\partial r} = \frac{2kp\cos\theta}{r^3}, \qquad E_\theta = -\frac{1}{r}\frac{\partial U}{\partial\theta} = \frac{kp\sin\theta}{r^3}$$
+
+两分量打包就是 PPT 的矢量式 $\vec{E} = k\left(\dfrac{3(\vec{p}\cdot\vec{r})\,\vec{r}}{r^5} - \dfrac{\vec{p}}{r^3}\right)$。检验两个特殊方向：轴线上（$\theta = 0$）$E = \dfrac{2kp}{r^3}$ 沿 $\vec{p}$；中垂面上（$\theta = 90^\circ$）$E = \dfrac{kp}{r^3}$ 与 $\vec{p}$ 反向。衰减规律：$U \propto 1/r^2$、$E \propto 1/r^3$——比点电荷快一档，因为远处 $+q$、$-q$ 的贡献几乎互相抵消，只剩这点"残余"。
+
+**④ 均匀外场中的电势能**：外场均匀，沿场方向走 $l\cos\theta$ 电势就降 $El\cos\theta$，故 $U_+ - U_- = -El\cos\theta$，
+
+$$W = q(U_+ - U_-) = -qEl\cos\theta = -\vec{p}\cdot\vec{E}$$
+
+$\vec{p}\parallel\vec{E}$ 时 $W = -pE$ 最小（稳定平衡，类比指南针指针稳定指北）；$\vec{p}$ 反平行时 $W = +pE$ 最大（不稳）。能量往低处走，所以"偶极矩趋向转向场强"。（支撑这句的力矩公式 PPT 没写，补上：$\vec{\tau} = \vec{p}\times\vec{E}$，大小 $pE\sin\theta$，作用就是把 $\vec{p}$ 拧向 $\vec{E}$。）
+
+**⑤ 泊松方程**：叠加、高斯都要求电荷分布好算；复杂边界问题换思路——不求 $\vec{E}$，先求标量 $\phi$。把 $\vec{E} = -\nabla\phi$ 代入高斯定理微分形式 $\nabla\cdot\vec{E} = \rho_e/\varepsilon_0$：
+
+$$\nabla\cdot(-\nabla\phi) = \frac{\rho}{\varepsilon} \;\Rightarrow\; \nabla^2\phi = -\frac{\rho}{\varepsilon}$$
+
+$\nabla^2 = \dfrac{\partial^2}{\partial x^2} + \dfrac{\partial^2}{\partial y^2} + \dfrac{\partial^2}{\partial z^2}$（拉普拉斯算子）；$\varepsilon$ 是介质介电常数（真空取 $\varepsilon_0$）；无电荷区域 $\rho = 0$ 时叫拉普拉斯方程。好处：三个分量的矢量问题变成一个标量的偏微分方程，配边界条件解出 $\phi$，再 $\vec{E} = -\nabla\phi$ 收尾。（解答由AI补全）
+
+</details>
+
+**PPT 三：梯度在不同坐标系的表述**
+
+球坐标：
+
+$$\nabla U = \vec{e}_r\frac{\partial U}{\partial r} + \vec{e}_\theta\,\frac{1}{r}\frac{\partial U}{\partial\theta} + \vec{e}_\phi\,\frac{1}{r\sin\theta}\frac{\partial U}{\partial\phi}$$
+
+柱坐标：
+
+$$\nabla U = \vec{e}_r\frac{\partial U}{\partial r} + \vec{e}_\phi\,\frac{1}{r}\frac{\partial U}{\partial\phi} + \vec{e}_z\frac{\partial U}{\partial z}$$
+
+坐标变换（PPT 原文，$\mathrm{tg}^{-1}$ 即 $\arctan$）：
+
+$$\begin{cases} x = r\sin\theta\cos\phi \\ y = r\sin\theta\sin\phi \\ z = r\cos\theta \end{cases} \qquad\quad \begin{cases} r = \sqrt{x^2+y^2+z^2} \\ \theta = \cos^{-1}\dfrac{z}{r} \\ \phi = \mathrm{tg}^{-1}\dfrac{y}{x} \end{cases}$$
+
+<details markdown="1">
+<summary><strong>【FA：坐标系里的梯度——为什么多出 1/r、怎么用】</strong></summary>
+
+- **为什么多出 $\frac{1}{r}$、$\frac{1}{r\sin\theta}$**：偏导 $\frac{\partial U}{\partial\theta}$ 是"$\theta$ 增加 1 弧度时 $U$ 变多少"，但梯度要的是"沿空间每走 1 米 $U$ 变多少"。球坐标里 $\theta$ 变 $\mathrm{d}\theta$ 实际只走 $r\,\mathrm{d}\theta$ 的弧长，$\phi$ 变 $\mathrm{d}\phi$ 只走 $r\sin\theta\,\mathrm{d}\phi$，所以换算成"每米变化率"要除以步长：$\frac{1}{r}\frac{\partial U}{\partial\theta}$、$\frac{1}{r\sin\theta}\frac{\partial U}{\partial\phi}$。直观：越靠近极轴（$\theta \to 0$），同一 $\mathrm{d}\phi$ 对应的圆圈越短，这个因子把这种"密集"自动放大进去。径向不用除——$r$ 本身就是长度，$\mathrm{d}r$ 走多远算多远。
+- **怎么用（和笔记对上）**：球对称问题 $U = U(r)$ 只依赖 $r$，后两项全为零，$\vec{E} = -\nabla U = -\frac{\mathrm{d}U}{\mathrm{d}r}\hat{r}$，三元偏导退化成一元求导——上面球壳由电势看场强就是这种情形；柱对称（无限长直线）同理只剩 $\vec{e}_r$ 项。这正是 9.8"电势求梯度"方法在对称问题上的省力之处。
+- **三个角的角色**：$r$ 是到原点的距离，$\theta$ 从 $+z$ 轴量起（极角），$\phi$ 是 $xy$ 平面内从 $+x$ 轴量起的方位角。（解答由AI补全）
+
+</details>
+
