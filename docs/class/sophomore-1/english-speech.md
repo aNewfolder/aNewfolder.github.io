@@ -57,3 +57,19 @@
 - Rubric:（评分细则）
   - 10% for delivery and content (same as regular speech assignments).（10% 表达与内容，与平时演讲作业相同）
   - 5% for overall improvement since the beginning of the course (progress in delivery, confidence, organization, etc.).（5% 开课以来的整体进步：表达、自信、结构组织等方面）
+
+## Week 2
+- sharpening (narrower, more concrete and harder to waffle on)
+- mapping the stakeholders
+
+introduce and recommend the video to global audience
+
+Opium 1856-1860 
+
+Jade Vase
+
+cultural relic
+
+personified 
+
+没招了，口语能力已经清零了

@@ -23,6 +23,11 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-09-20</div>
+<div class="update-log-content">顺带提交本地修改：英语演讲 Week2 笔记、物理实验选实验清单改为图片、跑步打卡（3km 4′54″）与游泳课 Class 2 记录。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-09-20</div>
 <div class="update-log-content">大学物理Ⅱ新增 9.20 课堂笔记：环路定理、电势与场强关系，文末附电偶极子等 PPT 详解。</div>
 </div>
 
