@@ -22,6 +22,11 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-09-22</div>
+<div class="update-log-content">大学物理Ⅱ新增 9.22 课堂笔记：导体的静电平衡与静电屏蔽，课本例 10.1/10.2 及 PPT 例 3 转文字并配拓展解法与插图；顺带提交读书记录表、跑步 9.21 打卡、即兴演奏练琴记录等本地修改。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-09-20</div>
 <div class="update-log-content">顺带提交本地修改：英语演讲 Week2 笔记、物理实验选实验清单改为图片、跑步打卡（3km 4′54″）与游泳课 Class 2 记录。</div>
 </div>
