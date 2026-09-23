@@ -23,6 +23,16 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-09-23</div>
+<div class="update-log-content">概率论与数理统计新增笔记：1.3 等可能概型、1.4 条件概率（乘法公式、全概率、贝叶斯与短信例题）、1.5 独立性；顺带提交电基 9.23 实验笔记与现代文学秋二周鲁迅课堂记录。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-09-23</div>
+<div class="update-log-content">电子电路基础新增 9.23 笔记：电源 u-I 特性与受控电源四种组合、基尔霍夫定律与拓扑约束（树、树支、连支、网孔），补 FA：四个系数、三极管 CCCS、电流源网孔处理。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-09-23</div>
 <div class="update-log-content">复变函数新增 9.23 笔记：调和函数与共轭调和函数、初等解析函数（指数、三角、双曲、对数）及三法求解析函数例题；顺带提交英语演讲 Week 3 标记与游泳课 Class 3 记录。</div>
 </div>
 

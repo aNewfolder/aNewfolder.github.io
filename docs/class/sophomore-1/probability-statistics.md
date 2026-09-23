@@ -100,3 +100,101 @@ $$P\left(\bigcup_{j=1}^{n} A_j\right) = \sum_{j=1}^{n} P(A_j) - \sum_{1 \le i < 
 
 补充 $n = 3$ 情形：$P(A \cup B \cup C) = P(A) + P(B) + P(C) - P(AB) - P(AC) - P(BC) + P(ABC)$。
 
+#### 1.3 等可能概型
+
+**古典概型**：有限性 + 等可能性。
+
+经典例题：(1) 超几何分布　(2) 抽签公平问题　(3) 生日问题（例题课本上都有，【见课本】第一章 §1.3）。
+
+<details markdown="1">
+<summary><strong>【FA：三个经典例题速览】</strong></summary>
+
+- **超几何分布**：$N$ 件产品中有 $M$ 件次品，不放回地任取 $n$ 件，则抽得次品数 $X$ 满足 $P(X = k) = \dfrac{\dbinom{M}{k}\dbinom{N-M}{n-k}}{\dbinom{N}{n}}$。
+- **抽签公平问题**：$n$ 支签中 $k$ 支为中签，众人依次抽签不放回，则无论第几个抽，中签概率恒为 $\dfrac{k}{n}$——抽签不必争先后。
+- **生日问题**：一间屋里 $n$ 个人中至少两人生日相同的概率为 $1 - \dfrac{365 \times 364 \times \cdots \times (365 - n + 1)}{365^n}$；$n = 23$ 时已超过 $50\%$。
+
+</details>
+
+### 2026.9.23
+
+#### 1.4 条件概率
+
+**条件概率定义**
+
+$$P(B \mid A) = \frac{P(AB)}{P(A)}$$
+
+条件概率同样满足概率的基本性质（非负、规范、可加），例如可加性在条件概率下为
+
+$$P(B \cup C \mid A) = P(B \mid A) + P(C \mid A) - P(BC \mid A)$$
+
+**乘法公式**
+
+$$P(AB) = P(A)P(B \mid A) = P(B)P(A \mid B)$$
+
+推广到三个事件：
+
+$$P(ABC) = P(A)P(B \mid A)P(C \mid AB)$$
+
+**划分**
+
+$B_1, B_2, \ldots, B_n$ 是 $S$ 的一个划分，若 ① $B_iB_j = \varnothing$（$i \ne j$）；② $B_1 \cup B_2 \cup \cdots \cup B_n = S$。
+
+**全概率公式**
+
+$$P(A) = \sum_{j=1}^{n} P(B_j)P(A \mid B_j)$$
+
+**贝叶斯公式**
+
+$$P(B_k \mid A) = \frac{P(B_k A)}{P(A)} = \frac{P(B_k)P(A \mid B_k)}{\sum\limits_{j=1}^{n} P(B_j)P(A \mid B_j)}$$
+
+<details markdown="1">
+<summary><strong>【FA：全概率与贝叶斯公式的推导和直观】</strong></summary>
+
+推导：由划分得 $A = AS = A(B_1 \cup \cdots \cup B_n) = AB_1 \cup \cdots \cup AB_n$，且诸 $AB_i$ 两两互斥，故由可加性与乘法公式
+
+$$P(A) = \sum_{j=1}^{n} P(AB_j) = \sum_{j=1}^{n} P(B_j)P(A \mid B_j)$$
+
+贝叶斯公式就是"条件概率定义 + 把全概率公式代入分母"。直观：全概率是**由因推果**——"结果" $A$ 按各条"原因" $B_j$ 分摊加权；贝叶斯是**执果索因**——观察到结果 $A$ 后反推它由各原因 $B_k$ 引起的概率（要求 $P(A) > 0$）。
+
+</details>
+
+**e.g.**（短信问题）某学生每天收到 $i$ 条短信的概率为 $\dfrac{\lambda^i e^{-\lambda}}{i!}$，记为 $B_i$（即 $B_i$ = "每天收到 $i$ 条短信"，诸 $B_i$ 构成 $S$ 的一个划分）；每条短信阅读概率为 $p$（各条是否阅读相互独立）。求 $P(\text{每天阅读 } k \text{ 条短信})$（设为 $A$）。
+
+收到 $n$ 条时恰阅读 $k$ 条的条件概率为二项分布 $\binom{n}{k}p^k(1-p)^{n-k}$，由乘法公式并对划分 $\{B_n\}$ 用全概率公式：
+
+$$P(A) = P(B_k)\,p^k + P(B_{k+1})\binom{k+1}{k}p^k(1-p) + \cdots = \sum_{n=k}^{+\infty} P(B_n)\binom{n}{k}p^k(1-p)^{n-k}$$
+
+代入 $P(B_n) = \dfrac{\lambda^n e^{-\lambda}}{n!}$ 并整理：
+
+$$P(A) = \sum_{n=k}^{+\infty} \frac{\lambda^n e^{-\lambda}}{n!} \cdot \frac{n!}{k!\,(n-k)!}\, p^k (1-p)^{n-k} = \frac{(\lambda p)^k e^{-\lambda}}{k!} \sum_{n=k}^{+\infty} \frac{[\lambda(1-p)]^{n-k}}{(n-k)!}$$
+
+由 $e^x = \sum\limits_{i=0}^{+\infty} \dfrac{x^i}{i!}$ 展开得
+
+$$P(A) = \frac{(\lambda p)^k e^{-\lambda}}{k!}\, e^{\lambda(1-p)} = \frac{(\lambda p)^k}{k!}\, e^{-\lambda p}$$
+
+（推导衔接步由AI补全）
+
+<details markdown="1">
+<summary><strong>【FA：结论——被阅读短信数仍服从泊松分布】</strong></summary>
+
+答案 $\dfrac{(\lambda p)^k}{k!}e^{-\lambda p}$ 恰是参数为 $\lambda p$ 的泊松分布：若收到条数 $X \sim P(\lambda)$，每条独立以概率 $p$ 被阅读，则被阅读条数 $\sim P(\lambda p)$。这叫泊松分布的**稀疏化（thinning）**：把每条短信以概率 $p$ "筛"一遍，筛剩下的仍是泊松分布，只是参数乘 $p$。
+
+</details>
+
+#### 1.5 独立性
+
+**定义**：若 $P(AB) = P(A)P(B)$，则称 $A$ 与 $B$ **独立**。当 $P(A)P(B) \ne 0$ 时，独立等价于
+
+$$P(B \mid A) = P(B) \quad \text{或} \quad P(A \mid B) = P(A)$$
+
+即一事件发生与否不改变另一事件发生的概率。
+
+**补事件替换**：$A$、$B$ 独立，则随意替换 $\overline{A}$、$\overline{B}$ 也独立，即 $A$ 与 $\overline{B}$、$\overline{A}$ 与 $B$、$\overline{A}$ 与 $\overline{B}$ 均独立。
+
+<details markdown="1">
+<summary><strong>【FA：补事件替换为何保持独立（证明）】</strong></summary>
+
+以 $A$ 与 $\overline{B}$ 为例：$P(A\overline{B}) = P(A) - P(AB) = P(A) - P(A)P(B) = P(A)\left[1 - P(B)\right] = P(A)P(\overline{B})$。其余情形同理，对 $\overline{A}$、$\overline{B}$ 反复套用即可。
+
+</details>
+
