@@ -22,6 +22,11 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-09-23</div>
+<div class="update-log-content">复变函数新增 9.23 笔记：调和函数与共轭调和函数、初等解析函数（指数、三角、双曲、对数）及三法求解析函数例题；顺带提交英语演讲 Week 3 标记与游泳课 Class 3 记录。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-09-22</div>
 <div class="update-log-content">大学物理Ⅱ新增 9.22 课堂笔记：导体的静电平衡与静电屏蔽，课本例 10.1/10.2 及 PPT 例 3 转文字并配拓展解法与插图；顺带提交读书记录表、跑步 9.21 打卡、即兴演奏练琴记录等本地修改。</div>
 </div>

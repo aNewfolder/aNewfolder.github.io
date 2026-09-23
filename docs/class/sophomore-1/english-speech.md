@@ -73,3 +73,5 @@ cultural relic
 personified 
 
 没招了，口语能力已经清零了
+
+## Week 3

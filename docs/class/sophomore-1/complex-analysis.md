@@ -272,3 +272,184 @@ $$f'(z) = \frac{\partial u}{\partial x} + \mathrm{i}\frac{\partial v}{\partial x
 
 （提醒：仅满足 C-R 条件不够，还需 $u$、$v$ 可微——如偏导数连续即可保证可微——两者合起来才与可导等价。）
 
+### 2026.9.23
+
+#### 复习 2.3：一点可导的充要条件
+
+$f(z) = u(x, y) + \mathrm{i}v(x, y)$ 在 $D$ 内一点 $z = x + \mathrm{i}y$ 可导的充要条件：$u_x$、$u_y$、$v_x$、$v_y$ 在 $(x, y)$ 存在且满足 C-R 方程。（笔记在此定理前有一两字旁注，字迹辨认不清，暂记【?】。）
+
+（上节课讲的：在区域 $D$ 内，可导 $\iff$ 解析。）
+
+注：若 $u(x, y)$ 在 $(x, y)$ 点有一阶连续偏导，则在 $(x, y)$ 必可微。
+
+<details markdown="1">
+<summary><strong>【FA：与 2.3 两种表述的衔接】</strong></summary>
+
+上一节 2.3 的版本是"$u$、$v$ 在该点**可微** + C-R $\iff$ 可导"，复习版写成"四个偏导存在 + C-R"。偏导**存在**保证不了 $u$、$v$ 可微，所以严格的充要条件仍是 2.3 的版本；不过只要四个偏导在该点**连续**（上面"注"：连续偏导 $\Rightarrow$ 可微），再配 C-R 就足以判出可导——这也是实际做题最常用的充分条件。
+
+</details>
+
+**例 1**：$w = \bar z = x - \mathrm{i}y$：处处连续，处处不可导，处处不解析。
+
+（补充：$u_x = 1 \ne v_y = -1$，C-R 方程处处不满足，故处处不可导，也就处处不解析；连续性显然。）
+
+**例 2**：$f(z) = u + \mathrm{i}v$ 在 $D$ 内解析且 $f'(z) \ne 0$ $\Rightarrow$ 曲线族 $u(x, y) = C_1$ 与 $v(x, y) = C_2$ **正交**（正交：在交点处的切线垂直）。
+
+证：$u(x, y) = C_1$ 在 $(x, y)$ 处切线斜率 $k_u = -\dfrac{u_x}{u_y}$，同理 $k_v = -\dfrac{v_x}{v_y}$。
+
+（斜率来历：$u \equiv C_1 \Rightarrow y = y(x)$，$u(x, y(x)) = C_1$，对 $x$ 求导得 $u_x + u_y\,y'(x) = 0$，$\therefore\ y'(x) = -\dfrac{u_x}{u_y}$。）
+
+$$k_u k_v = \frac{u_x\, v_x}{u_y\, v_y} \overset{\text{C-R}}{=} \frac{v_y \cdot (-u_y)}{u_y\, v_y} = -1$$
+
+即两族曲线在交点处的切线垂直。
+
+**解析函数退化为常数的几个充分条件**
+
+1. 解析且导数恒为 $0$；
+2. 实部、虚部、模、辐角中有一个恒为常数；
+3. $\overline{f(z)}$ 也解析。
+
+（Tip：若表达式里含有 $\bar z$，则不解析。）
+
+证：$f = u + \mathrm{i}v$。由 $x = \dfrac{z + \bar z}{2}$、$y = \dfrac{z - \bar z}{2\mathrm{i}}$ 得 $\dfrac{\partial x}{\partial \bar z} = \dfrac{1}{2}$，$\dfrac{\partial y}{\partial \bar z} = -\dfrac{1}{2\mathrm{i}} = \dfrac{\mathrm{i}}{2}$，链式法则
+
+$$\frac{\partial f}{\partial \bar z} = \frac{\partial f}{\partial x}\cdot\frac{\partial x}{\partial \bar z} + \frac{\partial f}{\partial y}\cdot\frac{\partial y}{\partial \bar z} = \frac{1}{2}(u_x + \mathrm{i}v_x) + \frac{\mathrm{i}}{2}(u_y + \mathrm{i}v_y) = \frac{1}{2}(u_x - v_y) + \frac{\mathrm{i}}{2}(v_x + u_y)$$
+
+若 $f(z)$ 解析，由 C-R 方程两个括号均为零，故 $\dfrac{\partial f}{\partial \bar z} = 0$——解析函数一定与 $\bar z$ 无关。
+
+<details markdown="1">
+<summary><strong>【FA：三条为什么都推出常数】</strong></summary>
+
+- 条件 1：$f' = u_x + \mathrm{i}v_x \equiv 0$ 给出 $u_x = v_x = 0$，C-R 再给出 $u_y = -v_x = 0$、$v_y = u_x = 0$：四个偏导全为零，$u$、$v$ 在连通区域 $D$ 内只能是常数。
+- 条件 2：以实部为例，$u \equiv C$ 时 $u_x = u_y = 0$，由 C-R 得 $v_x = v_y = 0$，同条件 1；虚部同理，模、辐角为常数的情形推导稍繁，结论相同。
+- 条件 3：$\overline{f(z)} = u - \mathrm{i}v$ 也解析，则它满足"反向 C-R"：$u_x = -v_y$，$u_y = v_x$；与 $f$ 的正向 C-R 相加得 $u_x = u_y = v_x = v_y = 0$，故 $f$ 恒为常数。
+
+这也顺带解释了 Tip：解析函数与 $\bar z$ 无关，所以表达式里真含 $\bar z$ 的（$\bar z$、$|z|^2 = z\bar z$、$\mathrm{Im}\,z$ 等）都不解析。
+
+</details>
+
+#### 2.4 解析函数与调和函数的关系
+
+解析性只适用于复函数（由 C-R 方程刻画）；想适配实函数需其他方法，而调和函数可定义于实函数。
+
+**定义（调和函数）**：$u(x, y)$ 在 $D$ 内**调和**：$u(x, y)$ 在 $D$ 内有二阶连续偏导，且
+
+$$\Delta u \equiv u_{xx} + u_{yy} = 0$$
+
+（即满足 Laplace 方程。）
+
+**定理**：$f(z) = u + \mathrm{i}v$ 解析 $\Rightarrow$ $u$、$v$ 均调和。
+
+证：$f(z)$ 在 $D$ 内解析，得 $u_x = v_y$，$v_x = -u_y$（C-R 方程）。再求偏导：$u_{xx} = v_{xy}$，$v_{xy} = -u_{yy}$，得 $u_{xx} + u_{yy} = 0$；$v$ 同理。
+
+**定义（共轭调和函数）**：若 $u$、$v$ 在 $D$ 内调和且满足 C-R 方程，则称 $v$ 是 $u$ 的**共轭调和函数**。
+
+**定理**：已知共轭调和函数中的一个，可用 C-R 方程求得另一个，从而构成一个解析函数。
+
+**例**：设 $u(x, y) = x^2 - y^2 + xy$（调和），求解析函数 $f(z) = u + \mathrm{i}v$ 使 $f(0) = 0$。
+
+**解 1°（偏积分法）**：$u_x = 2x + y$，$u_y = -2y + x$。由 $v_y = u_x$：
+
+$$v = \int (2x + y)\,\mathrm{d}y = 2xy + \frac{1}{2}y^2 + c(x)$$
+
+对 $x$ 求导并代 C-R 方程：$v_x = 2y + c'(x) = -u_y = 2y - x$，故 $c'(x) = -x$，$c(x) = -\dfrac{1}{2}x^2 + C$，再代入 $f(0) = 0$ 定常数。
+
+<details markdown="1">
+<summary><strong>【FA：1° 收尾——定常数、写成 z 的式子】</strong></summary>
+
+把 $c(x) = -\dfrac{1}{2}x^2 + C$ 代回，得 $v = 2xy + \dfrac{1}{2}y^2 - \dfrac{1}{2}x^2 + C$，于是
+
+$$f(z) = (x^2 - y^2 + xy) + \mathrm{i}\left(2xy + \frac{y^2 - x^2}{2}\right) + \mathrm{i}C$$
+
+代入 $f(0) = 0$ 得 $\mathrm{i}C = 0$，即 $C = 0$。展开 $\left(1 - \dfrac{\mathrm{i}}{2}\right)z^2 = (x^2 - y^2 + xy) + \mathrm{i}\left(2xy + \dfrac{y^2 - x^2}{2}\right)$，可见结果与 3° 一致。（解答由AI补全）
+
+</details>
+
+**解 2°（线积分法）**：因 $u_{xx} + u_{yy} = 0$，即 $\dfrac{\partial u_x}{\partial x} = \dfrac{\partial (-u_y)}{\partial y}$（旁注字迹不清：【?】）。
+
+<details markdown="1">
+<summary><strong>【FA：2° 的原理与补全——线积分法】</strong></summary>
+
+C-R 要的是 $v_x = -u_y$、$v_y = u_x$，也就是 $\mathrm{d}v = -u_y\,\mathrm{d}x + u_x\,\mathrm{d}y$。微分形式 $P\,\mathrm{d}x + Q\,\mathrm{d}y$ 恰好是某个函数的全微分（"恰当"）的条件是 $\dfrac{\partial P}{\partial y} = \dfrac{\partial Q}{\partial x}$，在这里即 $-u_{yy} = u_{xx}$——恰好就是 $u$ 的调和性。所以在单连通区域内曲线积分与路径无关，沿"先横后竖"的折线从 $(0, 0)$ 积到 $(x, y)$：
+
+$$v(x, y) = \int_0^x -u_y(t, 0)\,\mathrm{d}t + \int_0^y u_x(x, s)\,\mathrm{d}s = \int_0^x (-t)\,\mathrm{d}t + \int_0^y (2x + s)\,\mathrm{d}s = -\frac{x^2}{2} + 2xy + \frac{y^2}{2}$$
+
+与 1° 的结果一致（其中 $u_y(t, 0) = -t$，$u_x(x, s) = 2x + s$；积分起点不同只会差一个常数，最后被 $f(0) = 0$ 吸收）。（解答由AI补全）
+
+</details>
+
+**解 3°（先求导数）**：
+
+$$f'(z) = u_x + \mathrm{i}v_x = u_x - \mathrm{i}u_y = 2x + y - \mathrm{i}(-2y + x) \xrightarrow{\ \text{凑 } z \,=\, x + \mathrm{i}y\ } 2(x + \mathrm{i}y) - \mathrm{i}(x + \mathrm{i}y) = (2 - \mathrm{i})z$$
+
+$$\Rightarrow f(z) = \left(1 - \frac{\mathrm{i}}{2}\right)z^2 + C, \qquad \text{代入 } f(0) = 0 \text{ 得 } C = 0$$
+
+#### 2.5 初等解析函数
+
+**1. 指数函数**
+
+$$\mathrm{e}^z = \mathrm{e}^{x + \mathrm{i}y} = \mathrm{e}^x(\cos y + \mathrm{i}\sin y)$$
+
+性质：
+
+1. 全平面解析，$\mathrm{e}^z \ne 0$，$(\mathrm{e}^z)' = \mathrm{e}^z$（罗尔中值定理不成立）；
+2. $\mathrm{e}^{z + w} = \mathrm{e}^z \cdot \mathrm{e}^w$；
+3. 周期函数，$T = 2\pi\mathrm{i}$；
+4. 洛必达法则成立；
+5. $\lim\limits_{z \to \infty} \mathrm{e}^z$ 不存在；$\mathrm{e}^{\frac{\pi}{2}\mathrm{i}} = \mathrm{i}$，$\mathrm{e}^{\pi\mathrm{i}} = -1$，$\mathrm{e}^{2\pi\mathrm{i}} = 1$。
+
+复合：$\exp(\mathrm{e}^z) = \exp\left(\mathrm{e}^x(\cos y + \mathrm{i}\sin y)\right) = \mathrm{e}^{\mathrm{e}^x\cos y}\cos(\mathrm{e}^x\sin y) + \mathrm{i}\,\mathrm{e}^{\mathrm{e}^x\cos y}\sin(\mathrm{e}^x\sin y)$
+
+**2. 三角函数**
+
+定义：
+
+$$\sin z = \frac{\mathrm{e}^{\mathrm{i}z} - \mathrm{e}^{-\mathrm{i}z}}{2\mathrm{i}}, \qquad \cos z = \frac{\mathrm{e}^{\mathrm{i}z} + \mathrm{e}^{-\mathrm{i}z}}{2}$$
+
+（来历：$\mathrm{e}^{\mathrm{i}\theta} = \cos\theta + \mathrm{i}\sin\theta$，$\mathrm{e}^{-\mathrm{i}\theta} = \cos\theta - \mathrm{i}\sin\theta$ $\Rightarrow$ $\sin\theta = $（FA）、$\cos\theta = $（FA）$\Rightarrow$ 把 $\theta$ 换为 $z$。）
+
+<details markdown="1">
+<summary><strong>【FA：sinθ、cosθ 的反解】</strong></summary>
+
+两式相减、相加：
+
+$$\sin\theta = \frac{\mathrm{e}^{\mathrm{i}\theta} - \mathrm{e}^{-\mathrm{i}\theta}}{2\mathrm{i}}, \qquad \cos\theta = \frac{\mathrm{e}^{\mathrm{i}\theta} + \mathrm{e}^{-\mathrm{i}\theta}}{2}$$
+
+把实角 $\theta$ 换成复变量 $z$，就得到正文里 $\sin z$、$\cos z$ 的定义。
+
+</details>
+
+求导规律仍成立（补充：$(\sin z)' = \cos z$，$(\cos z)' = -\sin z$，由指数形式直接求导即得）；$\mathrm{e}^{\mathrm{i}z} = \cos z + \mathrm{i}\sin z$，$\sin z$、$\cos z$ 全平面解析。除半角公式外，三角恒等式均成立；奇偶性成立，周期不变。但 $|\sin z|$、$|\cos z|$ 无界。
+
+**3. 双曲函数**
+
+$$\mathrm{ch}\,z = \frac{\mathrm{e}^z + \mathrm{e}^{-z}}{2}, \qquad \mathrm{sh}\,z = \frac{\mathrm{e}^z - \mathrm{e}^{-z}}{2}$$
+
+（相当于把三角函数定义式里的 $\mathrm{i}$ 都去掉。）
+
+全平面解析；$(\mathrm{ch}\,z)' = \mathrm{sh}\,z$，$(\mathrm{sh}\,z)' = \mathrm{ch}\,z$；$T = 2\pi\mathrm{i}$；$\mathrm{ch}\,z$ 为偶，$\mathrm{sh}\,z$ 为奇。
+
+$$\mathrm{sh}(\mathrm{i}z) = \mathrm{i}\sin z, \qquad \mathrm{ch}(\mathrm{i}z) = \cos z, \qquad \sin(\mathrm{i}z) = \mathrm{i}\,\mathrm{sh}\,z, \qquad \cos(\mathrm{i}z) = \mathrm{ch}\,z$$
+
+**4. 对数函数**
+
+若 $\mathrm{e}^w = z$，则 $w = \mathrm{Ln}\,z$。
+
+记 $w = u + \mathrm{i}v$，$z = r\mathrm{e}^{\mathrm{i}\theta}$，则 $\mathrm{e}^{u + \mathrm{i}v} = \mathrm{e}^u\,\mathrm{e}^{\mathrm{i}v} = r\,\mathrm{e}^{\mathrm{i}\theta}$，得
+
+$$\mathrm{e}^u = r \ \Rightarrow\ u = \ln r = \ln|z|; \qquad v = \theta = \mathrm{Arg}\,z = \arg z + 2k\pi$$
+
+$$\Rightarrow\ w = \mathrm{Ln}\,z = \ln|z| + \mathrm{i}(\arg z + 2k\pi) = \ln z + 2k\pi\mathrm{i}$$
+
+定义 $\ln z = \ln|z| + \mathrm{i}\arg z$ 为**主值支**。
+
+例：$\mathrm{Ln}(-1) = \ln|-1| + \mathrm{i}\arg(-1) + 2k\pi\mathrm{i} = (2k + 1)\pi\mathrm{i}$。
+
+定义域 $0 < |z| < +\infty$，为无穷多值函数（但非周期）。有
+
+$$\mathrm{Ln}(z_1 z_2) = \mathrm{Ln}\,z_1 + \mathrm{Ln}\,z_2, \qquad \mathrm{Ln}\left(\frac{z_1}{z_2}\right) = \mathrm{Ln}\,z_1 - \mathrm{Ln}\,z_2$$
+
+除原点和负实轴外，$\ln z$ 在复平面内处处解析。
+
+$$(\ln z)' = (\mathrm{Ln}\,z)' = \frac{1}{z}$$
+
