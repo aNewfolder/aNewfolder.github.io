@@ -1830,6 +1830,56 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#2026923" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026.9.23
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2026.9.23">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#23_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        复习 2.3：一点可导的充要条件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 解析函数与调和函数的关系
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 初等解析函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -6578,6 +6628,56 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#2026923" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026.9.23
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2026.9.23">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#23_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        复习 2.3：一点可导的充要条件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 解析函数与调和函数的关系
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 初等解析函数
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -6763,6 +6863,109 @@
 <p>此时</p>
 <div class="arithmatex">\[f'(z) = \frac{\partial u}{\partial x} + \mathrm{i}\frac{\partial v}{\partial x} = \frac{\partial v}{\partial y} - \mathrm{i}\frac{\partial u}{\partial y}\]</div>
 <p>（提醒：仅满足 C-R 条件不够，还需 <span class="arithmatex">\(u\)</span>、<span class="arithmatex">\(v\)</span> 可微——如偏导数连续即可保证可微——两者合起来才与可导等价。）</p>
+<h3 id="2026923">2026.9.23<a class="headerlink" href="#2026923" title="Permanent link">&para;</a></h3>
+<h4 id="23_1">复习 2.3：一点可导的充要条件<a class="headerlink" href="#23_1" title="Permanent link">&para;</a></h4>
+<p><span class="arithmatex">\(f(z) = u(x, y) + \mathrm{i}v(x, y)\)</span> 在 <span class="arithmatex">\(D\)</span> 内一点 <span class="arithmatex">\(z = x + \mathrm{i}y\)</span> 可导的充要条件：<span class="arithmatex">\(u_x\)</span>、<span class="arithmatex">\(u_y\)</span>、<span class="arithmatex">\(v_x\)</span>、<span class="arithmatex">\(v_y\)</span> 在 <span class="arithmatex">\((x, y)\)</span> 存在且满足 C-R 方程。（笔记在此定理前有一两字旁注，字迹辨认不清，暂记【?】。）</p>
+<p>（上节课讲的：在区域 <span class="arithmatex">\(D\)</span> 内，可导 <span class="arithmatex">\(\iff\)</span> 解析。）</p>
+<p>注：若 <span class="arithmatex">\(u(x, y)\)</span> 在 <span class="arithmatex">\((x, y)\)</span> 点有一阶连续偏导，则在 <span class="arithmatex">\((x, y)\)</span> 必可微。</p>
+<details>
+<summary><strong>【FA：与 2.3 两种表述的衔接】</strong></summary>
+<p>上一节 2.3 的版本是"<span class="arithmatex">\(u\)</span>、<span class="arithmatex">\(v\)</span> 在该点<strong>可微</strong> + C-R <span class="arithmatex">\(\iff\)</span> 可导"，复习版写成"四个偏导存在 + C-R"。偏导<strong>存在</strong>保证不了 <span class="arithmatex">\(u\)</span>、<span class="arithmatex">\(v\)</span> 可微，所以严格的充要条件仍是 2.3 的版本；不过只要四个偏导在该点<strong>连续</strong>（上面"注"：连续偏导 <span class="arithmatex">\(\Rightarrow\)</span> 可微），再配 C-R 就足以判出可导——这也是实际做题最常用的充分条件。</p>
+</details>
+<p><strong>例 1</strong>：<span class="arithmatex">\(w = \bar z = x - \mathrm{i}y\)</span>：处处连续，处处不可导，处处不解析。</p>
+<p>（补充：<span class="arithmatex">\(u_x = 1 \ne v_y = -1\)</span>，C-R 方程处处不满足，故处处不可导，也就处处不解析；连续性显然。）</p>
+<p><strong>例 2</strong>：<span class="arithmatex">\(f(z) = u + \mathrm{i}v\)</span> 在 <span class="arithmatex">\(D\)</span> 内解析且 <span class="arithmatex">\(f'(z) \ne 0\)</span> <span class="arithmatex">\(\Rightarrow\)</span> 曲线族 <span class="arithmatex">\(u(x, y) = C_1\)</span> 与 <span class="arithmatex">\(v(x, y) = C_2\)</span> <strong>正交</strong>（正交：在交点处的切线垂直）。</p>
+<p>证：<span class="arithmatex">\(u(x, y) = C_1\)</span> 在 <span class="arithmatex">\((x, y)\)</span> 处切线斜率 <span class="arithmatex">\(k_u = -\dfrac{u_x}{u_y}\)</span>，同理 <span class="arithmatex">\(k_v = -\dfrac{v_x}{v_y}\)</span>。</p>
+<p>（斜率来历：<span class="arithmatex">\(u \equiv C_1 \Rightarrow y = y(x)\)</span>，<span class="arithmatex">\(u(x, y(x)) = C_1\)</span>，对 <span class="arithmatex">\(x\)</span> 求导得 <span class="arithmatex">\(u_x + u_y\,y'(x) = 0\)</span>，<span class="arithmatex">\(\therefore\ y'(x) = -\dfrac{u_x}{u_y}\)</span>。）</p>
+<div class="arithmatex">\[k_u k_v = \frac{u_x\, v_x}{u_y\, v_y} \overset{\text{C-R}}{=} \frac{v_y \cdot (-u_y)}{u_y\, v_y} = -1\]</div>
+<p>即两族曲线在交点处的切线垂直。</p>
+<p><strong>解析函数退化为常数的几个充分条件</strong></p>
+<ol>
+<li>解析且导数恒为 <span class="arithmatex">\(0\)</span>；</li>
+<li>实部、虚部、模、辐角中有一个恒为常数；</li>
+<li><span class="arithmatex">\(\overline{f(z)}\)</span> 也解析。</li>
+</ol>
+<p>（Tip：若表达式里含有 <span class="arithmatex">\(\bar z\)</span>，则不解析。）</p>
+<p>证：<span class="arithmatex">\(f = u + \mathrm{i}v\)</span>。由 <span class="arithmatex">\(x = \dfrac{z + \bar z}{2}\)</span>、<span class="arithmatex">\(y = \dfrac{z - \bar z}{2\mathrm{i}}\)</span> 得 <span class="arithmatex">\(\dfrac{\partial x}{\partial \bar z} = \dfrac{1}{2}\)</span>，<span class="arithmatex">\(\dfrac{\partial y}{\partial \bar z} = -\dfrac{1}{2\mathrm{i}} = \dfrac{\mathrm{i}}{2}\)</span>，链式法则</p>
+<div class="arithmatex">\[\frac{\partial f}{\partial \bar z} = \frac{\partial f}{\partial x}\cdot\frac{\partial x}{\partial \bar z} + \frac{\partial f}{\partial y}\cdot\frac{\partial y}{\partial \bar z} = \frac{1}{2}(u_x + \mathrm{i}v_x) + \frac{\mathrm{i}}{2}(u_y + \mathrm{i}v_y) = \frac{1}{2}(u_x - v_y) + \frac{\mathrm{i}}{2}(v_x + u_y)\]</div>
+<p>若 <span class="arithmatex">\(f(z)\)</span> 解析，由 C-R 方程两个括号均为零，故 <span class="arithmatex">\(\dfrac{\partial f}{\partial \bar z} = 0\)</span>——解析函数一定与 <span class="arithmatex">\(\bar z\)</span> 无关。</p>
+<details>
+<summary><strong>【FA：三条为什么都推出常数】</strong></summary>
+<ul>
+<li>条件 1：<span class="arithmatex">\(f' = u_x + \mathrm{i}v_x \equiv 0\)</span> 给出 <span class="arithmatex">\(u_x = v_x = 0\)</span>，C-R 再给出 <span class="arithmatex">\(u_y = -v_x = 0\)</span>、<span class="arithmatex">\(v_y = u_x = 0\)</span>：四个偏导全为零，<span class="arithmatex">\(u\)</span>、<span class="arithmatex">\(v\)</span> 在连通区域 <span class="arithmatex">\(D\)</span> 内只能是常数。</li>
+<li>条件 2：以实部为例，<span class="arithmatex">\(u \equiv C\)</span> 时 <span class="arithmatex">\(u_x = u_y = 0\)</span>，由 C-R 得 <span class="arithmatex">\(v_x = v_y = 0\)</span>，同条件 1；虚部同理，模、辐角为常数的情形推导稍繁，结论相同。</li>
+<li>条件 3：<span class="arithmatex">\(\overline{f(z)} = u - \mathrm{i}v\)</span> 也解析，则它满足"反向 C-R"：<span class="arithmatex">\(u_x = -v_y\)</span>，<span class="arithmatex">\(u_y = v_x\)</span>；与 <span class="arithmatex">\(f\)</span> 的正向 C-R 相加得 <span class="arithmatex">\(u_x = u_y = v_x = v_y = 0\)</span>，故 <span class="arithmatex">\(f\)</span> 恒为常数。</li>
+</ul>
+<p>这也顺带解释了 Tip：解析函数与 <span class="arithmatex">\(\bar z\)</span> 无关，所以表达式里真含 <span class="arithmatex">\(\bar z\)</span> 的（<span class="arithmatex">\(\bar z\)</span>、<span class="arithmatex">\(|z|^2 = z\bar z\)</span>、<span class="arithmatex">\(\mathrm{Im}\,z\)</span> 等）都不解析。</p>
+</details>
+<h4 id="24">2.4 解析函数与调和函数的关系<a class="headerlink" href="#24" title="Permanent link">&para;</a></h4>
+<p>解析性只适用于复函数（由 C-R 方程刻画）；想适配实函数需其他方法，而调和函数可定义于实函数。</p>
+<p><strong>定义（调和函数）</strong>：<span class="arithmatex">\(u(x, y)\)</span> 在 <span class="arithmatex">\(D\)</span> 内<strong>调和</strong>：<span class="arithmatex">\(u(x, y)\)</span> 在 <span class="arithmatex">\(D\)</span> 内有二阶连续偏导，且</p>
+<div class="arithmatex">\[\Delta u \equiv u_{xx} + u_{yy} = 0\]</div>
+<p>（即满足 Laplace 方程。）</p>
+<p><strong>定理</strong>：<span class="arithmatex">\(f(z) = u + \mathrm{i}v\)</span> 解析 <span class="arithmatex">\(\Rightarrow\)</span> <span class="arithmatex">\(u\)</span>、<span class="arithmatex">\(v\)</span> 均调和。</p>
+<p>证：<span class="arithmatex">\(f(z)\)</span> 在 <span class="arithmatex">\(D\)</span> 内解析，得 <span class="arithmatex">\(u_x = v_y\)</span>，<span class="arithmatex">\(v_x = -u_y\)</span>（C-R 方程）。再求偏导：<span class="arithmatex">\(u_{xx} = v_{xy}\)</span>，<span class="arithmatex">\(v_{xy} = -u_{yy}\)</span>，得 <span class="arithmatex">\(u_{xx} + u_{yy} = 0\)</span>；<span class="arithmatex">\(v\)</span> 同理。</p>
+<p><strong>定义（共轭调和函数）</strong>：若 <span class="arithmatex">\(u\)</span>、<span class="arithmatex">\(v\)</span> 在 <span class="arithmatex">\(D\)</span> 内调和且满足 C-R 方程，则称 <span class="arithmatex">\(v\)</span> 是 <span class="arithmatex">\(u\)</span> 的<strong>共轭调和函数</strong>。</p>
+<p><strong>定理</strong>：已知共轭调和函数中的一个，可用 C-R 方程求得另一个，从而构成一个解析函数。</p>
+<p><strong>例</strong>：设 <span class="arithmatex">\(u(x, y) = x^2 - y^2 + xy\)</span>（调和），求解析函数 <span class="arithmatex">\(f(z) = u + \mathrm{i}v\)</span> 使 <span class="arithmatex">\(f(0) = 0\)</span>。</p>
+<p><strong>解 1°（偏积分法）</strong>：<span class="arithmatex">\(u_x = 2x + y\)</span>，<span class="arithmatex">\(u_y = -2y + x\)</span>。由 <span class="arithmatex">\(v_y = u_x\)</span>：</p>
+<div class="arithmatex">\[v = \int (2x + y)\,\mathrm{d}y = 2xy + \frac{1}{2}y^2 + c(x)\]</div>
+<p>对 <span class="arithmatex">\(x\)</span> 求导并代 C-R 方程：<span class="arithmatex">\(v_x = 2y + c'(x) = -u_y = 2y - x\)</span>，故 <span class="arithmatex">\(c'(x) = -x\)</span>，<span class="arithmatex">\(c(x) = -\dfrac{1}{2}x^2 + C\)</span>，再代入 <span class="arithmatex">\(f(0) = 0\)</span> 定常数。</p>
+<details>
+<summary><strong>【FA：1° 收尾——定常数、写成 z 的式子】</strong></summary>
+<p>把 <span class="arithmatex">\(c(x) = -\dfrac{1}{2}x^2 + C\)</span> 代回，得 <span class="arithmatex">\(v = 2xy + \dfrac{1}{2}y^2 - \dfrac{1}{2}x^2 + C\)</span>，于是</p>
+<div class="arithmatex">\[f(z) = (x^2 - y^2 + xy) + \mathrm{i}\left(2xy + \frac{y^2 - x^2}{2}\right) + \mathrm{i}C\]</div>
+<p>代入 <span class="arithmatex">\(f(0) = 0\)</span> 得 <span class="arithmatex">\(\mathrm{i}C = 0\)</span>，即 <span class="arithmatex">\(C = 0\)</span>。展开 <span class="arithmatex">\(\left(1 - \dfrac{\mathrm{i}}{2}\right)z^2 = (x^2 - y^2 + xy) + \mathrm{i}\left(2xy + \dfrac{y^2 - x^2}{2}\right)\)</span>，可见结果与 3° 一致。（解答由AI补全）</p>
+</details>
+<p><strong>解 2°（线积分法）</strong>：因 <span class="arithmatex">\(u_{xx} + u_{yy} = 0\)</span>，即 <span class="arithmatex">\(\dfrac{\partial u_x}{\partial x} = \dfrac{\partial (-u_y)}{\partial y}\)</span>（旁注字迹不清：【?】）。</p>
+<details>
+<summary><strong>【FA：2° 的原理与补全——线积分法】</strong></summary>
+<p>C-R 要的是 <span class="arithmatex">\(v_x = -u_y\)</span>、<span class="arithmatex">\(v_y = u_x\)</span>，也就是 <span class="arithmatex">\(\mathrm{d}v = -u_y\,\mathrm{d}x + u_x\,\mathrm{d}y\)</span>。微分形式 <span class="arithmatex">\(P\,\mathrm{d}x + Q\,\mathrm{d}y\)</span> 恰好是某个函数的全微分（"恰当"）的条件是 <span class="arithmatex">\(\dfrac{\partial P}{\partial y} = \dfrac{\partial Q}{\partial x}\)</span>，在这里即 <span class="arithmatex">\(-u_{yy} = u_{xx}\)</span>——恰好就是 <span class="arithmatex">\(u\)</span> 的调和性。所以在单连通区域内曲线积分与路径无关，沿"先横后竖"的折线从 <span class="arithmatex">\((0, 0)\)</span> 积到 <span class="arithmatex">\((x, y)\)</span>：</p>
+<div class="arithmatex">\[v(x, y) = \int_0^x -u_y(t, 0)\,\mathrm{d}t + \int_0^y u_x(x, s)\,\mathrm{d}s = \int_0^x (-t)\,\mathrm{d}t + \int_0^y (2x + s)\,\mathrm{d}s = -\frac{x^2}{2} + 2xy + \frac{y^2}{2}\]</div>
+<p>与 1° 的结果一致（其中 <span class="arithmatex">\(u_y(t, 0) = -t\)</span>，<span class="arithmatex">\(u_x(x, s) = 2x + s\)</span>；积分起点不同只会差一个常数，最后被 <span class="arithmatex">\(f(0) = 0\)</span> 吸收）。（解答由AI补全）</p>
+</details>
+<p><strong>解 3°（先求导数）</strong>：</p>
+<div class="arithmatex">\[f'(z) = u_x + \mathrm{i}v_x = u_x - \mathrm{i}u_y = 2x + y - \mathrm{i}(-2y + x) \xrightarrow{\ \text{凑 } z \,=\, x + \mathrm{i}y\ } 2(x + \mathrm{i}y) - \mathrm{i}(x + \mathrm{i}y) = (2 - \mathrm{i})z\]</div>
+<div class="arithmatex">\[\Rightarrow f(z) = \left(1 - \frac{\mathrm{i}}{2}\right)z^2 + C, \qquad \text{代入 } f(0) = 0 \text{ 得 } C = 0\]</div>
+<h4 id="25">2.5 初等解析函数<a class="headerlink" href="#25" title="Permanent link">&para;</a></h4>
+<p><strong>1. 指数函数</strong></p>
+<div class="arithmatex">\[\mathrm{e}^z = \mathrm{e}^{x + \mathrm{i}y} = \mathrm{e}^x(\cos y + \mathrm{i}\sin y)\]</div>
+<p>性质：</p>
+<ol>
+<li>全平面解析，<span class="arithmatex">\(\mathrm{e}^z \ne 0\)</span>，<span class="arithmatex">\((\mathrm{e}^z)' = \mathrm{e}^z\)</span>（罗尔中值定理不成立）；</li>
+<li><span class="arithmatex">\(\mathrm{e}^{z + w} = \mathrm{e}^z \cdot \mathrm{e}^w\)</span>；</li>
+<li>周期函数，<span class="arithmatex">\(T = 2\pi\mathrm{i}\)</span>；</li>
+<li>洛必达法则成立；</li>
+<li><span class="arithmatex">\(\lim\limits_{z \to \infty} \mathrm{e}^z\)</span> 不存在；<span class="arithmatex">\(\mathrm{e}^{\frac{\pi}{2}\mathrm{i}} = \mathrm{i}\)</span>，<span class="arithmatex">\(\mathrm{e}^{\pi\mathrm{i}} = -1\)</span>，<span class="arithmatex">\(\mathrm{e}^{2\pi\mathrm{i}} = 1\)</span>。</li>
+</ol>
+<p>复合：<span class="arithmatex">\(\exp(\mathrm{e}^z) = \exp\left(\mathrm{e}^x(\cos y + \mathrm{i}\sin y)\right) = \mathrm{e}^{\mathrm{e}^x\cos y}\cos(\mathrm{e}^x\sin y) + \mathrm{i}\,\mathrm{e}^{\mathrm{e}^x\cos y}\sin(\mathrm{e}^x\sin y)\)</span></p>
+<p><strong>2. 三角函数</strong></p>
+<p>定义：</p>
+<div class="arithmatex">\[\sin z = \frac{\mathrm{e}^{\mathrm{i}z} - \mathrm{e}^{-\mathrm{i}z}}{2\mathrm{i}}, \qquad \cos z = \frac{\mathrm{e}^{\mathrm{i}z} + \mathrm{e}^{-\mathrm{i}z}}{2}\]</div>
+<p>（来历：<span class="arithmatex">\(\mathrm{e}^{\mathrm{i}\theta} = \cos\theta + \mathrm{i}\sin\theta\)</span>，<span class="arithmatex">\(\mathrm{e}^{-\mathrm{i}\theta} = \cos\theta - \mathrm{i}\sin\theta\)</span> <span class="arithmatex">\(\Rightarrow\)</span> $\sin\theta = <span class="arithmatex">\(（FA）、\)</span>\cos\theta = <span class="arithmatex">\(（FA）\)</span>\Rightarrow$ 把 <span class="arithmatex">\(\theta\)</span> 换为 <span class="arithmatex">\(z\)</span>。）</p>
+<details>
+<summary><strong>【FA：sinθ、cosθ 的反解】</strong></summary>
+<p>两式相减、相加：</p>
+<div class="arithmatex">\[\sin\theta = \frac{\mathrm{e}^{\mathrm{i}\theta} - \mathrm{e}^{-\mathrm{i}\theta}}{2\mathrm{i}}, \qquad \cos\theta = \frac{\mathrm{e}^{\mathrm{i}\theta} + \mathrm{e}^{-\mathrm{i}\theta}}{2}\]</div>
+<p>把实角 <span class="arithmatex">\(\theta\)</span> 换成复变量 <span class="arithmatex">\(z\)</span>，就得到正文里 <span class="arithmatex">\(\sin z\)</span>、<span class="arithmatex">\(\cos z\)</span> 的定义。</p>
+</details>
+<p>求导规律仍成立（补充：<span class="arithmatex">\((\sin z)' = \cos z\)</span>，<span class="arithmatex">\((\cos z)' = -\sin z\)</span>，由指数形式直接求导即得）；<span class="arithmatex">\(\mathrm{e}^{\mathrm{i}z} = \cos z + \mathrm{i}\sin z\)</span>，<span class="arithmatex">\(\sin z\)</span>、<span class="arithmatex">\(\cos z\)</span> 全平面解析。除半角公式外，三角恒等式均成立；奇偶性成立，周期不变。但 <span class="arithmatex">\(|\sin z|\)</span>、<span class="arithmatex">\(|\cos z|\)</span> 无界。</p>
+<p><strong>3. 双曲函数</strong></p>
+<div class="arithmatex">\[\mathrm{ch}\,z = \frac{\mathrm{e}^z + \mathrm{e}^{-z}}{2}, \qquad \mathrm{sh}\,z = \frac{\mathrm{e}^z - \mathrm{e}^{-z}}{2}\]</div>
+<p>（相当于把三角函数定义式里的 <span class="arithmatex">\(\mathrm{i}\)</span> 都去掉。）</p>
+<p>全平面解析；<span class="arithmatex">\((\mathrm{ch}\,z)' = \mathrm{sh}\,z\)</span>，<span class="arithmatex">\((\mathrm{sh}\,z)' = \mathrm{ch}\,z\)</span>；<span class="arithmatex">\(T = 2\pi\mathrm{i}\)</span>；<span class="arithmatex">\(\mathrm{ch}\,z\)</span> 为偶，<span class="arithmatex">\(\mathrm{sh}\,z\)</span> 为奇。</p>
+<div class="arithmatex">\[\mathrm{sh}(\mathrm{i}z) = \mathrm{i}\sin z, \qquad \mathrm{ch}(\mathrm{i}z) = \cos z, \qquad \sin(\mathrm{i}z) = \mathrm{i}\,\mathrm{sh}\,z, \qquad \cos(\mathrm{i}z) = \mathrm{ch}\,z\]</div>
+<p><strong>4. 对数函数</strong></p>
+<p>若 <span class="arithmatex">\(\mathrm{e}^w = z\)</span>，则 <span class="arithmatex">\(w = \mathrm{Ln}\,z\)</span>。</p>
+<p>记 <span class="arithmatex">\(w = u + \mathrm{i}v\)</span>，<span class="arithmatex">\(z = r\mathrm{e}^{\mathrm{i}\theta}\)</span>，则 <span class="arithmatex">\(\mathrm{e}^{u + \mathrm{i}v} = \mathrm{e}^u\,\mathrm{e}^{\mathrm{i}v} = r\,\mathrm{e}^{\mathrm{i}\theta}\)</span>，得</p>
+<div class="arithmatex">\[\mathrm{e}^u = r \ \Rightarrow\ u = \ln r = \ln|z|; \qquad v = \theta = \mathrm{Arg}\,z = \arg z + 2k\pi\]</div>
+<div class="arithmatex">\[\Rightarrow\ w = \mathrm{Ln}\,z = \ln|z| + \mathrm{i}(\arg z + 2k\pi) = \ln z + 2k\pi\mathrm{i}\]</div>
+<p>定义 <span class="arithmatex">\(\ln z = \ln|z| + \mathrm{i}\arg z\)</span> 为<strong>主值支</strong>。</p>
+<p>例：<span class="arithmatex">\(\mathrm{Ln}(-1) = \ln|-1| + \mathrm{i}\arg(-1) + 2k\pi\mathrm{i} = (2k + 1)\pi\mathrm{i}\)</span>。</p>
+<p>定义域 <span class="arithmatex">\(0 &lt; |z| &lt; +\infty\)</span>，为无穷多值函数（但非周期）。有</p>
+<div class="arithmatex">\[\mathrm{Ln}(z_1 z_2) = \mathrm{Ln}\,z_1 + \mathrm{Ln}\,z_2, \qquad \mathrm{Ln}\left(\frac{z_1}{z_2}\right) = \mathrm{Ln}\,z_1 - \mathrm{Ln}\,z_2\]</div>
+<p>除原点和负实轴外，<span class="arithmatex">\(\ln z\)</span> 在复平面内处处解析。</p>
+<div class="arithmatex">\[(\ln z)' = (\mathrm{Ln}\,z)' = \frac{1}{z}\]</div>
 
 
 
@@ -6785,7 +6988,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年9月18日 10:01:24 CST">2026年9月18日 10:01:24</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年9月23日 10:01:38 CST">2026年9月23日 10:01:38</span>
   </span>
 
     
