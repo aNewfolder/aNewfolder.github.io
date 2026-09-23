@@ -1803,6 +1803,56 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 等可能概型
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2026923" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026.9.23
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2026.9.23">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 条件概率
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 独立性
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -6417,6 +6467,56 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 等可能概型
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2026923" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026.9.23
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2026.9.23">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 条件概率
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 独立性
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -6510,6 +6610,60 @@
 <p><strong>容斥原理（加法公式的推广）</strong></p>
 <div class="arithmatex">\[P\left(\bigcup_{j=1}^{n} A_j\right) = \sum_{j=1}^{n} P(A_j) - \sum_{1 \le i &lt; j \le n} P(A_iA_j) + \cdots + (-1)^{n-1} P(A_1A_2 \cdots A_n)\]</div>
 <p>补充 <span class="arithmatex">\(n = 3\)</span> 情形：<span class="arithmatex">\(P(A \cup B \cup C) = P(A) + P(B) + P(C) - P(AB) - P(AC) - P(BC) + P(ABC)\)</span>。</p>
+<h4 id="13">1.3 等可能概型<a class="headerlink" href="#13" title="Permanent link">&para;</a></h4>
+<p><strong>古典概型</strong>：有限性 + 等可能性。</p>
+<p>经典例题：(1) 超几何分布　(2) 抽签公平问题　(3) 生日问题（例题课本上都有，【见课本】第一章 §1.3）。</p>
+<details>
+<summary><strong>【FA：三个经典例题速览】</strong></summary>
+<ul>
+<li><strong>超几何分布</strong>：<span class="arithmatex">\(N\)</span> 件产品中有 <span class="arithmatex">\(M\)</span> 件次品，不放回地任取 <span class="arithmatex">\(n\)</span> 件，则抽得次品数 <span class="arithmatex">\(X\)</span> 满足 <span class="arithmatex">\(P(X = k) = \dfrac{\dbinom{M}{k}\dbinom{N-M}{n-k}}{\dbinom{N}{n}}\)</span>。</li>
+<li><strong>抽签公平问题</strong>：<span class="arithmatex">\(n\)</span> 支签中 <span class="arithmatex">\(k\)</span> 支为中签，众人依次抽签不放回，则无论第几个抽，中签概率恒为 <span class="arithmatex">\(\dfrac{k}{n}\)</span>——抽签不必争先后。</li>
+<li><strong>生日问题</strong>：一间屋里 <span class="arithmatex">\(n\)</span> 个人中至少两人生日相同的概率为 <span class="arithmatex">\(1 - \dfrac{365 \times 364 \times \cdots \times (365 - n + 1)}{365^n}\)</span>；<span class="arithmatex">\(n = 23\)</span> 时已超过 <span class="arithmatex">\(50\%\)</span>。</li>
+</ul>
+</details>
+<h3 id="2026923">2026.9.23<a class="headerlink" href="#2026923" title="Permanent link">&para;</a></h3>
+<h4 id="14">1.4 条件概率<a class="headerlink" href="#14" title="Permanent link">&para;</a></h4>
+<p><strong>条件概率定义</strong></p>
+<div class="arithmatex">\[P(B \mid A) = \frac{P(AB)}{P(A)}\]</div>
+<p>条件概率同样满足概率的基本性质（非负、规范、可加），例如可加性在条件概率下为</p>
+<div class="arithmatex">\[P(B \cup C \mid A) = P(B \mid A) + P(C \mid A) - P(BC \mid A)\]</div>
+<p><strong>乘法公式</strong></p>
+<div class="arithmatex">\[P(AB) = P(A)P(B \mid A) = P(B)P(A \mid B)\]</div>
+<p>推广到三个事件：</p>
+<div class="arithmatex">\[P(ABC) = P(A)P(B \mid A)P(C \mid AB)\]</div>
+<p><strong>划分</strong></p>
+<p><span class="arithmatex">\(B_1, B_2, \ldots, B_n\)</span> 是 <span class="arithmatex">\(S\)</span> 的一个划分，若 ① <span class="arithmatex">\(B_iB_j = \varnothing\)</span>（<span class="arithmatex">\(i \ne j\)</span>）；② <span class="arithmatex">\(B_1 \cup B_2 \cup \cdots \cup B_n = S\)</span>。</p>
+<p><strong>全概率公式</strong></p>
+<div class="arithmatex">\[P(A) = \sum_{j=1}^{n} P(B_j)P(A \mid B_j)\]</div>
+<p><strong>贝叶斯公式</strong></p>
+<div class="arithmatex">\[P(B_k \mid A) = \frac{P(B_k A)}{P(A)} = \frac{P(B_k)P(A \mid B_k)}{\sum\limits_{j=1}^{n} P(B_j)P(A \mid B_j)}\]</div>
+<details>
+<summary><strong>【FA：全概率与贝叶斯公式的推导和直观】</strong></summary>
+<p>推导：由划分得 <span class="arithmatex">\(A = AS = A(B_1 \cup \cdots \cup B_n) = AB_1 \cup \cdots \cup AB_n\)</span>，且诸 <span class="arithmatex">\(AB_i\)</span> 两两互斥，故由可加性与乘法公式</p>
+<div class="arithmatex">\[P(A) = \sum_{j=1}^{n} P(AB_j) = \sum_{j=1}^{n} P(B_j)P(A \mid B_j)\]</div>
+<p>贝叶斯公式就是"条件概率定义 + 把全概率公式代入分母"。直观：全概率是<strong>由因推果</strong>——"结果" <span class="arithmatex">\(A\)</span> 按各条"原因" <span class="arithmatex">\(B_j\)</span> 分摊加权；贝叶斯是<strong>执果索因</strong>——观察到结果 <span class="arithmatex">\(A\)</span> 后反推它由各原因 <span class="arithmatex">\(B_k\)</span> 引起的概率（要求 <span class="arithmatex">\(P(A) &gt; 0\)</span>）。</p>
+</details>
+<p><strong>e.g.</strong>（短信问题）某学生每天收到 <span class="arithmatex">\(i\)</span> 条短信的概率为 <span class="arithmatex">\(\dfrac{\lambda^i e^{-\lambda}}{i!}\)</span>，记为 <span class="arithmatex">\(B_i\)</span>（即 <span class="arithmatex">\(B_i\)</span> = "每天收到 <span class="arithmatex">\(i\)</span> 条短信"，诸 <span class="arithmatex">\(B_i\)</span> 构成 <span class="arithmatex">\(S\)</span> 的一个划分）；每条短信阅读概率为 <span class="arithmatex">\(p\)</span>（各条是否阅读相互独立）。求 <span class="arithmatex">\(P(\text{每天阅读 } k \text{ 条短信})\)</span>（设为 <span class="arithmatex">\(A\)</span>）。</p>
+<p>收到 <span class="arithmatex">\(n\)</span> 条时恰阅读 <span class="arithmatex">\(k\)</span> 条的条件概率为二项分布 <span class="arithmatex">\(\binom{n}{k}p^k(1-p)^{n-k}\)</span>，由乘法公式并对划分 <span class="arithmatex">\(\{B_n\}\)</span> 用全概率公式：</p>
+<div class="arithmatex">\[P(A) = P(B_k)\,p^k + P(B_{k+1})\binom{k+1}{k}p^k(1-p) + \cdots = \sum_{n=k}^{+\infty} P(B_n)\binom{n}{k}p^k(1-p)^{n-k}\]</div>
+<p>代入 <span class="arithmatex">\(P(B_n) = \dfrac{\lambda^n e^{-\lambda}}{n!}\)</span> 并整理：</p>
+<div class="arithmatex">\[P(A) = \sum_{n=k}^{+\infty} \frac{\lambda^n e^{-\lambda}}{n!} \cdot \frac{n!}{k!\,(n-k)!}\, p^k (1-p)^{n-k} = \frac{(\lambda p)^k e^{-\lambda}}{k!} \sum_{n=k}^{+\infty} \frac{[\lambda(1-p)]^{n-k}}{(n-k)!}\]</div>
+<p>由 <span class="arithmatex">\(e^x = \sum\limits_{i=0}^{+\infty} \dfrac{x^i}{i!}\)</span> 展开得</p>
+<div class="arithmatex">\[P(A) = \frac{(\lambda p)^k e^{-\lambda}}{k!}\, e^{\lambda(1-p)} = \frac{(\lambda p)^k}{k!}\, e^{-\lambda p}\]</div>
+<p>（推导衔接步由AI补全）</p>
+<details>
+<summary><strong>【FA：结论——被阅读短信数仍服从泊松分布】</strong></summary>
+<p>答案 <span class="arithmatex">\(\dfrac{(\lambda p)^k}{k!}e^{-\lambda p}\)</span> 恰是参数为 <span class="arithmatex">\(\lambda p\)</span> 的泊松分布：若收到条数 <span class="arithmatex">\(X \sim P(\lambda)\)</span>，每条独立以概率 <span class="arithmatex">\(p\)</span> 被阅读，则被阅读条数 <span class="arithmatex">\(\sim P(\lambda p)\)</span>。这叫泊松分布的<strong>稀疏化（thinning）</strong>：把每条短信以概率 <span class="arithmatex">\(p\)</span> "筛"一遍，筛剩下的仍是泊松分布，只是参数乘 <span class="arithmatex">\(p\)</span>。</p>
+</details>
+<h4 id="15">1.5 独立性<a class="headerlink" href="#15" title="Permanent link">&para;</a></h4>
+<p><strong>定义</strong>：若 <span class="arithmatex">\(P(AB) = P(A)P(B)\)</span>，则称 <span class="arithmatex">\(A\)</span> 与 <span class="arithmatex">\(B\)</span> <strong>独立</strong>。当 <span class="arithmatex">\(P(A)P(B) \ne 0\)</span> 时，独立等价于</p>
+<div class="arithmatex">\[P(B \mid A) = P(B) \quad \text{或} \quad P(A \mid B) = P(A)\]</div>
+<p>即一事件发生与否不改变另一事件发生的概率。</p>
+<p><strong>补事件替换</strong>：<span class="arithmatex">\(A\)</span>、<span class="arithmatex">\(B\)</span> 独立，则随意替换 <span class="arithmatex">\(\overline{A}\)</span>、<span class="arithmatex">\(\overline{B}\)</span> 也独立，即 <span class="arithmatex">\(A\)</span> 与 <span class="arithmatex">\(\overline{B}\)</span>、<span class="arithmatex">\(\overline{A}\)</span> 与 <span class="arithmatex">\(B\)</span>、<span class="arithmatex">\(\overline{A}\)</span> 与 <span class="arithmatex">\(\overline{B}\)</span> 均独立。</p>
+<details>
+<summary><strong>【FA：补事件替换为何保持独立（证明）】</strong></summary>
+<p>以 <span class="arithmatex">\(A\)</span> 与 <span class="arithmatex">\(\overline{B}\)</span> 为例：<span class="arithmatex">\(P(A\overline{B}) = P(A) - P(AB) = P(A) - P(A)P(B) = P(A)\left[1 - P(B)\right] = P(A)P(\overline{B})\)</span>。其余情形同理，对 <span class="arithmatex">\(\overline{A}\)</span>、<span class="arithmatex">\(\overline{B}\)</span> 反复套用即可。</p>
+</details>
 
 
 
@@ -6532,7 +6686,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年9月16日 19:31:52 CST">2026年9月16日 19:31:52</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年9月23日 21:28:49 CST">2026年9月23日 21:28:49</span>
   </span>
 
     
