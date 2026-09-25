@@ -1201,3 +1201,281 @@ $$U_c = \frac{\sigma' + \sigma}{\varepsilon_0}\cdot\frac{d}{2} = \frac{U_0}{2} +
 
 PPT 点评：若 c 不带电，$U_c = U_0/2$；带电会影响电场！——修正项 $+\dfrac{dQ}{4\varepsilon_0 S}$ 就是带电薄板引起的。（解答与 PPT 一致，衔接步骤由AI补全）
 
+### 2026.9.24（10.2 电容器 · 10.3 电介质 · 10.4 电介质中静电场的基本定理）
+
+#### 10.2 电容器
+
+##### 1. 孤立导体的电容
+
+已知孤立导体球 $U = \dfrac{q}{4\pi\varepsilon_0 R}$，即 $q \propto U$。**定义电容**
+
+$$C = \frac{q}{\Delta U}$$
+
+e.g. 孤立导体球：$C = 4\pi\varepsilon_0 R$。
+
+##### 2. 典型电容器
+
+**电容器 = 两个导体**：把电能局限在较小的区域，提高能量密度，防外界干扰。（串联时各电容电荷相同、电压相加；并联时电压相同、电荷相加——第 3 小节两串式子的来历。）
+
+**（1）平行板电容器**
+
+板间真空，极板面积 $S$、间距 $d$，上下板分别带 $+q$、$-q$，则板间场强
+
+$$E = \frac{\sigma}{\varepsilon_0}\quad(\sigma = q/S)$$
+
+<details markdown="1">
+<summary><strong>【FA：E = σ/ε₀ 的推导】</strong></summary>
+
+2026.9.17"平面分布"一节已推：单块无限大均匀带电平面两侧各是匀强场 $\dfrac{\sigma}{2\varepsilon_0}$。正、负两板矢量叠加——板间两场同向，$E = \dfrac{\sigma}{2\varepsilon_0} + \dfrac{\sigma}{2\varepsilon_0} = \dfrac{\sigma}{\varepsilon_0}$；板外两场反向相消，$E = 0$。场被完全"关"在两板之间，这正是电容器防外界干扰的原因。（解答由AI补全）
+
+</details>
+
+则
+
+$$U_A - U_B = Ed = \frac{q}{\varepsilon_0 S}\,d \;\Rightarrow\; C = \frac{q}{\Delta U} = \frac{\varepsilon_0 S}{d}$$
+
+<details markdown="1">
+<summary><strong>【FA：为什么分子是 q 而非 2q（"q 不同呢"？）】</strong></summary>
+
+- **"q 不同呢"**：静电感应保证两板电荷永远**等量异号**——$+q$ 与 $-q$ 大小相同，所以"取哪块板上的电荷"答案都一样，这个统一的大小记作 $q$。
+- **为什么不用 $2q$**：电容定义里的 $q$ 规定为**一个极板上电荷的大小**，也就是充电时从一板搬到另一板、流过导线的电荷。决定电压的也是它：$U = qd/(\varepsilon_0 S) \propto q$（"两块板"的贡献已经体现在场强叠加的那个 2 倍里了，见上条推导）。若把分子写成 $2q$，只是把同一比值改个名，却和"充放电流过的电荷"脱节，与孤立导体电容的定义、串并联公式也都对不上。（解答由AI补全）
+
+</details>
+
+**（2）同轴圆柱形电容器**
+
+$L \gg (R_B - R_A)$ ⇒ 忽略边缘效应；内、外筒单位长度带电 $+\lambda$、$-\lambda$。则距轴线 $r$ 处
+
+$$E = \frac{\lambda}{2\pi\varepsilon_0 r}$$
+
+$$U_A - U_B = \int_{R_A}^{R_B} \vec{E}\cdot\mathrm{d}\vec{l} = \frac{\lambda}{2\pi\varepsilon_0}\ln\frac{R_B}{R_A}$$
+
+得
+
+$$C = \frac{Q}{U_A - U_B} = \frac{\lambda L}{U_A - U_B} = \frac{2\pi\varepsilon_0 L}{\ln\left(R_B/R_A\right)}$$
+
+<details markdown="1">
+<summary><strong>【FA：E = λ/(2πε₀r) 为什么（高斯定理）】</strong></summary>
+
+2026.9.17"轴对称"一节已推：取半径 $r$、长 $h$ 的同轴圆柱高斯面，只有侧面有通量 $E\cdot 2\pi r h$，面包围电荷 $\lambda h$，故 $E\cdot 2\pi r h = \dfrac{\lambda h}{\varepsilon_0} \Rightarrow E = \dfrac{\lambda}{2\pi\varepsilon_0 r}$。用在电容器上：高斯面取在内、外筒之间（$R_A < r < R_B$），面包围的只有内筒电荷。（解答由AI补全）
+
+</details>
+
+<details markdown="1">
+<summary><strong>【FA：为什么用电荷线密度 λ 不用面密度 σ】</strong></summary>
+
+- 内、外筒的面密度**不相等**：$\sigma_A = \dfrac{\lambda}{2\pi R_A}$，$\sigma_B = \dfrac{\lambda}{2\pi R_B}$——同一个系统里没有单一的"$\sigma$"可写；而 $\lambda$ 对两筒是同一个量。
+- 柱对称下高斯面侧面积按 $r$ 增长（$2\pi r h$），与场配合后恰好把 $r$ 消掉的正是 $\lambda$：$\lambda$ 才是直接决定场的电荷量。三种对称各有自然记账单位——球对称用 $Q$、柱对称用 $\lambda$、平面对称用 $\sigma$，用错了公式写不出简洁形式。（解答由AI补全）
+
+</details>
+
+**（3）球形电容器（同心球壳）**
+
+内、外球壳半径 $R_A$、$R_B$，分别带电 $+Q$、$-Q$，两壳之间
+
+$$E = \frac{Q}{4\pi\varepsilon_0 r^2}\qquad U_A - U_B = \int_{R_A}^{R_B} \vec{E}\cdot\mathrm{d}\vec{l}$$
+
+得
+
+$$C = \frac{Q}{U_A - U_B} = \frac{4\pi\varepsilon_0 R_A R_B}{R_B - R_A}$$
+
+（$R_B \to \infty$ 时，$C = 4\pi\varepsilon_0 R_A$——退回孤立导体球。）
+
+<details markdown="1">
+<summary><strong>【FA：E = Q/(4πε₀r²) 为什么（高斯定理）】</strong></summary>
+
+球对称（2026.9.17"球对称"一节）：取半径 $r$ 的同心球面为高斯面，$E\cdot 4\pi r^2 = \dfrac{Q}{\varepsilon_0} \Rightarrow E = \dfrac{Q}{4\pi\varepsilon_0 r^2}$，方向沿半径向外。壳间积分即 $U_A - U_B = \dfrac{Q}{4\pi\varepsilon_0}\left(\dfrac{1}{R_A} - \dfrac{1}{R_B}\right)$，代回定义式得上面结果。（解答由AI补全）
+
+</details>
+
+##### 3. 串联和并联
+
+**（1）串联**（各电容电荷相同 $Q$，总电压为各分压之和）
+
+$$\frac{1}{C} = \frac{U_A - U_B}{Q} = \frac{U_1}{Q} + \frac{U_2}{Q} + \cdots + \frac{U_n}{Q} = \frac{1}{C_1} + \cdots + \frac{1}{C_n}$$
+
+若均为 $C_1$，则 $C = \dfrac{C_1}{n}$；**更耐压**（电压分摊到每个电容上）。
+
+**（2）并联**（各电容电压相同，总电荷为各电荷之和）
+
+$$C = \frac{Q}{U_A - U_B} = \frac{q_1 + q_2 + \cdots + q_n}{U_A - U_B} = C_1 + C_2 + \cdots + C_n$$
+
+总电容变大。
+
+##### 例 1（FA：PPT 转文字）
+
+<details markdown="1">
+<summary><strong>【FA：例 1 插入金属片的平行板电容器（PPT 转文字）】</strong></summary>
+
+**例（PPT 电容-例 1）** 平板电容极板面积 $S$，间距 $d$（远小于极板线度），在两板间平行插入一面积 $S$、厚度 $t$ 的金属片，求该电容器的电容。
+
+图：两极板间距 $d$，中间平行插入厚 $t$ 的金属片（剖面涂阴影），金属片与左、右极板的缝隙宽 $d_1$、$d_2$，极板面积标 $S$。
+
+**解（PPT）** 插入金属片，相当于两个小尺寸电容的**串联**。设左右间距为 $d_1$、$d_2$（$d_1 + d_2 = d - t$）：
+
+$$\frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2}\,, \qquad C_1 = \frac{\varepsilon_0 S}{d_1}\,, \quad C_2 = \frac{\varepsilon_0 S}{d_2}$$
+
+$$\frac{1}{C} = \frac{d_1}{\varepsilon_0 S} + \frac{d_2}{\varepsilon_0 S} = \frac{d - t}{\varepsilon_0 S} \;\Rightarrow\; C = \frac{\varepsilon_0 S}{d - t}$$
+
+即板间距为 $d - t$ 的电容。金属片内部 $\vec{E} = 0$，只把有效间距从 $d$ 压到 $d - t$——所以它插在哪里都一样（结果里没有 $d_1$、$d_2$ 的单独项）。PPT 转写；末句解说由AI补全。
+
+</details>
+
+#### 10.3 电介质
+
+##### 1. 电介质（陶瓷）对电场的影响
+
+电介质：绝缘体，但内部场强不为 0。插入平行板电容器，将削弱 $E$，使 $U_{AB}$ 减少，$C$ 变大。
+
+<details markdown="1">
+<summary><strong>【FA：削弱 E、U 变小、C 变大的解释】</strong></summary>
+
+介质在外场里被**极化**：分子偶极子顺场排列，介质表面出现束缚电荷。束缚电荷的场 $\vec{E}'$ 与原场 $\vec{E}_0$ 反向，合场 $E = E_0 - E' < E_0$（削弱）。极板电荷不变时 $U = Ed$ 随之变小，$C = q/U$ 就变大。定量结论即下一节的 $E = E_0/\varepsilon_r$：等效于把 $\varepsilon_0$ 换成 $\varepsilon = \varepsilon_0\varepsilon_r$，$C = \dfrac{\varepsilon_0\varepsilon_r S}{d} = \varepsilon_r C_0$。（解答由AI补全）
+
+</details>
+
+##### 2. 极化强度
+
+$$\vec{P} = \frac{\sum \vec{p}_i}{\Delta V}$$
+
+（介质中单位体积内电偶极矩矢量和。）
+
+若介质内电场都均匀，则束缚电荷只出现在介质表面，内部极化影响相互抵消。
+
+<details markdown="1">
+<summary><strong>【FA：PPT"端面的束缚电荷密度与极化强度"——图 + 转文字 + 讲解（"完全不懂"处）】</strong></summary>
+
+![PPT：均匀极化介质柱——端面束缚电荷与极化强度的关系，斜柱体积 ΔV=ΔSL·cosθ，推得 σ′=|P|cosθ=P·n̂](https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/img/20260924202858756.jpg)
+
+**PPT 转写**：均匀极化介质柱，$\vec{P}$、$\vec{E}$ 同方向，端面 $\Delta S$，体积 $\Delta V = \Delta S L\cos\theta$。若端面有束缚电荷，电偶极矩
+
+$$q'\vec{L} = \sigma'\Delta S\cdot\vec{L}$$
+
+即柱体内电偶极矩的矢量和
+
+$$\sum \vec{p}_i = \sigma'\Delta S\cdot\vec{L}$$
+
+极化强度
+
+$$|\vec{P}| = \frac{\left|\sum \vec{p}_i\right|}{\Delta V} = \frac{\sigma'\Delta S L}{\Delta S L\cos\theta} = \frac{\sigma'}{\cos\theta}$$
+
+$$\Rightarrow\quad \sigma' = |\vec{P}|\cos\theta = P_n = \vec{P}\cdot\hat{n}$$
+
+**端面束缚电荷面密度 = $\vec{P}$ 的法向分量**；$0 < \theta < \pi/2$ 时，极化电荷为正。
+
+**讲解（说人话）**：
+
+- 图里柱子的**轴线沿 $\vec{P}$**（与 $\vec{E}$ 同向），两个端面是斜切面，端面法线 $\hat{n}$ 与轴成 $\theta$ 角。柱侧面的法线与 $\vec{P}$ 垂直，所以束缚电荷只出现在两个端面：一端 $+\sigma'$、一端 $-\sigma'$。
+- 推导的思路是"换算法"：整根柱子里所有分子偶极矩加起来，等效于把两端面的束缚电荷 $\pm\sigma'\Delta S$ 看成相距 $\vec{L}$ 的一对点电荷，总偶极矩大小就是 $\sigma'\Delta S L$。
+- 斜柱体积 $\Delta V = \Delta S\,L\cos\theta$（端面面积乘轴向长度在法线上的投影）。代回定义式得 $|\vec{P}| = \dfrac{\sigma'}{\cos\theta}$，反解出 $\sigma' = |\vec{P}|\cos\theta$。
+- $\cos\theta$ 恰是 $\vec{P}$ 在法线上的投影：表面某处"顶"出多少束缚电荷，只看 $\vec{P}$ **垂直于该表面**的分量——面与 $\vec{P}$ 垂直（$\theta = 0$）时最多，面与 $\vec{P}$ 平行（$\theta = 90°$）时为零。这就是 10.4 推导里反复要用的 $\sigma' = P_n$。（PPT 转写；讲解由AI补全）
+
+</details>
+
+#### 10.4 电介质中静电场的基本定理
+
+##### 1. 电介质中的场强
+
+$$\vec{P} = \varepsilon_0 \chi_e \vec{E}$$
+
+$\chi_e$：电极化率（无量纲；适用于各向同性介质、场强不太大的情形）。式中 $\vec{E}$ 为**原电荷（自由电荷）和极化电荷的合场强**。
+
+电介质中的场强：
+
+$$E = \frac{E_0}{\varepsilon_r} = \frac{E_0}{1 + \chi_e}$$
+
+<details markdown="1">
+<summary><strong>【FA：E = E₀/εᵣ 推导（课本图 10.19 + 轻文字）】</strong></summary>
+
+![课本图10.19：电介质中的场强——平行板电容器极板自由电荷±σ₀，介质表面极化电荷∓σ′，介质内 E₀ 与 E′ 反向，合场为 E](https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/img/20260924203000166.jpg)
+
+课本 P73–74 推导：介质充满极板间，极板自由电荷面密度 $\pm\sigma_0$，介质表面极化电荷 $\mp\sigma'$，它们在两极板间分别产生均匀电场 $\vec{E}_0$ 和 $\vec{E}'$，介质内任一点的场强为两者的矢量和：
+
+$$\vec{E} = \vec{E}_0 + \vec{E}'$$
+
+因 $\vec{E}_0$ 与 $\vec{E}'$ 方向相反，合场强大小为
+
+$$E = E_0 - E' = \frac{\sigma_0}{\varepsilon_0} - \frac{\sigma'}{\varepsilon_0}$$
+
+本例中 $\vec{P}$ 与介质表面法线方向一致，因而 $\sigma' = P$；又 $P = \chi_e\varepsilon_0 E$（注意用的正是**合场强** $E$——$\sigma'$ 与 $E$ 互相牵制，当方程解），于是
+
+$$E = E_0 - \frac{P}{\varepsilon_0} = E_0 - \chi_e E \;\Rightarrow\; E = \frac{E_0}{1 + \chi_e}$$
+
+定义
+
+$$1 + \chi_e = \varepsilon_r \;\Rightarrow\; E = \frac{E_0}{\varepsilon_r}$$
+
+由于极化电荷的场 $\vec{E}'$ 的存在，介质中场强比介质未引入时减弱了。需要指出：这一结论虽从"充满各向同性均匀电介质的平行板电容器"推出，但可推广——当介质充满电场所在的全部空间（或介质表面是等势面）时都成立。（据课本 P73–74 转写补全）
+
+</details>
+
+$$\sigma' = \sigma_0\left(1 - \frac{1}{\varepsilon_r}\right)$$
+
+<details markdown="1">
+<summary><strong>【FA：σ′ = σ₀(1 − 1/εᵣ) 推导与条件限定】</strong></summary>
+
+**推导**：把 $E = E_0/\varepsilon_r$（即 $E = \dfrac{\sigma_0}{\varepsilon_0\varepsilon_r}$，其中 $E_0 = \dfrac{\sigma_0}{\varepsilon_0}$）代回 $E = \dfrac{\sigma_0 - \sigma'}{\varepsilon_0}$：
+
+$$\frac{\sigma_0}{\varepsilon_0\varepsilon_r} = \frac{\sigma_0 - \sigma'}{\varepsilon_0} \;\Rightarrow\; \sigma' = \sigma_0\left(1 - \frac{1}{\varepsilon_r}\right)$$
+
+介质表面极化电荷面密度与极板自由电荷面密度之间存在固有数量关系。
+
+**条件限定**：推导用了 $\sigma' = P$、$P = \chi_e\varepsilon_0 E$ 以及"介质充满各向同性均匀电介质（介质充满极板间 / 介质表面是等势面）"这一前提——部分填充时 $E \neq E_0/\varepsilon_r$，此式随之不成立；但对**充满**各向同性均匀电介质的其他电容器（球形、圆柱形等）也同样适用。（推导与条件说明由AI按课本补全）
+
+</details>
+
+##### 2. 电位移矢量 D 和介质中的高斯定理
+
+环路定理（介质不改变它——静电场仍有势）：
+
+$$\oint \vec{E}\cdot\mathrm{d}\vec{l} = 0$$
+
+高斯定理里出现了未知的极化电荷：
+
+$$\oint_S \vec{E}\cdot\mathrm{d}\vec{S} = \frac{1}{\varepsilon_0}\left(\sum q_0 + \sum q'\right)$$
+
+$q'$ 未知，想办法消去。利用（上一节端面关系 $\sigma' = P_n$）
+
+$$\oint_S \vec{P}\cdot\mathrm{d}\vec{S} = P_n \times S = \sigma' \Delta S$$
+
+> 笔记原话：没招了，至此完全听不懂了……没记错的话这才第二周来着……
+
+<details markdown="1">
+<summary><strong>【FA：从"消去 q′"到电位移矢量 D（补全推导）】</strong></summary>
+
+**第 1 步：把 $q'$ 用 $\vec{P}$ 表示。** 极化电荷只出现在介质表面且 $\sigma' = \vec{P}\cdot\hat{n}$。对任意闭合面 $S$，面内净束缚电荷等于 $\vec{P}$ 通量的负值：
+
+$$\sum q' = -\oint_S \vec{P}\cdot\mathrm{d}\vec{S}$$
+
+平板情形检验：包围介质靠正极板那个表面（带 $-\sigma'$）取小扁盒，只有伸进介质的那个面有通量，$\oint \vec{P}\cdot\mathrm{d}\vec{S} = P\Delta S = \sigma'\Delta S$（正是笔记里那条式子），而盒内束缚电荷 $q' = -\sigma'\Delta S$——恰好差一个负号 ✓。
+
+**第 2 步：代入高斯定理、移项合并。**
+
+$$\oint_S \varepsilon_0\vec{E}\cdot\mathrm{d}\vec{S} = \sum q_0 + \sum q' = \sum q_0 - \oint_S \vec{P}\cdot\mathrm{d}\vec{S} \;\Rightarrow\; \oint_S \left(\varepsilon_0\vec{E} + \vec{P}\right)\cdot\mathrm{d}\vec{S} = \sum q_0$$
+
+括号里的组合对闭合面的通量只由**自由电荷**决定，起名叫**电位移矢量**：
+
+$$\vec{D} = \varepsilon_0\vec{E} + \vec{P} \qquad\Rightarrow\qquad \oint_S \vec{D}\cdot\mathrm{d}\vec{S} = \sum q_0 \quad (\text{只数自由电荷！})$$
+
+**第 3 步：各向同性线性介质中 D 与 E 的关系。** 代入 $\vec{P} = \varepsilon_0\chi_e\vec{E}$：
+
+$$\vec{D} = \varepsilon_0(1 + \chi_e)\vec{E} = \varepsilon_0\varepsilon_r\vec{E} = \varepsilon\vec{E}$$
+
+**为什么这是好办法**：$\vec{D}$ 的高斯定理里没有 $q'$——对称问题（球、柱、板）里已知自由电荷就能先解出 $\vec{D}$，再除以 $\varepsilon_0\varepsilon_r$ 得 $\vec{E}$，全程不必碰未知的极化电荷。（推导由AI补全）
+
+</details>
+
+介质对电容器的作用（没记全，FA 补全见下）。
+
+<details markdown="1">
+<summary><strong>【FA：介质对电容器的作用（补全没记下的几条）】</strong></summary>
+
+- **增大电容**：$C = \varepsilon_r C_0$，同样尺寸电容翻 $\varepsilon_r$ 倍（$C = \dfrac{\varepsilon_0\varepsilon_r S}{d}$）。
+- **提高耐压**：介质的击穿场强比空气高得多，同样厚度能承受更高电压而不被击穿（笔记这句原文写"增大内压"，应为"增大**耐压**"）。
+- **缩小体积**：要同样的 $C$，用大 $\varepsilon_r$ 的介质可把器件做小。
+- **兼作固定支撑**：工程上介质还用来固定极板间距、防振动。（由AI补全）
+
+</details>
+
+**攻略：已知自由电荷，通常先求电位移矢量 $\vec{D}$！**（对称问题：高斯定理求 $\vec{D}$ → $\vec{E} = \vec{D}/(\varepsilon_0\varepsilon_r)$ → 需要时再反推 $\sigma'$。）
+

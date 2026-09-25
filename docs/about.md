@@ -22,6 +22,11 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-09-25</div>
+<div class="update-log-content">大学物理新增 9.24 笔记：电容器（孤立导体电容、平行板/圆柱/球形、串并联、插金属片例题）与电介质（极化强度、介质中场强 E=E₀/εᵣ、电位移矢量 D 与介质中的高斯定理）；顺带提交现代文学课堂展示要求与即兴演奏 9.24 Lesson 3 记录。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-09-23</div>
 <div class="update-log-content">概率论与数理统计新增笔记：1.3 等可能概型、1.4 条件概率（乘法公式、全概率、贝叶斯与短信例题）、1.5 独立性；顺带提交电基 9.23 实验笔记与现代文学秋二周鲁迅课堂记录。</div>
 </div>
