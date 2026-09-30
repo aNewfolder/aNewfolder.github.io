@@ -1479,3 +1479,102 @@ $$\vec{D} = \varepsilon_0(1 + \chi_e)\vec{E} = \varepsilon_0\varepsilon_r\vec{E}
 
 **攻略：已知自由电荷，通常先求电位移矢量 $\vec{D}$！**（对称问题：高斯定理求 $\vec{D}$ → $\vec{E} = \vec{D}/(\varepsilon_0\varepsilon_r)$ → 需要时再反推 $\sigma'$。）
 
+### 2026.9.29（10.6 静电场的能量）
+
+#### 一、点电荷系统的静电能
+
+两个点电荷时，装配所做之功 $A = q_1 U_1 = q_2 U_2$（推导见课本 P81）$= \dfrac{1}{2}q_1 U_1 + \dfrac{1}{2}q_2 U_2$。推广到 $n$ 个点电荷（$U_i$ 为第 $i$ 个电荷所在位置处、**其他电荷**产生的电势）：
+
+$$W = \frac{1}{2}\sum_{i=1}^{n} q_i U_i = \frac{1}{2}\int_V U \rho\,\mathrm{d}V = \frac{1}{2}\oint_S U \sigma\,\mathrm{d}S$$
+
+（连续分布时：体分布用 $\rho$、面分布用 $\sigma$。）
+
+#### 二、电容器（储能）
+
+- **单个导体**：$W = \dfrac{1}{2}\int u\,\mathrm{d}q = \dfrac{1}{2}Qu$；
+- **电容器**：$A = \int_0^Q \dfrac{q}{C}\,\mathrm{d}q = \dfrac{1}{2}\dfrac{Q^2}{C} = \dfrac{1}{2}Q(U_A - U_B)$。
+
+#### 三、电场能量与能量密度
+
+平行板情形代入 $\Delta U = Ed$、$C = \dfrac{\varepsilon S}{d}$：
+
+$$W = \frac{1}{2}\varepsilon E^2 S d = \frac{1}{2}\varepsilon E^2 V$$
+
+单位体积的能量
+
+$$w_e = \frac{W}{V} = \frac{1}{2}\varepsilon E^2 = \frac{1}{2}DE$$
+
+称为**电场能量密度**（电能密度），普遍形式实为 $\dfrac{1}{2}\vec{E}\cdot\vec{D}$。非均匀场：
+
+$$W = \int_V \frac{1}{2}\varepsilon E^2\,\mathrm{d}V$$
+
+#### 例题：均匀带电介质球的静电能（FA：不懂）
+
+半径 $R$ 的均匀带电介质球，介电常数 $\varepsilon$，电荷体密度 $\rho$，求静电能。
+
+**1° 场强法。** 由高斯定理 $\oint_S \vec{D}\cdot\mathrm{d}\vec{S} = Q = D \cdot 4\pi r^2 = \dfrac{4\pi}{3}r^3\rho$，再由 $\vec{D} = \varepsilon\vec{E}$ 得
+
+$$\vec{E}_1 = \frac{\rho r}{3\varepsilon}\hat{r} \quad (r \le R), \qquad \vec{E}_2 = \frac{\rho R^3}{3\varepsilon_0 r^2}\hat{r} \quad (r \ge R)$$
+
+$$W = \int_V \frac{1}{2}\varepsilon E^2\,\mathrm{d}V \quad (\text{球内、球外分开积分，FA})$$
+
+**2° 电势法。** $U_{\text{内}} = \int_r^R E_1\,\mathrm{d}r + \int_R^{+\infty} E_2\,\mathrm{d}r$，$W = \dfrac{1}{2}\int u\,\mathrm{d}q$：
+
+$$U_{\text{内}} = \int_r^R \frac{\rho r}{3\varepsilon}\,\mathrm{d}r + \int_R^{+\infty} \frac{\rho R^3}{3\varepsilon_0 r^2}\,\mathrm{d}r = \frac{\rho}{6\varepsilon}\left(R^2 - r^2\right) + \frac{\rho R^2}{3\varepsilon_0}, \qquad r \le R$$
+
+取 $\varepsilon_r = 1$（即球内也按真空处理，$\varepsilon = \varepsilon_0$），则 $U_{\text{内}} = \dfrac{\rho}{6\varepsilon_0}\left(3R^2 - r^2\right)$，
+
+$$W = \frac{1}{2}\int u\,\mathrm{d}q = \frac{1}{2}\int_0^R \frac{\rho}{6\varepsilon_0}\left(3R^2 - r^2\right) \rho\, 4\pi r^2\,\mathrm{d}r$$
+
+<details markdown="1">
+<summary><strong>【FA：例题算到底 + 两种方法对照】</strong></summary>
+
+**场强法算到底**（$\varepsilon_r = 1$，$Q = \dfrac{4}{3}\pi R^3\rho$）：
+
+$$W_{\text{内}} = \int_0^R \frac{1}{2}\varepsilon_0 E_1^2 \cdot 4\pi r^2\,\mathrm{d}r = \int_0^R \frac{1}{2}\varepsilon_0 \left(\frac{\rho r}{3\varepsilon_0}\right)^2 4\pi r^2\,\mathrm{d}r = \frac{2\pi\rho^2 R^5}{45\varepsilon_0}$$
+
+$$W_{\text{外}} = \int_R^{+\infty} \frac{1}{2}\varepsilon_0 \left(\frac{\rho R^3}{3\varepsilon_0 r^2}\right)^2 4\pi r^2\,\mathrm{d}r = \frac{2\pi\rho^2 R^5}{9\varepsilon_0}$$
+
+$$W = W_{\text{内}} + W_{\text{外}} = \frac{4\pi\rho^2 R^5}{15\varepsilon_0} = \frac{3Q^2}{20\pi\varepsilon_0 R} = \frac{3}{5}\cdot\frac{1}{4\pi\varepsilon_0}\cdot\frac{Q^2}{R}$$
+
+**电势法算到底**：$W = \dfrac{1}{2}\int_0^R \rho \cdot \dfrac{\rho(3R^2 - r^2)}{6\varepsilon_0} \cdot 4\pi r^2\,\mathrm{d}r = \dfrac{\pi\rho^2}{3\varepsilon_0}\cdot\dfrac{4R^5}{5} = \dfrac{4\pi\rho^2 R^5}{15\varepsilon_0}$，与场强法一致 ✓。
+
+（推导由AI补全）
+
+</details>
+
+与课本例 10-6 对比：**体分布比面分布的静电能略大**。（【见课本例 10-6】）
+
+**Q1**：若 $R = 0$（点电荷），能量发散？定义 $k\dfrac{e^2}{r_e} = mc^2$ 得**电子经典半径** $r_e = ?$（FA）
+
+<details markdown="1">
+<summary><strong>【FA：电子的经典半径】</strong></summary>
+
+把电子看成半径 $R$ 的带电球，场能 $\sim k e^2/R$，$R \to 0$ 时发散——"点电荷 + 场能"的经典图像自相矛盾。令 $k e^2 / r_e = m_e c^2$：
+
+$$r_e = \frac{k e^2}{m_e c^2} = \frac{(8.99\times10^9)\times(1.60\times10^{-19})^2}{(9.11\times10^{-31})\times(3.00\times10^8)^2} \approx 2.8\times10^{-15}\ \text{m}$$
+
+即经典电子半径约 2.8 fm（飞米）。它只是经典电磁理论拼出来的一个长度量级，并不代表电子真的这么大。（解答由AI补全）
+
+</details>
+
+**Q2**：$\displaystyle\int_V \frac{1}{2}\varepsilon E^2\,\mathrm{d}V$ **恒正**，而 $\sum q_i U_i$ **可正可负**——相互作用能 $\ne$ 总能量（FA）
+
+<details markdown="1">
+<summary><strong>【FA：为什么场能积分恒正、互能却可负】</strong></summary>
+
+$\int \dfrac{1}{2}\varepsilon E^2\,\mathrm{d}V$ 是能量密度对全空间积分，被积函数非负，所以**总能量恒正**。而 $\sum q_i U_i$ 里 $q_i$ 带正负号：异号电荷之间的贡献是负的，所以它（单独作为相互作用能时）**可正可负**。两者不是同一个量：总能量 $=$ 各带电体的自能（恒正）$+$ 相互作用能（可正可负），负的互能最多把总能量往下拉，拉不到负值。（FA 补充）
+
+</details>
+
+**总能量 $=$ $\sum$ 自能 $+$ 相互作用能**（FA：举例——内导体球 $+$ 外接地地球壳）：自能（恒正）$+$ 相互作用能（可正可负）
+
+<details markdown="1">
+<summary><strong>【FA：自能与互能——"内导体球 + 接地外壳"的例子】</strong></summary>
+
+- **自能**：把单个带电体自身的电荷从无穷远聚拢起来所需做的功，同性相斥、始终要做正功，恒为正。
+- **相互作用能**：带电体**彼此之间**的那部分能量，符号由对方电荷的正负决定，可正可负。
+- **例子**：带正电的内导体球放进**接地**的导体球壳（想象地球作外壳）内——壳内壁感应出等量负电荷，内球电荷与感应电荷之间的相互作用能为**负**；但两个带电体各自的自能都是正的，而总能量（全空间 $\int \frac{1}{2}\varepsilon_0 E^2\,\mathrm{d}V$）依然恒正。这正是"自能（正）$+$ 互能（可正可负）$=$ 总能量"的具体呈现。（FA 补充）
+
+</details>
+

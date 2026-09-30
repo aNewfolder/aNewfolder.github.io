@@ -453,3 +453,127 @@ $$\mathrm{Ln}(z_1 z_2) = \mathrm{Ln}\,z_1 + \mathrm{Ln}\,z_2, \qquad \mathrm{Ln}
 
 $$(\ln z)' = (\mathrm{Ln}\,z)' = \frac{1}{z}$$
 
+### 2026.9.30
+
+#### 2.5 初等解析函数（续）
+
+**4. 对数函数（续）**
+
+- **为消除间断，割去负实轴**：主值支的辐角 $\arg z$ 仅在负实轴上不连续——从下半平面趋近负实轴时 $\lim\limits_{y \to 0^-} \arg z = -\pi$（从上方趋近则趋于 $+\pi$）。割去负实轴后 $\arg z$ 处处连续，$\ln z$ 随之在割开的复平面内解析。
+- **集合等式要小心**：$\mathrm{Ln}\,z^2 \ne 2\,\mathrm{Ln}\,z \ne \mathrm{Ln}\,z + \mathrm{Ln}\,z$。按集合理解：$\mathrm{Ln}\,z + \mathrm{Ln}\,z$ 的虚部里出现的是 $2k_1\pi$ 和 $2k_2\pi$ 两个独立的整数。
+
+<details markdown="1">
+<summary><strong>【FA：Ln z²、2Ln z、Ln z + Ln z 的集合关系辨析】</strong></summary>
+
+多值函数按**集合**比较（记 $\arg z = \theta \in (-\pi, \pi]$）：
+
+- $\mathrm{Ln}\,z^2 = \ln|z|^2 + \mathrm{i}(2\theta + 2k\pi)$，$k$ 取遍全体整数；
+- $2\,\mathrm{Ln}\,z = 2\ln|z| + \mathrm{i}(2\theta + 4k\pi)$——分支间隔 $4\pi$，只取到 $\mathrm{Ln}\,z^2$ 里一半的分支，故 $2\,\mathrm{Ln}\,z \subsetneq \mathrm{Ln}\,z^2$；
+- $\mathrm{Ln}\,z + \mathrm{Ln}\,z = 2\ln|z| + \mathrm{i}(2\theta + 2k_1\pi + 2k_2\pi)$——两个独立整数相加可取遍 $2k\pi$，恰与 $\mathrm{Ln}\,z^2$ 相等。
+
+一句话：$\mathrm{Ln}\,z^2 = \mathrm{Ln}\,z + \mathrm{Ln}\,z \ne 2\,\mathrm{Ln}\,z$，"自加一次"与"乘 2"在多值世界里不是一回事。（FA 补充）
+
+</details>
+
+**5. 幂函数**
+
+$$w = z^\alpha = \mathrm{e}^{\alpha \mathrm{Ln}\,z}, \qquad z \in \mathbb{C}$$
+
+按指数 $\alpha$ 的类型分四种情形（利用 $\mathrm{Ln}\,z = \ln|z| + \mathrm{i}\arg z + \mathrm{i}2k\pi$）：
+
+1. **$\alpha \in \mathbb{Z}$**：$w = \mathrm{e}^{\alpha(\ln|z| + \mathrm{i}\arg z + \mathrm{i}2k\pi)} = \mathrm{e}^{\alpha(\ln|z| + \mathrm{i}\arg z)} \cdot \mathrm{e}^{\mathrm{i}2k\pi\alpha} = \mathrm{e}^{\alpha \ln z}$。$\alpha$ 为整数时 $\mathrm{e}^{\mathrm{i}2k\pi\alpha} = 1$，多值性消失，为**单值**函数，即通常的 $z^\alpha$；
+2. **$\alpha = \dfrac{1}{n}$**：$z^{\frac{1}{n}} = \mathrm{e}^{\frac{1}{n}(\ln|z| + \mathrm{i}\arg z)} \cdot \mathrm{e}^{\mathrm{i}\frac{2k\pi}{n}}$，$k = 0, 1, \ldots, n-1$，**有限多值**（$n$ 个值，即 $n$ 次方根）；
+3. **$\alpha = \dfrac{m}{n}$**（$n > 1$，$n$、$m$ 互质）：$z^{\frac{m}{n}} = \mathrm{e}^{\frac{m}{n}\ln z} \cdot \mathrm{e}^{\mathrm{i}\frac{2k\pi m}{n}}$，同样 $k = 0, 1, \ldots, n-1$ 取 $n$ 个值（$m$、$n$ 互质保证不重不漏）；
+4. **$\alpha$ 为无理数或虚部不为零的复数**：$\mathrm{e}^{\mathrm{i}2k\pi\alpha}$ 永不重复，**无穷多值**。
+
+在原点与 $x$ 轴负半轴之外解析，且
+
+$$(z^\alpha)' = \alpha z^{\alpha - 1}$$
+
+#### 三、复变函数的积分
+
+**定义**：$S = \displaystyle\int_C f(z)\,\mathrm{d}z$，$C$ 为曲线。设 $C$ 的参数方程为 $z = z(t)$，$t \in [\alpha, \beta]$，则
+
+$$\int_C f(z)\,\mathrm{d}z = \int_\alpha^\beta f\left(z(t)\right) z'(t)\,\mathrm{d}t$$
+
+即当 $f(z) = u(x)$ 只取实值、$C$ 退化为 $x$ 轴上的区间时，复积分就是通常的定积分。
+
+**定理**：设 $f(z) = u + \mathrm{i}v$ 在 $C$ 上连续，则 $f(z)$ 沿 $C$ 可积，且
+
+$$\int_C f(z)\,\mathrm{d}z = \int_C u\,\mathrm{d}x - v\,\mathrm{d}y + \mathrm{i}\int_C v\,\mathrm{d}x + u\,\mathrm{d}y = \int_C (u + \mathrm{i}v)\,(\mathrm{d}x + \mathrm{i}\,\mathrm{d}y)$$
+
+**性质**
+
+- $|\mathrm{d}z| = \mathrm{d}s$（弧长微元），复积分属于第二类曲线积分；
+- $C$：逐段光滑的有向曲线；
+- 线性性、可加性、反向取负；
+- 估值不等式：$\left|\int_C f(z)\,\mathrm{d}z\right| \le \int_C |f(z)|\,\mathrm{d}s \le Ml$，其中 $|f(z)| \le M$，$l$ 为 $C$ 的弧长。
+
+**e.g.** $\int_C |z|\,\mathrm{d}z$，$C$ 为从 $\mathrm{i}$ 到 $-\mathrm{i}$ 的路径（FA：补充更详细过程）。图：$C_1$ 为沿虚轴的直线段（自 $\mathrm{i}$ 向下到 $-\mathrm{i}$）；$C_2$ 为左半平面的半圆周（自 $\mathrm{i}$ 经 $-1$ 到 $-\mathrm{i}$）。
+
+$$C_1:\ z = -\mathrm{i}t,\ t \in [-1, 1]\ \Rightarrow\ \int_{C_1} |z|\,\mathrm{d}z = \int_{-1}^{1} \left|-\mathrm{i}t\right| \mathrm{d}(-\mathrm{i}t) = -\mathrm{i}$$
+
+$$C_2:\ z = \mathrm{e}^{\mathrm{i}\theta},\ \theta: \frac{\pi}{2} \to \frac{3\pi}{2}\ \Rightarrow\ \int_{C_2} |z|\,\mathrm{d}z = \int_{\frac{\pi}{2}}^{\frac{3\pi}{2}} \left|\mathrm{e}^{\mathrm{i}\theta}\right| \mathrm{d}\left(\mathrm{e}^{\mathrm{i}\theta}\right) = \int_{\frac{\pi}{2}}^{\frac{3\pi}{2}} \mathrm{e}^{\mathrm{i}\theta} \cdot \mathrm{i}\,\mathrm{d}\theta = -2\mathrm{i}$$
+
+<details markdown="1">
+<summary><strong>【FA：∫|z|dz 两路径的详细过程与结论】</strong></summary>
+
+$C_1$：$z = -\mathrm{i}t$，$t$ 从 $-1$（对应 $\mathrm{i}$）到 $1$（对应 $-\mathrm{i}$），$\mathrm{d}z = -\mathrm{i}\,\mathrm{d}t$，$|z| = |-\mathrm{i}t| = |t|$：
+
+$$\int_{C_1} |z|\,\mathrm{d}z = \int_{-1}^{1} |t| \cdot (-\mathrm{i})\,\mathrm{d}t = -\mathrm{i}\int_{-1}^{1} |t|\,\mathrm{d}t = -\mathrm{i} \cdot 2\int_0^1 t\,\mathrm{d}t = -\mathrm{i}$$
+
+$C_2$：$z = \mathrm{e}^{\mathrm{i}\theta}$，$\theta$ 从 $\dfrac{\pi}{2}$ 到 $\dfrac{3\pi}{2}$，$\mathrm{d}z = \mathrm{i}\mathrm{e}^{\mathrm{i}\theta}\,\mathrm{d}\theta$，$|z| = 1$：
+
+$$\int_{C_2} |z|\,\mathrm{d}z = \int_{\frac{\pi}{2}}^{\frac{3\pi}{2}} \mathrm{i}\,\mathrm{e}^{\mathrm{i}\theta}\,\mathrm{d}\theta = \left[\mathrm{e}^{\mathrm{i}\theta}\right]_{\frac{\pi}{2}}^{\frac{3\pi}{2}} = \mathrm{e}^{\frac{3\pi\mathrm{i}}{2}} - \mathrm{e}^{\frac{\pi\mathrm{i}}{2}} = -\mathrm{i} - \mathrm{i} = -2\mathrm{i}$$
+
+**结论**：两条路径的积分值不同（$-\mathrm{i} \ne -2\mathrm{i}$）——$|z|$ 不是 $z$ 的解析函数，积分一般与路径有关。（解答由AI补全）
+
+</details>
+
+**e.g.**（作为定理记住）$I = \displaystyle\oint_C \frac{\mathrm{d}z}{(z - z_0)^n}$（$n \in \mathbb{Z}$），$C:\ |z - z_0| = r > 0$。
+
+参数化 $z = z_0 + r\mathrm{e}^{\mathrm{i}\theta}$，$\theta \in [0, 2\pi]$：
+
+$$I = \int_0^{2\pi} \frac{1}{\left(r\mathrm{e}^{\mathrm{i}\theta}\right)^n}\,\mathrm{d}\left(z_0 + r\mathrm{e}^{\mathrm{i}\theta}\right) = \int_0^{2\pi} r^{-n}\,\mathrm{e}^{-\mathrm{i}n\theta} \cdot r\mathrm{e}^{\mathrm{i}\theta} \cdot \mathrm{i}\,\mathrm{d}\theta = r^{1-n}\,\mathrm{i}\int_0^{2\pi} \mathrm{e}^{\mathrm{i}(1-n)\theta}\,\mathrm{d}\theta$$
+
+1. $n = 1$ 时，$I = 2\pi\mathrm{i}$；
+2. $n \ne 1$ 时，$I = r^{1-n} \cdot \mathrm{i} \cdot \dfrac{\mathrm{e}^{\mathrm{i}(1-n)\theta}}{\mathrm{i}(1-n)} \Bigg|_0^{2\pi} = 0$（$\mathrm{e}^{\mathrm{i}(1-n) \cdot 2\pi} = 1$，上下限处函数值相同）。
+
+<details markdown="1">
+<summary><strong>【FA：这个基本积分为什么重要】</strong></summary>
+
+被积函数在圆内只有唯一奇点 $z_0$：$n = 1$（最"奇"的一档）给出 $2\pi\mathrm{i}$，且与半径 $r$ 无关；其余幂次全为零。这一"只认奇点、与圆的大小无关"的结果是后面柯西积分公式与洛朗展开的出发点，所以课上要求作为定理记住。（FA 补充）
+
+</details>
+
+**e.g.**（FA）$|z| = 1$ 上比较两个"长得像"的积分：
+
+$$\oint_{|z|=1} \left|\frac{\mathrm{d}z}{z}\right| = \oint_{|z|=1} \frac{|\mathrm{d}z|}{|z|} = 2\pi, \qquad \oint_{|z|=1} \frac{\mathrm{d}z}{|z|} = \oint_{|z|=1} \frac{|\mathrm{d}z|}{z} = 0$$
+
+<details markdown="1">
+<summary><strong>【FA：|dz| 与 dz 一字之差】</strong></summary>
+
+关键区分：$|\mathrm{d}z| = \mathrm{d}s$ 是**弧长微元**（正实数），$\mathrm{d}z$ 是**复增量**。取单位圆 $z = \mathrm{e}^{\mathrm{i}\theta}$，$\theta \in [0, 2\pi]$，则 $|\mathrm{d}z| = \mathrm{d}\theta$：
+
+- $\displaystyle\oint \left|\frac{\mathrm{d}z}{z}\right| = \oint \frac{|\mathrm{d}z|}{|z|} = \int_0^{2\pi} \frac{\mathrm{d}\theta}{1} = 2\pi$——对模积分，结果是正实数（恰为圆周长），这是对弧长的第一类曲线积分而非复积分；
+- $\displaystyle\oint \frac{\mathrm{d}z}{|z|} = \int_0^{2\pi} \frac{\mathrm{i}\mathrm{e}^{\mathrm{i}\theta}\,\mathrm{d}\theta}{1} = \left[\mathrm{e}^{\mathrm{i}\theta}\right]_0^{2\pi} = 0$；
+- $\displaystyle\oint \frac{|\mathrm{d}z|}{z} = \int_0^{2\pi} \frac{\mathrm{d}\theta}{\mathrm{e}^{\mathrm{i}\theta}} = \int_0^{2\pi} \mathrm{e}^{-\mathrm{i}\theta}\,\mathrm{d}\theta = 0$。
+
+后两个才是复积分。加不加绝对值一字之差，积分类型与结果完全不同。（解答由AI补全）
+
+</details>
+
+**e.g.**（FA）$\int_C z^2\,\mathrm{d}z$，$C$ 为从 $-1$ 到 $1$ 的路径。图：$C_1$ 为 $x$ 轴上的直线段（方向向右）；$C_2$ 为上半平面的半圆周（自 $-1$ 经上方到 $1$）。
+
+预告：柯西积分定理——积分何时与路径无关。
+
+<details markdown="1">
+<summary><strong>【FA：两条路径验证 ∫z²dz 同值】</strong></summary>
+
+- 沿 $C_1$（直线段，$z = x$，$x$ 从 $-1$ 到 $1$）：$\displaystyle\int_{-1}^{1} x^2\,\mathrm{d}x = \frac{2}{3}$；
+- 沿 $C_2$（上半圆周，$z = \mathrm{e}^{\mathrm{i}\theta}$，$\theta$ 从 $\pi$ 到 $0$）：$\displaystyle\int_\pi^0 \mathrm{e}^{2\mathrm{i}\theta} \cdot \mathrm{i}\mathrm{e}^{\mathrm{i}\theta}\,\mathrm{d}\theta = \mathrm{i}\left[\frac{\mathrm{e}^{3\mathrm{i}\theta}}{3\mathrm{i}}\right]_\pi^0 = \frac{1 - \mathrm{e}^{3\pi\mathrm{i}}}{3} = \frac{1 - (-1)}{3} = \frac{2}{3}$。
+
+两条路径同值——因为 $z^2$ 全平面解析。"解析 $\Rightarrow$ 积分与路径无关"正是下节课柯西积分定理要讲的内容。（解答由AI补全）
+
+</details>
+

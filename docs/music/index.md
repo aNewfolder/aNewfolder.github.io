@@ -32,6 +32,7 @@ hide:
     - [诀别书](piano/jue-bie-shu.md)
     - [梦中的婚礼](piano/wedding-in-the-dream.md)
     - [歌曲串烧](piano/medley.md)
+    - [记录](piano/records.md) — 琴房与课时记录
 
 ??? quote "架子鼓"
 
@@ -44,6 +45,7 @@ hide:
     - [Rolling in the Deep](drums/rolling-in-the-deep.md)
     - [克罗地亚狂想曲](drums/croatian-rhapsody.md)
     - [加勒比海盗](drums/pirates-of-the-caribbean.md)
+    - [记录](drums/records.md) — 课时记录
 
 ??? quote "声乐"
 

@@ -198,3 +198,55 @@ $$P(B \mid A) = P(B) \quad \text{或} \quad P(A \mid B) = P(A)$$
 
 </details>
 
+### 2026.9.30
+
+#### 二、随机变量及其概率分布（离散型）
+
+**1. 两点分布**
+
+$$P(X = k) = p^k (1-p)^{1-k}, \qquad k = 0, 1$$
+
+记作 $X \sim B(1, p)$（即 0-1 分布）。
+
+**2. 二项分布**
+
+$$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}, \qquad k = 0, 1, 2, \ldots, n$$
+
+记作 $X \sim B(n, p)$。
+
+**3. 泊松分布**
+
+$$P(X = k) = \frac{\mathrm{e}^{-\lambda} \lambda^k}{k!}, \qquad k = 0, 1, 2, \ldots$$
+
+记作 $X \sim P(\lambda)$ 或 $X \sim \pi(\lambda)$。当 $n$ 足够大、$p$ 足够小时，二项分布可近似为泊松分布，$\lambda = np$。
+
+<details markdown="1">
+<summary><strong>【FA：泊松定理（二项分布的泊松近似）】</strong></summary>
+
+设 $\lambda = np$ 固定（$n$ 增大时 $p$ 相应减小），则对每个固定的 $k$：
+
+$$\lim_{n \to \infty} \binom{n}{k} p^k (1-p)^{n-k} = \frac{\mathrm{e}^{-\lambda}\lambda^k}{k!}$$
+
+即 $n$ 大、$p$ 小时 $B(n, p) \approx P(np)$。经验上 $n \ge 20$、$p \le 0.05$ 时近似已相当好。直观：大量独立个体各自发生"稀有事件"，稀有事件的总次数天然趋于泊松分布。（FA 补充）
+
+</details>
+
+#### 连续型随机变量
+
+**1. 随机变量的概率分布函数**
+
+$$F(x) = P\{X \le x\}$$
+
+且 $F(x + 0) = F(x)$，即 $F$ 处处**右连续**。
+
+<details markdown="1">
+<summary><strong>【FA：右连续与"左开右闭"辨析】</strong></summary>
+
+$F(x + 0) = F(x)$ 说的是 $F$ **右连续**；有了它才能用分布函数算任意区间的概率
+
+$$P\{a < X \le b\} = F(b) - F(a)$$
+
+这里的区间 $(a, b]$ 是**左开右闭**的——笔记里写的"左闭右开"应是口误（"左闭右开"的 $[a, b)$ 对应的是 $F(x) = P\{X < x\}$ 那种左连续定义，与本页 $F(x) = P\{X \le x\}$ 的定义不配套，别混用）。分布函数另外两条基本性质：单调不减；$F(-\infty) = 0$、$F(+\infty) = 1$。（FA 补充）
+
+</details>
+
