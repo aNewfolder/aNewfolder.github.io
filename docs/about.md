@@ -23,6 +23,11 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-09-30</div>
+<div class="update-log-content">拓展学习新增《SKILLS DIY》：开源 13 个自制 AI 助手 skills 至 GitHub 仓库，附各 skill 部署指南与说明。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-09-30</div>
 <div class="update-log-content">复变（对数函数续、幂函数、复变函数的积分）、概统（随机变量及其分布）、大物（10.6 静电场的能量）新增课堂笔记；音乐板块新增钢琴与架子鼓"记录"两页并登记导航；顺带提交阅读、体育、音乐、课程等页面的本地修改。</div>
 </div>
 
