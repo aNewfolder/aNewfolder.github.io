@@ -2170,7 +2170,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        先把丑话说在前面
+        前言
       
     </span>
   </a>
@@ -2182,17 +2182,6 @@
     <span class="md-ellipsis">
       
         都有些什么
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        怎么用起来
       
     </span>
   </a>
@@ -6403,7 +6392,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        先把丑话说在前面
+        前言
       
     </span>
   </a>
@@ -6415,17 +6404,6 @@
     <span class="md-ellipsis">
       
         都有些什么
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        怎么用起来
       
     </span>
   </a>
@@ -6453,22 +6431,19 @@
 
 
 <h1 id="skills-diy">SKILLS DIY<a class="headerlink" href="#skills-diy" title="Permanent link">&para;</a></h1>
-<p>用 AI 干活这两年，我攒下了一批自己写的 skills——就是给 AI 助手看的"技能包"：一个说明书加几个脚本，AI 读了就知道什么时候该用它、怎么一步步干。超星课件下载、大物实验报告、问卷星建卷、邮箱公文草稿、图床上传、CC98 论坛爬读、微信公众号归档……基本都是校园生活里反复出现的体力活，写一次 skill，以后一句话就能让 AI 代劳。</p>
-<p>现在我把其中比较成型的 13 个整理开源了出来：</p>
 <blockquote>
 <p><strong>仓库地址：<a href="https://github.com/aNewfolder/zcode-skills">https://github.com/aNewfolder/zcode-skills</a></strong></p>
 </blockquote>
-<h2 id="_1">先把丑话说在前面<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">前言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>这些 skills 全部由 AI 辅助编写</strong>（ZCode + GLM）。我负责提需求、测试、迭代，代码几乎一行不是人手写的。</li>
-<li><strong>不保证及时更新，不保证质量。</strong>它们深度依赖各平台的网页接口，平台一改版就可能失效，我也未必有空修。</li>
-<li>但凡放上来的，<strong>一定是我自己用过、并且觉得好用有帮助的</strong>，不是写着玩的 demo。</li>
-<li>仓库里不含任何账号凭据，需要登录的 skill 都在你本机配置自己的账号，详见每个 skill 的 README。</li>
+<li><strong>skills 全部由 AI 编写</strong>。 <strong>不保证及时更新，不保证质量。</strong></li>
+<li>但是放上来的这些都是我用过且觉得比较有帮助的。</li>
+<li><mark>仅供学习使用，作者不对用户可能产生的不当行为负责。</mark></li>
 </ul>
 <h2 id="_2">都有些什么<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p><strong>课程与作业</strong></p>
 <ul>
-<li><strong>chaoxing-courseware</strong> — 超星学习通课件下载：按章节爬取课程文件（pptx / docx / pdf），账号密码登录后 Cookie 持久化，之后一句话下载整章课件</li>
+<li><strong>chaoxing-courseware</strong> — 超星学习通课件下载：用于大学物理实验课程网站，按章节爬取课程文件（pptx / docx / pdf），账号密码登录后 Cookie 持久化，之后一句话下载整章课件</li>
 <li><strong>gctrain-homework</strong> — 工程训练平台每周预习作业自动取题、答题、提交（仅校园网可达）</li>
 <li><strong>circuit-lab-report</strong> — 《电子电路基础及实验》实验报告：XeLaTeX 版式复刻课程 Word 模板，处理数据、出规范报告</li>
 <li><strong>physics-lab-report</strong> — 《大学物理实验》预习报告与实验报告：严格按课程的不确定度评定与有效数字规范，自动下载讲义、传图、排版</li>
@@ -6481,7 +6456,7 @@
 <p><strong>文档与邮件</strong></p>
 <ul>
 <li><strong>kdocs</strong> — 金山文档 / WPS 云文档操作：云端建表写入、读单元格、分享设置，配浏览器自动化兜底</li>
-<li><strong>mail163-draft</strong> — 163 邮箱公文排版存草稿：仿宋正文、Times New Roman 西文、首行缩进、署名日期右对齐，一键排好存进草稿箱（绝不自动发送）</li>
+<li><strong>mail163-draft</strong> — 163 邮箱公文排版存草稿：仿宋正文、Times New Roman 西文、首行缩进、署名日期右对齐，一键排好存进草稿箱</li>
 <li><strong>zjuem-mail-draft</strong> — 浙大邮箱同款公文草稿工具，统一认证 API 直连</li>
 </ul>
 <p><strong>内容与工具</strong></p>
@@ -6491,9 +6466,8 @@
 <li><strong>solidworks-reader</strong> — 免开软件只读提取 SolidWorks 零件 / 装配体 / 工程图数据，输出 JSON</li>
 <li><strong>wjx-survey</strong> — 问卷星全流程：70 多种题型建卷、发布、答卷导出、统计报表</li>
 </ul>
-<h2 id="_3">怎么用起来<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>skills 是一种通用的 agent 扩展格式（ZCode、Claude Code 等都兼容）：克隆仓库，把你想要的那个目录整个复制进 AI 助手的技能目录，装上依赖、配好你自己的账号就行。每个 skill 目录里都有一份 README，依赖清单、要配置什么、常用命令、注意事项都写好了，人和 AI 都能照着做——我连"读者是 AI"这件事都考虑进去了，你甚至可以让你的 AI 助手自己去读 README 完成部署。</p>
-<p>如果你用出了问题，或者想交流怎么写自己的 skill，欢迎到仓库提 issue，也欢迎在页面底部的留言板聊聊。</p>
+<p><strong>待更新</strong>
+- <strong>xzzd-homework</strong> — 相关功能仍在测试中</p>
 
 
 
@@ -6516,7 +6490,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年9月30日 18:37:06 CST">2026年9月30日 18:37:06</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年9月30日 18:49:15 CST">2026年9月30日 18:49:15</span>
   </span>
 
     
