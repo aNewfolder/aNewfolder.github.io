@@ -23,6 +23,11 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-09-30</div>
+<div class="update-log-content">调整《SKILLS DIY》：精简前言、补充免责声明，预告新 skill xzzd-homework。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-09-30</div>
 <div class="update-log-content">拓展学习新增《SKILLS DIY》：开源 13 个自制 AI 助手 skills 至 GitHub 仓库，附各 skill 部署指南与说明。</div>
 </div>
 
