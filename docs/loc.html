@@ -1,0 +1,109 @@
+<!doctype html>
+<!--
+  定位工具页（2026-09-30）：为课堂签到面板等 HTTP 站点提供 HTTPS 环境下的
+  手机 GPS 取位。用法 /loc.html?back=<urlencoded 回跳地址>；定位成功后带
+  ?lat=&lon= 回跳。back 仅允许签到面板主机（防开放重定向）。不进站点导航。
+-->
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>获取当前位置</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; display: flex; align-items: center;
+    justify-content: center; padding: 24px;
+    font: 16px/1.7 -apple-system, "PingFang SC", "Noto Sans SC",
+          "Microsoft YaHei", sans-serif;
+    background: #faf7f2; color: #3a2d1c;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { background: #14100a; color: #d8cfc2; }
+  }
+  main { max-width: 420px; width: 100%; text-align: center; }
+  h1 { font-size: 20px; margin: 0 0 12px; font-weight: 600; }
+  p { margin: 6px 0; }
+  .coord {
+    font-family: ui-monospace, Consolas, monospace; font-size: 22px;
+    letter-spacing: .5px; margin: 14px 0; user-select: all;
+  }
+  .acc { font-size: 13px; opacity: .7; }
+  button, a.btn {
+    display: inline-block; margin: 10px 6px 0; padding: 10px 22px;
+    border: 1px solid #9c3a24; border-radius: 8px; background: #9c3a24;
+    color: #fff; font-size: 15px; text-decoration: none; cursor: pointer;
+  }
+  a.btn.ghost { background: transparent; color: inherit; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main>
+  <h1>获取当前位置</h1>
+  <p id="msg">正在请求定位权限…</p>
+  <p class="coord" id="coord"></p>
+  <p class="acc" id="acc"></p>
+  <button id="retry" hidden>重试定位</button>
+  <a class="btn" id="back" hidden>返回并填入</a>
+</main>
+<script>
+(function () {
+  var q = new URLSearchParams(location.search);
+  var back = q.get('back') || '';
+  // 仅允许回跳到签到面板（IP 或 localhost），防开放重定向滥用
+  if (!/^https?:\/\/(114\.55\.177\.240(:\d+)?|localhost(:\d+)?)\//i.test(back)) {
+    back = '';
+  }
+  var msg = document.getElementById('msg');
+  var coordEl = document.getElementById('coord');
+  var accEl = document.getElementById('acc');
+  var retryBtn = document.getElementById('retry');
+  var backBtn = document.getElementById('back');
+  var backUrl = '';
+
+  function show(lat, lon, acc) {
+    coordEl.textContent = lat.toFixed(6) + ',' + lon.toFixed(6);
+    accEl.textContent = acc ? '精度约 ' + Math.round(acc) + ' 米（教室内一般 5-30 米）' : '';
+    var sep = back.indexOf('?') >= 0 ? '&' : '?';
+    backUrl = back + sep + 'lat=' + lat.toFixed(6) + '&lon=' + lon.toFixed(6);
+    if (back) {
+      msg.textContent = '定位成功，正在返回…';
+      backBtn.href = backUrl;
+      backBtn.hidden = false;
+      setTimeout(function () { location.replace(backUrl); }, 700);
+    } else {
+      msg.textContent = '定位成功。点击上方坐标即可选中复制。';
+    }
+  }
+  function fail(m) {
+    msg.textContent = m;
+    retryBtn.hidden = false;
+    if (back) {
+      backBtn.textContent = '不定位，直接返回';
+      backBtn.href = back;
+      backBtn.classList.add('ghost');
+      backBtn.hidden = false;
+    }
+  }
+  function attempt() {
+    msg.textContent = '正在获取定位…';
+    retryBtn.hidden = true;
+    if (!navigator.geolocation) { fail('此浏览器不支持网页定位。'); return; }
+    navigator.geolocation.getCurrentPosition(function (p) {
+      show(p.coords.latitude, p.coords.longitude, p.coords.accuracy || 0);
+    }, function (err) {
+      fail(err.code === 1 ? '定位权限被拒绝：请在浏览器设置里允许本页定位后重试。'
+        : err.code === 2 ? '暂时拿不到位置（室内信号弱），到窗边或室外再试。'
+        : err.code === 3 ? '定位超时，请重试。'
+        : '定位失败：' + err.message);
+    }, { enableHighAccuracy: true, timeout: 20000, maximumAge: 0 });
+  }
+  retryBtn.onclick = attempt;
+  attempt();
+})();
+</script>
+</body>
+</html>

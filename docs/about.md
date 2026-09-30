@@ -23,6 +23,11 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-09-30</div>
+<div class="update-log-content">新增定位工具页 loc（供课堂签到面板在手机上取 GPS 坐标，不进导航）；顺带提交《中国现代文学经典选读》秋三周课堂笔记。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-09-30</div>
 <div class="update-log-content">调整《SKILLS DIY》：精简前言、补充免责声明，预告新 skill xzzd-homework。</div>
 </div>
 
