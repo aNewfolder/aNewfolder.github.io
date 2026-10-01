@@ -23,6 +23,11 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-10-01</div>
+<div class="update-log-content">羽毛球、乒乓球文章补充 10 月 1 日练习记录，羽毛球文另附基本规则整理。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-10-01</div>
 <div class="update-log-content">SKILLS DIY 收录琴房自动预约工具 piano-room-booking（已脱敏开源至同一仓库）。</div>
 </div>
 
