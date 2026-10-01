@@ -13,5 +13,5 @@ hide:
 
 - [科研日报](research-daily.md) — 自动化文献调研系统：每天抓取顶刊新论文，AI 筛选后生成万字中文深读，附导师日报与打分反馈闭环
 - [制作一个 MkDocs 个人网站](mkdocs-site-guide.md) — 零基础也能跟着做的建站全流程指南：部署智能体 → 本地搭建 → GitHub 上线 → 绑定域名
-- [SKILLS DIY](skills-diy.md) — 开源我自制的 13 个 AI 助手 skills：课件下载、实验报告、问卷星、邮箱草稿、图床、CC98、公众号归档等，每个都附部署指南
+- [SKILLS DIY](skills-diy.md) — 开源我自制的 14 个 AI 助手 skills：课件下载、实验报告、问卷星、邮箱草稿、图床、CC98、琴房预约、公众号归档等，每个都附部署指南
 
