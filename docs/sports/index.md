@@ -17,3 +17,5 @@ hide:
 - [匹克球](pickleball.md)
 - [台球](billiard.md)
 - [网球](tennis.md)
+- [气排球](air-volleyball.md)
+- [羽毛球](badminton.md)
