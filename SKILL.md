@@ -88,3 +88,7 @@
 
 1. 公式库地址统一用 `https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js`（mkdocs.yml `extra_javascript:`），CSP 的 `script-src` 与 `font-src` 白名单同步放行 `https://cdn.jsdelivr.net`（MathJax CHTML 的字体也从脚本同源加载）。unpkg 在国内直连不通，不要再引回。
 2. 重建/修改 CSP 时仍须保留：`frame-src 'self' https://giscus.app` 与 `object-src 'self'`（PDF 内嵌依赖，见 2026-08-30 条）。
+
+## 2026-10-03 · 打印排版紧凑化（网页端不受影响）
+
+1. 打印省纸规则集中在 `extra.css` 末尾 `@media print` 块的「紧凑排布」小节：行距 1.4（网页仍 1.6）、段落/列表间距约减半、标题间距缩小、折叠块与提示框外边距 1.5625em→0.7em、MathJax 显示公式 1em→0.35em（带 !important 覆盖 MathJax 注入样式）、表格单元格与分隔线同步收紧。实测复变函数页从 14 页压到 10 页。调整打印密度只改这一节，不要动屏幕端样式。

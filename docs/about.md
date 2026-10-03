@@ -23,6 +23,11 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-10-03</div>
+<div class="update-log-content">导出 PDF 排版收紧：打印时自动减小行距与段间距（14 页笔记压到 10 页），网页阅读排版不变。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-10-03</div>
 <div class="update-log-content">公式库 MathJax 源切换为国内可直连的 jsdelivr 镜像，未开代理也能正常显示公式；顺带提交钢琴即兴练习记录与《至暗时刻》观影记录。</div>
 </div>
 
