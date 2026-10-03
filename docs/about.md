@@ -22,6 +22,16 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-10-03</div>
+<div class="update-log-content">公式库 MathJax 源切换为国内可直连的 jsdelivr 镜像，未开代理也能正常显示公式；顺带提交钢琴即兴练习记录与《至暗时刻》观影记录。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-10-03</div>
+<div class="update-log-content">课程总结从大二上起每个课程页新增「导出完整 PDF」按钮：导出时自动展开全部折叠解答，只留正文。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-10-01</div>
 <div class="update-log-content">羽毛球、乒乓球文章补充 10 月 1 日练习记录，羽毛球文另附基本规则整理。</div>
 </div>

@@ -78,3 +78,13 @@
 
 1. **Chromium 系浏览器（Chrome/Edge/360se）把 `<embed>`/`<object>` 内嵌 PDF 的加载归入 `frame-src` 检查**（内置 PDF viewer 以 frame/plugin 方式实现，偏离 CSP 规范；Firefox/Safari 才按 `object-src`）。因此 PDF 内嵌要正常渲染，**`frame-src` 与 `object-src` 必须同时含 `'self'`**——只有 `object-src 'self'` 时，浏览器显示"该内容被屏蔽了。请联系网站所有者以解决此问题。"（Chromium 拦截 frame 的标准文案）。2026-08-30 已把 `overrides/main.html` CSP 的 `frame-src` 从 `https://giscus.app` 改为 `'self' https://giscus.app`；重建/改 CSP 时两条都必须保留。
 2. 排查手法：CSP 拦截可在页面里挂 `securitypolicyviolation` 事件监听后重新插入被拦元素直接验证；无 PDF 插件的内核（如 ZCode 内嵌浏览器）对 embed PDF 只渲染空白、不触发事件，无法复现此类拦截，须在用户真实浏览器里验证。
+
+## 2026-10-03 · 课程页「导出完整 PDF」按钮（大二上起）
+
+1. **按钮范围**：大二上（`class/sophomore-1/`）及之后的学期课程页，标题上方自动出现「导出完整 PDF」按钮（`extra.js` 第 8 段注入）。规则按路径判断：`/class/学期-序号/课程名/` 且学期目录名不是 freshman 即生效——今后新增 sophomore-2、junior-1 等学期目录无需改代码自动带上；freshman-1/2 与各 index 页不出按钮。
+2. **导出原理**：点击按钮（等 MathJax 渲染完）调起系统打印，`beforeprint` 里临时切浅色模式并展开全部 `<details>` 折叠块（含 `???` 生成的），`afterprint` 恢复原状；打印窗口选「另存为 PDF」即得全部内容可见的完整文档。Ctrl+P / 浏览器菜单打印走同一套处理。样式配套在 `extra.css` 末尾的 `@media print` 块（隐藏留言板标题/统计行/脚印层/按钮/页面日期，A4 页面、保留底色、标题不与后文断页）；Material 自带打印样式已隐藏页头/侧栏/页脚并自动展开选项卡，不要重复实现。
+
+## 2026-10-03 · MathJax 源从 unpkg 切换为 jsdelivr（国内未开代理可直连）
+
+1. 公式库地址统一用 `https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js`（mkdocs.yml `extra_javascript:`），CSP 的 `script-src` 与 `font-src` 白名单同步放行 `https://cdn.jsdelivr.net`（MathJax CHTML 的字体也从脚本同源加载）。unpkg 在国内直连不通，不要再引回。
+2. 重建/修改 CSP 时仍须保留：`frame-src 'self' https://giscus.app` 与 `object-src 'self'`（PDF 内嵌依赖，见 2026-08-30 条）。

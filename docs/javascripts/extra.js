@@ -7,6 +7,7 @@
 // 5. 留言板：所有非首页自动注入 giscus（宽度与关于页一致）
 // 6. 更新日志：默认折叠只显示最新 3 条，按钮展开/收起
 // 7. 关于页站点统计 + 更新日历板
+// 8. 课程页导出完整 PDF：大二上起的课程页注入按钮，打印时展开全部折叠块
 // ============================================================
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -461,5 +462,61 @@ document.addEventListener('DOMContentLoaded', function() {
         if (siteStatsEl) siteStatsEl.innerHTML = '<p class="site-stats-note">统计数据暂不可用（本地预览请先构建一次）。</p>';
         if (calendarEl) calendarEl.innerHTML = '';
       });
+  }
+
+  // ----------------------------------------------------------
+  // 8. 课程页「导出完整 PDF」：大二上（sophomore-1）及之后的学期课程页，
+  //    在标题上方注入一个导出按钮。点击后等 MathJax 渲染完，调起系统打印：
+  //    beforeprint 里临时切回浅色模式、展开全部折叠块（<details> / ???），
+  //    afterprint 恢复原状；打印窗口里选「另存为 PDF」即得全部内容可见的完整文档。
+  //    Ctrl+P / 浏览器菜单打印走同一套处理。
+  //    范围规则：路径形如 /class/学期-序号/课程名/，学期目录名不是 freshman 即生效
+  //    （freshman-1/2 不加，semester index 与 class 总目录不在二级路径下，天然不匹配）。
+  // ----------------------------------------------------------
+  var courseMatch = location.pathname.replace(/index\.html$/, '')
+    .match(/^\/class\/([a-z]+)-\d+\/([^\/]+)\/?$/);
+  var isPdfCourse = !!(courseMatch && courseMatch[1] !== 'freshman');
+
+  if (article && firstH1 && isPdfCourse) {
+    var pdfBar = document.createElement('div');
+    pdfBar.className = 'course-pdf-bar';
+
+    var pdfBtn = document.createElement('button');
+    pdfBtn.type = 'button';
+    pdfBtn.className = 'course-pdf-btn';
+    pdfBtn.title = '展开本页全部折叠解答，导出为完整 PDF（打印窗口中选择「另存为 PDF」）';
+    pdfBtn.innerHTML =
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" ' +
+      'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+      '<polyline points="6 9 6 2 18 2 18 9"/>' +
+      '<path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>' +
+      '<rect x="6" y="14" width="12" height="8"/></svg>导出完整 PDF';
+    pdfBar.appendChild(pdfBtn);
+    firstH1.insertAdjacentElement('beforebegin', pdfBar);
+
+    pdfBtn.addEventListener('click', function() {
+      // 公式等 MathJax 渲染完成再打印（已渲染或加载失败时立即打印）
+      var ready = (window.MathJax && window.MathJax.startup && window.MathJax.startup.promise) ||
+                  Promise.resolve();
+      ready.then(function() { window.print(); });
+    });
+
+    var pdfCollapsed = [];   // 打印前被展开的折叠块，打完后恢复收起
+    var pdfScheme = null;    // 打印前的配色方案（暗色打印前临时切浅色）
+    window.addEventListener('beforeprint', function() {
+      pdfScheme = document.body.getAttribute('data-md-color-scheme');
+      if (pdfScheme === 'slate') document.body.setAttribute('data-md-color-scheme', 'default');
+      pdfCollapsed = [];
+      article.querySelectorAll('details:not([open])').forEach(function(d) {
+        pdfCollapsed.push(d);
+        d.open = true;
+      });
+    });
+    window.addEventListener('afterprint', function() {
+      pdfCollapsed.forEach(function(d) { d.open = false; });
+      pdfCollapsed = [];
+      if (pdfScheme === 'slate') document.body.setAttribute('data-md-color-scheme', 'slate');
+      pdfScheme = null;
+    });
   }
 });
