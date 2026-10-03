@@ -23,6 +23,11 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-10-03</div>
+<div class="update-log-content">导出 PDF 再加密一档：行距 1.2、间距进一步收紧，图片缩至约三成宽并居中，进一步省纸。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-10-03</div>
 <div class="update-log-content">导出 PDF 排版收紧：打印时自动减小行距与段间距（14 页笔记压到 10 页），网页阅读排版不变。</div>
 </div>
 
