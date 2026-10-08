@@ -1578,3 +1578,186 @@ $\int \dfrac{1}{2}\varepsilon E^2\,\mathrm{d}V$ 是能量密度对全空间积�
 
 </details>
 
+
+### 2026.10.8（第 11 章 稳恒电流）
+
+#### 11.1 稳恒电流
+
+**电流强度** $I = \dfrac{\mathrm{d}q}{\mathrm{d}t}$，单位库仑（C）。
+
+**电流密度矢量** $\vec{j} = \dfrac{\mathrm{d}I}{\mathrm{d}S_\perp}$，则 $I = \displaystyle\int_S \vec{j}\cdot\mathrm{d}\vec{S}$。
+
+产生稳恒传导电流需要：1. 自由电荷；2. 电场。
+
+外电场作用下，载流子定向漂移，**漂移速度** $v_d$（$\neq$ 实际速度）。$\Delta t$ 内通过 $\Delta S$ 的电量为 $\Delta q = e\cdot n\cdot v_d\cdot\Delta t\cdot\Delta S$，则
+
+$$I = \frac{\Delta q}{\Delta t} = ne\Delta S v_d \;\Rightarrow\; j = \frac{I}{\Delta S} = nev_d \;\Rightarrow\; \vec{j} = -ne\vec{v}_d \;\Rightarrow\; v_d = 2.8\times10^{-5}\,\mathrm{m/s}$$
+
+而热运动速率 $\sim 10^6\,\mathrm{m/s}$。
+
+**拓展：金属导电的 Drude 模型**（FA）
+
+加定压，电子加速，$\vec{a} = -\dfrac{e}{m}\vec{E}$ 为常量，$I$ 应随 $t$ 变大——但不对。实际：电子不断与原子实不规则碰撞，同时有漂移（定向）$\Rightarrow$ 电流。
+
+自由飞行时间 $=$ 平均自由程 $/$ 热运动速率：$\tau = \dfrac{\lambda}{v_T}$。
+
+则平均速度 $v_d \approx \dfrac{1}{2}a\tau = -\dfrac{eE}{2m}\tau$：
+
+$$\vec{j} = -en\vec{v}_d = \sigma\vec{E}, \qquad \sigma = \frac{ne^2\lambda}{2mv_T} \propto \frac{1}{v_T} \propto \frac{1}{\sqrt{T}}$$
+
+$\therefore$ 随 $T\uparrow$，电导 $\downarrow$、金属 $R\uparrow$，定性符合实验。
+
+<details markdown="1">
+<summary><strong>【FA：Drude 模型——½ 因子从哪来、局限在哪】</strong></summary>
+
+- **½ 因子**：每次碰撞后电子的定向速度"清零"、重新加速，两次碰撞的自由飞行时间长短不一，平均为 $\tau$。对一次飞行，定向速度从 $0$ 线性涨到 $at$，对所有飞行取平均就是 $\langle v\rangle = \tfrac{1}{2}a\tau$——匀加速从零出发的平均，不是额外假设。
+- **局限**：经典模型给出 $\sigma\propto T^{-1/2}$（热速率 $\propto\sqrt{T}$），而实验是 $\sigma\propto T^{-1}$。量子理论（索末菲模型）换成费米–狄拉克统计后，参与导电的只是费米面附近一小部分电子，$\sigma = ne^2\tau/m$ 形式不变，但 $\tau$ 由量子散射决定，从而给出正确的温度依赖。（FA 补充）
+
+</details>
+
+#### 11.2 欧姆定律
+
+$U_1 - U_2 = IR$；若 $\vec{E}$ 恒定，则 $U_1 - U_2 = E\Delta l$。
+
+由 $R = \dfrac{\rho\Delta l}{\Delta S}$、$I = j\Delta S$ 得
+
+$$\vec{j} = \frac{\vec{E}}{\rho} \quad (\text{微元欧姆定律}) = \sigma\vec{E}$$
+
+**电导率** $\sigma = \dfrac{1}{\rho}$（S/m，西门子/米）。
+
+**焦耳定律**：电子与原子实碰撞会引起焦耳热。
+
+$$P = I^2 R \;\Rightarrow\; \text{功率密度 } w = \frac{\Delta P}{\Delta V} = \sigma E^2 \qquad (\text{ydd 大概率考，新内容！})$$
+
+温度极低（4 K）时金属、合金电阻降到零 $\Rightarrow$ **超导**。高温超导：液氮（77 K）、YBaCuO；铁基材料（FA）；室温超导（FA）。
+
+<details markdown="1">
+<summary><strong>【FA：铁基超导体】</strong></summary>
+
+继铜氧化物之后的第二个高温超导家族。2008 年日本的细野秀雄组首先发现 LaFeAsO$_{1-x}$F$_x$（$T_c\approx 26$ K），换稀土元素后 $T_c$ 很快提到 50 K 以上；中国团队（陈仙辉、赵忠贤等）做出关键贡献，"铁基超导体"获 2013 年国家自然科学一等奖。导电主角是层状结构中的 FeAs 面，角色类似铜氧化物的 CuO$_2$ 面，多数带、各向异性更小，是研究高温超导机理的重要参照。（FA 补充）
+
+</details>
+
+<details markdown="1">
+<summary><strong>【FA：室温超导】</strong></summary>
+
+指常压（或接近常压）、室温下出现零电阻，是凝聚态物理的"圣杯"。截至整理时（2026-10）尚无获公认的材料：富氢化合物（H$_3$S 约 203 K、LaH$_{10}$ 约 250 K）确实近室温超导，但要一百多万个大气压，离实用很远；2023 年 Dias 组宣称的常压近室温超导（Lu-N-H）因数据问题被撤稿；同年的 LK-99 热潮被大量重复实验证伪（实为抗磁，非超导）。常压室温超导仍待新机理、新材料突破。（FA 补充）
+
+</details>
+
+#### 稳恒电流与稳恒电场
+
+**电流连续性方程**：$\oint_S \vec{j}\cdot\mathrm{d}\vec{S} = -\dfrac{\mathrm{d}q}{\mathrm{d}t}$；**电流稳恒**时 $\dfrac{\mathrm{d}q}{\mathrm{d}t} = 0$，即 $\oint_S \vec{j}\cdot\mathrm{d}\vec{S} = 0$
+
+$$\Rightarrow\; \nabla\cdot\vec{j} = 0 \quad (\text{散度为零})$$
+
+稳恒电流下导体内部电场 $\neq 0$：
+
+$$\oint_S \vec{j}\cdot\mathrm{d}\vec{S} = \sigma\oint_S \vec{E}\cdot\mathrm{d}\vec{S} = 0 \;\Rightarrow\; \text{均匀载流导体内部无净电荷}$$
+
+电荷只能分布在导体表面，电场线（电流线）必与表面平行。
+
+#### 11.3 电动势
+
+充电（非静电力移动电荷 $q$ 做功）：$A_k = q\displaystyle\int_L \vec{E}_k\cdot\mathrm{d}\vec{l}$，$\vec{E}_k$：非静电场强（化学/磁场/…）。
+
+**电动势**：
+
+$$\varepsilon = \frac{A_k}{q} = \int_L \vec{E}_k\cdot\mathrm{d}\vec{l} = \int_{-(\text{内})}^{+} \vec{E}_k\cdot\mathrm{d}\vec{l}$$
+
+#### 11.4 基尔霍夫定律
+
+（ydd 会考！）
+
+#### 11.5 电容器的充放电
+
+$$\varepsilon - U - IR = 0$$
+
+<details markdown="1">
+<summary><strong>【FA：分离变量法解 RC 充放电（复习常微分方程）】</strong></summary>
+
+**充电**（开关合上，电源 $\varepsilon$ 经 $R$ 给 $C$ 充电）：回路方程 $\varepsilon - u - iR = 0$，其中 $i = \dfrac{\mathrm{d}q}{\mathrm{d}t} = C\dfrac{\mathrm{d}u}{\mathrm{d}t}$，故
+
+$$RC\,\frac{\mathrm{d}u}{\mathrm{d}t} = \varepsilon - u \;\Rightarrow\; \frac{\mathrm{d}u}{\varepsilon - u} = \frac{\mathrm{d}t}{RC}$$
+
+变量分列两边，积分：$-\ln(\varepsilon - u) = \dfrac{t}{RC} + C_1$。由 $u(0) = 0$ 定出常数，得
+
+$$u = \varepsilon\left(1 - \mathrm{e}^{-t/RC}\right), \qquad i = C\frac{\mathrm{d}u}{\mathrm{d}t} = \frac{\varepsilon}{R}\,\mathrm{e}^{-t/RC}$$
+
+**放电**（去掉电源、电容经 $R$ 短接）：$RC\,\dfrac{\mathrm{d}u}{\mathrm{d}t} = -u$，分离变量 $\dfrac{\mathrm{d}u}{u} = -\dfrac{\mathrm{d}t}{RC}$，积分得
+
+$$u = U_0\,\mathrm{e}^{-t/RC}$$
+
+**时间常数** $\tau = RC$：$t = \tau$ 时充电到 $1 - \mathrm{e}^{-1}\approx 63\%$（放电衰减到 $\mathrm{e}^{-1}\approx 37\%$）。（推导由AI补全）
+
+</details>
+
+#### 例题：PPT 综合题——接地导体球壳与同心内球（第 10 章复习）
+
+一接地导体球壳 A，其内、外半径为 $R_A$ 和 $R$，内有一半径 $R_B$ 的同心导体球 B，带电荷 $q$，已知 $R_A = 2R_B$，$R = 3R_B$。今在距球心 O 为 $d = 4R_B$ 处放一点电荷 $Q$。求：(1) 球壳 A 带的总电荷；(2) 若用导线将 A、B 相连，球壳 A 的带电量是多少？
+
+**解 (1)**：B 带 $q$，在 A 内表面感应出 $-q$；设外表面带电 $Q'$。O 点电势为各处电荷贡献之和：
+
+$$U_O = \frac{q}{4\pi\varepsilon_0 R_B} + \frac{-q}{4\pi\varepsilon_0 R_A} + \frac{Q'}{4\pi\varepsilon_0 R} + \frac{Q}{4\pi\varepsilon_0 d}$$
+
+球壳 A 接地，其电势为零；由电势定义（沿 B 到壳内表面之间的场积分，这段只有 $q$ 产生的场）：
+
+$$U_O = \int_{R_B}^{R_A} \frac{q}{4\pi\varepsilon_0 r^2}\,\mathrm{d}r = \frac{q}{4\pi\varepsilon_0}\left(\frac{1}{R_B} - \frac{1}{R_A}\right)$$
+
+联立（两式前两项相同，消去）得
+
+$$\frac{Q'}{R} + \frac{Q}{d} = 0 \;\Rightarrow\; Q' = -\frac{R}{d}Q = -\frac{3}{4}Q$$
+
+A 的总电荷：
+
+$$Q_1 = -q + Q' = -q - \frac{3}{4}Q$$
+
+**解 (2)**（解答由AI补全）：A、B 用导线相连后成为同一个导体：腔内不再有孤立电荷，内表面电荷随之消失（腔内 $E = 0$），全部净电荷分布到壳外表面。系统总电荷守恒：
+
+$$Q_{\text{总}} = \left(-q - \frac{3}{4}Q\right) + q = -\frac{3}{4}Q$$
+
+故此时球壳 A 的带电量为 $-\dfrac{3}{4}Q$（全在外表面），B 不再带电。
+
+#### 例题：PPT 例 2——漏电的平板电容
+
+极板面积 $S$，介质厚度 $d_1$ 和 $d_2$，介电常数 $\varepsilon_1$ 和 $\varepsilon_2$，板间电压 $U$。若介质漏电，电导率 $\sigma_1$ 和 $\sigma_2$。求：1）损耗功率；2）介质交界面的自由电荷。
+
+![PPT 例 2：漏电的平板电容——解法 1，两层介质中 D、E 与电流连续，联立求 E1、E2（右侧附"等效电路？2 组坏电容/电阻的串联"的课堂批注）](https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/img/20261008133750695.jpg)
+
+**解法 1（场量法）**：稳恒电流下电流密度连续：
+
+$$j_1 = \sigma_1 E_1 = j_2 = \sigma_2 E_2, \qquad E_1 d_1 + E_2 d_2 = U$$
+
+联立解得
+
+$$E_1 = \frac{U\sigma_2}{d_1\sigma_2 + d_2\sigma_1}, \qquad E_2 = \frac{U\sigma_1}{d_1\sigma_2 + d_2\sigma_1}$$
+
+电阻为
+
+$$R_1 = \frac{d_1}{\sigma_1 S},\quad R_2 = \frac{d_2}{\sigma_2 S},\quad R = R_1 + R_2 = \frac{d_1\sigma_2 + d_2\sigma_1}{S\sigma_1\sigma_2}$$
+
+损耗功率
+
+$$P = I^2 R = \frac{\sigma_1\sigma_2 U^2 S}{d_1\sigma_2 + d_2\sigma_1}$$
+
+![PPT 例 2（续）：电阻、损耗功率与交界面自由电荷 Qf 的计算（漏电介质导致电荷积累，故与静电场不同）](https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/img/20261008133755624.jpg)
+
+2）介质交界面的自由电荷：由 $\oint_S \vec{D}\cdot\mathrm{d}\vec{S} = \sum q_0$（作包住交界面的扁高斯面）：
+
+$$Q_f = D_2 S - D_1 S = (\varepsilon_2 E_2 - \varepsilon_1 E_1)S = \frac{\varepsilon_2\sigma_1 - \varepsilon_1\sigma_2}{d_1\sigma_2 + d_2\sigma_1}\,US$$
+
+界面条件即 $\hat{n}\cdot(\vec{D}_2 - \vec{D}_1) = \sigma_f$。**漏电介质导致电荷积累，故与静电场不同**。
+
+![PPT 例 2：解法 2——等效电路法，按分压公式求 Q1、Q2，得 Q2−Q1 与解法 1 一致](https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/img/20261008133756916.jpg)
+
+**解法 2（等效电路法）**：电阻同上，损耗功率 $P = \dfrac{U^2}{R} = \dfrac{\sigma_1\sigma_2 U^2 S}{d_1\sigma_2 + d_2\sigma_1}$。电容
+
+$$C_1 = \frac{\varepsilon_1 S}{d_1}, \qquad C_2 = \frac{\varepsilon_2 S}{d_2}$$
+
+可按分压公式计算（$U_1 = \dfrac{R_1}{R_1 + R_2}U$，$U_2 = \dfrac{R_2}{R_1 + R_2}U$）：
+
+$$Q_1 = C_1 U_1 = \frac{\varepsilon_1 S}{d_1}\cdot\frac{R_1 U}{R_1 + R_2} = \frac{\varepsilon_1\sigma_2 S U}{d_1\sigma_2 + d_2\sigma_1}, \qquad Q_2 = C_2 U_2 = \frac{\varepsilon_2 S}{d_2}\cdot\frac{R_2 U}{R_1 + R_2} = \frac{\varepsilon_2\sigma_1 S U}{d_1\sigma_2 + d_2\sigma_1}$$
+
+$$\Rightarrow\; Q_2 - Q_1 = \frac{\varepsilon_2\sigma_1 - \varepsilon_1\sigma_2}{d_1\sigma_2 + d_2\sigma_1}\,US$$
+
+与解法 1 一致 ✓。

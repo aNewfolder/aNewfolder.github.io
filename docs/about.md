@@ -22,6 +22,16 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-10-08</div>
+<div class="update-log-content">大学物理甲Ⅱ新增 2026.10.8 课堂笔记：第 11 章稳恒电流（漂移速度、Drude 模型、欧姆定律、电动势、RC 充放电）与漏电平板电容等两道 PPT 例题。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-10-08</div>
+<div class="update-log-content">（补记）收录近几日生活记录：钢琴与乒乓球练习、观影《敦刻尔克》、气排球与羽毛球对局（10.3–10.7）。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-10-03</div>
 <div class="update-log-content">导出 PDF 再加密一档：行距 1.2、间距进一步收紧，图片缩至约三成宽并居中，进一步省纸。</div>
 </div>
