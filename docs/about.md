@@ -23,6 +23,11 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-10-10</div>
+<div class="update-log-content">随笔 Age 栏目新增《Twenty》：二十岁生日随笔。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-10-10</div>
 <div class="update-log-content">中国现代文学课堂笔记新增「秋四周：郁达夫」；跑步打卡 +1（10.10，3 km 4′47″）。</div>
 </div>
 
