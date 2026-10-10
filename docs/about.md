@@ -22,6 +22,11 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-10-10</div>
+<div class="update-log-content">体育栏目新增《健身》一文（10.9 游泳馆健身房首练）；钢琴即兴课补 10.8 Lesson 4 笔记（斜杠和弦、sus 和弦与和声走向），并附两日练琴记录。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-10-08</div>
 <div class="update-log-content">大学物理甲Ⅱ新增 2026.10.8 课堂笔记：第 11 章稳恒电流（漂移速度、Drude 模型、欧姆定律、电动势、RC 充放电）与漏电平板电容等两道 PPT 例题。</div>
 </div>
