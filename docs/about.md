@@ -22,6 +22,11 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-10-14</div>
+<div class="update-log-content">更新英语演讲 Week 3–4 课堂笔记与钢琴即兴心得、练琴记录；跑步、游泳、乒乓球打卡 +1。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-10-10</div>
 <div class="update-log-content">随笔 Age 栏目新增《Twenty》：二十岁生日随笔。</div>
 </div>

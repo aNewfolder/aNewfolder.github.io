@@ -75,3 +75,41 @@ personified
 没招了，口语能力已经清零了
 
 ## Week 3
+看《至暗时刻》
+
+## Week 4
+Grade-example of himself get up early-responsibility talked a lot - **the responsibility of every one** - to discover your talents- inventor science class example - **need education to discover** - **need knowledge learned at school to solve real problems** - **hard to focus on school** - example of himself - examples fighting brain cancer etc but good grades- JKRowling rejected 12 times - **don't give up**
+
+10 min one general topic dig deep with specific examples draw a conclusion
+
+为什么我们每天都过得很累 
+内卷
+优绩主义
+确定性
+好的 嫌太难了 没关系 不是很愉快的无领导小组讨论 还是需要一个 leader 那么就只能选发言人当这个 leader
+
+
+You are what you eat
+饮食健康
+
+stay a little hungry
+
+Elevator pitch/speech impress 30 s-1 min second meeting
+
+**Always have such a speech in your pocket**
+
+Mid-term project: pitch deck  Odysseus 
+
+We are not more imaginative as time goes, we are seeking inspiration from history
+
+China is the same.
+
+to sell to the investors
+
+influence students to invest 
+
+either a film or a game
+
+borrow idea from our history
+
+we can solve all technological problems
