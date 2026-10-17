@@ -250,3 +250,134 @@ $$P\{a < X \le b\} = F(b) - F(a)$$
 
 </details>
 
+**2. 连续型随机变量**（10.14 补记：*这节课在打生日贺信的草稿，听了整个乐呵……*）
+
+$$F(x) = \int_{-\infty}^{x} f(t)\,\mathrm{d}t$$
+
+称 $X$ 为**连续型**随机变量，$f(x)$ 为**密度函数**。分段点处 $F$ 必须连续（$F(2^-) = F(2)$）。
+
+**① 均匀分布**
+
+$$f(x) = \begin{cases} \dfrac{1}{b-a}, & x \in (a, b) \\[2pt] 0, & \text{其他} \end{cases} \qquad X \sim U(a, b)$$
+
+$$F(x) = \begin{cases} 0, & x < a \\[2pt] \dfrac{x-a}{b-a}, & a \le x < b \\[2pt] 1, & x \ge b \end{cases}$$
+
+**② 正态分布**
+
+$$f(x) = \frac{1}{\sqrt{2\pi}\,\sigma}\,\mathrm{e}^{-\frac{(x-\mu)^2}{2\sigma^2}}, \qquad \mu \in \mathbb{R},\ \sigma > 0, \qquad X \sim N(\mu, \sigma^2)$$
+
+$$F(x) = \int_{-\infty}^{x} \frac{1}{\sqrt{2\pi}\,\sigma}\,\mathrm{e}^{-\frac{(t-\mu)^2}{2\sigma^2}}\,\mathrm{d}t, \qquad \sigma \text{ 越大越扁}$$
+
+**标准正态分布**：$\mu = 0$、$\sigma = 1$：$\varphi(x) = \dfrac{1}{\sqrt{2\pi}}\mathrm{e}^{-\frac{x^2}{2}}$，$\Phi(x) = \displaystyle\int_{-\infty}^{x} \dfrac{1}{\sqrt{2\pi}}\,\mathrm{e}^{-\frac{t^2}{2}}\,\mathrm{d}t$。
+
+一般化标准：令 $t = \dfrac{x - \mu}{\sigma}$。
+
+**③ 指数分布**
+
+$$f(x) = \begin{cases} \lambda\mathrm{e}^{-\lambda x}, & x > 0 \\ 0, & x \le 0 \end{cases} \qquad X \sim E(\lambda)$$
+
+$$F(x) = \int_{-\infty}^{x} f(t)\,\mathrm{d}t = \begin{cases} 1 - \mathrm{e}^{-\lambda x}, & x > 0 \\ 0, & x \le 0 \end{cases}$$
+
+$$P\{X > t_0 + t\} = P\{X > t_0\}\cdot P\{X > t\}$$
+
+（两边同除 $P\{X > t_0\}$ 即得无记忆性的条件概率形式 $P\{X > t_0 + t \mid X > t_0\} = P\{X > t\}$。）
+
+### 2026.10.10（2.5 随机变量函数的分布；10.14 自学补）
+
+> 笔记原话：显然这节课在写生日贺信，一点没听。
+
+**定义**：$X$ 为连续型随机变量，密度函数 $f_X(\cdot)$，随机变量 $Y = g(X)$。若 $y = g(x)$ **严格单调**且处处可导，$y = g(x)$ 反函数 $x = h(y)$，则 $Y$ 的密度函数：
+
+$$f_Y(y) = \begin{cases} f_X(h(y))\left|h'(y)\right|, & y \in D \\ 0, & y \notin D \end{cases}$$
+
+（FA，不懂）
+
+这个方法应该不如后面写的等价法万能。
+
+<details markdown="1">
+<summary><strong>【FA：公式法从哪来、等价法为什么更万能】</strong></summary>
+
+公式法的来源：设 $g$ 单调增，则 $F_Y(y) = P\{g(X) \le y\} = P\{X \le h(y)\} = F_X(h(y))$，两边求导得 $f_Y(y) = f_X(h(y))\,h'(y)$；$g$ 单调减时不等号翻转，多一层 $|\cdot|$。$|h'(y)|$ 就是"拉伸倍数"——概率元 $\mathrm{d}x$ 映到 $\mathrm{d}y$ 要除以伸缩率。**等价法**就是不用背这套：先算 $F_Y(y) = P\{g(X) \le y\}$（把 $X$ 的事件翻译成 $Y$ 的事件），再求导。它不要求单调、不要求记公式，分段也能处理，所以更"万能"。（FA 补充）
+
+</details>
+
+### 2026.10.14（第八/九周小测 · 等价法；二维随机变量开篇）
+
+> 第三次签到（签满八次即可）。
+
+#### 小测：等价法（万能）
+
+**e.g.** $X \sim U(-1, 2)$，求 $Y = |X|$ 的概率密度 $f_Y(y)$。
+
+图：$y = |x|$ 在 $(-1, 2)$ 上的 V 形折线（$x = -1$ 处 $y = 1$，$x = 2$ 处 $y = 2$）。
+
+$-1 < x < 2 \Rightarrow 0 < Y < 2$（有效范围）。左侧（$Y < 0$）为 0，右侧（$Y > 2$）为 1。
+
+若介于有效区间之间 $0 < Y < 2$：$(-1, 1)$ 左右对称，$(1, 2)$ 不对称，则分段：
+
+1° $0 < Y < 1$：$P(-y \le x \le y) = \displaystyle\int_{-y}^{y} \frac{1}{3}\,\mathrm{d}x = \frac{2}{3}y$（FA，不懂）
+
+2° $1 \le Y < 2$：$P(-y \le x \le y) = \displaystyle\int_{-y}^{y} f(x)\,\mathrm{d}x$，$-y$ 在 $-1$ 左侧（下限截到 $-1$）：
+
+$$= \int_{-1}^{y} \frac{1}{3}\,\mathrm{d}x = \frac{y+1}{3}$$
+
+（FA，$\frac{1}{3}$ 是怎么来的）
+
+则
+
+$$F_Y(y) = \begin{cases} 0, & y < 0 \\[2pt] \frac{2}{3}y, & 0 \le y < 1 \\[2pt] \frac{y+1}{3}, & 1 \le y < 2 \\[2pt] 1, & y \ge 2 \end{cases} \qquad \xrightarrow{\ \text{求导}\ } \qquad f_Y(y) = \begin{cases} \frac{2}{3}, & 0 < y < 1 \\[2pt] \frac{1}{3}, & 1 \le y < 2 \\[2pt] 0, & \text{其他} \end{cases}$$
+
+（FA，补全条件）
+
+**若不好分段，先不积：**
+
+**e.g.** $X \sim N(0, 1)$，求 $Z = X^2$ 的概率密度 $f_Z(z)$。
+
+$X$ 的有效范围：$-\infty \to +\infty$；$Z$：$0 \to +\infty$。
+
+由 $F_Z(z) = P(Z \le z) = P\{X^2 \le z\}$：
+
+$$F_Z(z) = \begin{cases} 0, & z \le 0 \\[2pt] \displaystyle\int_{-\sqrt{z}}^{\sqrt{z}} \frac{1}{\sqrt{2\pi}}\,\mathrm{e}^{-\frac{x^2}{2}}\,\mathrm{d}x, & z > 0 \end{cases}$$
+
+不积分，求导：$f_Z(z) = F_Z'(z) = \dfrac{1}{\sqrt{2\pi z}}\,\mathrm{e}^{-\frac{z}{2}}$（FA，如何积分）
+
+**稍复杂一些：**
+
+**e.g.** $f(x) = \begin{cases} \dfrac{2x}{\pi^2}, & 0 < x < \pi \\[2pt] 0, & \text{else} \end{cases}$，求 $Y = \sin X$ 的概率密度。
+
+$$F_Y(y) = P(Y \le y) = P\{\sin X \le y\}, \qquad X: (0, \pi) \Rightarrow Y: (0, 1]$$
+
+左侧为 0，右侧为 1。当 $Y \in (0, 1)$（笔记原文写"或"，实为两段概率**相加**）：
+
+$$F_Y(y) = P(0 < x \le \arcsin y) + P(\pi - \arcsin y \le x < \pi)$$
+
+图：正弦曲线 $y = \sin x$ 的拱形与水平线 $y$ 交于 $x = \arcsin y$ 和 $x = \pi - \arcsin y$。（FA，补全，看不懂老师的神秘板书字体）（咱不会写字的话可以做 PPT 的）
+
+<details markdown="1">
+<summary><strong>【FA：三处 FA 的补全】</strong></summary>
+
+- **$\dfrac{1}{3}$ 从哪来**：$X \sim U(-1, 2)$ 的密度在长度为 3 的区间 $(-1, 2)$ 上恒为 $\dfrac{1}{3}$，落在其中任何一段 $[a, b]$ 的概率都是 $\dfrac{b-a}{3}$。1° 里 $y < 1$ 时区间 $[-y, y]$ 整体在 $(-1, 2)$ 内，长 $2y$，得 $\dfrac{2y}{3}$；2° 里被截后实际区间 $[-1, y]$，长 $y + 1$，得 $\dfrac{y+1}{3}$。
+- **补全条件**：密度函数的分段端点（$y = 0, 1, 2$）处取值不影响积分，可任取；要求的是 $F_Y$ 在端点处连续衔接、$f_Y$ 分段不重不漏。
+- **如何"积分"**：$\int_{-\sqrt z}^{\sqrt z} \mathrm{e}^{-x^2/2}\mathrm{d}x$ 积不出初等函数，不用积——变限求导即可：$\dfrac{\mathrm{d}}{\mathrm{d}z}\displaystyle\int_{-\sqrt z}^{\sqrt z} g(x)\,\mathrm{d}x = g(\sqrt z)\cdot\dfrac{1}{2\sqrt z} + g(-\sqrt z)\cdot\dfrac{1}{2\sqrt z}$，$g$ 为偶函数，合并 $= \dfrac{g(\sqrt z)}{\sqrt z} = \dfrac{1}{\sqrt{2\pi z}}\mathrm{e}^{-z/2}$（这正是 $\chi^2(1)$ 分布的密度）。
+- **$\sin X$ 例的补全**：$F_Y(y) = \displaystyle\int_0^{\arcsin y} \frac{2x}{\pi^2}\mathrm{d}x + \int_{\pi - \arcsin y}^{\pi} \frac{2x}{\pi^2}\,\mathrm{d}x = \frac{(\arcsin y)^2}{\pi^2} + \frac{\pi^2 - (\pi - \arcsin y)^2}{\pi^2} = \frac{2}{\pi}\arcsin\,y$，求导得
+
+$$f_Y(y) = \frac{2}{\pi\sqrt{1 - y^2}} \quad (0 < y < 1), \qquad f_Y(y) = 0 \ \ (\text{其他})$$
+
+（两段积分里 arcsin 的二次项恰好消掉。）（解答由AI补全）
+
+</details>
+
+#### 三、二维随机变量（开篇；本页未标日期，按扫描顺序接于 10.14）
+
+**3.1 二维离散**
+
+$$P\{X = x_i,\ Y = y_j\} = p_{ij} \qquad \text{（联合分布）}$$
+
+**边际分布**：$P\{X = x_i\} = p_{i\cdot}$，$P\{Y = y_j\} = p_{\cdot j}$。
+
+**条件分布**：
+
+$$P\{X = x_i \mid Y = y_j\} = \frac{P\{X = x_i,\ Y = y_j\}}{P\{Y = y_j\}} = \frac{p_{ij}}{p_{\cdot j}}$$
+
+联合 $\Rightarrow$ 边际唯一，边际 $\nRightarrow$ 联合。
+

@@ -1761,3 +1761,194 @@ $$Q_1 = C_1 U_1 = \frac{\varepsilon_1 S}{d_1}\cdot\frac{R_1 U}{R_1 + R_2} = \fra
 $$\Rightarrow\; Q_2 - Q_1 = \frac{\varepsilon_2\sigma_1 - \varepsilon_1\sigma_2}{d_1\sigma_2 + d_2\sigma_1}\,US$$
 
 与解法 1 一致 ✓。
+
+### 2026.10.13（12.1 磁场 · 12.2 毕奥-萨伐尔定律）
+
+#### 12.1 磁场
+
+磁性来源于电荷的运动。
+
+现代磁学起点：奥斯特，磁针偏转。
+
+毕奥-萨伐尔发现（图：竖直导线旁**水平**放置的小磁针）这样放小磁针不偏转。
+
+安培放两平行导线，电流同向相吸，异向相斥。
+
+实验：$q$ 所受磁力方向与 $v$ 垂直，也与 $B$ 垂直，则
+
+$$B = \frac{F_{max}}{qv}, \qquad \vec{F} = q\vec{v}\times\vec{B}$$
+
+特斯拉 $\mathrm{T} = 1\,\mathrm{N/(A\cdot m)}$，$1\,\mathrm{G}$（高斯）$= 10^{-4}\,\mathrm{T}$。
+
+右手四指指向 $\vec{F}_m$，沿小角度转向 $\vec{v}$，大拇指指向 $\vec{B}$。
+
+电场 + 磁场：
+
+$$\vec{F} = q\vec{E} + q\vec{v}\times\vec{B}$$
+
+右手螺旋定则：拇指指 $I$，则四指为 $B$ 方向。
+
+#### 12.2 毕奥-萨伐尔定律（拉普拉斯推出数学表达式）
+
+1、缩小的电流元激发磁场在 P 点：
+
+$$\mathrm{d}B = \frac{\mu_0}{4\pi}\cdot\frac{I\,\mathrm{d}l\sin\theta}{r^2}$$
+
+$\mathrm{d}l$：沿电流方向，$\sin\theta$：$\mathrm{d}l$ 与 $\vec{OP}$ 的夹角。$\mu_0 = 4\pi\times10^{-7}\,\mathrm{N/A^2}$（真空磁导率）。
+
+$B$ 的方向：右手定则，四指指 $I$（$\mathrm{d}l$）经小角度转向 $\vec{r}$（$\vec{BP}/\vec{OP}$），大拇指为 $\vec{B}$。得
+
+$$\mathrm{d}\vec{B} = \frac{\mu_0}{4\pi}\frac{I\,\mathrm{d}\vec{l}\times\hat{r}}{r^2} \qquad (\mathrm{d}\vec{l}\times\hat{r}\text{，即右手四指由 }\mathrm{d}\vec{l}\text{ 转向 }\hat{r})$$
+
+积分得
+
+$$\vec{B} = \int \mathrm{d}\vec{B} = \frac{\mu_0}{4\pi}\int\frac{I\,\mathrm{d}\vec{l}\times\hat{r}}{r^2}$$
+
+通常 **先投影再积分！** $\mathrm{d}\vec{B} = \mathrm{d}B_x\hat{x} + \mathrm{d}B_y\hat{y} + \mathrm{d}B_z\hat{z}$
+
+**应用：**
+
+**① 长直导线的磁场**，求距离 $a$ 的 P 点 $\vec{B}$：
+
+$$\mathrm{d}B = \frac{\mu_0}{4\pi}\frac{I\,\mathrm{d}l\sin\theta}{r^2} \qquad \text{（先判断完 } B \text{ 方向，均朝里，则标量积分即可）}$$
+
+以 $\theta$ 为变量，得
+
+$$B = \frac{\mu_0 I}{4\pi a}\int_{\theta_1}^{\theta_2}\sin\theta\,\mathrm{d}\theta = \frac{\mu_0 I}{4\pi a}\left(\cos\theta_1 - \cos\theta_2\right)$$
+
+$\theta$ 为 $\mathrm{d}l$ 与 $\vec{r}$ 的夹角。
+
+长直导线（$L \gg a$）：$\theta_1 = 0$、$\theta_2 = \pi$，得 $B = \dfrac{\mu_0 I}{2\pi a}$；半无限长：$\theta_1 = \dfrac{\pi}{2}$、$\theta_2 = \pi$；延长线上：$B = 0$。
+
+**② 载流圆线圈**，$R$、$I$，轴线上 P 点，距离 $x$。
+
+先取 $\mathrm{d}l$，求 $\mathrm{d}B$ 分解，垂直轴向 $\mathrm{d}B_\perp$ 抵消，仅剩 $\mathrm{d}B_\parallel = \mathrm{d}B\cos\theta$，$\cos\theta = \dfrac{R}{\sqrt{R^2 + x^2}}$：
+
+$$\Rightarrow B = \int \mathrm{d}B_\parallel = \frac{\mu_0 I R^2}{2\left(R^2 + x^2\right)^{3/2}}$$
+
+1° 圆心（$x = 0$）：$B(0) = \dfrac{\mu_0 I}{2R}$，$N$ 匝：$B = \dfrac{\mu_0 N I}{R}$
+
+2° $x \gg R$：上式 ≈ $\dfrac{\mu_0 I R^2}{2x^3} = \dfrac{\mu_0 I S}{2\pi x^3}$（$S = \pi R^2$）
+
+**磁矩** $\vec{P}_m = N\cdot I\cdot S\cdot\hat{e}_n$（$N$ 匝），与 $\vec{B}$ 方向相同（也叫磁偶极矩），则上式 $= \dfrac{\mu_0}{2\pi}\dfrac{\vec{P}_m}{x^3}$（与电偶极子延长线上电场比较：$\vec{E} = \dfrac{\vec{p}_e}{2\pi\varepsilon_0 x^3}$）
+
+**③ 直螺线管**，$R$、每单位长度 $n$ 匝，求轴线上 P 点。
+
+取 $\mathrm{d}l$，有 $n\,\mathrm{d}l$ 匝，相当于 $In\,\mathrm{d}l$ 的圆电流，则
+
+$$\mathrm{d}B = \frac{\mu_0}{2}\cdot\frac{R^2 I n\,\mathrm{d}l}{\left(R^2 + l^2\right)^{3/2}}$$
+
+引入 $\beta$：原点到～的夹角（P 点对环元的张角）。方向相同直接积分标量：
+
+$$B = -\frac{\mu_0 n I}{2}\int_{\beta_1}^{\beta_2}\sin\beta\,\mathrm{d}\beta = \frac{\mu_0 n I}{2}\left(\cos\beta_2 - \cos\beta_1\right)$$
+
+1° 无限长：$\beta_1 \to \pi$、$\beta_2 \to 0$，$B = \mu_0 n I$，均匀；
+
+2° 半无限长端点：$\beta_1 = \dfrac{\pi}{2}$、$\beta_2 \to 0$（或 $\pi$），则 $B = \dfrac{1}{2}\mu_0 n I$。
+
+**④ 无限长均匀薄铜片**，宽度 $a$，$I$，求轴线上方距离 $y$ 的 P 点。
+
+视为无限多条宽度 $\mathrm{d}x$ 的直导线，$\mathrm{d}I = \dfrac{I\,\mathrm{d}x}{a}$：
+
+$$\mathrm{d}B = \frac{\mu_0\,\mathrm{d}I}{2\pi r}, \qquad \mathrm{d}B_y \text{ 抵消，积分 } \int \mathrm{d}B_x$$
+
+$$\Rightarrow B = \frac{\mu_0 I}{\pi a}\arctan\frac{a}{2y} \qquad \left(\text{若 } y \gg a:\; B = \frac{\mu_0 I}{\pi a}\cdot\frac{a}{2y} = \frac{\mu_0 I}{2\pi y}\text{，此时可视为长直导线}\right)$$
+
+### 2026.10.15（磁场的高斯定理 · 安培环路定理）
+
+复习：小磁针，磁场方向为 N 极。$\vec{F} = q\vec{E} + q\vec{v}\times\vec{B}$
+
+**e.g.** （图：均匀带电塑料圆环面，内半径 $R_1$、外半径 $R_2$，以 $\omega$ 绕过中心垂直盘面的轴旋转）电荷 $q$，求中心 O 的 $B$。
+
+视为带电圆环叠加：半径 $r$、宽 $\mathrm{d}r$ 的细环，$\mathrm{d}q = \sigma\cdot 2\pi r\,\mathrm{d}r$（FA，补全）。细环随盘旋转形成电流 $\mathrm{d}I = \mathrm{d}q\cdot\dfrac{\omega}{2\pi} = \sigma\omega r\,\mathrm{d}r$，在圆心处
+
+$$\mathrm{d}B = \frac{\mu_0\,\mathrm{d}I}{2r} = \frac{\mu_0\sigma\omega}{2}\,\mathrm{d}r \;\Rightarrow\; B = \int_{R_1}^{R_2} \frac{\mu_0\sigma\omega}{2}\,\mathrm{d}r = \frac{\mu_0\sigma\omega(R_2 - R_1)}{2}$$
+
+其中 $\sigma = \dfrac{q}{\pi(R_2^2 - R_1^2)}$。（解答由AI补全）
+
+**e.g.** $R$、$Q$ 薄球壳，$\omega$ 绕直径旋转，求球心 $B$ 及磁矩。
+
+图：球，极角 $\theta$，转轴 $x$。先求 $\theta \to \theta + \mathrm{d}\theta$ 的细环电流（FA）：
+
+$$\mathrm{d}I = 2\pi R\sin\theta\cdot R\,\mathrm{d}\theta\cdot\frac{Q}{4\pi R^2}\cdot\frac{\omega}{2\pi}$$
+
+再套公式 $B = \dfrac{\mu_0 I R^2}{2(R^2 + x^2)^{3/2}}$：细环半径 $r = R\sin\theta$、到球心距离 $x = R\cos\theta$，$R^2 + r^2 = R^2$，故（FA）
+
+$$\mathrm{d}B = \frac{\mu_0 Q\omega\sin^3\theta\,\mathrm{d}\theta}{8\pi R} \;\Rightarrow\; B = \int_0^{\pi} \mathrm{d}B = \frac{\mu_0 Q\omega}{6\pi R} \qquad \left(\int_0^{\pi}\sin^3\theta\,\mathrm{d}\theta = \frac{4}{3}\right)$$
+
+磁矩 $\vec{P}_m = I S\hat{n}$（$\hat{n}$ 与 $\vec{B}$ 方向相同），则
+
+$$\mathrm{d}P_m = \mathrm{d}I\cdot\pi r^2 = \pi\sigma\omega R^4\sin^3\theta\,\mathrm{d}\theta \;\Rightarrow\; P_m = \int \mathrm{d}P_m = \frac{1}{3}QR^2\omega$$
+
+<details markdown="1">
+<summary><strong>【FA：两道旋转带电体例题的 FA 步骤解释】</strong></summary>
+
+- **塑料圆环**（FA，补全）：细环的"转速化电流"——电荷每转一圈过一次截面，$\mathrm{d}I = \dfrac{\mathrm{d}q}{T} = \mathrm{d}q\cdot\dfrac{\omega}{2\pi}$；细环在圆心处的场直接用载流圆线圈圆心公式 $B = \dfrac{\mu_0 I}{2r}$。
+- **旋转薄球壳**（FA）：$\theta \to \theta + \mathrm{d}\theta$ 环带的面积为 $2\pi R\sin\theta\cdot R\,\mathrm{d}\theta$（半径 $R\sin\theta$ 的圆周长 × 母线宽 $R\,\mathrm{d}\theta$），乘面电荷密度 $\sigma = \dfrac{Q}{4\pi R^2}$ 得 $\mathrm{d}q$，再乘 $\dfrac{\omega}{2\pi}$ 得 $\mathrm{d}I$；代入轴线圆电流公式时 $R^2 + x^2 = R^2\sin^2\theta + R^2\cos^2\theta = R^2$ 恰好化简，留下 $\sin^3\theta$。$\displaystyle\int_0^\pi \sin^3\theta\,\mathrm{d}\theta = \int_0^\pi (1-\cos^2\theta)\sin\theta\,\mathrm{d}\theta = \left[-\cos\theta + \frac{\cos^3\theta}{3}\right]_0^\pi = \frac{4}{3}$。（FA 补充）
+
+</details>
+
+新课：讨论磁场的通量和环流。
+
+1、**磁通量** $\mathrm{d}\Phi_m = \vec{B}\cdot\mathrm{d}\vec{S}$，通量 $\Phi_m = \displaystyle\int_S \vec{B}\cdot\mathrm{d}\vec{S}$，$\mathrm{T\cdot m^2} = \mathrm{Wb}$（韦伯）
+
+2、**磁场的高斯定理**：
+
+$$\oint_S \vec{B}\cdot\mathrm{d}\vec{S} = 0 \qquad \text{（通过任何闭合曲面的磁通量恒为 0）}$$
+
+3、**安培环路定理**
+
+(1) 闭合回路包含"无限长"直导线：
+
+图：闭合回路 $L$ 围绕导线，导线处标 $r$、$\mathrm{d}\varphi$、$\mathrm{d}l$。
+
+$$\vec{B}\cdot\mathrm{d}\vec{l} = B\cos\varphi\,\mathrm{d}l \approx Br\,\mathrm{d}\varphi = \frac{\mu_0 I}{2\pi r}\,r\,\mathrm{d}\varphi = \frac{\mu_0 I}{2\pi}\mathrm{d}\varphi$$
+
+$$\Rightarrow \oint_L \vec{B}\cdot\mathrm{d}\vec{l} = \frac{\mu_0 I}{2\pi}\int_0^{2\pi}\mathrm{d}\varphi = \mu_0 I$$
+
+∴（与回路形状）任意回路都无关。反方向/电流反向 $\Rightarrow \mu_0(-I)$。右手关系为正，反手为负。
+
+(2) 载流导线在闭合回路 L 之外：$\oint \vec{B}\cdot\mathrm{d}\vec{l} = 0$（FA，推导）
+
+(3) 多导线：
+
+$$\oint \vec{B}\cdot\mathrm{d}\vec{l} = \mu_0\sum_{i=1}^{m} I_i \qquad \text{只与 L 内的净电流有关}$$
+
+(4) L 不垂直于导线，分解到垂直，平行的没用。
+
+$$\Rightarrow\; \text{安培环路定理：}\oint_L \vec{B}\cdot\mathrm{d}\vec{l} = \mu_0\sum I_{内}$$
+
+**应用：**
+
+(1) 无限长圆柱体，$R$，$I$ 沿轴向。
+
+1° 圆柱外：$\displaystyle\oint \vec{B}\cdot\mathrm{d}\vec{l} = B\cdot 2\pi r = \mu_0 I$（FA）
+
+$$\Rightarrow B = \frac{\mu_0 I}{2\pi r}$$
+
+2° 圆柱内：$\displaystyle\oint_L \vec{B}\cdot\mathrm{d}\vec{l} \Rightarrow B\cdot 2\pi r = \mu_0\cdot\frac{Ir^2}{R^2}$
+
+电流 $\sum I_i = j\cdot S = \dfrac{I}{\pi R^2}\cdot\pi r^2 = \dfrac{Ir^2}{R^2}$（FA）
+
+$$\Rightarrow B = \frac{\mu_0 I}{2\pi R^2}\,r$$
+
+图：$B$–$r$ 曲线，$r$ 从 0 线性升至 $B_m$（$r = R$ 处）后按 $1/r$ 下降；若为圆柱面（电流只在表面），则内部 $B = 0$、表面跳到 $B_m$ 后按 $1/r$ 下降。
+
+(2) 长直螺线管：既没有径向分量，也没有环向分量（FA），∴ 只有轴向分量，推导见课本吧。
+
+$$B = \mu_0 n I \quad \text{（FA）}$$
+
+(3) 托卡马克：内 $B = \mu_0 n I$；外 $B = 0$（FA）
+
+(4) 无限大载流导体薄板（用线密度 $\delta$）（FA）
+
+<details markdown="1">
+<summary><strong>【FA：安培环路定理应用中的 FA 补全】</strong></summary>
+
+- **导线在回路外环流为零（FA，推导）**：沿用上法 $\vec{B}\cdot\mathrm{d}\vec{l} = \dfrac{\mu_0 I}{2\pi}\mathrm{d}\varphi$，$\varphi$ 是导线对回路点的方位角。回路**不包围**导线时，绕行一圈方位角净变化 $\Delta\varphi = 0$，环流为 0；**包围**时 $\Delta\varphi = \pm 2\pi$，给 $\pm\mu_0 I$。空间一般回路的严格证明用"对顶圆锥面"（以导线为公共轴的锥面上 $\vec{B}\perp\mathrm{d}\vec{l}$、积分为零，把 $L$ 与锥面拼成大回路），见课本。
+- **圆柱外 $B\cdot 2\pi r = \mu_0 I$（FA）**：对称性——长直均匀轴电流的磁感线是垂直于轴平面内绕轴的同心圆，$B$ 的大小只依赖 $r$；取圆形环路，$B$ 处处与 $\mathrm{d}\vec{l}$ 平行且等值，$\oint = B\cdot 2\pi r$。
+- **螺线管"无径向、无环向分量"（FA）**：由对称性加磁场高斯定理可排除另两个分量（取同轴圆柱面看径向通量为零、取跨内外的小矩形回路看环向分量为零），只剩轴向；再取一长 $l$、跨内外的矩形环路，$\oint \vec{B}\cdot\mathrm{d}\vec{l} = B_{内}\,l = \mu_0\cdot n l I \Rightarrow B = \mu_0 n I$（详细推导见课本）。
+- **托卡马克（FA）**：本质是弯成环的螺绕环，$B = \mu_0 n I$ 只存在于环管内部（$n$ 为单位周长匝数，按环的中心线计算），管外磁场为零。
+- **无限大薄板（FA）**：线电流密度 $\delta$（A/m，垂直于电流方向单位宽度的电流）。对称性给出：板两侧的磁场与板平行、与电流垂直，两侧等大反向。取横跨板的矩形环路（两条长 $l$ 的边对称分居板两侧）：$\oint \vec{B}\cdot\mathrm{d}\vec{l} = 2Bl = \mu_0\,\delta l \Rightarrow B = \dfrac{\mu_0\delta}{2}$，与到板的距离无关。（FA 补充）
+
+</details>

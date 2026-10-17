@@ -98,18 +98,20 @@ Elevator pitch/speech impress 30 s-1 min second meeting
 
 **Always have such a speech in your pocket**
 
-Mid-term project: pitch deck  Odysseus 
+Mid-term project: a pitch deck  
 
-We are not more imaginative as time goes, we are seeking inspiration from history
+Odysseus went viral recently. 
+
+We are not more imaginative as time goes, we are seeking inspiration from history.
 
 China is the same.
 
-to sell to the investors
+We are to sell our idea to the investors
 
-influence students to invest 
+influence the investors to invest 
 
-either a film or a game
+come up with either a film or a game
 
 borrow idea from our history
 
-we can solve all technological problems
+pretend that we can solve all technological problems

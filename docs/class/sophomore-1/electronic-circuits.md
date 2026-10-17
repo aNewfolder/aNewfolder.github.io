@@ -440,3 +440,92 @@ $$l = b - n + 1$$
 - **电流源在两个网孔的公共支路上**：把两个网孔拼成一个**超网孔**，沿超网孔外圈列一个 KVL（跳过电流源所在支路），再补一个辅助方程"两网孔电流之差 = $I_S$"，未知数与方程数刚好配平。
 
 </details>
+
+### 2026.10.10（4.3 电路定理 · 正弦稳态分析开篇）
+
+#### 4.3 电路定理
+
+**1. 叠加定理**：独立电源单独作用（电压源符号——短路；电流源符号——断开）。
+
+所以可以先拆开算，再把结果叠加。必须是**线性**电路。
+
+**2. 替代定理**：若已知支路 $k$ 为 $U_k$、$I_k$，则不管元件，可以用 $U_S = U_k$ 电压源或 $I_S = I_k$ 电流源置换。
+
+条件：唯一解、无耦合关系（受控源）；线性非线性、时变非时变均成立。
+
+**3. 戴维宁定理**：线性含源一端口电路，用电压源 + 电阻（实际电压源）等效。
+
+$U_0$ = 开路电压，$R_0$ = 独立电源置零等效电阻。
+
+若含受控源求 $R_0$：1° 加压法：独立源置零，施独立电压/流，得 $I/U$，$R_0 = \dfrac{U}{I}$；2° 开路短路法（万用表）：$R_0 = \dfrac{U_0}{I_d}$
+
+**4. 诺顿定理**：线性含源一端口电阻电路，用电流源 $I_d$ + $R_0$ 并联等效。
+
+$I_d$ = 短路电流，$R_0$ = 独立电源置零。
+
+**5. 最大功率传输定理**：$R_L = R_0$ 时，$P_{max} = \dfrac{U_0^2}{4R_0}$
+
+#### 五、线性动态电路的正弦稳态分析
+
+##### 5.1 正弦交流电路
+
+（本页记到这里，后续内容见 10.12、10.14。）
+
+### 2026.10.12（正弦交流电量的相量表示）
+
+**虚数**：因为与电流 $I$ 区分，一般用 $j$。
+
+**相量**：上加一点，为复数：$\dot{U} = U\mathrm{e}^{\mathrm{j}\varphi_u}$。
+
+由 $\sqrt{2}U\mathrm{e}^{\mathrm{j}(\omega t + \varphi_u)} = \sqrt{2}U\cos(\omega t + \varphi_u) + \mathrm{j}\sqrt{2}U\sin(\omega t + \varphi_u)$，正弦电压取**虚部**：
+
+$$u(t) = \operatorname{Im}\left[\sqrt{2}U\,\mathrm{e}^{\mathrm{j}(\omega t + \varphi_u)}\right]$$
+
+则对 $u(t) = \sqrt{2}U\sin(\omega t + \varphi_u) \Rightarrow \dot{U} = U\angle\varphi_u$，即**有效值 ∠ 初相**；同理 $i(t) = \sqrt{2}I\sin(\omega t + \varphi_i) \Rightarrow \dot{I} = I\angle\varphi_i$。
+
+**计算**：$10\angle 60° = 5 + \mathrm{j}8.66$。先转相量，复数相加，再转回来求 $|U|$ 和 $\arg$。
+
+**基本元件的相量模型**：
+
+1. **电阻**：$i(t) = \sqrt{2}I\sin(\omega t + \varphi_i) = \operatorname{Im}\left[\sqrt{2}\,\dot{I}\,\mathrm{e}^{\mathrm{j}\omega t}\right]$（FA）
+
+   $$\dot{U} = R\dot{I} \qquad \text{结论 } U = IR,\ \varphi_u = \varphi_i \text{（电压电流同相）}$$
+
+2. **电感**：$\dot{U} = \mathrm{j}\omega L\dot{I}$，$\varphi_u = \varphi_i + 90°$，**电压超前电流 90°**。感抗 $X_L = \omega L = 2\pi f L$（欧姆）
+
+3. **电容**（笔记未写，补充见 FA）
+
+4. **基尔霍夫定律（相量形式）**：$\sum \dot{U}_k = 0$，$\sum \dot{I}_k = 0$
+
+<details markdown="1">
+<summary><strong>【FA：电阻相量的推导与电容的相量模型】</strong></summary>
+
+- **电阻**：$u = Ri = \sqrt{2}RI\sin(\omega t + \varphi_i)$，而 $\operatorname{Im}\left[\sqrt{2}R\dot{I}\mathrm{e}^{\mathrm{j}\omega t}\right]$ 的虚部正是它，故 $\dot{U} = R\dot{I}$——纯电阻不改变相位。
+- **电容**：$i = C\dfrac{\mathrm{d}u}{\mathrm{d}t}$，相量域里"求导"就是"乘 $\mathrm{j}\omega$"，故 $\dot{I} = \mathrm{j}\omega C\dot{U}$，即 $\dot{U} = \dfrac{1}{\mathrm{j}\omega C}\dot{I} = -\mathrm{j}\dfrac{1}{\omega C}\dot{I}$：**电流超前电压 90°**，容抗 $X_C = \dfrac{1}{\omega C} = \dfrac{1}{2\pi f C}$（欧姆）。与电感对照记：电感电压超前、电容电流超前；$\mathrm{j}\omega L$ 与 $\dfrac{1}{\mathrm{j}\omega C}$ 随频率的行为恰好相反（感抗随 $f$ 升高、容抗随 $f$ 降低）。（FA 补充）
+
+</details>
+
+### 2026.10.14（谐振）
+
+在一定 $f$ 下，我们关注的某个参量显著增大。那么如何谐振？① 把 $f$ 调到谐振 $f$；② $f$ 不变，调系统参数，改变谐振 $f$。
+
+**e.g.** 光学谐振腔 F-P（FA）
+
+> 笔记原话：完了，太久不听电基，已经听不懂了。
+
+**总结**：
+
+| | 并联谐振 | 串联谐振 |
+| --- | --- | --- |
+| 条件 | $B_L = B_C$ | $X_L = X_C$ |
+| 阻抗/导纳 | 导纳模最小（$Y = G$），$U$ max、$I$ min | 阻抗模最小（$Z = R$），$I$ max、$U$ min |
+| 支路 | $I_L = I_C > I_{总}$ | $U_L = U_C > U_{总}$ |
+| $Q$ | $\omega_0 L / R$ | $\omega_0 C / G$ |
+
+<details markdown="1">
+<summary><strong>【FA：光学谐振腔 F-P 与 Q 值公式辨析】</strong></summary>
+
+- **F-P 腔**（Fabry–Pérot）：两块平行部分反射镜组成的腔，光在腔内多次往返，只有满足驻波条件（腔长为半波长整数倍）的频率才能相长干涉增强——是"调系统参数改变谐振频率"（方式②）的典型例子，移动镜片即调谐振频率。
+- **Q 值**：品质因数，衡量谐振峰的尖锐程度（$Q$ 越大，通频带越窄、选择性越好，谐振时支路过电压/过电流越显著）。笔记表中并联 $Q = \omega_0 L/R$ 是"线圈串电阻再与电容并联"实用模型的公式；但串联一栏的 $Q = \omega_0 C/G$ 与常见教材（串联 $Q = \omega_0 L/R$、GCL 并联 $Q = \omega_0 C/G$）对不上，疑为两栏互串【?】，考试以老师课件为准。（FA 补充）
+
+</details>

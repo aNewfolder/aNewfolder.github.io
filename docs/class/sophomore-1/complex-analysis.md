@@ -577,3 +577,326 @@ $$\oint_{|z|=1} \left|\frac{\mathrm{d}z}{z}\right| = \oint_{|z|=1} \frac{|\mathr
 
 </details>
 
+### 2026.10.9（3.2 柯西积分定理 · 3.3 柯西积分公式）
+
+#### 3.2 柯西积分定理（解析函数可以定义原函数）
+
+**定理**：$f(z)$ 在 $D$ 内处处解析，则 $f(z)$ 沿 $D$ 内封闭曲线 $C$ 积分为零。
+
+**弱化**：$f(z)$ 在 $D$ 内解析、$D + C$（边界）上连续，则 $\oint_C f(z)\,\mathrm{d}z = 0$。
+
+**证**：$z = x + \mathrm{i}y$，$f(z) = u + \mathrm{i}v$，则
+
+$$\oint_C f(z)\,\mathrm{d}z = \underbrace{\int_C u\,\mathrm{d}x - v\,\mathrm{d}y}_{①} + \mathrm{i}\underbrace{\int_C v\,\mathrm{d}x + u\,\mathrm{d}y}_{②}$$
+
+由 $f(z)$ 连续，$f'(z) = u_x + \mathrm{i}v_x = v_y - \mathrm{i}u_y$（C-R 方程：$u_x = v_y$，$u_y = -v_x$）。
+
+用 Green 公式 $\oint_C P\,\mathrm{d}x + Q\,\mathrm{d}y = \iint_D \left(\dfrac{\partial Q}{\partial x} - \dfrac{\partial P}{\partial y}\right)\mathrm{d}x\mathrm{d}y$，则
+
+$$① = \iint_D \left(-\frac{\partial v}{\partial x} - \frac{\partial u}{\partial y}\right)\mathrm{d}x\mathrm{d}y = \iint_D \left(u_y - u_y\right)\mathrm{d}x\mathrm{d}y = 0$$
+
+由 C-R 方程 $-\dfrac{\partial v}{\partial x} = \dfrac{\partial u}{\partial y}$，两项相消；② 同理。
+
+**推论**：$f(z)$ 在 $D$ 内解析，$C$ 在 $D$ 内，则积分路径无关。
+
+**拓展：多连通区域**，规定曲线**左侧为区域内部**为正方向：
+
+图：大圆 $C_1$ 内含小圆 $C_2$ 的圆环域。$\partial D = C_1 - C_2$（$C_2$ 本身逆时针为正，但要求 $C_1$、$C_2$ 之间区域的边界都在走向左侧，故外沿逆时针、内沿顺时针，写成相减）：
+
+$$\oint_{C_1} f(z)\,\mathrm{d}z = \oint_{C_2} f(z)\,\mathrm{d}z$$
+
+**复合**：$\displaystyle\oint_C f(z)\,\mathrm{d}z = \oint_{C_1} f(z)\,\mathrm{d}z + \oint_{C_2} f(z)\,\mathrm{d}z + \cdots$（复合闭路定理）
+
+**原函数定理**：固定 $z_0 \in D$，则定义
+
+$$F(z) = \int_{z_0}^{z} f(\xi)\,\mathrm{d}\xi \qquad (z \in D)$$
+
+则 $F(z)$ 也解析，$F'(z) = f(z)$。
+
+条件：解析 / 单连通区域 $D$ 上连续 / 任一围线积分为 0。
+
+$\Phi(z) = F(z) + C = \displaystyle\int_{z_0}^{z} f(\xi)\,\mathrm{d}\xi + C$ 为原函数。
+
+$\Rightarrow$ **N-L 公式**：$\displaystyle\int_{z_0}^{z_1} f(\xi)\,\mathrm{d}\xi = \Phi(z_1) - \Phi(z_0)$
+
+**e.g.** 单连通区域 $D:\ -\pi < \arg z < \pi$ 内，求 $f(z) = \dfrac{1}{z}$ 的原函数：
+
+$$\int_1^z \frac{1}{\xi}\,\mathrm{d}\xi = \ln z - \ln 1 = \ln z$$
+
+#### 3.3 柯西积分公式
+
+**分析**：$z_0 \in D$、$f(z)$ 在 $D$ 内解析，则（把 $z_0$ 挖去后用复合闭路定理，积分移到以 $z_0$ 为心的小圆上）
+
+$$\oint_C \frac{f(z)}{z - z_0}\,\mathrm{d}z = \oint_{|z - z_0| = \delta} \frac{f(z)}{z - z_0}\,\mathrm{d}z$$
+
+$\dfrac{f(z) \Rightarrow f(z_0)}{\delta \Rightarrow 0}$：
+
+$$f(z_0)\oint_{|z - z_0| = \delta} \frac{1}{z - z_0}\,\mathrm{d}z = 2\pi\mathrm{i} f(z_0)$$
+
+**得柯西积分公式**：$f(z)$ 在 $D$ 内解析，$C$ 为 $D$ 内简单正向闭曲线，$z_0$ 为 $C$ 内任一点，则
+
+$$f(z_0) = \frac{1}{2\pi\mathrm{i}}\oint_C \frac{f(z)}{z - z_0}\,\mathrm{d}z \qquad \text{or} \qquad f(z) = \frac{1}{2\pi\mathrm{i}}\oint_C \frac{f(\xi)}{\xi - z}\,\mathrm{d}\xi$$
+
+**若 $C$ 为圆周** $z = z_0 + R\mathrm{e}^{\mathrm{i}\theta}$，则有
+
+$$f(z_0) = \frac{1}{2\pi\mathrm{i}}\int_0^{2\pi} \frac{f\left(z_0 + R\mathrm{e}^{\mathrm{i}\theta}\right)}{R\mathrm{e}^{\mathrm{i}\theta}}\cdot\mathrm{i}R\mathrm{e}^{\mathrm{i}\theta}\,\mathrm{d}\theta = \frac{1}{2\pi}\int_0^{2\pi} f\left(z_0 + R\mathrm{e}^{\mathrm{i}\theta}\right)\,\mathrm{d}\theta$$
+
+（**加权平均**：解析函数在圆心的值等于圆周上的平均。）
+
+**二连通区域**：
+
+$$f(z_0) = \frac{1}{2\pi\mathrm{i}}\left(\oint_C \frac{f(z)}{z - z_0}\,\mathrm{d}z - \oint_{C_1} \frac{f(z)}{z - z_0}\,\mathrm{d}z\right) \qquad \text{（加权平均）}$$
+
+**e.g.** 求 $I = \displaystyle\oint_C \frac{\mathrm{e}^z}{z(z+1)(z-2)}\,\mathrm{d}z$，$C:\ |z| = r$（$r \ne 1, 2$）。图：以原点为心的三个同心圆 $C_1, C_2, C_3$（半径渐大）。
+
+1° $0 < r < 1$：
+
+$$I = \oint_C \frac{\mathrm{e}^z / \left[(z+1)(z-2)\right]}{z}\,\mathrm{d}z = 2\pi\mathrm{i}\cdot\frac{\mathrm{e}^z}{(z+1)(z-2)}\bigg|_{z=0} = -\pi\mathrm{i} \quad \text{（FA，不懂）}$$
+
+2° $1 < r < 2$：
+
+$$I = \oint_{C_1} + \oint_{C_2} = -\pi\mathrm{i} + \oint_{C_2} \frac{\mathrm{e}^z / \left[z(z-2)\right]}{z+1}\,\mathrm{d}z = -\pi\mathrm{i} + \frac{2\pi\mathrm{i}}{3\mathrm{e}} \quad \text{（FA，不懂）}$$
+
+3° $r > 2$（FA）
+
+<details markdown="1">
+<summary><strong>【FA：三段例题的补全】</strong></summary>
+
+柯西积分公式的用法：把被积函数凑成 $\dfrac{g(z)}{z - z_0}$，其中 $g(z)$ 在 $z_0$ 附近解析，这块积分就等于 $2\pi\mathrm{i}\,g(z_0)$；被积函数有 $0$、$-1$、$2$ 三个奇点，半径 $r$ 变大时圆内奇点逐个增多，用复合闭路定理按奇点拆圆。
+
+- **1°**（只有 $z = 0$ 在圆内）：$g(z) = \dfrac{\mathrm{e}^z}{(z+1)(z-2)}$，$g(0) = -\dfrac{1}{2}$，故 $I = 2\pi\mathrm{i}\cdot\left(-\dfrac{1}{2}\right) = -\pi\mathrm{i}$。
+- **2°**（$z = 0, -1$ 在圆内）：围绕 $0$ 的一块同 1°（$-\pi\mathrm{i}$）；围绕 $-1$ 的一块取 $g(z) = \dfrac{\mathrm{e}^z}{z(z-2)}$，$g(-1) = \dfrac{\mathrm{e}^{-1}}{(-1)(-3)} = \dfrac{1}{3\mathrm{e}}$，贡献 $\dfrac{2\pi\mathrm{i}}{3\mathrm{e}}$。合计 $-\pi\mathrm{i} + \dfrac{2\pi\mathrm{i}}{3\mathrm{e}}$。
+- **3°**（三个奇点全在圆内）：再加围绕 $z = 2$ 的一块，$g(z) = \dfrac{\mathrm{e}^z}{z(z+1)}$，$g(2) = \dfrac{\mathrm{e}^2}{6}$，贡献 $\dfrac{\pi\mathrm{i}\mathrm{e}^2}{3}$。合计
+
+$$I = -\pi\mathrm{i} + \frac{2\pi\mathrm{i}}{3\mathrm{e}} + \frac{\pi\mathrm{i}\mathrm{e}^2}{3}$$
+
+（解答由AI补全）
+
+</details>
+
+### 2026.10.10（解析函数的无穷可微性 · 四、级数开篇）
+
+**高阶导数的 Cauchy 积分公式**：由 $f(z) = \dfrac{1}{2\pi\mathrm{i}}\oint_C \dfrac{f(\xi)}{\xi - z}\,\mathrm{d}\xi$，可在积分号下对 $z$ 求导，得
+
+$$f^{(n)}(z_0) = \frac{n!}{2\pi\mathrm{i}}\oint_C \frac{f(z)}{(z - z_0)^{n+1}}\,\mathrm{d}z$$
+
+（解析函数无穷次可微，且各阶导数仍解析。）
+
+**e.g.** $\displaystyle\oint_C \frac{\mathrm{e}^z}{(z^2+1)^2}\,\mathrm{d}z$，$C:\ |z| = r > 1$。图：大圆 $C$ 内含 $C_1$（绕 $\mathrm{i}$）、$C_2$（绕 $-\mathrm{i}$）两个小圆。
+
+$z^2 + 1 = (z+\mathrm{i})(z-\mathrm{i}) \Rightarrow \oint_C = \oint_{C_1} + \oint_{C_2}$
+
+$$= \oint_{C_1} \frac{\mathrm{e}^z/(z+\mathrm{i})^2}{(z-\mathrm{i})^2}\,\mathrm{d}z + \oint_{C_2} \frac{\mathrm{e}^z/(z-\mathrm{i})^2}{(z+\mathrm{i})^2}\,\mathrm{d}z = 2\pi\mathrm{i}\left(\left(\frac{\mathrm{e}^z}{(z+\mathrm{i})^2}\right)'\bigg|_{z=\mathrm{i}} + \left(\frac{\mathrm{e}^z}{(z-\mathrm{i})^2}\right)'\bigg|_{z=-\mathrm{i}}\right) = \mathrm{i}\pi\sqrt{2}\sin\left(1 - \frac{\pi}{4}\right)$$
+
+**Cauchy 不等式**：$f(z)$ 在 $C_R = \{|z - z_0| = R\}$ 内解析、$C_R$ 上连续，则
+
+$$\left|f^{(n)}(z_0)\right| \le \frac{Mn!}{R^n} \qquad \left(M = \max_{C_R}|f(z)|\right)$$
+
+**柳维尔定理**：有界整函数 $f(z)$ 必为常数（实部有界即可）。
+
+**最大模定理**：$f(z)$ 在 $D$ 内解析、在 $\bar{D} = D \cup \partial D$ 上连续，则 $|f(z)|$ 在 $\partial D$ 上取到最大值。
+
+（FA：这几个定理都有什么应用，我不懂，太抽象了）
+
+**代数学基本定理**【见课本 P77】
+
+**四、级数**
+
+**复数列的极限**：$z_n = a_n + \mathrm{i}b_n$，$\forall\varepsilon > 0$，$\exists N \in \mathbb{Z}^+$，s.t. $n > N$ 时有 $|z_n - z_0| < \varepsilon$，则 $\lim\limits_{n\to\infty} z_n = z_0$。
+
+**收敛充要条件**：① $\lim\limits_{n\to\infty} a_n = a$，$\lim\limits_{n\to\infty} b_n = b$；② Cauchy 收敛准则 $\forall\varepsilon > 0$，$\exists N = N(\varepsilon)$，$n > N$ 时有 $|z_{n+p} - z_n| < \varepsilon$。
+
+**复数项级数收敛充要条件**：Cauchy 收敛准则 / $\sum a_n$、$\sum b_n$ 收敛。**必要条件**：$\lim\limits_{n\to\infty} z_n = 0$。
+
+**绝对收敛准则**：若 $\sum |z_n|$ 收敛，则 $\sum z_n$ 收敛。正项级数判别法仍适用。
+
+<details markdown="1">
+<summary><strong>【FA：柳维尔、最大模、Cauchy 不等式都有什么应用】</strong></summary>
+
+三者是一条链。**Cauchy 不等式**说"导数受边界控制"：圆越小、边界值越小，导数就越小。取 $n = 1$ 并让半径 $R \to \infty$：整函数处处有界时 $|f'(z_0)| \le M/R \to 0$，即 $f' \equiv 0$，这就是**柳维尔定理**。柳维尔定理最漂亮的应用是一行证明**代数基本定理**：设 $p(z)$ 无零点，则 $1/p(z)$ 是整函数，$|p|$ 充分大时 $1/|p|$ 趋于 0、闭圆内有界，故 $1/p$ 有界，柳维尔给 $1/p$ 为常数、$p$ 为常数，矛盾。**最大模定理**说内部没有"最高点"，用于把最大值估计搬到边界上：证明解析函数由边界值唯一决定、稳定性/误差估计、Schwarz 引理等。直观理解：解析性约束太强，函数没有藏在内部的自由度。（FA 补充）
+
+</details>
+
+### 复变小测复习（约 2026.10.13，页面未标日期）
+
+1. **辐角主值的分段公式**：主值范围 $(-\pi, \pi]$；一象限 $\arctan\dfrac{y}{x}$，二象限加 $\pi$，三象限减 $\pi$。
+2. **柯西积分公式 / 柯西积分定理（复合闭路定理）/ 高阶导数公式**：套路——找奇点 $\xrightarrow{\text{Cauchy 积分定理}}$ 挖小圆 $\xrightarrow{\text{凑 } z - z_0 \text{ 且解析}}$ 积分公式。
+3. **注意 Cauchy 积分公式 $2\pi\mathrm{i}$ 的位置**（在 $f(z_0) = \dfrac{1}{2\pi\mathrm{i}}\oint\cdots$ 的分母上）。
+4. $\mathrm{e}^{\mathrm{i}x} = 0$ 求 $x$：笔记写 $x = 2k\pi$【?】——若方程为 $\mathrm{e}^{\mathrm{i}x} = 1$ 则 $x = 2k\pi$ 正确；$\mathrm{e}^{\mathrm{i}x} = 0$ 实则无解（$|\mathrm{e}^{\mathrm{i}x}| = 1$ 恒成立）。
+5. **解复数方程如何把 $x$、$y$ 消掉保留 $z$**（FA，待完善）：
+   1° 解析 $\Rightarrow$ 无 $x,y$：$x \to \dfrac{z + \bar z}{2}$，$y \to \dfrac{z - \bar z}{2\mathrm{i}}$；
+   2° $\mathrm{e}^{\mathrm{i}\bar z} = \mathrm{e}^{\mp\mathrm{i}x}$；
+   3° $z^2 = (x+\mathrm{i}y)^2 = x^2 - y^2 + 2\mathrm{i}xy$；
+   4° 凑 $x + \mathrm{i}y$（全平面解析）。
+6. **整函数定义**：全平面解析。
+7. $|\mathrm{e}^{\mathrm{i}\theta}|$：恒为 1。
+8. **刘维尔定理**：全平面有界解析函数必为常数。
+9. **柯西不等式**：$|f^{(n)}(z_0)| \le \dfrac{Mn!}{R^n}$（$M = \max|f(z)|$）。
+10. **最大模定理**：$|f(z)|$ 在 $\partial D$ 上取 max。
+11. **三角函数转化**（$\sin \leftrightarrow \mathrm{sh}$，$\cos \leftrightarrow \mathrm{ch}$）：$\mathrm{sh}\,\mathrm{i}z = \mathrm{i}\sin z$，$\sin\mathrm{i}z = \mathrm{i}\,\mathrm{sh}\,z$；$\mathrm{ch}\,\mathrm{i}z = \cos z$，$\cos\mathrm{i}z = \mathrm{ch}\,z$。
+12. $\tan z = -\mathrm{i}\dfrac{\mathrm{e}^{2\mathrm{i}z} - 1}{\mathrm{e}^{2\mathrm{i}z} + 1}$。
+13. **讨论可导性与解析性**：写 $u$、$v$，看 C-R 方程。
+14. $\dfrac{\partial}{\partial z}$、$\dfrac{\partial}{\partial\bar z}$：$\dfrac{1}{2}\left(\dfrac{\partial}{\partial x} - \mathrm{i}\dfrac{\partial}{\partial y}\right)$、$\dfrac{1}{2}\left(\dfrac{\partial}{\partial x} + \mathrm{i}\dfrac{\partial}{\partial y}\right)$。
+
+<details markdown="1">
+<summary><strong>【FA：消 x、y 保留 z 的四个套路（待完善项补全）】</strong></summary>
+
+- **代入法**（最通用）：把 $x = \dfrac{z + \bar z}{2}$、$y = \dfrac{z - \bar z}{2\mathrm{i}}$ 整体代入后化简；若 $f$ 解析，$\bar z$ 的项会自动消干净。例：$x^2 - y^2 + 2\mathrm{i}xy = (x + \mathrm{i}y)^2 = z^2$，一步看出。
+- **指数类**：见到 $\mathrm{e}^{\mathrm{i}x}$、$\cos x$、$\sin x$，用 Euler 公式借 $\mathrm{e}^{\mathrm{i}z} = \mathrm{e}^{\mathrm{i}x - y}$ 反解出 $\mathrm{e}^{\mathrm{i}x}$ 再代入。
+- **认结构**：$z^2 = x^2 - y^2 + 2\mathrm{i}xy$、$|z|^2 = x^2 + y^2 = z\bar z$、$\dfrac{1}{z} = \dfrac{x - \mathrm{i}y}{x^2 + y^2}$ 这类"标准件"直接对号入座。
+- **凑 $x + \mathrm{i}y$**：把表达式改写成 $x + \mathrm{i}y$ 的多项式/有理式后整体换成 $z$。（FA 补充）
+
+</details>
+
+### 2026.10.14（收敛半径 · 4.2 Taylor 级数）
+
+**收敛半径的求法**：取模用正项级数判别法。
+
+$$\lim_{n\to\infty}\left|\frac{C_n}{C_{n+1}}\right| = R, \qquad \lim_{n\to\infty}\sqrt[n]{|C_n|} = R$$
+
+**幂级数的四则运算**（FA）
+
+**复合运算**：$|z| < r$ 时，$f(z) = \sum\limits_{n=0}^\infty a_n z^n$；$|z| < R$ 内 $g(z)$ 解析、$|g(z)| < r$，则当（FA，补全）$f(g(z)) = \sum\limits_{n=0}^\infty a_n\left[g(z)\right]^n$ 在 $|z| < R$ 内成立。
+
+**一个解析函数一定可以转成幂级数。**
+
+**e.g.** $\dfrac{1}{z - b} \Rightarrow \sum\limits_{n=0}^\infty c_n (z-a)^n$，$a \ne b$。
+
+解：$\dfrac{1}{z-b} = \dfrac{1}{(z-a) - (b-a)} = \dfrac{-1}{b-a}\cdot\dfrac{1}{1 - \dfrac{z-a}{b-a}}$，而 $\dfrac{1}{1-x} = 1 + x + x^2 + \cdots + x^n + \cdots$，则 $R = |b - a|$（FA，为什么）
+
+**和函数**：$f(z) = \sum\limits_{n=0}^\infty c_n (z-a)^n$ 为收敛圆 $|z-a| < R$（**小于，非 $\le$**）内的解析函数。先求导/积分 or 先求和不影响结果。
+
+**4.2 Taylor 级数**
+
+$f(z)$ 在 $D$ 内解析，$|z - z_0| < R$ 在 $D$ 内，则 $f(z)$ 可展开为 $\sum\limits_{n=0}^\infty c_n (z-z_0)^n$，$|z - z_0| < R$（证明见课本 P93）：
+
+$$\therefore\; f(z) = \sum_{n=0}^\infty \frac{f^{(n)}(z_0)}{n!}(z - z_0)^n \qquad \text{为 } f(z) \text{ 在 } z_0 \text{ 处的 Taylor 展开}$$
+
+若有奇点 $z^*$，则 $R = |z^* - z_0|$（不接触奇点）。
+
+直接展开法：直接求 $c_n = \dfrac{1}{n!}f^{(n)}(z_0)$，但局限性较强。
+
+<details markdown="1">
+<summary><strong>【FA：幂级数四则运算与 R = |b−a| 的来历】</strong></summary>
+
+- **四则运算**：两个幂级数在收敛圆的**公共部分**内可以相加、相减、相乘（系数按对应运算组合），相除要求分母级数在内部不为零，收敛半径取较小的那个（除法可能更大）。
+- **复合（代入）**：把 $g(z)$ 整体当作 $f$ 的变元，前提是 $|g(z)|$ 落在 $f$ 的收敛圆内（笔记条件 $|z| < R$ 内 $|g(z)| < r$ 正是此意）。
+- **$R = |b-a|$**：用 $\dfrac{1}{1-x}$ 展开的条件是 $\left|\dfrac{z-a}{b-a}\right| < 1$，即 $|z - a| < |b - a|$；从奇点看：$\dfrac{1}{z-b}$ 的奇点 $z = b$ 到展开中心 $a$ 的距离恰为 $|b-a|$——"收敛半径由最近奇点决定"，这正是 10.16 的推论 4。（FA 补充）
+
+</details>
+
+### 2026.10.16（间接展开 · 4.3 零点孤立性及唯一性 · 4.4 洛朗级数）
+
+#### 2° 间接展开 Taylor 级数
+
+- **e.g.** $\dfrac{1}{(1+z)^2}$ 展开（凑 $\dfrac{1}{1+z}$，FA），可求导
+- **e.g.** $\left[\ln(1+z)\right]'$（两边同时积分，FA，跟实函数同理）
+
+**推论**：$f(z)$ 在 $z_0$ 解析 $\Leftrightarrow$ $z_0$ 邻域内可展开为 $z - z_0$ 的幂级数（实函数通用）。
+
+**注**：$D$ 内解析等价条件：$D$ 内可导 / $D$ 内 $u$、$v$ 可微 + C-R / $D$ 内连续 + 路径无关 / $D$ 内可展开。
+
+**推论 2**：$f(z)$ 在 $D$ 内解析，$z_0 \in D$，$R = \mathrm{dist}(z_0, \partial D)$，则 $f(z)$ 在 $|z - z_0| < R$ 可展开。
+
+**推论 3**：幂级数的和函数在其收敛圆周上至少有一个奇点。
+
+**e.g.** $\sum\limits_{n=0}^\infty \dfrac{z^n}{n^2} = f(z)$ 在 $|z| \le 1$ 绝对收敛（FA，证）。但
+
+$$f'(z) = 1 + \frac{z}{2} + \cdots + \frac{z^{n-1}}{n} + \cdots \qquad (|z| < 1)$$
+
+$z \ge 1$ 时 $f'(z) \to \infty$，即 $z = 1$ 为奇点（FA）。
+
+**推论 4**：$f(z)$ 在 $z_0$ 解析，$f(z) = \sum\limits_{n=0}^\infty c_n (z - z_0)^n$，$z^*$ 为距离最近奇点，则 $R = |z^* - z_0|$ 为收敛半径。
+
+**e.g.** $f(z) = \dfrac{1}{z^2 + z - 6}$（奇点 $z = 2, -3$）：
+
+$$f(z) = \sum_{n=0}^\infty c_n z^n \;\Rightarrow\; \text{直接得 } R = 2 \;\;【\text{?】笔记写 } R > 2; \qquad f(z) = \sum_{n=0}^\infty c_n (z-\mathrm{i})^n \;\Rightarrow\; R = \sqrt{2^2 + 1^2} = \sqrt{5}$$
+
+**e.g.** $\dfrac{1}{1 + x^2} = 1 - x^2 + x^4 - \cdots + (-1)^n x^{2n} + \cdots$ 必受 $|x| < 1$ 限制。放到复变函数是显然的，因为有奇点 $\pm\mathrm{i}$。
+
+#### 4.3 解析函数零点孤立性及唯一性
+
+若 $f(z_0) = 0$，邻域 $D(z_0, \delta) = \{z \mid |z - z_0| < \delta\}$ 内 $f(z)$ 处处不为零，则可写为
+
+$$f(z) = (z - z_0)^m \psi(z)$$
+
+其中 $\psi(z)$ 在 $z_0$ 解析、$\psi(z_0) \ne 0$，$m \ge 1$，则 $z_0$ 为 $m$ 级零点。
+
+**定理**：若 $f(z)$ 在 $D$ 内解析，$\{z_n\}$ 为互异零点，且 $z_n \to z_0 \in D$（$n \to \infty$），则 $f(z)$ 在 $D$ 内恒为 0。（即但凡有聚点则恒为 0，可得零点孤立性）
+
+**推论**：不恒为零的解析函数零点必孤立。
+
+**推论**：若 $f(z)$、$g(z)$ 在 $D$ 内解析，$\exists\{z_n\} \to z_0 \in D$，有 $f(z_n) = g(z_n)$，则 $D$ 内恒有 $f(z) \equiv g(z)$。
+
+**注 1**：零点的孤立性是解析函数有别于实可微函数的重要性质（FA）。
+
+**e.g.** $f(x) = \begin{cases} x^2\sin\dfrac{1}{x}, & x \ne 0 \\ 0, & x = 0 \end{cases}$，$0$ 为聚点。
+
+**注 2**：一切恒等式在复平面仍成立。
+
+<details markdown="1">
+<summary><strong>【FA：实可微函数为什么没有零点孤立性】</strong></summary>
+
+$f(x) = x^2\sin\dfrac{1}{x}$（$f(0) = 0$）在 $x = 0$ 处可导（$f'(0) = 0$），但它的零点 $x = \dfrac{1}{k\pi} \to 0$ 有聚点，$f$ 却不恒为零——实可微函数允许零点"挤"在一起而不恒为零。解析函数做不到：零点一旦有聚点就直接恒为零（唯一性定理），因为解析函数由任意一点邻域内的值唯一决定。这就是"可微"在实数里很弱、在复数里极强的体现。（FA 补充）
+
+</details>
+
+**定理**：不恒为零的解析函数 $f(z)$ 以 $z_0$ 为 $m$ 级零点的充要条件为：
+
+$$f(z_0) = f'(z_0) = \cdots = f^{(m-1)}(z_0) = 0, \qquad f^{(m)}(z_0) \ne 0$$
+
+**e.g.** 求 $f(z) = z - \sin z$ 在 $z = 0$ 处性质（FA）：
+
+$$f(z) = z - \sum_{n=0}^\infty \frac{(-1)^n}{(2n+1)!}z^{2n+1} = z^3\psi(z), \qquad \psi(0) = \frac{1}{3!} \ne 0$$
+
+即 $z = 0$ 为 3 级零点。
+
+**e.g.** 求 $f(z) = \sin(z) - 1$ 全部零点并指出阶数。
+
+零点为 $z_k = \dfrac{\pi}{2} + 2k\pi$（$k \in \mathbb{Z}$）。由 $f'(z) = \cos z$ 在这些点也为 $0$，而 $f''(z) = -\sin z = -1 \ne 0$，故每个零点都是 **2 级零点**（也可由 $\sin z - 1 \approx -\dfrac{(z - z_k)^2}{2}$ 直接看出）。（解答由AI补全）
+
+#### 4.4 洛朗级数
+
+若 $z_0$ 处不解析，则不可展为幂级数——挖掉，就有孔了。
+
+研究 $\sum\limits_{-\infty}^{+\infty} c_n (z - z_0)^n$（把 $z_0$ 挖掉）：
+
+$$c_0 + c_1(z - z_0) + \cdots + c_n(z - z_0)^n + \cdots + c_{-n}(z - z_0)^{-n} + \cdots + c_{-1}(z - z_0)^{-1}$$
+
+**正幂部分**：幂级数，$R_2$。对负幂：令 $\xi = (z - z_0)^{-1}$，则
+
+$$\sum_{n=1}^\infty c_{-n}(z - z_0)^{-n} = c_{-1}\xi + c_{-2}\xi^2 + \cdots$$
+
+设为 $R$，则 $|\xi| < R \Rightarrow |z - z_0| > \dfrac{1}{R} = R_1$。
+
+即 $R_1 < |z - z_0| < R_2$ 的**圆环域**才收敛。
+
+**e.g.** $\sum\limits_{n=1}^\infty \dfrac{a^n}{z^n} + \sum\limits_{n=0}^\infty \dfrac{z^n}{b^n}$（$a, b \in \mathbb{C}$）。负幂项（FA，补全）：$\sum\left(\dfrac{a}{z}\right)^n$ 收敛 $\Leftrightarrow |a/z| < 1 \Leftrightarrow |z| > |a|$；正幂 $\sum\left(\dfrac{z}{b}\right)^n$ 收敛 $\Leftrightarrow |z| < |b|$；故收敛域为 $|a| < |z| < |b|$。
+
+**性质**：和函数解析，可逐项求积、逐项求导。
+
+**问**：在圆环域内解析的函数是否一定能展开？
+
+**e.g.** $f(z) = \dfrac{1}{z(1-z)} = \dfrac{1}{z} + \dfrac{1}{1-z}$：
+
+$$= \frac{1}{z}\left(1 + z + z^2 + \cdots + z^n + \cdots\right) \qquad \text{即在 } 0 < |z| < 1 \text{ 可展开}$$
+
+其次，在 $0 < |z - 1| < 1$ 内也可展开：
+
+$$= \frac{1}{1-z}\left[\frac{1}{1-(1-z)}\right] = \frac{1}{1-z}\left[1 + (1-z) + \cdots + (1-z)^n + \cdots\right]$$
+
+**定理**：若 $f(z)$ 在 $R_1 < |z - z_0| < R_2$ 内解析，则 $f(z) = \sum\limits_{-\infty}^{+\infty} c_n (z - z_0)^n$，其中
+
+$$c_n = \frac{1}{2\pi\mathrm{i}}\oint_C \frac{f(\xi)}{(\xi - z_0)^{n+1}}\,\mathrm{d}\xi \qquad (n = 0, \pm 1, \pm 2, \cdots)$$
+
+$C$ 为环域内绕 $z_0$ 一周的简单正向闭曲线。任意点处都可以展开为洛朗级数，但圆环必须与奇点隔开。
+
+<details markdown="1">
+<summary><strong>【FA：间接展开两例与"实函数通用"辨析】</strong></summary>
+
+- $\dfrac{1}{(1+z)^2}$：先写 $\dfrac{1}{1+z} = 1 - z + z^2 - \cdots$（$|z| < 1$），两边求导再乘 $-1$：$\dfrac{1}{(1+z)^2} = 1 - 2z + 3z^2 - \cdots$。
+- $\left[\ln(1+z)\right]' = \dfrac{1}{1+z}$ 已知展开，两边同时积分：$\ln(1+z) = z - \dfrac{z^2}{2} + \dfrac{z^3}{3} - \cdots$（与实函数套路相同）。
+- **"实函数通用"的辨析**：推论里"解析 $\Leftrightarrow$ 可展开为幂级数"的双向等价**不**对实函数成立——实函数无穷阶可导也未必能展开（反例 $\mathrm{e}^{-1/x^2}$），Taylor 展开的**思想**实函数同样通用，但等价性是复变特有的。（FA 补充）
+
+</details>
+
