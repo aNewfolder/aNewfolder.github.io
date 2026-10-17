@@ -1897,6 +1897,56 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#2026101025-1014" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026.10.10（2.5 随机变量函数的分布；10.14 自学补）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#20261014" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026.10.14（第八/九周小测 · 等价法；二维随机变量开篇）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2026.10.14（第八/九周小测 · 等价法；二维随机变量开篇）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        小测：等价法（万能）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1014" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、二维随机变量（开篇；本页未标日期，按扫描顺序接于 10.14）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -6796,6 +6846,56 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#2026101025-1014" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026.10.10（2.5 随机变量函数的分布；10.14 自学补）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#20261014" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026.10.14（第八/九周小测 · 等价法；二维随机变量开篇）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2026.10.14（第八/九周小测 · 等价法；二维随机变量开篇）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        小测：等价法（万能）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1014" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、二维随机变量（开篇；本页未标日期，按扫描顺序接于 10.14）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -6965,6 +7065,80 @@
 <div class="arithmatex">\[P\{a &lt; X \le b\} = F(b) - F(a)\]</div>
 <p>这里的区间 <span class="arithmatex">\((a, b]\)</span> 是<strong>左开右闭</strong>的——笔记里写的"左闭右开"应是口误（"左闭右开"的 <span class="arithmatex">\([a, b)\)</span> 对应的是 <span class="arithmatex">\(F(x) = P\{X &lt; x\}\)</span> 那种左连续定义，与本页 <span class="arithmatex">\(F(x) = P\{X \le x\}\)</span> 的定义不配套，别混用）。分布函数另外两条基本性质：单调不减；<span class="arithmatex">\(F(-\infty) = 0\)</span>、<span class="arithmatex">\(F(+\infty) = 1\)</span>。（FA 补充）</p>
 </details>
+<p><strong>2. 连续型随机变量</strong>（10.14 补记：<em>这节课在打生日贺信的草稿，听了整个乐呵……</em>）</p>
+<div class="arithmatex">\[F(x) = \int_{-\infty}^{x} f(t)\,\mathrm{d}t\]</div>
+<p>称 <span class="arithmatex">\(X\)</span> 为<strong>连续型</strong>随机变量，<span class="arithmatex">\(f(x)\)</span> 为<strong>密度函数</strong>。分段点处 <span class="arithmatex">\(F\)</span> 必须连续（<span class="arithmatex">\(F(2^-) = F(2)\)</span>）。</p>
+<p><strong>① 均匀分布</strong></p>
+<div class="arithmatex">\[f(x) = \begin{cases} \dfrac{1}{b-a}, &amp; x \in (a, b) \\[2pt] 0, &amp; \text{其他} \end{cases} \qquad X \sim U(a, b)\]</div>
+<div class="arithmatex">\[F(x) = \begin{cases} 0, &amp; x &lt; a \\[2pt] \dfrac{x-a}{b-a}, &amp; a \le x &lt; b \\[2pt] 1, &amp; x \ge b \end{cases}\]</div>
+<p><strong>② 正态分布</strong></p>
+<div class="arithmatex">\[f(x) = \frac{1}{\sqrt{2\pi}\,\sigma}\,\mathrm{e}^{-\frac{(x-\mu)^2}{2\sigma^2}}, \qquad \mu \in \mathbb{R},\ \sigma &gt; 0, \qquad X \sim N(\mu, \sigma^2)\]</div>
+<div class="arithmatex">\[F(x) = \int_{-\infty}^{x} \frac{1}{\sqrt{2\pi}\,\sigma}\,\mathrm{e}^{-\frac{(t-\mu)^2}{2\sigma^2}}\,\mathrm{d}t, \qquad \sigma \text{ 越大越扁}\]</div>
+<p><strong>标准正态分布</strong>：<span class="arithmatex">\(\mu = 0\)</span>、<span class="arithmatex">\(\sigma = 1\)</span>：<span class="arithmatex">\(\varphi(x) = \dfrac{1}{\sqrt{2\pi}}\mathrm{e}^{-\frac{x^2}{2}}\)</span>，<span class="arithmatex">\(\Phi(x) = \displaystyle\int_{-\infty}^{x} \dfrac{1}{\sqrt{2\pi}}\,\mathrm{e}^{-\frac{t^2}{2}}\,\mathrm{d}t\)</span>。</p>
+<p>一般化标准：令 <span class="arithmatex">\(t = \dfrac{x - \mu}{\sigma}\)</span>。</p>
+<p><strong>③ 指数分布</strong></p>
+<div class="arithmatex">\[f(x) = \begin{cases} \lambda\mathrm{e}^{-\lambda x}, &amp; x &gt; 0 \\ 0, &amp; x \le 0 \end{cases} \qquad X \sim E(\lambda)\]</div>
+<div class="arithmatex">\[F(x) = \int_{-\infty}^{x} f(t)\,\mathrm{d}t = \begin{cases} 1 - \mathrm{e}^{-\lambda x}, &amp; x &gt; 0 \\ 0, &amp; x \le 0 \end{cases}\]</div>
+<div class="arithmatex">\[P\{X &gt; t_0 + t\} = P\{X &gt; t_0\}\cdot P\{X &gt; t\}\]</div>
+<p>（两边同除 <span class="arithmatex">\(P\{X &gt; t_0\}\)</span> 即得无记忆性的条件概率形式 <span class="arithmatex">\(P\{X &gt; t_0 + t \mid X &gt; t_0\} = P\{X &gt; t\}\)</span>。）</p>
+<h3 id="2026101025-1014">2026.10.10（2.5 随机变量函数的分布；10.14 自学补）<a class="headerlink" href="#2026101025-1014" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>笔记原话：显然这节课在写生日贺信，一点没听。</p>
+</blockquote>
+<p><strong>定义</strong>：<span class="arithmatex">\(X\)</span> 为连续型随机变量，密度函数 <span class="arithmatex">\(f_X(\cdot)\)</span>，随机变量 <span class="arithmatex">\(Y = g(X)\)</span>。若 <span class="arithmatex">\(y = g(x)\)</span> <strong>严格单调</strong>且处处可导，<span class="arithmatex">\(y = g(x)\)</span> 反函数 <span class="arithmatex">\(x = h(y)\)</span>，则 <span class="arithmatex">\(Y\)</span> 的密度函数：</p>
+<div class="arithmatex">\[f_Y(y) = \begin{cases} f_X(h(y))\left|h'(y)\right|, &amp; y \in D \\ 0, &amp; y \notin D \end{cases}\]</div>
+<p>（FA，不懂）</p>
+<p>这个方法应该不如后面写的等价法万能。</p>
+<details>
+<summary><strong>【FA：公式法从哪来、等价法为什么更万能】</strong></summary>
+<p>公式法的来源：设 <span class="arithmatex">\(g\)</span> 单调增，则 <span class="arithmatex">\(F_Y(y) = P\{g(X) \le y\} = P\{X \le h(y)\} = F_X(h(y))\)</span>，两边求导得 <span class="arithmatex">\(f_Y(y) = f_X(h(y))\,h'(y)\)</span>；<span class="arithmatex">\(g\)</span> 单调减时不等号翻转，多一层 <span class="arithmatex">\(|\cdot|\)</span>。<span class="arithmatex">\(|h'(y)|\)</span> 就是"拉伸倍数"——概率元 <span class="arithmatex">\(\mathrm{d}x\)</span> 映到 <span class="arithmatex">\(\mathrm{d}y\)</span> 要除以伸缩率。<strong>等价法</strong>就是不用背这套：先算 <span class="arithmatex">\(F_Y(y) = P\{g(X) \le y\}\)</span>（把 <span class="arithmatex">\(X\)</span> 的事件翻译成 <span class="arithmatex">\(Y\)</span> 的事件），再求导。它不要求单调、不要求记公式，分段也能处理，所以更"万能"。（FA 补充）</p>
+</details>
+<h3 id="20261014">2026.10.14（第八/九周小测 · 等价法；二维随机变量开篇）<a class="headerlink" href="#20261014" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>第三次签到（签满八次即可）。</p>
+</blockquote>
+<h4 id="_6">小测：等价法（万能）<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p><strong>e.g.</strong> <span class="arithmatex">\(X \sim U(-1, 2)\)</span>，求 <span class="arithmatex">\(Y = |X|\)</span> 的概率密度 <span class="arithmatex">\(f_Y(y)\)</span>。</p>
+<p>图：<span class="arithmatex">\(y = |x|\)</span> 在 <span class="arithmatex">\((-1, 2)\)</span> 上的 V 形折线（<span class="arithmatex">\(x = -1\)</span> 处 <span class="arithmatex">\(y = 1\)</span>，<span class="arithmatex">\(x = 2\)</span> 处 <span class="arithmatex">\(y = 2\)</span>）。</p>
+<p><span class="arithmatex">\(-1 &lt; x &lt; 2 \Rightarrow 0 &lt; Y &lt; 2\)</span>（有效范围）。左侧（<span class="arithmatex">\(Y &lt; 0\)</span>）为 0，右侧（<span class="arithmatex">\(Y &gt; 2\)</span>）为 1。</p>
+<p>若介于有效区间之间 <span class="arithmatex">\(0 &lt; Y &lt; 2\)</span>：<span class="arithmatex">\((-1, 1)\)</span> 左右对称，<span class="arithmatex">\((1, 2)\)</span> 不对称，则分段：</p>
+<p>1° <span class="arithmatex">\(0 &lt; Y &lt; 1\)</span>：<span class="arithmatex">\(P(-y \le x \le y) = \displaystyle\int_{-y}^{y} \frac{1}{3}\,\mathrm{d}x = \frac{2}{3}y\)</span>（FA，不懂）</p>
+<p>2° <span class="arithmatex">\(1 \le Y &lt; 2\)</span>：<span class="arithmatex">\(P(-y \le x \le y) = \displaystyle\int_{-y}^{y} f(x)\,\mathrm{d}x\)</span>，<span class="arithmatex">\(-y\)</span> 在 <span class="arithmatex">\(-1\)</span> 左侧（下限截到 <span class="arithmatex">\(-1\)</span>）：</p>
+<div class="arithmatex">\[= \int_{-1}^{y} \frac{1}{3}\,\mathrm{d}x = \frac{y+1}{3}\]</div>
+<p>（FA，<span class="arithmatex">\(\frac{1}{3}\)</span> 是怎么来的）</p>
+<p>则</p>
+<div class="arithmatex">\[F_Y(y) = \begin{cases} 0, &amp; y &lt; 0 \\[2pt] \frac{2}{3}y, &amp; 0 \le y &lt; 1 \\[2pt] \frac{y+1}{3}, &amp; 1 \le y &lt; 2 \\[2pt] 1, &amp; y \ge 2 \end{cases} \qquad \xrightarrow{\ \text{求导}\ } \qquad f_Y(y) = \begin{cases} \frac{2}{3}, &amp; 0 &lt; y &lt; 1 \\[2pt] \frac{1}{3}, &amp; 1 \le y &lt; 2 \\[2pt] 0, &amp; \text{其他} \end{cases}\]</div>
+<p>（FA，补全条件）</p>
+<p><strong>若不好分段，先不积：</strong></p>
+<p><strong>e.g.</strong> <span class="arithmatex">\(X \sim N(0, 1)\)</span>，求 <span class="arithmatex">\(Z = X^2\)</span> 的概率密度 <span class="arithmatex">\(f_Z(z)\)</span>。</p>
+<p><span class="arithmatex">\(X\)</span> 的有效范围：<span class="arithmatex">\(-\infty \to +\infty\)</span>；<span class="arithmatex">\(Z\)</span>：<span class="arithmatex">\(0 \to +\infty\)</span>。</p>
+<p>由 <span class="arithmatex">\(F_Z(z) = P(Z \le z) = P\{X^2 \le z\}\)</span>：</p>
+<div class="arithmatex">\[F_Z(z) = \begin{cases} 0, &amp; z \le 0 \\[2pt] \displaystyle\int_{-\sqrt{z}}^{\sqrt{z}} \frac{1}{\sqrt{2\pi}}\,\mathrm{e}^{-\frac{x^2}{2}}\,\mathrm{d}x, &amp; z &gt; 0 \end{cases}\]</div>
+<p>不积分，求导：<span class="arithmatex">\(f_Z(z) = F_Z'(z) = \dfrac{1}{\sqrt{2\pi z}}\,\mathrm{e}^{-\frac{z}{2}}\)</span>（FA，如何积分）</p>
+<p><strong>稍复杂一些：</strong></p>
+<p><strong>e.g.</strong> <span class="arithmatex">\(f(x) = \begin{cases} \dfrac{2x}{\pi^2}, &amp; 0 &lt; x &lt; \pi \\[2pt] 0, &amp; \text{else} \end{cases}\)</span>，求 <span class="arithmatex">\(Y = \sin X\)</span> 的概率密度。</p>
+<div class="arithmatex">\[F_Y(y) = P(Y \le y) = P\{\sin X \le y\}, \qquad X: (0, \pi) \Rightarrow Y: (0, 1]\]</div>
+<p>左侧为 0，右侧为 1。当 <span class="arithmatex">\(Y \in (0, 1)\)</span>（笔记原文写"或"，实为两段概率<strong>相加</strong>）：</p>
+<div class="arithmatex">\[F_Y(y) = P(0 &lt; x \le \arcsin y) + P(\pi - \arcsin y \le x &lt; \pi)\]</div>
+<p>图：正弦曲线 <span class="arithmatex">\(y = \sin x\)</span> 的拱形与水平线 <span class="arithmatex">\(y\)</span> 交于 <span class="arithmatex">\(x = \arcsin y\)</span> 和 <span class="arithmatex">\(x = \pi - \arcsin y\)</span>。（FA，补全，看不懂老师的神秘板书字体）（咱不会写字的话可以做 PPT 的）</p>
+<details>
+<summary><strong>【FA：三处 FA 的补全】</strong></summary>
+<ul>
+<li><strong><span class="arithmatex">\(\dfrac{1}{3}\)</span> 从哪来</strong>：<span class="arithmatex">\(X \sim U(-1, 2)\)</span> 的密度在长度为 3 的区间 <span class="arithmatex">\((-1, 2)\)</span> 上恒为 <span class="arithmatex">\(\dfrac{1}{3}\)</span>，落在其中任何一段 <span class="arithmatex">\([a, b]\)</span> 的概率都是 <span class="arithmatex">\(\dfrac{b-a}{3}\)</span>。1° 里 <span class="arithmatex">\(y &lt; 1\)</span> 时区间 <span class="arithmatex">\([-y, y]\)</span> 整体在 <span class="arithmatex">\((-1, 2)\)</span> 内，长 <span class="arithmatex">\(2y\)</span>，得 <span class="arithmatex">\(\dfrac{2y}{3}\)</span>；2° 里被截后实际区间 <span class="arithmatex">\([-1, y]\)</span>，长 <span class="arithmatex">\(y + 1\)</span>，得 <span class="arithmatex">\(\dfrac{y+1}{3}\)</span>。</li>
+<li><strong>补全条件</strong>：密度函数的分段端点（<span class="arithmatex">\(y = 0, 1, 2\)</span>）处取值不影响积分，可任取；要求的是 <span class="arithmatex">\(F_Y\)</span> 在端点处连续衔接、<span class="arithmatex">\(f_Y\)</span> 分段不重不漏。</li>
+<li><strong>如何"积分"</strong>：<span class="arithmatex">\(\int_{-\sqrt z}^{\sqrt z} \mathrm{e}^{-x^2/2}\mathrm{d}x\)</span> 积不出初等函数，不用积——变限求导即可：<span class="arithmatex">\(\dfrac{\mathrm{d}}{\mathrm{d}z}\displaystyle\int_{-\sqrt z}^{\sqrt z} g(x)\,\mathrm{d}x = g(\sqrt z)\cdot\dfrac{1}{2\sqrt z} + g(-\sqrt z)\cdot\dfrac{1}{2\sqrt z}\)</span>，<span class="arithmatex">\(g\)</span> 为偶函数，合并 <span class="arithmatex">\(= \dfrac{g(\sqrt z)}{\sqrt z} = \dfrac{1}{\sqrt{2\pi z}}\mathrm{e}^{-z/2}\)</span>（这正是 <span class="arithmatex">\(\chi^2(1)\)</span> 分布的密度）。</li>
+<li><strong><span class="arithmatex">\(\sin X\)</span> 例的补全</strong>：<span class="arithmatex">\(F_Y(y) = \displaystyle\int_0^{\arcsin y} \frac{2x}{\pi^2}\mathrm{d}x + \int_{\pi - \arcsin y}^{\pi} \frac{2x}{\pi^2}\,\mathrm{d}x = \frac{(\arcsin y)^2}{\pi^2} + \frac{\pi^2 - (\pi - \arcsin y)^2}{\pi^2} = \frac{2}{\pi}\arcsin\,y\)</span>，求导得</li>
+</ul>
+<div class="arithmatex">\[f_Y(y) = \frac{2}{\pi\sqrt{1 - y^2}} \quad (0 &lt; y &lt; 1), \qquad f_Y(y) = 0 \ \ (\text{其他})\]</div>
+<p>（两段积分里 arcsin 的二次项恰好消掉。）（解答由AI补全）</p>
+</details>
+<h4 id="1014">三、二维随机变量（开篇；本页未标日期，按扫描顺序接于 10.14）<a class="headerlink" href="#1014" title="Permanent link">&para;</a></h4>
+<p><strong>3.1 二维离散</strong></p>
+<div class="arithmatex">\[P\{X = x_i,\ Y = y_j\} = p_{ij} \qquad \text{（联合分布）}\]</div>
+<p><strong>边际分布</strong>：<span class="arithmatex">\(P\{X = x_i\} = p_{i\cdot}\)</span>，<span class="arithmatex">\(P\{Y = y_j\} = p_{\cdot j}\)</span>。</p>
+<p><strong>条件分布</strong>：</p>
+<div class="arithmatex">\[P\{X = x_i \mid Y = y_j\} = \frac{P\{X = x_i,\ Y = y_j\}}{P\{Y = y_j\}} = \frac{p_{ij}}{p_{\cdot j}}\]</div>
+<p>联合 <span class="arithmatex">\(\Rightarrow\)</span> 边际唯一，边际 <span class="arithmatex">\(\nRightarrow\)</span> 联合。</p>
 
 
 
@@ -6987,7 +7161,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年9月30日 18:20:45 CST">2026年9月30日 18:20:45</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年10月17日 11:54:16 CST">2026年10月17日 11:54:16</span>
   </span>
 
     
