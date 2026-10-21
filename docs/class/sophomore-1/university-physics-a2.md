@@ -1952,3 +1952,102 @@ $$B = \mu_0 n I \quad \text{（FA）}$$
 - **无限大薄板（FA）**：线电流密度 $\delta$（A/m，垂直于电流方向单位宽度的电流）。对称性给出：板两侧的磁场与板平行、与电流垂直，两侧等大反向。取横跨板的矩形环路（两条长 $l$ 的边对称分居板两侧）：$\oint \vec{B}\cdot\mathrm{d}\vec{l} = 2Bl = \mu_0\,\delta l \Rightarrow B = \dfrac{\mu_0\delta}{2}$，与到板的距离无关。（FA 补充）
 
 </details>
+
+### 2026.10.20（12.4 磁场对电流的作用 · 12.5 带电粒子在电场和磁场中的运动）
+
+> 小测：下周。讲到哪考到哪。期中：考到电磁感应。
+
+#### 12.4 磁场对电流的作用
+
+**一、安培力**。电子在磁场中受洛伦兹力 $\vec{F} = q\vec{v}\times\vec{B}$。
+
+载流导线在磁场中受**安培力** $F = BIL$：
+
+$$\mathrm{d}\vec{F} = I\,\mathrm{d}\vec{l}\times\vec{B}, \qquad \vec{F} = \int \mathrm{d}\vec{F} = \int_0^l I\,\mathrm{d}\vec{l}\times\vec{B} \qquad \text{（先投影后积分）}$$
+
+**左手定则**：四指指 $I$，$B$ 穿手心，大拇指指正电荷受力方向。
+
+？（FA，何时左右手定则分别怎么用？）
+
+若磁场由另一个电流元激发：
+
+$$\mathrm{d}\vec{B} = \frac{\mu_0}{4\pi}\,\frac{I_1\,\mathrm{d}\vec{l}_1\times\hat{r}}{r^2} \;\Rightarrow\; \mathrm{d}\vec{F}_{21} = \frac{\mu_0 I_1 I_2}{4\pi}\,\frac{\mathrm{d}\vec{l}_2\times(\mathrm{d}\vec{l}_1\times\hat{r})}{r^2} \qquad \text{（会推导）}$$
+
+$$\mathrm{d}\vec{F}_2 = I_2\,\mathrm{d}\vec{l}_2\times\mathrm{d}\vec{B} \qquad \text{（FA，不懂）}$$
+
+且电流元间作用力 $\ne$ 反作用力（因为电磁场本身有动量，总动量仍守恒）。
+
+**二、平行长直载流导线间的作用力**
+
+$$\mathrm{d}\vec{F}_2 = I_2\,\mathrm{d}\vec{l}_2\times\vec{B}_1, \qquad B_1 = \frac{\mu_0 I_1}{2\pi d} \;\Rightarrow\; \frac{\mathrm{d}F_2}{\mathrm{d}l_2} = \frac{\mu_0 I_1 I_2}{2\pi d}$$
+
+若两导线距离 1 m，$I$ 相等，每米受力 $2\times 10^{-7}\ \mathrm{N}$，则导线上电流强度定义为 1 A。
+
+可得真空磁导率 $\mu_0 = 4\pi\times 10^{-7}\ \mathrm{N/A^2}$。
+
+**e.g.** 匀强磁场中直导线受力（高中所学）：$F = BIl\sin\theta$（$\theta$ 为导线与磁场夹角），方向由左手定则判断。（解答由AI补全）
+
+**三、磁场对平面载流线圈作用**
+
+合力为零，有力矩；任意形状线圈合力均为零。
+
+力矩
+
+$$M = F_{ab}\,l\sin\theta = BIL_1 l_2\sin\theta = BIS\sin\theta \;\xrightarrow{\ N\ \text{匝}\ }\ NBIS\sin\theta$$
+
+（$F_{ab}$ 为 $ab$ 边所受安培力，$l\sin\theta$ 为力臂。）可写为
+
+$$\vec{M} = \vec{p}_m\times\vec{B}, \qquad \vec{p}_m = NIS\hat{e}_n$$
+
+$\vec{p}_m$ 称为载流线圈的**磁矩**，方向与电流成右螺旋（FA，不懂）。
+
+（呼应：电偶极子 $\vec{M} = \vec{p}\times\vec{E}$？FA）
+
+**四、安培力做功**
+
+载流导线在磁场中运动：$A = I\Delta\Phi$（实际是产生磁通的电源在做功）。
+
+转动：$\mathrm{d}A = -M\,\mathrm{d}\theta$（FA，不会了），与洛伦兹力不做功不矛盾。
+
+$$= I\,\mathrm{d}\Phi \;\Rightarrow\; A = I\Delta\Phi = \int_{\Phi_1}^{\Phi_2} I\,\mathrm{d}\Phi \qquad \text{（}I\ \text{随时间变化时}）$$
+
+<details markdown="1">
+<summary><strong>【FA：12.4 各 FA 点补全】</strong></summary>
+
+- **左右手定则分别怎么用（FA）**：判断**受力**（安培力、洛伦兹力）方向用**左手定则**——磁感线穿手心，四指指电流方向（或正电荷运动速度方向），拇指即受力方向；判断**生磁**（直导线周围磁场、线圈内部磁场、磁矩方向、螺线管 N 极）用**右手定则/右手螺旋**——四指弯向电流绕向，拇指即磁场方向。一句话：受力用左手，生磁用右手。
+- **$\mathrm{d}\vec{F}_2 = I_2\mathrm{d}\vec{l}_2\times\mathrm{d}\vec{B}$（FA，不懂）**：这就是安培力微分公式本身——把导线 2 的电流元 $I_2\mathrm{d}\vec{l}_2$ 放进导线 1 的电流元产生的元磁场 $\mathrm{d}\vec{B}$ 中，套 $\mathrm{d}\vec{F} = I\mathrm{d}\vec{l}\times\vec{B}$ 即得。两式连读就是"电流元 1 产生场 → 场对电流元 2 施力"的场媒介图像。
+- **$\mathrm{d}\vec{F}_{21}$ 的推导（会推导）**：把毕奥–萨伐尔元磁场 $\mathrm{d}\vec{B} = \dfrac{\mu_0}{4\pi}\dfrac{I_1\mathrm{d}\vec{l}_1\times\hat{r}}{r^2}$ 代入 $\mathrm{d}\vec{F}_2 = I_2\mathrm{d}\vec{l}_2\times\mathrm{d}\vec{B}$ 即得 $\mathrm{d}\vec{F}_{21} = \dfrac{\mu_0 I_1 I_2}{4\pi r^2}\,\mathrm{d}\vec{l}_2\times(\mathrm{d}\vec{l}_1\times\hat{r})$，注意 $\hat{r}$ 由电流元 1 指向电流元 2。
+- **磁矩方向与电流成右螺旋（FA，不懂）**：右手四指弯向线圈电流的绕向，大拇指即 $\hat{e}_n$（磁矩方向）——也就是这块通电线圈等效小磁针的 N 极指向。
+- **电偶极子呼应（FA）**：对，完全平行——电偶极子在均匀电场中受力矩 $\vec{M} = \vec{p}\times\vec{E}$，磁偶极子（载流线圈）在均匀磁场中受力矩 $\vec{M} = \vec{p}_m\times\vec{B}$；连势能形式都对应（$-\vec{p}\cdot\vec{E}$ 与 $-\vec{p}_m\cdot\vec{B}$），均匀场中合力均为零、只受力矩转到取向稳定。
+- **$\mathrm{d}A = -M\mathrm{d}\theta$（FA，不会了）**：线圈转过 $\mathrm{d}\theta$ 时磁通变化 $\mathrm{d}\Phi = -BS\sin\theta\,\mathrm{d}\theta$（$\theta$ 为 $\hat{e}_n$ 与 $\vec{B}$ 的夹角），而磁力矩 $M = BIS\sin\theta$，两式消去 $BS\sin\theta$ 得 $\mathrm{d}A = -M\mathrm{d}\theta = I\,\mathrm{d}\Phi$。负号的物理：磁力矩总想把线圈转向 $\theta = 0$（磁矩顺外场），若沿 $\theta$ 增大方向转，安培力做负功。这与"洛伦兹力不做功"不矛盾——对导线做功的能量来自维持电流的电源，洛伦兹力的两个分量分别垂直于电子漂移速度和垂直于导线运动方向，合起来只起"能量中转"作用。（FA 补充）
+
+</details>
+
+#### 12.5 带电粒子在电场和磁场中的运动
+
+$$q\vec{E} + q\vec{v}\times\vec{B} = m\frac{\mathrm{d}\vec{v}}{\mathrm{d}t} = \frac{\mathrm{d}}{\mathrm{d}t}\left[\frac{m\vec{v}}{\sqrt{1 - v^2/c^2}}\right]$$
+
+1° 与磁场平行：$F = 0$，匀速直线；
+
+2° 与磁场垂直：圆周；
+
+3° 一般：螺旋（上述组合）。
+
+**一、圆周**：
+
+$$qvB = m\frac{v^2}{R} \;\Rightarrow\; R = \frac{mv}{qB}, \qquad T = \frac{2\pi R}{v} = \frac{2\pi m}{qB} \qquad \text{（与 } v\ \text{无关）}$$
+
+**二、螺旋**：$v_{\parallel} = v\cos\theta$，$v_{\perp} = v\sin\theta$。
+
+$$R = \frac{mv\sin\theta}{qB}, \qquad \text{螺距 } h = v_{\parallel}T = \frac{2\pi m}{qB}\cdot v\cos\theta$$
+
+**e.g.** 磁聚焦（FA）；磁约束（FA）；范阿仑辐射带（FA）。
+
+<details markdown="1">
+<summary><strong>【FA：磁聚焦 · 磁约束 · 范阿仑辐射带】</strong></summary>
+
+- **磁聚焦**：一束速率相近、方向略有发散的带电粒子，以与磁场成小角 $\theta$ 入射。由 $T = \dfrac{2\pi m}{qB}$ 与 $v$、$\theta$ 无关，各粒子转一圈的时间相同；平行速度 $v\cos\theta$ 也几乎相同，于是前进一个螺距 $h$ 后重新会聚到一点——像透镜聚焦光线一样。
+- **磁约束**：螺旋运动的带电粒子进入磁场**由弱变强**的区域时，磁矩 $\dfrac{mv_\perp^2}{2B}$ 近似不变，$B$ 增大迫使 $v_\perp$ 增大、$v_\parallel$ 减小；磁场足够强处 $v_\parallel = 0$，粒子被"反射"回来——相当于一面**磁镜**。两个磁镜相对就能把带电粒子（等离子体）兜在中间，受控核聚变的磁约束即用此原理。
+- **范阿仑辐射带**：地球磁场近似偶极场，两极强、赤道弱，是天然的"磁镜笼"。太阳风带来的高能带电粒子被捕获在赤道上空的环状区域内，绕磁力线螺旋并南北反弹，即为范阿仑（范艾伦）辐射带；部分粒子沿磁力线落入极区大气，激发出极光。（FA 补充）
+
+</details>

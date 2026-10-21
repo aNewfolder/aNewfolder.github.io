@@ -900,3 +900,161 @@ $C$ 为环域内绕 $z_0$ 一周的简单正向闭曲线。任意点处都可以
 
 </details>
 
+### 2026.10.17（5.1 孤立奇点的分类及性质）
+
+> 复变 留数。没听，这节课在干啥，好像在刷手机（）。开始尝试补天。
+
+#### 5.1 孤立奇点的分类及性质
+
+**定义**：$z_0$ 为 $f(z)$ 的孤立奇点，则在 $z_0$ 的某个去心邻域内，$f(z)$ 可展开为
+
+$$f(z) = \sum_{n=-\infty}^{+\infty} c_n (z - z_0)^n = \underbrace{\sum_{n=-\infty}^{-1} c_n (z - z_0)^n}_{\text{主部}} + \sum_{n=0}^{+\infty} c_n (z - z_0)^n$$
+
+1° 主部为 0，称**可去奇点**；
+
+2° 主部只有有限次：$c_{-m} \ne 0$，$c_{-(m+k)} = 0\ (k = 1, 2, \cdots)$，此时称 $z_0$ 为 **$m$ 级极点**；
+
+3° 主部有无穷多次，$z_0$ 为**本性奇点**。
+
+**性质**（等价条件），若 $z_0$ 为孤立奇点：
+
+- 1° $z_0$ 为可去奇点 $\Leftrightarrow$ 3° $f(z)$ 在 $z_0$ 点的一个邻域内有界；
+- 2° $\lim\limits_{z \to z_0} f(z)$ 存在 $\Leftrightarrow$ 4° $\lim\limits_{z \to z_0}(z - z_0)f(z) = 0$。
+
+**定理**：$z_0$ 为 $f(z)$ 的 $m$ 级奇点 $\Leftrightarrow$ $f(z)$ 可表示为
+
+$$f(z) = \frac{\psi(z)}{(z - z_0)^m}, \qquad \psi(z)\ \text{在}\ z_0\ \text{解析},\ \psi(z_0) \ne 0$$
+
+**推论**：$\Leftrightarrow$ $z_0$ 为 $\dfrac{1}{f(z)}$ 的 $m$ 级零点。
+
+**定理**：$z_0$ 为孤立奇点，则 $z_0$ 是 $f(z)$ 的极点 $\Leftrightarrow \lim\limits_{z \to z_0} f(z) = \infty$。
+
+**结论**：对 $f(z) = \dfrac{h(z)}{g(z)}$，若 $h(z)$、$g(z)$ 均在 $z_0$ 解析，且 $z_0$ 为 $h(z)$ 与 $g(z)$ 的 $m$、$n$ 级零点，则
+
+$$\begin{cases} m \ge n, & z_0\ \text{为}\ f(z)\ \text{的可去奇点} \\ m < n, & z_0\ \text{为}\ f(z)\ \text{的}\ n - m\ \text{级极点} \end{cases}$$
+
+**定理**：$z_0$ 为孤立奇点，则 $z_0$ 为 $f(z)$ 的本性奇点 $\Leftrightarrow \lim\limits_{z \to z_0} f(z)$ 不存在也不为 $\infty$。
+
+**无穷远点**：$f(z)$ 在 $z = \infty$ 的一个去心邻域 $\{R < |z| < +\infty\}$（$R \ge 0$）内解析，则称 $z = \infty$ 为函数的孤立奇点。则可展开为
+
+$$\sum_{n=-\infty}^{+\infty} c_n z^n = \underbrace{\sum_{n=-\infty}^{0} c_n z^n}_{\text{正则部分}} + \underbrace{\sum_{n=1}^{+\infty} c_n z^n}_{\text{主要部分}} \qquad \begin{cases} \text{为 0}， & \text{可去奇点} \\ \text{有限次}， & m\ \text{级极点} \\ \text{无穷次}， & \text{本性奇点} \end{cases}$$
+
+若 $z = \infty$ 为可去奇点 $\Rightarrow$ $f(z)$ 在 $\infty$ 解析，$\lim\limits_{z \to \infty} f(z) = f(\infty)$。
+
+> 好难啊，全是定理和结论。
+
+### 2026.10.21（5.2 留数定理 · 5.2.3 无穷远点处的留数 · 5.3 留数定理的应用）
+
+> 先续上午课的补天，咋落了这么多……
+
+#### 5.2 留数定理
+
+**定义**：$z_0$ 为 $f(z)$ 的孤立奇点，$f(z)$ 在 $z_0$ 的去心邻域及边界 $C_\rho$ 解析，则称
+
+$$\operatorname{Res}[f(z); z_0] = \frac{1}{2\pi\mathrm{i}}\oint_{C_\rho} f(z)\,\mathrm{d}z \qquad \text{（也记作 } \operatorname{Res}(f; z_0)\text{）}$$
+
+为 $f(z)$ 在 $z_0$ 处的**留数** $= c_{-1}$，即 $f(z)$ 在 $z_0$ 的洛朗级数 $\dfrac{1}{z - z_0}$ 项的系数。
+
+**留数定理**：设边界 $C$ 由有限条曲线段组成，$f(z)$ 在 $C$ 上及 $C$ 内除 $n$ 个有限孤立奇点 $z_1, z_2, \cdots, z_n$ 外解析，则
+
+$$\oint_C f(z)\,\mathrm{d}z = 2\pi\mathrm{i}\sum_{k=1}^{n} \operatorname{Res}[f(z); z_k]$$
+
+图：区域 $D$ 的边界 $C$ 内部含孤立奇点 $z_1, z_2, \cdots, z_n$，每个奇点各自挖去一个小圆边界 $C_1, C_2, \cdots, C_n$，复合闭路正向。
+
+（等价地，单独求各奇点的 $c_{-1}$。）
+
+**计算**：1° 罗朗展开；2° 下述定理：
+
+① $f(z)$ 在可去**有限**奇点 $z_0$ 处的留数为 0；
+
+② $z_0$ 为 $m$ 级极点，则
+
+$$\operatorname{Res}[f(z); z_0] = \frac{1}{(m-1)!}\lim_{z \to z_0} \frac{\mathrm{d}^{m-1}}{\mathrm{d}z^{m-1}}\left[(z - z_0)^m f(z)\right]$$
+
+单极点时化为 $\lim\limits_{z \to z_0}(z - z_0)f(z)$。
+
+**推论**：若 $f(z) = \dfrac{\psi(z)}{(z - z_0)^m}$，$\psi(z)$ 在 $z_0$ 解析，$\psi(z_0) \ne 0$，$m \ge 1$，则
+
+$$\operatorname{Res}\left[\frac{\psi(z)}{(z - z_0)^m};\ z_0\right] = \frac{\psi^{(m-1)}(z_0)}{(m-1)!}$$
+
+**推论**：若 $f(z) = \dfrac{P(z)}{Q(z)}$，$P$、$Q$ 在 $z_0$ 解析，且 $Q(z_0) = 0$，$Q'(z_0) \ne 0$（$z_0$ 为单极点），则
+
+$$\operatorname{Res}\left[\frac{P(z)}{Q(z)};\ z_0\right] = \frac{P(z_0)}{Q'(z_0)}$$
+
+**推论**：若 $z_0$ 为 $g(z)$ 的 $k$ 级零点、为 $h(z)$ 的 $k+1$ 级零点，则 $z_0$ 为 $f(z) = \dfrac{g(z)}{h(z)}$ 的单极点，且
+
+$$\operatorname{Res}\left[\frac{g(z)}{h(z)};\ z_0\right] = (k+1)\,\frac{g^{(k)}(z_0)}{h^{(k+1)}(z_0)}$$
+
+**定理**：$g(z)$、$h(z)$ 在 $z_0$ 解析，$g(z_0) \ne 0$，$h(z_0) = h'(z_0) = 0$，$h''(z_0) \ne 0$。此时 $z_0$ 为 $f(z) = \dfrac{g(z)}{h(z)}$ 的**二阶极点**，则
+
+$$\operatorname{Res}\left[\frac{g(z)}{h(z)};\ z_0\right] = \frac{2g'(z_0)}{h''(z_0)} - \frac{2}{3}\,\frac{g(z_0)\,h'''(z_0)}{\left[h''(z_0)\right]^2}$$
+
+> Good，除了〔?〕都补充了，虽然还是啥也不会。再补这节课的。
+
+#### 5.2.3 无穷远点处的留数
+
+**定义**：设 $\infty$ 为 $f(z)$ 的孤立奇点，$f(z)$ 在 $\{z: R < |z| < +\infty\}$ 内解析，则称 $\dfrac{1}{2\pi\mathrm{i}}\oint_{C_\rho} f(z)\,\mathrm{d}z$ 为 $f(z)$ 在 $\infty$ 点的留数，记为 $\operatorname{Res}[f(z); \infty]$。
+
+$C_\rho$：中心在原点、半径为 $\rho$ 的圆周，沿**顺时针**方向。
+
+**定理**：$f(z)$ 在扩充复平面上只有有限个孤立奇点（含 $\infty$），设为 $z_1, z_2, \cdots, z_n, \infty$，则 $f(z)$ 在所有奇点处的留数之和为 0，即（$C$ 包围全部有限奇点时）
+
+$$\oint_C f(z)\,\mathrm{d}z = -2\pi\mathrm{i}\operatorname{Res}[f(z); \infty]$$
+
+**注意**：$f(z)$ 在有限可去奇点处必有 $\operatorname{Res}[f(z); z_0] = 0$；但若 $\infty$ 为可去奇点，则 $\operatorname{Res}[f(z); \infty]$ 未必一定为 0。
+
+**公式**：
+
+$$\operatorname{Res}[f(z); \infty] = -\operatorname{Res}\left[f\!\left(\frac{1}{z}\right)\frac{1}{z^2};\ 0\right]$$
+
+#### 5.3 留数定理的应用
+
+##### 5.3.1 $\int_0^{2\pi} R(\cos\theta, \sin\theta)\,\mathrm{d}\theta$
+
+设 $R(\cos\theta, \sin\theta)$ 为 $\cos\theta$、$\sin\theta$ 的有理函数，且在 $[0, 2\pi]$ 连续，则
+
+$$\int_0^{2\pi} R(\cos\theta, \sin\theta)\,\mathrm{d}\theta = 2\pi\mathrm{i} \sum \{f(z)\ \text{在单位圆内极点处的留数}\}$$
+
+其中代换 $z = \mathrm{e}^{\mathrm{i}\theta}$：
+
+$$f(z) = \frac{1}{\mathrm{i}z}\,R\!\left(\frac{z^2 + 1}{2z},\ \frac{z^2 - 1}{2\mathrm{i}z}\right)$$
+
+（积分区间必须是 $2\pi$。）
+
+**例5（PPT，转文字）**：计算积分
+
+$$I = \int_0^{\pi} \frac{\cos mx}{5 - 4\cos x}\,\mathrm{d}x$$
+
+**解**：红笔批注：$I = \dfrac{1}{2}\displaystyle\int_0^{2\pi} \dfrac{\cos mx}{5 - 4\cos x}\,\mathrm{d}x$。因为被积函数是关于 $x$ 的偶函数，因此
+
+$$I = \frac{1}{2}\int_{-\pi}^{\pi} \frac{\cos mx}{5 - 4\cos x}\,\mathrm{d}x$$
+
+令 $I_1 = \displaystyle\int_{-\pi}^{\pi} \dfrac{\cos mx}{5 - 4\cos x}\,\mathrm{d}x$，$I_2 = \displaystyle\int_{-\pi}^{\pi} \dfrac{\sin mx}{5 - 4\cos x}\,\mathrm{d}x = 0$（被积函数为奇函数，圈出重点）。
+
+（PPT 手写批注：$\cos mx = \dfrac{z^m + z^{-m}}{2}$。）
+
+$I_1 + \mathrm{i}I_2 = \displaystyle\int_{-\pi}^{\pi} \dfrac{\mathrm{e}^{\mathrm{i}mx}}{5 - 4\cos x}\,\mathrm{d}x$。设 $z = \mathrm{e}^{\mathrm{i}x}$，则
+
+$$I_1 + \mathrm{i}I_2 = \frac{1}{\mathrm{i}}\oint_{|z|=1} \frac{z^m}{5z - 2(1 + z^2)}\,\mathrm{d}z = \frac{\mathrm{i}}{2}\oint_{|z|=1} \frac{z^m}{(z - 2)\left(z - \dfrac{1}{2}\right)}\,\mathrm{d}z$$
+
+$f(z)$ 在单位圆周内只有一个一级极点 $z = \dfrac{1}{2}$（$z = 2$ 在圆外），由留数定理及规则②（单极点）：
+
+$$\operatorname{Res}\left[\frac{z^m}{(z - 2)\left(z - \dfrac{1}{2}\right)};\ \frac{1}{2}\right] = \lim_{z \to \frac{1}{2}} \frac{z^m}{z - 2} = \frac{2^{-m}}{-\dfrac{3}{2}} = -\frac{2^{1-m}}{3}$$
+
+于是
+
+$$I_1 + \mathrm{i}I_2 = \frac{\mathrm{i}}{2}\cdot 2\pi\mathrm{i}\cdot\left(-\frac{2^{1-m}}{3}\right) = \frac{2\pi}{3\cdot 2^m} \qquad \text{（纯实数，与 } I_2 = 0\ \text{一致）}$$
+
+故
+
+$$I = \frac{I_1}{2} = \frac{\pi}{3\cdot 2^m} \qquad \text{（后半段计算由 AI 补全）}$$
+
+**e.g. 上课时问**：$\displaystyle\sum_{m=0}^{+\infty} \frac{1}{m!} = \mathrm{e}\ ?$（FA）
+
+<details markdown="1">
+<summary><strong>【FA：为什么 Σ 1/m! = e】</strong></summary>
+
+$\mathrm{e}^z$ 在全平面有 Taylor 展开 $\mathrm{e}^z = \sum\limits_{m=0}^{\infty} \dfrac{z^m}{m!}$，取 $z = 1$ 即得 $\mathrm{e} = \sum\limits_{m=0}^{\infty} \dfrac{1}{m!} = 1 + 1 + \dfrac{1}{2} + \dfrac{1}{6} + \dfrac{1}{24} + \cdots \approx 2.71828$。反过来说，$\sum \dfrac{1}{m!}$ 收敛到有限值也是显然的（$\dfrac{1}{m!} \le \dfrac{1}{2^{m-1}}$ 对 $m \ge 2$，被几何级数压住）。（FA 补充）
+
+</details>
+

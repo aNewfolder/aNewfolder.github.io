@@ -381,3 +381,76 @@ $$P\{X = x_i \mid Y = y_j\} = \frac{P\{X = x_i,\ Y = y_j\}}{P\{Y = y_j\}} = \fra
 
 联合 $\Rightarrow$ 边际唯一，边际 $\nRightarrow$ 联合。
 
+### 2026.10.21（3.2 二维随机变量的分布函数 · 3.3 二维连续型随机变量 · 3.4 独立性）
+
+> 第四次签到。
+>
+> 小测：期望 + 方差 + ……（一道大题、四个小问，25 min 左右）（九周一次，十四/五周一次）。
+
+#### 3.2 二维随机变量的分布函数
+
+**分布函数** $F(x, y) = P\{X \le x,\ Y \le y\}$：单调不减、右连续。
+
+若 $x_2 > x_1$，$y_2 > y_1$，则
+
+$$F(x_2, y_2) + F(x_1, y_1) - \left[F(x_2, y_1) + F(x_1, y_2)\right] \ge 0$$
+
+（矩形区域概率非负。）
+
+**边际分布函数**：
+
+$$F_X(x) = P\{X \le x\} = F(x, +\infty)$$
+
+**条件分布函数**：
+
+$$F_{Y|X}(y \mid x_i) = P\{Y \le y \mid X = x_i\}$$
+
+$$F_{Y|X}(y \mid x) = \lim_{\delta \to 0^+} P\{Y \le y \mid \underbrace{x < X \le x + \delta}_{\text{连续}}\ \text{或}\ \underbrace{x - \delta < X \le x + \delta}_{\text{任意}}\} = P\{Y \le y \mid X = x\}$$
+
+#### 3.3 二维连续型随机变量
+
+$$F(x, y) = \int_{-\infty}^{x}\int_{-\infty}^{y} f(u, v)\,\mathrm{d}u\,\mathrm{d}v \qquad \text{对}\ \forall x, y\ \text{成立}$$
+
+则称 $f(x, y)$ 为**联合密度函数**。
+
+连续点处 $\dfrac{\partial^2 F(x, y)}{\partial x\, \partial y} = f(x, y)$；$D$ 内 $P\{(X, Y) \in D\} = \displaystyle\iint_D f(x, y)\,\mathrm{d}x\,\mathrm{d}y$。
+
+**二重积分方法**：$\displaystyle\int_0^1 \mathrm{d}y \int_{-y}^{y} f(x, y)\,\mathrm{d}x$。$\mathrm{d}y$ 写前面：先积 $\mathrm{d}x$，$y$ 固定，$x$ 范围用 $y$ 表示（后面的范围用前面的表示）。写分数配平【?】。
+
+**边际分布**：
+
+$$F_X(x) = P\{X \le x\} = P\{X \le x,\ Y \in (-\infty, +\infty)\}$$
+
+$$F_X(x) = \int_{-\infty}^{x}\left[\int_{-\infty}^{+\infty} f(x, y)\,\mathrm{d}y\right]\mathrm{d}x = \int_{-\infty}^{x}\mathrm{d}x\int_{-\infty}^{+\infty} f(x, y)\,\mathrm{d}y$$
+
+$$f_X(x) = \int_{-\infty}^{+\infty} f(x, y)\,\mathrm{d}y, \qquad f_Y(y) = \int_{-\infty}^{+\infty} f(x, y)\,\mathrm{d}x$$
+
+（$-\infty \sim +\infty$ 要根据实际条件改成实际范围。）
+
+$$P\{Y \le 2\} = \int_{-\infty}^{2} f_Y(y)\,\mathrm{d}y = \iint_D f(x, y)\,\mathrm{d}x\,\mathrm{d}y$$
+
+**条件分布**：
+
+$$f_{Y|X}(y \mid x) = \frac{f(x, y)}{f_X(x)}, \qquad -\infty < y < +\infty$$
+
+**二元均匀分布**：
+
+$$f(x, y) = \begin{cases} \dfrac{1}{D\ \text{的面积}}, & (x, y) \in D \\[6pt] 0, & \text{其他} \end{cases}$$
+
+**二元正态**：$(X, Y) \sim N(\mu_1, \mu_2;\ \sigma_1^2, \sigma_2^2;\ \rho)$
+
+$$f_X(x) = \frac{1}{\sqrt{2\pi}\,\sigma_1}\,\mathrm{e}^{-\frac{(x - \mu_1)^2}{2\sigma_1^2}} \qquad \text{（FA，补全）}$$
+
+<details markdown="1">
+<summary><strong>【FA：二元正态的边际密度】</strong></summary>
+
+指数上补全的是 $-\dfrac{(x - \mu_1)^2}{2\sigma_1^2}$：二元正态的每个**边际都是一维正态**，$X \sim N(\mu_1, \sigma_1^2)$、$Y \sim N(\mu_2, \sigma_2^2)$，$f_Y(y) = \dfrac{1}{\sqrt{2\pi}\sigma_2}\exp\left(-\dfrac{(y - \mu_2)^2}{2\sigma_2^2}\right)$。注意边际密度里**不含 $\rho$**——所以从"两个边际都是正态"推不出"联合是二元正态"，联合分布的信息量大于边际。（FA 补充）
+
+</details>
+
+#### 3.4 独立性
+
+**独立**：
+
+$$F(x, y) = F_X(x)\cdot F_Y(y)$$
+
