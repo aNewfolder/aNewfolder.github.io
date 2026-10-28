@@ -11,7 +11,7 @@ hide:
 - [新年寄语｜文字是生命中穿流而过的河](https://mp.weixin.qq.com/s/kKWGkt5Y6PThenJzxbyX3A) — 公众号：文字游戏厅
 - [新年寄语｜只有我们醒着才是真正的破晓（上）](https://mp.weixin.qq.com/s/55WZac1l24pWjVFzf6O1YA) — 公众号：文字游戏厅
 - [新年寄语｜只有我们醒着才是真正的破晓（下）](https://mp.weixin.qq.com/s/eaBZ5nD9VnNHu4onzJaI9Q) — 公众号：文字游戏厅
-- [都2026年了，你怎么还在读书？](https://mp.weixin.qq.com/s/QRox_s8NqjWLrWo5iY1xxg) — 公众号：人物
+- [2025年，我们的年度书单](https://mp.weixin.qq.com/s/QRox_s8NqjWLrWo5iY1xxg) — 公众号：人物
 - 长郡中学建校120周年校庆特刊《飞越疯人院》
 - [追 OpenAI 的人](https://mp.weixin.qq.com/s/Ab5_sc8ztfQWjDmwmRcWog) — 公众号：人物
 - [张钹 天才的决心](https://mp.weixin.qq.com/s/ZUPsBFvrMBmt9szC3tN6iA) — 公众号：人物
@@ -20,3 +20,5 @@ hide:
 - [再见刘小样](https://mp.weixin.qq.com/s/O4lKDHRzKbbzYKbo4j8z7A) — 公众号：人物
 - [丁肇中 伟大的是物理](https://mp.weixin.qq.com/s/h7LWNySpUU2iz2DQF2WE_A) — 公众号：人物
 - [Context语境 | D-98 文体流变2](https://mp.weixin.qq.com/s/yk3V4Gd-14TwE8S-8_a_zg) — 公众号：文字游戏厅
+- [枯荣有数，天行有常｜《天星问》歌词分析](https://mp.weixin.qq.com/s/D_QqmpfC2V3nSgfe-_gpfQ) — 公众号：文字游戏厅
+- [真实就是无法醒来](https://mp.weixin.qq.com/s/3IRCA4B6JIcLEIBXBZ007w) — 公众号：正面连接

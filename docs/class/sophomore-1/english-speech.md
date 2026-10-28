@@ -115,3 +115,25 @@ come up with either a film or a game
 borrow idea from our history
 
 pretend that we can solve all technological problems
+
+
+## Week 7
+Ad Hominem 人身攻击
+
+举报 抄袭
+
+第一，古人云，耳听为虚眼见为实 你又没看见我抄袭
+
+第二，他那么傻，怎么可能我抄的他的，肯定是他抄的我的啊
+
+况且，我看了我周围人的答案，周围的几个人的答案都很像啊，为啥只说我是抄的
+
+总而言之，不是我抄的，因为这个作业是我自己写的 。
+
+First, as the ancients said, what you hear is often unreliable while what you see is more trustworthy. You didn't actually see me copying the homework.
+
+Second, he is so stupid. How could it be that I copied his homework? It must be that he copied mine. 
+
+Besides, I checked the answers of the people around me. The answers of several people were quite similar. Why did you only say that I copied?
+
+In conclusion, it wasn't me who copied it. Because this homework was written by me myself.

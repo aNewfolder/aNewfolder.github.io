@@ -39,6 +39,8 @@ hide:
     - [我们仨](excerpts/chinese/we-three.md) — 杨绛
     - [白夜行](excerpts/chinese/white-night.md) — 东野圭吾
     - [蒋勋说红楼梦](excerpts/chinese/jiang-xun.md) — 蒋勋
+    - [病隙碎笔](excerpts/chinese/bing-xi-sui-bi.md) — 史铁生
+    - [皮囊](excerpts/chinese/pi-nang.md) — 蔡崇达
 
 ??? quote "英文摘抄"
 

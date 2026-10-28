@@ -22,6 +22,11 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-10-28</div>
+<div class="update-log-content">阅读摘抄大批量更新：新增《病隙碎笔》《皮囊》两个摘抄页，2046旅店、蒋勋说红楼梦、杂项补充百余条；顺带提交课程笔记、音乐、阅读记录、体育（含新页飞盘）等本地修改。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-10-21</div>
 <div class="update-log-content">录入复变（留数）、大物（12.4/12.5）、电基（变压器/三相/非正弦分解）、概统（二维随机变量）10.17–10.21 课堂笔记，含 FA 补全；顺带提交音乐、体育页面本地调整。</div>
 </div>
