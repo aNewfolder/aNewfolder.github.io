@@ -23,6 +23,11 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-10-30</div>
+<div class="update-log-content">Skills DIY 页新增 MinerU 转 Markdown、aTrust 校网隧道、文献批量下载三个 skill；琴房预约更新为多人共享版（候补捡漏、签到监控、飞书通知）。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-10-30</div>
 <div class="update-log-content">新增课堂笔记：复变函数（留数求积分、保角映射、Laplace 变换）与大学物理（磁介质、电磁感应）；顺带提交阅读摘抄、影音与科研日报等页面的本地修改。</div>
 </div>
 

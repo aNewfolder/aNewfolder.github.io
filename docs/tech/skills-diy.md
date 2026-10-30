@@ -21,7 +21,8 @@
 
 - **cc98-crawler** — CC98 论坛帖子搜索、正文与附件抓取到本地，支持全文检索和按兴趣推送（需校园网）
 - **cc98-viewer** — 不在校网时经 WebVPN 实时看 98 新帖，页内阅读器直接读帖
-- **piano-room-booking** — 琴房自动预约：每天放票时刻自动登录抢琴房，配手机网页控制台管理每周/单次计划与订单（云服务器 + 校园网隧道部署）
+- **zju-atrust-vpn** — 校外服务器经 zju-connect（aTrust 协议）建浙大校网隧道：本地 HTTP/SOCKS 代理直达校内系统，配每分钟探测自愈，还有手机 IKEv2 共享隧道玩法（EasyConnect 旧通道已下线，这是现行解）
+- **piano-room-booking** — 琴房自动预约（多人共享版）：每天放票时刻自动登录抢琴房，约满自动进候补捡漏，带签到监控与飞书通知；同学可注册共享（密码不落盘、站长总控制台调优先级），手机网页管理每周/单次计划与订单（云服务器 + aTrust 隧道部署）
 
 **文档与邮件**
 
@@ -33,6 +34,8 @@
 
 - **wechat-article-reader** — 微信公众号推文完整归档成 Markdown，图片视频音频全部本地化，还能免登录读一个公众号的最新推送生成日报
 - **picgo-image-upload** — 调本机 PicGo 图床上传图片拿外链，写笔记插图的默认通道
+- **mineru-md** — PDF/图片/Office 经 MinerU 精准解析 API 高保真转 Markdown：公式、复杂表格、双栏、扫描件都能解析，图片随产物本地落盘（纯标准库脚本，配一个 API Token 即用）
+- **zju-literature-downloader-skill** — 经你已登录的浙大图书馆/WebVPN 浏览器会话批量下载文献 PDF 与补充材料：manifest 记录、PDF 签名校验、CAS/人机验证后同页重试，只用机构订阅权限
 - **solidworks-reader** — 免开软件只读提取 SolidWorks 零件 / 装配体 / 工程图数据，输出 JSON
 - **wjx-survey** — 问卷星全流程：70 多种题型建卷、发布、答卷导出、统计报表
 
