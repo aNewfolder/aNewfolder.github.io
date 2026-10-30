@@ -6620,7 +6620,8 @@
 <ul>
 <li><strong>cc98-crawler</strong> — CC98 论坛帖子搜索、正文与附件抓取到本地，支持全文检索和按兴趣推送（需校园网）</li>
 <li><strong>cc98-viewer</strong> — 不在校网时经 WebVPN 实时看 98 新帖，页内阅读器直接读帖</li>
-<li><strong>piano-room-booking</strong> — 琴房自动预约：每天放票时刻自动登录抢琴房，配手机网页控制台管理每周/单次计划与订单（云服务器 + 校园网隧道部署）</li>
+<li><strong>zju-atrust-vpn</strong> — 校外服务器经 zju-connect（aTrust 协议）建浙大校网隧道：本地 HTTP/SOCKS 代理直达校内系统，配每分钟探测自愈，还有手机 IKEv2 共享隧道玩法（EasyConnect 旧通道已下线，这是现行解）</li>
+<li><strong>piano-room-booking</strong> — 琴房自动预约（多人共享版）：每天放票时刻自动登录抢琴房，约满自动进候补捡漏，带签到监控与飞书通知；同学可注册共享（密码不落盘、站长总控制台调优先级），手机网页管理每周/单次计划与订单（云服务器 + aTrust 隧道部署）</li>
 </ul>
 <p><strong>文档与邮件</strong></p>
 <ul>
@@ -6632,6 +6633,8 @@
 <ul>
 <li><strong>wechat-article-reader</strong> — 微信公众号推文完整归档成 Markdown，图片视频音频全部本地化，还能免登录读一个公众号的最新推送生成日报</li>
 <li><strong>picgo-image-upload</strong> — 调本机 PicGo 图床上传图片拿外链，写笔记插图的默认通道</li>
+<li><strong>mineru-md</strong> — PDF/图片/Office 经 MinerU 精准解析 API 高保真转 Markdown：公式、复杂表格、双栏、扫描件都能解析，图片随产物本地落盘（纯标准库脚本，配一个 API Token 即用）</li>
+<li><strong>zju-literature-downloader-skill</strong> — 经你已登录的浙大图书馆/WebVPN 浏览器会话批量下载文献 PDF 与补充材料：manifest 记录、PDF 签名校验、CAS/人机验证后同页重试，只用机构订阅权限</li>
 <li><strong>solidworks-reader</strong> — 免开软件只读提取 SolidWorks 零件 / 装配体 / 工程图数据，输出 JSON</li>
 <li><strong>wjx-survey</strong> — 问卷星全流程：70 多种题型建卷、发布、答卷导出、统计报表</li>
 </ul>
@@ -6657,7 +6660,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年10月30日 17:18:49 CST">2026年10月30日 17:18:49</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年10月30日 17:44:44 CST">2026年10月30日 17:44:44</span>
   </span>
 
     
