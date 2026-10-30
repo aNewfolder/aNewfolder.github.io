@@ -36,5 +36,4 @@
 - **solidworks-reader** — 免开软件只读提取 SolidWorks 零件 / 装配体 / 工程图数据，输出 JSON
 - **wjx-survey** — 问卷星全流程：70 多种题型建卷、发布、答卷导出、统计报表
 
-**待更新**
-- **xzzd-homework** — 相关功能仍在测试中
+

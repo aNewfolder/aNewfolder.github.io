@@ -1058,3 +1058,170 @@ $\mathrm{e}^z$ 在全平面有 Taylor 展开 $\mathrm{e}^z = \sum\limits_{m=0}^{
 
 </details>
 
+### 2026.10.23（5.3.2 $\int_{-\infty}^{+\infty} f(x)\,\mathrm{d}x$ 型积分 · 5.3.3 含 $\mathrm{e}^{\mathrm{i}\alpha x}$ 的积分）
+
+#### 5.3.2 $\int_{-\infty}^{+\infty} f(x)\,\mathrm{d}x$ 型积分
+
+设 $f(z)$ 除有限个极点外全平面解析，且极点不在 $x$ 轴上。若 $\exists\ M$ 和正数 $R$，s.t. 当 $|z| \ge R$ 时有
+
+$$|f(z)| \le \frac{M}{|z|^{\delta}}$$
+
+对 $\delta > 1$ 成立（$\delta \ge 2$），则
+
+$$\int_{-\infty}^{+\infty} f(x)\,\mathrm{d}x = 2\pi\mathrm{i} \sum \{f(z)\ \text{在上半平面极点处的留数}\} = -2\pi\mathrm{i} \sum \{\text{下半平面}\}$$
+
+特别地，对 $f(z) = \dfrac{P(z)}{Q(z)}$，$P(z)$、$Q(z)$ 为有理多项式，$Q(z)$ 为 $m$ 次、$P(z)$ 为 $n$ 次，且 $m \ge n+2$：
+
+$$f(z) = \frac{P(z)}{Q(z)} = \frac{a_0 + a_1 z + \cdots + a_n z^n}{b_0 + b_1 z + \cdots + b_m z^m}$$
+
+此时上式也成立。
+
+**偶函数**：
+
+$$\int_0^{+\infty} R(x)\,\mathrm{d}x = \frac{1}{2}\int_{-\infty}^{+\infty} R(x)\,\mathrm{d}x = \pi\mathrm{i} \sum \operatorname{Res}[R(z),\, z_k]$$
+
+#### 5.3.3 $\int_{-\infty}^{+\infty} \mathrm{e}^{\mathrm{i}\alpha x} f(x)\,\mathrm{d}x$ 型积分
+
+$f(z)$ 条件同上。若
+
+$$|f(z)| \le \frac{M}{|z|} \qquad \text{（分母至少比分子高一次）}$$
+
+则
+
+$$\int_{-\infty}^{+\infty} \mathrm{e}^{\mathrm{i}\alpha x} f(x)\,\mathrm{d}x = \lim_{R\to\infty}\int_{-R}^{R} \mathrm{e}^{\mathrm{i}\alpha x} f(x)\,\mathrm{d}x = 2\pi\mathrm{i} \sum \{f(z)\,\mathrm{e}^{\mathrm{i}\alpha z}\ \text{在上半平面极点处的留数}\}$$
+
+当 $f(z) = \dfrac{P(z)}{Q(z)}$（$n$ 次 / $m$ 次），且 $m \ge n+1$，则上式成立。
+
+且
+
+$$\int_{-\infty}^{+\infty} \cos\alpha x\, f(x)\,\mathrm{d}x = \operatorname{Re}(I), \qquad \int_{-\infty}^{+\infty} \sin\alpha x\, f(x)\,\mathrm{d}x = \operatorname{Im}(I)$$
+
+（本页末尾预先写下了下一章标题"六、保角映射"，正式内容见 2026.10.28 节。）
+
+### 2026.10.28（六、保角映射：6.1 概念 · 6.2 初等函数的映射 · 6.3 分式线性映射）
+
+#### 6.1 保角映射
+
+##### 6.1.1 导数的几何意义
+
+$w = f(z)$，$M(z_0)$ 与 $N(z_0 + \delta z)$ 对应值域中的 $M_1(w_0)$、$N_1(w_0 + \delta w)$，则
+
+$$\lim_{N\to M}\left|\frac{\overline{M_1N_1}}{\overline{MN}}\right| = \lim_{N\to M}\left|\frac{\delta w}{\delta z}\right| = |f'(z_0)|$$
+
+称 $w = f(z)$ 在 $z_0$ 的**伸缩率**。
+
+**转向**：过 $M$ 取曲线 $C_1$，经 $w = f(z)$ 映成曲线 $\Gamma_1$（过 $M_1$），$N$ 点与 $M$ 邻近 $\to N_1$。则
+
+$$\arg\Delta w - \arg\Delta z = \arg\frac{\Delta w}{\Delta z}$$
+
+设 $C_1$ 在 $M$ 处切线倾角 $\theta_1$，$\Gamma_1$ 在 $M_1$ 处切线倾角 $\varphi_1$（与 $Ou$ 正方向的夹角）。当 $N\to M$ 时
+
+$$\varphi_1 - \theta_1 = \arg f'(z_0) \qquad \text{即 } \varphi_1 = \theta_1 + \arg f'(z_0)$$
+
+即原切线旋转 $\arg f'(z_0)$ 就与象切线平行，称 $\arg f'(z_0)$ 为 $w = f(z)$ 在 $z_0$ 的**旋转角**。
+
+再作曲线 $C_2 \to \Gamma_2$，$\varphi_1 - \theta_1 = \varphi_2 - \theta_2 = \arg f'(z_0)$，得
+
+$$\varphi_2 - \varphi_1 = \theta_2 - \theta_1$$
+
+即经映射 $w = f(z)$，在导数不为零的点，曲线间夹角大小、方向不变 ⇒ **保角性**。
+
+##### 6.1.2 概念
+
+$f(z)$ 在 $D\to G$ 为双射，且 $D$ 内每一点都保角 ⇒ $f(z)$ 为 $D\to G$ 的**保角映射**。
+
+若 $D$ 内每点都存在一个邻域使 $f(z)$ 在邻域内保角 ⇒ **局部保角映射**。
+
+**定理**：
+
+① 局部 ⟺ $f(z)$ 在 $D$ 内解析且 $f'(z)\ne 0$；
+
+② $f(z)$ 在 $D$ 内解析单射，则 $\forall z\in D$，$f'(z)\ne 0$；
+
+③ 保角 ⟺ 解析双射；
+
+④ **黎曼（Riemann）映射定理**：$D$、$G$ 为单连通区域，$z_0\in D$，$w_0\in G$，$\theta\in(-\pi,\pi]$，则存在唯一的 $D\to G$ 保角映射 $w = f(z)$，s.t. $w_0 = f(z_0)$，$\arg f'(z_0) = \theta$；
+
+⑤ **边界对应原理**：简单闭曲线 $\Gamma$、$\Gamma'$ 围成 $D$、$D'$，则 $D\to D'$ 的保角映射 $w = f(z)$ 可以延拓为 $D\cup\Gamma$ 到 $D'\cup\Gamma'$ 的连续双射，且 $f(z)$ 将 $\Gamma$ 正向映为 $\Gamma'$ 正向。
+
+#### 6.2 初等函数的映射
+
+##### 6.2.1 整线性映射
+
+$w = az + b$，$\dfrac{\mathrm{d}w}{\mathrm{d}z} = a \ne 0$ ⇒ 保角。
+
+① $w = kz$ ⇒ 相似（比例）映射；② $w = \mathrm{e}^{\mathrm{i}\theta}z$ ⇒ 旋转映射；③ $w = z + b$ ⇒ 平移映射。
+
+**保圆性**：圆周 → 圆周（直线 → 半径 $\infty$ 的圆）。
+
+##### 6.2.2 倒数映射
+
+$w = \dfrac{1}{z}$，$\dfrac{\mathrm{d}w}{\mathrm{d}z} = -\dfrac{1}{z^2}$，则除原点、$z = \infty$ 外处处保角。
+
+图：以 $O$ 为心、半径 $R$ 的圆周 $C$，圆内一点 $P$ 与射线 $OP$ 延长线上一点 $P'$。
+
+若 $OP\cdot OP' = R^2$，则称 $P$ 与 $P'$ 关于 $C: |z| = R$ **对称**。
+
+**保圆性**：直线和圆统称**广义圆**。
+
+**保对称性**：关于 $C$ 的两对称点，映射到 $C'$ 仍对称。
+
+**定理**：$z_1$、$z_2$ 为关于圆周 $C$ 的一对对称点 ⟺ 过 $z_1$、$z_2$ 的任何圆周 $\Gamma$ 与 $C$ 正交（交点处两圆切线垂直）。
+
+#### 6.3 分式线性映射
+
+##### 6.3.1 定义
+
+$$w = \frac{az + b}{cz + d} \qquad (ad - bc \ne 0)$$
+
+保角映射（整线性、倒数映射叠加），双向保角，保圆，保对称。
+
+##### 6.3.2 三个独立条件唯一确定一个分式线性映射
+
+$z_1$、$z_2$、$z_3 \to w_1$、$w_2$、$w_3$：
+
+$$\frac{w - w_1}{w - w_2}\cdot\frac{w_3 - w_2}{w_3 - w_1} = \frac{z - z_1}{z - z_2}\cdot\frac{z_3 - z_2}{z_3 - z_1}$$
+
+$z_1$、$z_2 \to w_1$、$w_2$：
+
+$$\frac{w - w_1}{w - w_2} = k\,\frac{z - z_1}{z - z_2} \qquad \text{（}k\text{：待定复常数）}$$
+
+现给定两圆周 $C$、$C'$，在圆周上取定三个点，则必有分式线性映射 $C\to C'$。而内部的点呢？若 $z_0\to w_0$ 在内部，则 内部 → 内部、外部 → 外部；或若由 $z_1\to z_2\to z_3$ 的绕向与 $w_1\to w_2\to w_3$ 的绕向相同，则 内部 → 内部，否则 外部。
+
+**两个圆包围的区域**（按圆周上映为 $\infty$ 的点的个数分类）：
+
+1° 无 ⇒ 弧所围区域 → 弧所围区域；
+
+2° 一个点 ⇒ 圆弧 + 直线；
+
+3° FA ⇒ 两直线（角形区域）。
+
+<details markdown="1">
+<summary><strong>【FA：两圆弧区域的三种情形（3° 补充）】</strong></summary>
+
+分式线性映射把广义圆（直线和圆）映成广义圆，而**某个边界圆（弧）的像是直线 ⟺ 该圆（弧）经过映射的极点**（被映为 $\infty$ 的那个点 $z^*$，映射后跑到无穷远）。设区域由两个圆（弧）围成，按经过极点的边界圆（弧）个数分三种情形：
+
+- **1° 没有边界点映为 $\infty$**：两条圆（弧）都不经过 $z^*$，像仍是两条圆（弧），区域仍是"弧所围区域"（如月牙形区域）。
+- **2° 一个点映为 $\infty$**：一条边界圆（弧）经过 $z^*$、像为直线，另一条仍为圆（弧），区域边界变成"圆弧 + 直线"。
+- **3° 两个点映为 $\infty$（FA）**：两条边界圆（弧）都经过 $z^*$（例如两弧相交而极点取在交点处），像为两条直线，区域变成"两直线围成的角形区域"。常见用法：先用分式线性映射把两圆弧围成的区域"拉直"成角形域，再用幂函数 $w = z^{\lambda}$ 把角形域放大成半平面。
+
+（FA 补充）
+
+</details>
+
+##### 6.3.3 两个重要的分式线性映射
+
+1. 上半平面 → 单位圆内部：
+
+$$w = \mathrm{e}^{\mathrm{i}\theta}\,\frac{z - z_0}{z - \bar{z}_0}$$
+
+### 2026.10.30（七、Laplace 变换开篇）
+
+$f(t)$，$[0, +\infty)$，对 $s = c + \mathrm{i}y$，
+
+$$F(s) = \int_0^{+\infty} f(t)\,\mathrm{e}^{-st}\,\mathrm{d}t$$
+
+在某一区域内收敛，则记为 $f(t)$ 的 **Laplace 变换**：
+
+$$\mathcal{L}[f(t)] = F(s) = \int_0^{+\infty} f(t)\,\mathrm{e}^{-st}\,\mathrm{d}t$$
+

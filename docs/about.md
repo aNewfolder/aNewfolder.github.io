@@ -22,6 +22,11 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-10-30</div>
+<div class="update-log-content">新增课堂笔记：复变函数（留数求积分、保角映射、Laplace 变换）与大学物理（磁介质、电磁感应）；顺带提交阅读摘抄、影音与科研日报等页面的本地修改。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-10-28</div>
 <div class="update-log-content">阅读摘抄大批量更新：新增《病隙碎笔》《皮囊》两个摘抄页，2046旅店、蒋勋说红楼梦、杂项补充百余条；顺带提交课程笔记、音乐、阅读记录、体育（含新页飞盘）等本地修改。</div>
 </div>

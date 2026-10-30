@@ -2051,3 +2051,134 @@ $$R = \frac{mv\sin\theta}{qB}, \qquad \text{螺距 } h = v_{\parallel}T = \frac{
 - **范阿仑辐射带**：地球磁场近似偶极场，两极强、赤道弱，是天然的"磁镜笼"。太阳风带来的高能带电粒子被捕获在赤道上空的环状区域内，绕磁力线螺旋并南北反弹，即为范阿仑（范艾伦）辐射带；部分粒子沿磁力线落入极区大气，激发出极光。（FA 补充）
 
 </details>
+
+### 2026.10.22（磁介质开篇：顺磁质与抗磁质 · 分子磁矩的半经典解释 · 磁化强度与磁化电流）
+
+#### 磁介质开篇
+
+原子核特别重，介质在外电场**极化**；电子的移动、自旋 ⇒ **磁化**。
+
+**分子电流假说**：取向无规则 ⇒ 磁效应抵消；取向相同 ⇒ 显出磁性。
+
+原磁场 $\vec{B}_0$，附加磁场 $\vec{B}'$：
+
+$$\vec{B} = \vec{B}_0 + \vec{B}'$$
+
+同向 ⇒ **顺磁质**（$\mu_r > 1$）；反向 ⇒ **抗磁质**（$\mu_r < 1$）；同向且很强 ⇒ **铁磁质**。
+
+$$\mu_r = \frac{B}{B_0} \qquad \text{介质的相对磁导率}$$
+
+（页边有一处批注被裁切，无法辨认【?】）
+
+- 顺：锰、铬、铂、钙、氧
+- 抗：汞、铜、铋、银、惰性气体
+
+通常的 $\mu_r - 1 \sim 10^{-5}$。
+
+#### 分子磁矩的半经典解释
+
+把电子等效为环形载流线圈。
+
+$$\nu = \frac{1}{T} = \frac{v}{2\pi r}, \qquad I = \nu e \qquad \text{（FA，怎么得到）}$$
+
+引入**电子轨道磁矩**：
+
+$$\mu = IS = \frac{1}{2}evr$$
+
+代入角动量 $L = mvr$，得 $\mu = \dfrac{e}{2m}L$，写成矢量式（单个电子）：
+
+$$\vec{\mu} = -\frac{e}{2m}\vec{L} \qquad (\vec{L} = m\vec{v}\times\vec{r})$$
+
+$\mu$ 量子化，最小值（玻尔磁子）：
+
+$$\mu_B = \frac{eh}{4\pi m} = 9.27\times 10^{-24}\ \mathrm{A\cdot m^2}$$
+
+**电子自旋磁矩**：
+
+$$\vec{\mu}_s = -\frac{e}{m}\vec{S}$$
+
+（$\vec{S}$ 为电子自旋角动量。）
+
+**分子的固有磁矩 = 轨道磁矩 + 自旋磁矩 = 分子磁矩 $\vec{P}_m$**（等效圆电流）。
+
+轨道磁矩在外磁场中受力矩：
+
+$$\vec{M} = \vec{\mu}\times\vec{B}_0 = -\frac{e}{2m}\,\vec{L}\times\vec{B}_0 \qquad \text{有 } \vec{M}\,\mathrm{d}t = \mathrm{d}\vec{L}$$
+
+横向的力矩改变角动量的方向，即旋进运动（FA，做解释）。
+
+进动方向（沿 $\vec{\omega}_p$ 方向）即外磁场方向！（FA，方向判断）
+
+进动自然产生附加磁矩？（FA）
+
+**分子磁矩 $\vec{P}_m$ 是顺磁质磁化的主要原因；附加磁矩 $\Delta\vec{P}_m$ 是抗磁质磁化的唯一原因。**
+
+每个分子电流都有抗磁性。
+
+抗磁质必要条件：核外电子必须成对。抗磁质磁化率都很小且与 $T$ 无关。
+
+<details markdown="1">
+<summary><strong>【FA：$I=\nu e$ · 旋进 · 进动方向 · 附加磁矩】</strong></summary>
+
+- **$I = \nu e$ 怎么得到（FA）**：电子带电荷 $-e$，每绕核转一圈就有一份电荷 $e$ "通过"轨道截面（等效圆电流），单位时间转 $\nu$ 圈，即单位时间通过电荷 $\nu e$，故 $I = \nu e$（电流 = 单位时间通过截面的电量）。
+- **旋进运动（FA，做解释）**：由 $\vec{\mu} = -\dfrac{e}{2m}\vec{L}$，力矩 $\vec{M} = \vec{\mu}\times\vec{B}_0 = \dfrac{e}{2m}\vec{B}_0\times\vec{L}$ 恒垂直于 $\vec{L}$。角动量定理 $\vec{M}\,\mathrm{d}t = \mathrm{d}\vec{L}$ 说明 $\mathrm{d}\vec{L}$ 沿力矩方向、与 $\vec{L}$ 垂直——$\vec{L}$ 的大小不变、方向绕 $\vec{B}_0$ 匀速转动，即**拉莫尔旋进（进动）**，与倾斜自转的陀螺在重力矩下的进动同理。
+- **进动方向判断（FA，方向判断）**：设进动角速度为 $\vec{\omega}_p$，则 $\vec{M} = \dfrac{\mathrm{d}\vec{L}}{\mathrm{d}t} = \vec{\omega}_p\times\vec{L}$；与 $\vec{M} = \dfrac{e}{2m}\vec{B}_0\times\vec{L}$ 比较得 $\vec{\omega}_p = \dfrac{e}{2m}\vec{B}_0$——进动角速度方向与外磁场 $\vec{B}_0$ 同向，大小 $\omega_p = \dfrac{eB_0}{2m}$（拉莫尔频率）。
+- **进动自然产生附加磁矩（FA）**：进动相当于给电子叠加了一个绕 $\vec{B}_0$ 的转动分量，对应的附加角动量 $\Delta\vec{L}$ 沿 $\vec{B}_0$ 方向；而电子磁矩反平行于角动量（$\vec{\mu} = -\dfrac{e}{2m}\vec{L}$），所以附加磁矩 $\Delta\vec{P}_m = -\dfrac{e}{2m}\Delta\vec{L}$ 总与 $\vec{B}_0$ **反向**——这就是抗磁性的来源。顺磁质中它远小于固有磁矩 $\vec{P}_m$，但每个分子电流都有这份贡献（"每个分子电流都有抗磁性"）。（FA 补充）
+
+</details>
+
+#### 磁化强度与磁化电流
+
+$\vec{M}$：某点处单位体积分子总磁矩的矢量和。
+
+$$j_M \equiv \frac{\mathrm{d}I_M}{\mathrm{d}l}$$
+
+柱体总磁矩 $|\sum\vec{P}_m| = I_M\cdot S = j_M\,\mathrm{d}V$。（线圈法）
+
+### 2026.10.29（补：法拉第电磁感应定律 · 14.2 动生电动势 · 14.3 感生电动势）
+
+#### 补上节课：法拉第电磁感应定律
+
+$$\varepsilon_i = -k\frac{\mathrm{d}\Phi}{\mathrm{d}t} = -\frac{\mathrm{d}\Phi}{\mathrm{d}t}\ \text{（国际单位制）} = -\frac{\mathrm{d}}{\mathrm{d}t}\int_S \vec{B}\cdot\mathrm{d}\vec{S}$$
+
+回路正方向与回路曲面正法线成右螺旋，$\varepsilon_i$ 与 $L$ 同向为正；一般用原 $\vec{B}$ 确定回路正方向（右手螺旋）。
+
+**全磁通**：
+
+$$\Psi = \sum_{i=1}^{N}\Phi_i \qquad \text{若 } \Phi_i \text{ 均相等，}\ \Psi = N\Phi \qquad \text{称磁通链数}$$
+
+$$\Rightarrow\ \varepsilon_i = -\frac{\mathrm{d}\Psi}{\mathrm{d}t} = -N\frac{\mathrm{d}\Phi}{\mathrm{d}t}, \qquad I_i = \frac{\varepsilon_i}{R} = -\frac{N}{R}\frac{\mathrm{d}\Phi}{\mathrm{d}t}, \qquad q = \int_{t_1}^{t_2} I_i\,\mathrm{d}t = \frac{N}{R}(\Phi_1 - \Phi_2)$$
+
+**楞次定律**：感应电流的方向总是使其激发的磁场阻碍原磁通量的变化。
+
+#### 开新课 14.2 动生电动势
+
+洛伦兹力 $\vec{F}_m = -e\,\vec{v}\times\vec{B}$ 形成电源，非静电力为洛伦兹力。
+
+引入 $\vec{E}_k = \dfrac{\vec{F}_m}{-e} = \vec{v}\times\vec{B}$，则
+
+$$\varepsilon_i = \int_{-}^{+}\vec{E}_k\cdot\mathrm{d}\vec{l} = \int_a^b (\vec{v}\times\vec{B})\cdot\mathrm{d}\vec{l} = BvL$$
+
+**计算**：1° $\varepsilon_i = \displaystyle\int_a^b (\vec{v}\times\vec{B})\cdot\mathrm{d}\vec{l}$；2° $\varepsilon_i = -\dfrac{\mathrm{d}\Phi}{\mathrm{d}t}$。
+
+**e.g.** 图：一段直导线沿自身方向平动。这样不切割磁感线，$\vec{v}\times\vec{B}$ 与 $\mathrm{d}\vec{l}$ 垂直（因导线无面积），故 $\varepsilon_i = 0$。（解答由AI补全）
+
+注意电动势有方向：负极 → 正极。
+
+#### 14.3 感生电动势
+
+**涡旋电场**：变化的磁场激发的电场。
+
+**感生电动势**：
+
+$$\varepsilon_i = \oint_L \vec{E}_{\text{旋}}\cdot\mathrm{d}\vec{l} \ne 0$$
+
+由法拉第定律：
+
+$$\varepsilon_i = -\frac{\mathrm{d}\Phi_B}{\mathrm{d}t} = -\frac{\mathrm{d}}{\mathrm{d}t}\int_S \vec{B}\cdot\mathrm{d}\vec{S} \;\xrightarrow{\ \text{回路不变}\ }\; -\int_S \frac{\partial\vec{B}}{\partial t}\cdot\mathrm{d}\vec{S}$$
+
+**性质**：涡旋电场与空间是否有导体无关；若有导体，会产生感应电流。
+
+$\vec{E}_{\text{旋}}$ 与 $\dfrac{\partial\vec{B}}{\partial t}$ 成**左手螺旋**关系。（$\dfrac{\partial\vec{B}}{\partial t}$：$B$ 向上变小 ⇒ 向下。）
+
+**应用**：电子感应加速器（应用涡旋电场），不同于回旋加速器。加速和维持回旋的磁场必须匹配——看课本 P219 推导，$B_R = \dfrac{1}{2}\bar{B}$（【见课本P219】）。也可以用 $\varepsilon_i = -\dfrac{\mathrm{d}\Phi}{\mathrm{d}t}$ 来处理。
