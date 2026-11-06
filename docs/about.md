@@ -22,6 +22,11 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-11-06</div>
+<div class="update-log-content">Skills DIY 页新增智云课堂讲义 skill（素材抓取+教材级讲义整理）；顺带提交英语演讲、现代文学课堂笔记与琴房、乒乓球记录的本地修改。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-10-30</div>
 <div class="update-log-content">Skills DIY 页新增 MinerU 转 Markdown、aTrust 校网隧道、文献批量下载三个 skill；琴房预约更新为多人共享版（候补捡漏、签到监控、飞书通知）。</div>
 </div>

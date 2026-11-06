@@ -137,3 +137,5 @@ Second, he is so stupid. How could it be that I copied his homework? It must be 
 Besides, I checked the answers of the people around me. The answers of several people were quite similar. Why did you only say that I copied?
 
 In conclusion, it wasn't me who copied it. Because this homework was written by me myself.
+
+## Week 8
