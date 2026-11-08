@@ -2182,3 +2182,114 @@ $$\varepsilon_i = -\frac{\mathrm{d}\Phi_B}{\mathrm{d}t} = -\frac{\mathrm{d}}{\ma
 $\vec{E}_{\text{旋}}$ 与 $\dfrac{\partial\vec{B}}{\partial t}$ 成**左手螺旋**关系。（$\dfrac{\partial\vec{B}}{\partial t}$：$B$ 向上变小 ⇒ 向下。）
 
 **应用**：电子感应加速器（应用涡旋电场），不同于回旋加速器。加速和维持回旋的磁场必须匹配——看课本 P219 推导，$B_R = \dfrac{1}{2}\bar{B}$（【见课本P219】）。也可以用 $\varepsilon_i = -\dfrac{\mathrm{d}\Phi}{\mathrm{d}t}$ 来处理。
+
+### 2026.11.3（14.4 自感与互感 · 14.5 磁场的能量）
+
+#### 14.4 自感与互感
+
+**1. 自感**：回路中电流变化，在回路自身产生感应电动势。
+
+$$\Psi = LI$$
+
+- $L$：**自感系数**，取决于回路的形状与 $\mu$，与 $I$、$B$ 无关，类似电容 $C$；单位：亨利（H）。
+
+**自感电动势**：
+
+$$\varepsilon_L = -\frac{\mathrm{d}\Psi}{\mathrm{d}t} = -L\frac{\mathrm{d}I}{\mathrm{d}t}$$
+
+（类比 $F = m\dfrac{\mathrm{d}v}{\mathrm{d}t}$。）笔记的类比表：质点——$F$、$v$；线圈——$U$、$I$【?】，即 $U$（电压，此处即 $\varepsilon_L$）对应 $F$、$I$ 对应 $v$，$L$ 对应惯性质量 $m$。
+
+**R-L 暂态电路**：
+
+$$\tau = \frac{L}{R}\ \text{（时间常数 / 弛豫时间）}, \qquad \tau_{\text{电容}} = RC$$
+
+$$\text{接通：}\ I = I_0\left(1 - e^{-\frac{R}{L}t}\right) \qquad \text{断开：}\ I = I_0\,e^{-\frac{R}{L}t}$$
+
+（推导由AI补全：接通时 $L\dfrac{\mathrm{d}I}{\mathrm{d}t} + RI = \varepsilon$，稳态分量 $I_0 = \dfrac{\varepsilon}{R}$，通解 $I = I_0 + Ce^{-\frac{R}{L}t}$，代入初始条件 $I(0) = 0$ 得 $C = -I_0$；断开时方程右端为 $0$，$I = I_0e^{-\frac{R}{L}t}$，此处 $I_0$ 为断开瞬间的电流。）
+
+**2. 互感**：回路电流变化引起邻近回路的感应电动势。
+
+$$\Psi = MI$$
+
+回路 1 对 2：$\Psi_{21}$（$= M_{21}I_1$，电流 1 的磁场穿过回路 2 的磁链）；$M_{12} = M_{21} = M$。
+
+#### 14.5 磁场的能量
+
+**1. 线圈的自感磁能**
+
+暂考虑 RL 电路（接通过程）：
+
+$$\varepsilon - L\frac{\mathrm{d}I}{\mathrm{d}t} = IR \;\Rightarrow\; \varepsilon I\,\mathrm{d}t = LI\,\mathrm{d}I + I^2R\,\mathrm{d}t$$
+
+（AI 补充：左边是电源做的元功；右边第一项是反抗自感电动势的元功、储入磁场，第二项是焦耳热。）令 $\mathrm{d}A = LI\,\mathrm{d}I$，积分得
+
+$$A = \int_0^I LI\,\mathrm{d}I = \frac{1}{2}LI^2 = W_m$$
+
+$W_m$：**自感磁能**（充满电流后线圈储存的能量）。
+
+**2. 磁场能量**
+
+$$W_m = \frac{1}{2}BHV$$
+
+得**磁场能量密度**（单位体积）：
+
+$$w_m = \frac{1}{2}BH = \frac{1}{2}\vec{B}\cdot\vec{H} = \frac{B^2}{2\mu}$$
+
+**补充**：对于三维导体，内芯磁通不易直接计算——可用平均法 / 用能量法算。
+
+可将 $\Psi = LI$ 推广为（**平均磁通链法**）：
+
+$$\Psi = \frac{1}{I}\iint i\,\mathrm{d}\Phi$$
+
+$\mathrm{d}\Phi$ 为当电流 $i$ 的元磁力管【?】磁通。
+
+<details markdown="1">
+<summary><strong>【FA：平均磁通链法】</strong></summary>
+
+粗导线不能当成一根细线来数磁链：穿过导体内部的磁通，各自只"链住"截面上一部分电流，直接套 $\Psi = N\Phi$ 行不通。于是把磁场想象成一束束**元磁力管**（即元磁通管：由一束磁感线围成的细管，管内磁通 $\mathrm{d}\Phi$ 处处相等——这就是笔记中带问号的那个词），每根管乘以它实际链住的电流 $i$，再除以总电流 $I$ 作加权平均：
+
+$$\Psi = \frac{1}{I}\iint i\,\mathrm{d}\Phi$$
+
+"平均磁通链"就是把全部磁通按"链住电流的比例"折算出的等效磁链，算出后除以 $I$ 即得自感 $L$。笔记同栏说的另一条路是**能量法**：先由能量密度积分出总磁能 $W_m = \displaystyle\int_V \frac{B^2}{2\mu}\,\mathrm{d}V$，再用 $W_m = \dfrac{1}{2}LI^2$ 反解 $L$，完全绕开磁链计数。
+
+</details>
+
+**e.g. 例 14.11**：长直圆柱形芯线，半径 $R$、通电流 $I$（沿截面均匀分布），求芯线内 $r$ 处的磁场与内自感。
+
+电流密度 $j = \dfrac{I}{\pi R^2}$，芯线内 $r$ 处：
+
+$$B = \frac{\mu_0Ir}{2\pi R^2}$$
+
+由平均磁通链法：
+
+$$\Psi = \frac{1}{I}\iint i\,\mathrm{d}\Phi = \frac{\mu_0\ell I}{8\pi} \;\Rightarrow\; L_{\text{内}} = \frac{\mu_0\ell}{8\pi}\ \left(\text{每单位长度为 } \frac{\mu_0}{8\pi}\right)$$
+
+（积分步骤由AI补全：在半径 $r$ 处取厚 $\mathrm{d}r$、长 $\ell$ 的薄圆筒层，层内 $\mathrm{d}\Phi = B\ell\,\mathrm{d}r$；这根元磁力管的磁通只链住 $r$ 以内的电流 $i = j\pi r^2 = I\dfrac{r^2}{R^2}$，于是
+
+$$\Psi = \frac{1}{I}\int_0^R I\frac{r^2}{R^2}\cdot\frac{\mu_0Ir}{2\pi R^2}\,\ell\,\mathrm{d}r = \frac{\mu_0I\ell}{2\pi R^4}\int_0^R r^3\,\mathrm{d}r = \frac{\mu_0I\ell}{8\pi}$$
+
+）
+
+**e.g. 证：$M^2 \le L_1L_2$**
+
+图：两个相邻的耦合回路，分别标注电流 $I_1$、$I_2$。
+
+- 线圈 1 建立电流 $I_1$（此时线圈 2 尚无电流）：$W_1 = \dfrac{1}{2}L_1I_1^2$。
+- 线圈 2 电流从 0 增加：在线圈 1 中激起互感电动势 $\varepsilon_{12} = -M_{12}\dfrac{\mathrm{d}I_2}{\mathrm{d}t}$。
+- 为维持 $I_1$ 不变，克服互感电动势需做功（笔记原式取克服量的大小）：
+
+$$\int_0^t \varepsilon_{12}I_1\,\mathrm{d}t = \int_0^t M_{12}\frac{\mathrm{d}I_2}{\mathrm{d}t}I_1\,\mathrm{d}t = M_{12}I_1I_2$$
+
+∴ 总磁能：
+
+$$W_m = \frac{1}{2}L_1I_1^2 + \frac{1}{2}L_2I_2^2 + M_{12}I_1I_2$$
+
+配方：
+
+$$W_m = \frac{1}{2}L_1\left(I_1 + \frac{M_{12}}{L_1}I_2\right)^2 + \frac{1}{2}\left(L_2 - \frac{M_{12}^2}{L_1}\right)I_2^2$$
+
+$W_m$ 必须正定（磁场能量不能为负，而 $I_1$、$I_2$ 可任取）。第一项是完全平方、恒非负，且取 $I_1 = -\dfrac{M_{12}}{L_1}I_2$ 时为零，于是必须 $\dfrac{1}{2}\left(L_2 - \dfrac{M_{12}^2}{L_1}\right)I_2^2 \ge 0$ 对一切 $I_2$ 成立（末步论证由AI补全），即
+
+$$M_{12}^2 \le L_1L_2 \qquad\left(M \le \sqrt{L_1L_2}\right)$$
+
+证毕。
