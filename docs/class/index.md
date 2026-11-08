@@ -60,3 +60,4 @@ hide:
     - [英语演讲](sophomore-1/english-speech.md) — 陈艳华
     - [游泳（中级）](sophomore-1/swimming.md) — 赵峰
     - [中国现代文学经典选读](sophomore-1/modern-chinese-literature-classics.md)
+    - [人工智能前沿](sophomore-1/artificial-intelligence-frontiers.md)

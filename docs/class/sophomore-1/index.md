@@ -24,6 +24,7 @@ hide:
 - [英语演讲](english-speech.md) — 陈艳华
 - [游泳（中级）](swimming.md) — 赵峰
 - [中国现代文学经典选读](modern-chinese-literature-classics.md)
+- [人工智能前沿](artificial-intelligence-frontiers.md)
 
 秋学期结束简单总结一下。
 

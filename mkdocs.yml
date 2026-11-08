@@ -109,6 +109,7 @@ nav:
       - 英语演讲: class/sophomore-1/english-speech.md
       - 游泳（中级）: class/sophomore-1/swimming.md
       - 中国现代文学经典选读: class/sophomore-1/modern-chinese-literature-classics.md
+      - 人工智能前沿: class/sophomore-1/artificial-intelligence-frontiers.md
   - 拓展学习:
     - tech/index.md
     - 制作一个MkDocs个人网站: tech/mkdocs-site-guide.md

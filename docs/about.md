@@ -23,6 +23,11 @@
 
 <div class="update-log-card" markdown>
 <div class="update-log-date">2026-11-08</div>
+<div class="update-log-content">大二上新增课程「人工智能前沿」（冬学期 · 2.0 学分）占位页，导航与课程列表同步更新。</div>
+</div>
+
+<div class="update-log-card" markdown>
+<div class="update-log-date">2026-11-08</div>
 <div class="update-log-content">大学物理Ⅱ新增 11.3 课堂笔记：自感与互感、磁场的能量（含平均磁通链法补充与两道例题）；顺带提交学期页期中小结、钢琴即兴第 7 课要点与气排球、乒乓球 11 月记录。</div>
 </div>
 
