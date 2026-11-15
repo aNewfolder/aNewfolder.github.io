@@ -22,6 +22,11 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-11-15</div>
+<div class="update-log-content">复变期末、大物期中（ch9~ch14）、概统期中三章考前复习清单分别录入对应课程文档；顺带提交社发史 Week 1 笔记与钢琴练习记录更新。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-11-08</div>
 <div class="update-log-content">大二上新增课程「人工智能前沿」（冬学期 · 2.0 学分）占位页，导航与课程列表同步更新。</div>
 </div>

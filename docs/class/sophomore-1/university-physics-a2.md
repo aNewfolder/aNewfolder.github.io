@@ -2293,3 +2293,124 @@ $W_m$ 必须正定（磁场能量不能为负，而 $I_1$、$I_2$ 可任取）�
 $$M_{12}^2 \le L_1L_2 \qquad\left(M \le \sqrt{L_1L_2}\right)$$
 
 证毕。
+
+### 2026.11.15（期中复习清单：小测复习 ch9~ch13 · ch14 电磁感应）
+
+> 考前手写重点整理（扫描于 2026-11-15）。按原清单逐章收录，公式以清单原样为准。
+
+#### ch9 静电场
+
+- **电偶极矩**：$\vec{p} = q\vec{l}$（$\vec l$ 由 $-$ 指向 $+$）。
+- **无限大均匀带电平面场强**：$E = \dfrac{\sigma}{2\varepsilon_0}$（1° 用圆盘积分推，2° 圆柱高斯面）。
+- **无限长直线场强**（同圆柱面思路）：$E_y = \dfrac{\lambda}{2\pi\varepsilon_0 a} = \dfrac{\lambda(\cos\theta_1 - \cos\theta_2)}{4\pi\varepsilon_0 a}$（$\theta_1 \ne \theta_2$ 时 $E_x \ne 0$，只有对称段才抵消）。
+- **高斯定理**：$\Phi_e = \oint_S \vec{E}\cdot\mathrm{d}\vec{S} = \dfrac{1}{\varepsilon_0}\sum q_i$。
+- **均匀带电球面/球体场强**：$r > R$ 时 $E = \dfrac{Q}{4\pi\varepsilon_0 r^2}$；球体内部 $r < R$ 时 $E = \dfrac{Qr}{4\pi\varepsilon_0 R^3}$（球面内部为 $0$）。
+- **无限长均匀带电圆柱面场强**：$E_{外} = \dfrac{\lambda}{2\pi\varepsilon_0 r}$，$E_{内} = 0$。
+- **两无限平行平面场强**：各自单独算再叠加——两板之间 $E = \dfrac{\sigma}{\varepsilon_0}$（电容器），两板外侧叠加为 $0$。
+- **三大高斯定理与环路定理**：静电场 $\oint\vec{E}\cdot\mathrm{d}\vec{S} = \dfrac{1}{\varepsilon_0}\sum q_i$；电位移 $\oint\vec{D}\cdot\mathrm{d}\vec{S} = \sum q_0$；磁场 $\oint\vec{B}\cdot\mathrm{d}\vec{S} = 0$。静电场环路 $\oint\vec{E}\cdot\mathrm{d}\vec{l} = 0$；磁场安培环路 $\oint\vec{B}\cdot\mathrm{d}\vec{l} = \mu_0\sum I_{内}$；磁介质中 $\oint\vec{H}\cdot\mathrm{d}\vec{l} = \sum I_0$。
+- **电场力做功**：$A_{ab} = \displaystyle\int_a^b q_0\vec{E}\cdot\mathrm{d}\vec{l} = W_a - W_b = q_0(U_a - U_b)$。
+- **电势能**：$W_P = \displaystyle\int_P^{+\infty} q_0\vec{E}\cdot\mathrm{d}\vec{l}$。
+- **已知 $U_{P_0}$ 求 $U_P$**：$U_P = \displaystyle\int_P^{P_0}\vec{E}\cdot\mathrm{d}\vec{l} + U_{P_0}$。
+- **均匀带电球面电势**：$r > R$ 时 $U_P = \dfrac{q}{4\pi\varepsilon_0 r}$；$r < R$ 时 $U_P = \dfrac{q}{4\pi\varepsilon_0 R}$。
+- **由电势求场强**：$\vec{E} = -\left(\dfrac{\partial U}{\partial x}\vec{i} + \dfrac{\partial U}{\partial y}\vec{j} + \dfrac{\partial U}{\partial z}\vec{k}\right) = -\nabla U$。
+- **球坐标面元**：$\mathrm{d}S = R^2\sin\varphi\,\mathrm{d}\varphi\,\mathrm{d}\theta$（$\varphi$ 为与 $z$ 轴夹角，$\theta$ 为绕 $z$ 轴角度）。
+
+#### ch10 导体 · 电容 · 电介质
+
+- **导体表面电荷面密度与场强关系**：$E = \dfrac{\sigma}{\varepsilon_0}$。
+- **孤立导体球电容**：$C = 4\pi\varepsilon_0 R$（由 $C = \dfrac QU$、$U = \dfrac{Q}{4\pi\varepsilon_0 R}$ 推导）。
+- **平行板电容器**：$C = \varepsilon_0\dfrac{S}{d}$（推导路线 $E \to U \to C$）。
+- **圆柱形电容器（无限长，圆柱面）**：$C = \dfrac{2\pi\varepsilon_0 L}{\ln\frac{R_B}{R_A}}$（推导）。
+- **球形电容器（球壳）**：$C = \dfrac{4\pi\varepsilon_0}{\frac{1}{R_A} - \frac{1}{R_B}}$，$R_B \gg R_A$ 时退化为孤立导体球。
+- **电介质中的电势差**：$U = \dfrac{U_0}{\varepsilon_r}$（相应可推得 $C$、$E$ 的变化——电场减弱）。
+- **极化强度**：$\vec{P} = \dfrac{\sum\vec{p}_i}{\Delta V}$（单位体积）。
+- **P、E 关系**：$\vec{P} = \varepsilon_0\chi_e\vec{E}$（条件：外电场不太强），$\chi_e = \varepsilon_r - 1$。
+- **电介质表面极化电荷面密度**：$\sigma' = \vec{P}\cdot\hat{e}_n = \sigma_0\left(1 - \dfrac{1}{\varepsilon_r}\right)$。
+- **电位移矢量（四连等）**：$\vec{D} = \varepsilon_0\vec{E} + \vec{P} = (1 + \chi_e)\varepsilon_0\vec{E} = \varepsilon_r\varepsilon_0\vec{E} = \varepsilon\vec{E}$。
+- **介质中的高斯定理**：$\oint\vec{D}\cdot\mathrm{d}\vec{S} = \sum q_0$（$S$ 内自由电荷）。
+- **边界条件**：分界面上 $D$ 法向连续、$E$ 切向连续，即 $\varepsilon_{r1}E_{1n} = \varepsilon_{r2}E_{2n}$，$\dfrac{D_{1t}}{\varepsilon_{r1}} = \dfrac{D_{2t}}{\varepsilon_{r2}}$。
+- **电容器的能量**：$W = \dfrac{Q^2}{2C} = \dfrac{1}{2}QU_{AB} = \dfrac{1}{2}CU_{AB}^2$（可推导）。
+- **平行板电容器的能量**：$W = \dfrac{1}{2}CU_{AB}^2 = \dfrac{1}{2}\varepsilon E^2 Sd = \dfrac{1}{2}\varepsilon E^2 V$。
+- **电场能量密度（电能密度）**：$w_e = \dfrac{W}{V} = \dfrac{1}{2}\varepsilon E^2 = \dfrac{1}{2}DE$（$\dfrac{1}{2}DE$ 下划线强调）。
+
+**量纲对照记忆**（笔记"PD 同单位 / MH 同单位"）：
+
+- $P$、$D$ 同单位：$\vec{D} = \vec{P} + \varepsilon_0\vec{E}$；配套 $\oint\vec{E}\cdot\mathrm{d}\vec{S} = \dfrac{\sum q}{\varepsilon_0}$，$\oint\vec{E}\cdot\mathrm{d}\vec{l} = 0$，$\oint\vec{P}\cdot\mathrm{d}\vec{S} = -q'$，$\sigma' = \vec{P}\cdot\hat{e}_n$。
+- $M$、$H$ 同单位：$\vec{B} = \mu\vec{H} = \mu_0\vec{M} + \mu_0\vec{H}$；配套 $\oint\vec{B}\cdot\mathrm{d}\vec{S} = 0$，$\oint\vec{B}\cdot\mathrm{d}\vec{l} = \mu_0\sum I$，$\oint\vec{M}\cdot\mathrm{d}\vec{l} = \sum I_{磁}$（磁化电流），$j_m = |\vec{M}|$。
+
+#### ch11 稳恒电流
+
+- **电流连续性方程**：$\oint_S\vec{j}\cdot\mathrm{d}\vec{S} = -\dfrac{\mathrm{d}q}{\mathrm{d}t}$（圈注强调）。
+- **电流稳恒的条件**：$\oint\vec{j}\cdot\mathrm{d}\vec{S} = 0$。
+- **欧姆定律的微分形式**：$\vec{j} = \gamma\vec{E}$（$\gamma$ 为电导率，S/m）。
+- **焦耳定律的微分形式**：$w = \dfrac{\mathrm{d}P}{\mathrm{d}V} = \gamma E^2$（$w$：热功率密度）。
+- **电容器充电**（$t = 0$，$q = 0$，求 $q$、$I$）：$q = q_0\left(1 - \mathrm{e}^{-\frac{t}{RC}}\right)$，$I = I_0\mathrm{e}^{-\frac{t}{RC}}$。
+- **时间常数**：$\tau = RC$。
+- **电容器放电**（$t = 0$，$q = q_0$，求 $q$、$I$）：$q = q_0\mathrm{e}^{-\frac{t}{RC}}$，$I = I_0\mathrm{e}^{-\frac{t}{RC}}$。
+
+#### ch12 稳恒磁场
+
+- **洛伦兹力**：$\vec{F} = q\vec{v}\times\vec{B}$（含电场时 $+q\vec{E}$）。
+- **毕奥–萨伐尔定律**：$\mathrm{d}\vec{B} = \dfrac{\mu_0}{4\pi}\dfrac{I\,\mathrm{d}\vec{l}\times\hat{r}}{r^3}$（旁注为 $\mu_0$、$k$ 数值速记【?】难以辨认；标准值 $\mu_0 = 4\pi\times10^{-7}\,\mathrm{T\cdot m/A}$，$k = \dfrac{1}{4\pi\varepsilon_0} = 9\times10^9\,\mathrm{N\cdot m^2/C^2}$）。
+- **长直导线的磁场**：$B = \dfrac{\mu_0 I}{2\pi a} = \dfrac{\mu_0 I(\cos\theta_1 - \cos\theta_2)}{4\pi a}$。
+- **圆线圈的磁场**（轴线上）：$B = \dfrac{\mu_0 IR^2}{2(R^2 + x^2)^{3/2}}$；圆心处 $B(0) = \dfrac{\mu_0 I}{2R}$（红注：无 $\pi$）；圆弧在圆心处 $B = \dfrac{\mu_0 I\theta}{4\pi R}$（$\theta$ 为圆心角，$\theta = 2\pi$ 代回即整圆式）（圆弧一角标注潦草【?】，按整圆关系整理）。
+- **磁矩**：$\vec{p}_m = NIS\,\hat{e}_n$。
+- **直螺线管的磁场**（轴线）：$B = \dfrac{\mu_0 nI}{2}(\cos\beta_2 - \cos\beta_1)$（用圆电流叠加推）。
+- **无限长、有限宽平面电流的磁场**（轴上，宽 $a$）：$B = \dfrac{\mu_0 I}{\pi a}\arctan\dfrac{a}{2y} \approx \dfrac{\mu_0 I}{\pi a}\cdot\dfrac{a}{2y}$（$y$ 很大时）。
+- **运动电荷的磁场**：$\vec{B} = \dfrac{\mu_0}{4\pi}\dfrac{q\vec{v}\times\hat{r}}{r^3}$（红字对照：运动电荷与电流元对应，$q\vec{v}\times\vec{B}$ 与 $I\,\mathrm{d}\vec{l}\times\vec{B}$ 同构；红字部分字迹潦草【?】，按此意整理）。
+- **磁场高斯定理**：$\Phi_m = \oint_S\vec{B}\cdot\mathrm{d}\vec{S} = 0$。
+- **安培环路定理**：$\oint\vec{B}\cdot\mathrm{d}\vec{l} = \mu_0\sum I_{内}$。
+- **无限长载流圆柱体的磁场**：$r > R$ 时 $B = \dfrac{\mu_0 I}{2\pi r}$；$r < R$ 时 $B = \dfrac{\mu_0 Ir}{2\pi R^2}$。
+- **螺绕环的磁场**：环内 $B = \dfrac{\mu_0 NI}{2\pi r}$，环外 $B = 0$。
+- **长直螺线管**（管内任意位置）：$B = \mu_0 nI$。
+- **安培公式**：$\mathrm{d}\vec{F} = I\,\mathrm{d}\vec{l}\times\vec{B}$。
+- **平行长导线间作用力**：$\dfrac{\mathrm{d}F}{\mathrm{d}l} = \dfrac{\mu_0 I_1I_2}{2\pi d}$。
+- **载流导线/线圈在磁场中运动做功**：$A = \displaystyle\int_{\Phi_1}^{\Phi_2}I\,\mathrm{d}\Phi = I\Delta\Phi$。
+- **载流线圈的磁矩和力矩**：$\vec{M} = \vec{p}_m\times\vec{B}$（$\vec{p}_m = NIS$）。
+- **霍耳电压**：$U_H = \dfrac{IB}{npd}$（笔记原样；分母"npd"疑为 $nqd$——$n$ 载流子浓度、$q$ 载流子电荷【?】，$B$ 与厚度 $d$ 方向平行）。
+- **无限大平面的磁场**：$B = \dfrac{\mu_0}{2}j$。
+- **霍尔载流子方向**：负载流子：$\vec{I}\times\vec{B}$ 与 $\vec{E}$ 同向；正载流子：$\vec{I}\times\vec{B}$ 与 $\vec{E}$ 反向。
+- **对照**：电偶极矩 $\vec{p} = q\vec{l}$（直线模型）；磁矩 $\vec{p}_m = IS\,\hat{e}_n$（线圈模型）。
+
+#### ch13 磁介质
+
+- **电子轨道磁矩**：$\mu = IS = \dfrac{1}{2}e\nu r$，$\vec{\mu} = -\dfrac{e}{2m}\vec{L}$。
+- **电子自旋磁矩**：$\vec{\mu}_s = -\dfrac{e}{m}\vec{S}$（$\vec{S}$ 为自旋角动量）。
+- **磁化强度**：$\vec{M} = \dfrac{\sum\vec{p}_m}{\Delta V}$（$\vec{p}_m$ 为分子磁矩 $\vec{\mu} + \vec{\mu}_s$，单位 A/m）。
+- **与磁化电流的关系**：$|\vec{M}| = j_m$（$j_m$：磁化电流线密度，A/m；注意与电流密度 $j$（A/m²）区分——即每单位长度上绕有 $j_m$ 安培的电流）。
+- $\oint_L\vec{M}\cdot\mathrm{d}\vec{l} = \sum I_{磁化}$（由此可求磁化电流强度）。
+- **磁场强度**：$\vec{H} = \dfrac{\vec{B}}{\mu_0} - \vec{M}$（A/m）。
+- **介质中安培环路定理**：$\oint\vec{H}\cdot\mathrm{d}\vec{l} = \sum I_0$。
+- **磁介质磁场高斯定理**：$\oint_S\vec{B}\cdot\mathrm{d}\vec{S} = \oint_S(\vec{B}_0 + \vec{B}')\cdot\mathrm{d}\vec{S} = 0$。
+- **B、H 连等**：$\vec{B} = \mu\vec{H} = \mu_0\mu_r\vec{H} = \mu_0(\chi_m + 1)\vec{H} = \mu_0\vec{H} + \mu_0\vec{M}$；$\vec{M} = \chi_m\vec{H}$（$\chi_m$：磁化率）。
+- **$\chi_m$ 与温度**：顺磁质 $\chi_m > 0$，$T\uparrow$ 则 $\chi_m\downarrow$（量值小、近似恒定）；抗磁质 $\chi_m < 0$，与 $T$ 无关；铁磁质 $\chi_m$ 大且非恒量，与磁化历史/温度相关，不适用 $\vec{B} = \mu\vec{H}$。
+- **两个 M 的区分**（页末总结）：力矩 $\vec{M} = \vec{p}_m\times\vec{B}$；磁化强度 $\vec{M} = \dfrac{\sum\vec{p}_m}{\Delta V}$（A/m，$|\vec{M}| = j_m$）。
+
+#### ch14 电磁感应
+
+- **法拉第电磁感应定律**：$\varepsilon_i = -N\dfrac{\mathrm{d}\Phi}{\mathrm{d}t}$；回路正方向：四指沿回路绕行方向弯曲，大拇指指向磁感线正方向；$\Phi = \vec{B}\cdot\vec{S}$，$\varepsilon_i > 0$ 时电动势方向与回路正方向一致。
+- **磁通链数**：$\Psi = N\Phi$。
+- **感应电流与电量**：$I = \dfrac{\varepsilon_i}{R}$，$q = \displaystyle\int_{t_1}^{t_2}I\,\mathrm{d}t = \dfrac{N}{R}(\Phi_1 - \Phi_2)$。
+- **右手定则**：大拇指指运动方向，四指指 $I$/$\varepsilon$ 方向。
+- **动生电动势**：$\varepsilon_i = \displaystyle\int_a^b(\vec{v}\times\vec{B})\cdot\mathrm{d}\vec{l}$（$\varepsilon_i > 0 \Rightarrow$ 从 $a$ 到 $b$）；另一路径：$\varepsilon_i = -N\dfrac{\mathrm{d}\Phi}{\mathrm{d}t}$，不便直接积分时补辅助线构成回路（红注：径向情形）。
+- **感生电动势**：$\varepsilon_i = \oint_L\vec{E}_i\cdot\mathrm{d}\vec{l} = -\displaystyle\int_S\dfrac{\partial\vec{B}}{\partial t}\cdot\mathrm{d}\vec{S}$；$\varepsilon_i = -N\dfrac{\mathrm{d}\Phi}{\mathrm{d}t}$。
+- **自感 $L$**（无介质）：$\Psi = LI$，$\varepsilon_L = -\dfrac{\mathrm{d}\Psi}{\mathrm{d}t} = -L\dfrac{\mathrm{d}I}{\mathrm{d}t}$（单位 H）$\Rightarrow$ 加介质（$\mu$ 增大）则 $L$ 增大。
+- **RL 电路**：接通 $I = I_0\left(1 - \mathrm{e}^{-\frac{R}{L}t}\right)$，断开/短接 $I = I_0\mathrm{e}^{-\frac{R}{L}t}$；$\tau = \dfrac{L}{R}$（时间常数【?：旁注"（b秒）"字样难以确认】）。
+- **互感 $M$**：$\Psi = MI$（如 $\Psi_{21}$：$I_1$ 激发的穿过线圈 2 的全磁通）；$\varepsilon_{21} = -\dfrac{\mathrm{d}\Psi_{21}}{\mathrm{d}t} = -M\dfrac{\mathrm{d}I_1}{\mathrm{d}t}$（笔记下标写法互有出入，此处按教材约定统一）。
+- **线圈自感磁能**：$W_m = \dfrac{1}{2}LI_0^2$。
+- **磁能量密度**：$w_m = \dfrac{W_m}{V} = \dfrac{1}{2}\vec{B}\cdot\vec{H}$，$W_m = \displaystyle\int_V\dfrac{1}{2}\vec{B}\cdot\vec{H}\,\mathrm{d}V$（笔记记号近似"$w_e$"，按物理含义记作 $w_m$）。
+- **长直螺线管自感系数**（圈注强调）：$L = \mu\dfrac{N^2}{l}S = \mu n^2 V$。
+- **双线圈总磁能**：$W_m = \dfrac{1}{2}L_1I_1^2 + \dfrac{1}{2}L_2I_2^2 + MI_1I_2$。
+
+#### 附：一阶暂态过程速查（页末附记）
+
+$$f(t) = f(\infty) + \left[f(0) - f(\infty)\right]\mathrm{e}^{-\frac{t}{\tau}}; \qquad R\text{--}C:\ \tau = RC, \qquad R\text{--}L:\ \tau = \frac{L}{R}$$
+
+充放电初末值对照（整理为表）：
+
+| 电路 | 过程 | $I(0)$ | $I(\infty)$ | $u_C$ | $q$ |
+| --- | --- | --- | --- | --- | --- |
+| $R$–$C$ | 充电 | $U/R$ | $0$ | $0 \to U$ | $0 \to q_0$ |
+| $R$–$C$ | 放电 | $U/R$ | $0$ | $U \to 0$ | $q_0 \to 0$ |
+| $R$–$L$ | 充电 | $0$ | $U/R$ | — | — |
+| $R$–$L$ | 放电 | $U/R$ | $0$ | — | — |

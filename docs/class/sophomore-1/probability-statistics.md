@@ -454,3 +454,50 @@ $$f_X(x) = \frac{1}{\sqrt{2\pi}\,\sigma_1}\,\mathrm{e}^{-\frac{(x - \mu_1)^2}{2\
 
 $$F(x, y) = F_X(x)\cdot F_Y(y)$$
 
+### 2026.11.15（期中复习：前三章重点清单）
+
+> 考前手写重点整理（扫描于 2026-11-15，覆盖第一~三章）。逐条收录，未删减。
+
+#### 第一章
+
+- $P(A - B) = P(A) - P(AB)$，即 $P(A\bar B) = P(A) - P(AB)$。
+- **德摩根律**：$\overline{\bigcap_i A_i} = \bigcup_i \bar A_i$，$\overline{\bigcup_i A_i} = \bigcap_i \bar A_i$。
+- **生日问题**（全不相同）：$P = \dfrac{A_n^{365}}{365^n}$（每巢至多一球）。
+- **$n$ 个事件相互独立**：任意 $k$ 个（$k = 2, \cdots, n$）事件都独立。
+- **伯努利试验**：两结果、各次 $p$ 相同、各次试验独立。
+- **事件运算常用表达**：
+  - 至少一个发生：$A\cup B\cup C$；至少两个发生：$AB\cup AC\cup BC$；至多一个发生：$\overline{AB\cup AC\cup BC}$（"至少两个发生"的对立）；至少两个不发生：$\bar A\bar B\cup\bar A\bar C\cup\bar B\bar C$。
+  - $P(AB\cup AC\cup BC) = P(AB) + P(AC) + P(BC) - 3P(ABC) + P(ABC)$（容斥，$AB\cap AC\cap BC = ABC$、两两交均为 $ABC$）。
+  - $P(B\cup C \mid A) = P(B\mid A) + P(C\mid A) - P(BC\mid A)$。
+- **互斥必不独立**（概率非零时）；注意区分两两独立与相互独立。
+- **泊松分布**：$X \sim \pi(\lambda)$（或记 $P(\lambda)$），$P\{X = k\} = \dfrac{\lambda^k\mathrm{e}^{-\lambda}}{k!}$（$\lambda$ 为均值）。
+
+#### 第二章
+
+- **分布函数**：$F(x) = P\{X \le x\}$（右连续）；判定：有界、单调不减、极限为 $0/1$、右连续。
+- **连续型**：$F(x) = \displaystyle\int_{-\infty}^x f(t)\,\mathrm{d}t$；密度函数判定：非负、归一。
+- 随机变量分类：离散 / 连续 / 既不离散也不连续；连续型随机变量的分布函数一定连续（左右极限相等）。
+- **均匀分布**：$X \sim U(a, b)$。
+- **指数分布**：$X \sim E(\lambda)$，$E(X) = \dfrac{1}{\lambda}$，$f(x) = \lambda\mathrm{e}^{-\lambda x}\ (x > 0)$，$F(x) = 1 - \mathrm{e}^{-\lambda x}\ (x > 0)$；指数分布**无记忆性**——任何时段都"全新"。
+- **正态分布**：$X \sim N(\mu, \sigma^2)$，$f(x) = \dfrac{1}{\sqrt{2\pi}\,\sigma}\mathrm{e}^{-\frac{(x - \mu)^2}{2\sigma^2}}$；$\displaystyle\int_{-\infty}^{+\infty}\mathrm{e}^{-\frac{x^2}{2}}\,\mathrm{d}t = \sqrt{2\pi}$；**见到 $\mathrm{e}^{-x^2}$ 型直接凑正态**。
+- **无故障时间 $T$**：$P\{T > t\} \Leftrightarrow (0, t)$ 内无故障 $\Leftrightarrow$ 泊松计数 $k = 0$。
+- **随机变量函数的分布**：等价变换 $F_Y(y) \Rightarrow f_Y(y)$（$F \to f$ 求导）；反函数法：$y = g(x)$ 单调，$x = h(y)$，$f_Y(y) = f_X(h(y))|h'(y)|$。
+- **判离散/连续**：取值含区间 ⇒ 非离散；某点概率非 $0$ ⇒ 非连续。
+- **常用代数/积分工具**：$(a + b)^n = \sum_i C_n^i a^i b^{n-i}$；$\displaystyle\int_0^{+\infty}\mathrm{e}^{-ax}\,\mathrm{d}x = \dfrac{1}{a}$；$\arcsin x$：$x \in [-1, 1]$，值域 $\left[-\dfrac{\pi}{2}, \dfrac{\pi}{2}\right]$。
+
+#### 第三章
+
+- **边缘分布**：$f_X(x) = \displaystyle\int_{-\infty}^{+\infty}f(x, y)\,\mathrm{d}y$（画图找上下限）；$F_X(x) = \displaystyle\int_{-\infty}^x f_X(u)\,\mathrm{d}u$。
+- **条件分布**：$f_{X|Y}(x|y) = \dfrac{f(x, y)}{f_Y(y)}$；$F_{X|Y}(x|y) = \displaystyle\int_{-\infty}^x\dfrac{f(s, y)}{f_Y(y)}\,\mathrm{d}s$。
+- **二维正态**：$(X, Y) \sim N(\mu_1, \mu_2, \sigma_1^2, \sigma_2^2, \rho)$。
+- **独立性判据**：
+  1. $F(x, y) = F_X(x)F_Y(y) \Leftrightarrow$ 离散 $P_{ij} = p_{i\cdot}p_{\cdot j}$、连续 $f(x, y) = f_X(x)f_Y(y)$；
+  2. $f(x, y) = g(x)h(y)$ 且支集为（广义）长方形 ⇒ 独立；不可分离 / 支集非长方形 ⇒ 不独立。
+- $\Phi(x) = \displaystyle\int_{-\infty}^x\dfrac{1}{\sqrt{2\pi}}\mathrm{e}^{-\frac{t^2}{2}}\,\mathrm{d}t$。
+- **卷积（离散）**：$P\{Z = z_k\} = \sum_i P\{X = x_i\}P\{Y = z_k - x_i\}$（若独立）。
+- **再生性**（三个均需独立）：$\pi(\lambda_1) + \pi(\lambda_2) = \pi(\lambda_1 + \lambda_2)$；$B(n_1, p) + B(n_2, p) = B(n_1 + n_2, p)$；$N(\mu_1, \sigma_1^2) + N(\mu_2, \sigma_2^2) = N(\mu_1 + \mu_2,\ \sigma_1^2 + \sigma_2^2)$。
+- **连续卷积**：$f_Z(z) = \displaystyle\int_{-\infty}^{+\infty}f(x, z - x)\,\mathrm{d}x \overset{\text{独立}}{=} \int_{-\infty}^{+\infty}f_X(x)f_Y(z - x)\,\mathrm{d}x$。
+- **非 $X + Y$ 型（如 $X\cdot Y$）万能法**：先求分布函数再求导，如 $Z = XY$：$f_Z(z) = \displaystyle\iint f\!\left(x,\ \dfrac{z}{x}\right)\dfrac{1}{|x|}\,\mathrm{d}x\,\mathrm{d}y$。
+- **max / min**（独立）：max 如"并"——$F_{\max}(z) = P\{X \le z, Y \le z\} = F_X(z)F_Y(z)$；min 如"串"——$F_{\min}(z) = 1 - P\{X > z, Y > z\} = 1 - (1 - F_X(z))(1 - F_Y(z))$。
+- 恒等式：$\max + \min = X + Y$（两个变量时）。
+

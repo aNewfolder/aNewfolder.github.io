@@ -1225,3 +1225,167 @@ $$F(s) = \int_0^{+\infty} f(t)\,\mathrm{e}^{-st}\,\mathrm{d}t$$
 
 $$\mathcal{L}[f(t)] = F(s) = \int_0^{+\infty} f(t)\,\mathrm{e}^{-st}\,\mathrm{d}t$$
 
+### 2026.11.15（复变期末复习：考前重点清单）
+
+> 考前手写重点整理（扫描于 2026-11-15）。「复变小测复习」一页已收录于「复变小测复习（约 2026.10.13）」一节，此处不重复（R8 去重）。
+
+#### ch1~ch3 基本要点
+
+- $\theta = \mathrm{Arg}\,z = \arg z + 2k\pi$；$\mathrm{Arg}\,z_1z_2 = \mathrm{Arg}\,z_1 + \mathrm{Arg}\,z_2$。
+- **调和函数** $u(x,y)$：$\dfrac{\partial^2 u}{\partial x^2} + \dfrac{\partial^2 u}{\partial y^2} = 0$。
+- $\mathrm{e}^z$ 的周期：$2\pi\mathrm{i}$（圈注强调）。
+- **对数**：$\mathrm{Ln}\,z = \ln z + \mathrm{i}\cdot 2k\pi = \ln|z| + \mathrm{i}\arg z + \mathrm{i}\cdot 2k\pi$。
+- **导数公式**：$(\mathrm{sh}\,z)' = \mathrm{ch}\,z$，$(\mathrm{ch}\,z)' = \mathrm{sh}\,z$（笔记上初写时把后一个写错，红圈更正为 $\mathrm{sh}\,z$）。
+- **加法公式**：$\mathrm{sh}(z_1 + z_2) = \mathrm{sh}\,z_1\,\mathrm{ch}\,z_2 + \mathrm{ch}\,z_1\,\mathrm{sh}\,z_2$；$\mathrm{ch}(z_1 + z_2) = \mathrm{ch}\,z_1\,\mathrm{ch}\,z_2 + \mathrm{sh}\,z_1\,\mathrm{sh}\,z_2$。
+- **积分基本值**（$C$ 为闭曲线）：
+
+$$\oint_C \frac{\mathrm{d}z}{(z-a)^n} = \begin{cases} 2\pi\mathrm{i}, & n = 1 \text{ 且 } a \text{ 在 } C \text{ 内部} \\ 0, & n \ne 1 \text{ 或 } a \text{ 在 } C \text{ 外部} \end{cases}$$
+
+- **C-R 条件**：$f(z) = u + \mathrm{i}v$ 在 $z = x + \mathrm{i}y$ 可导 $\Leftrightarrow$ $u$、$v$ 在 $(x,y)$ 可微且满足 C-R 方程；$f(z) = u + \mathrm{i}v$ 在 $D$ 内解析 $\Leftrightarrow$ $u$、$v$ 在 $D$ 内可微且满足 C-R 方程。
+- **解析函数求导**（☆）：$f'(z) = \dfrac{\partial u}{\partial x} + \mathrm{i}\dfrac{\partial v}{\partial x} = \dfrac{\partial v}{\partial y} - \mathrm{i}\dfrac{\partial u}{\partial y}$。
+- **参数方程积分**（红字提示）：把 $z$ 参数化后代入，化为定积分。【?：旁小字步骤注（"2°…3°可导"字样）难以完整辨认】
+- **e.g.** 沿单位圆下半周（$\theta: 0 \to -\pi$，从 $1$ 到 $-1$；笔记上路径文字有涂改，按参数限整理），求 $\displaystyle\int_C \bar z\,\mathrm{d}z$：
+
+$$z = \mathrm{e}^{\mathrm{i}\theta} \;\Rightarrow\; \bar z = \mathrm{e}^{-\mathrm{i}\theta},\quad \mathrm{d}z = \mathrm{i}\mathrm{e}^{\mathrm{i}\theta}\,\mathrm{d}\theta \;\Rightarrow\; \int_0^{-\pi} \mathrm{e}^{-\mathrm{i}\theta}\cdot\mathrm{i}\mathrm{e}^{\mathrm{i}\theta}\,\mathrm{d}\theta = \mathrm{i}\int_0^{-\pi}\mathrm{d}\theta = -\pi\mathrm{i}$$
+
+（终值一步由AI补全：被积函数恰为 $\mathrm{i}$，积分即 $\mathrm{i}\times$ 区间长度。）
+
+- **积分绝对值估计**：$\left|\int_C f(z)\,\mathrm{d}z\right| \le \int_C |f(z)|\,\mathrm{d}s \le ML$（$L$ 为 $C$ 的长度，$|f(z)| \le M$）。
+
+#### 四、级数（ch4）
+
+- **幂级数**：$\displaystyle\sum_{n=0}^\infty c_n(z-a)^n = c_0 + c_1(z-a) + \cdots$
+- **Taylor 定理**：$f(z) = \displaystyle\sum_{n=0}^\infty c_n(z - z_0)^n$，$f(z)$ 在 $|z - z_0| < R$ 内解析；
+
+$$c_n = \frac{f^{(n)}(z_0)}{n!} = \frac{1}{2\pi\mathrm{i}}\oint_{C_\rho} \frac{f(s)}{(s - z_0)^{n+1}}\,\mathrm{d}s$$
+
+- **sh、ch 展开**（红字：先求导展开；【?：该行旁红圈注"$2\pi\mathrm{i}$"，含义不明】）：
+
+$$\mathrm{sh}\,z = \sum_{n=0}^\infty \frac{z^{2n+1}}{(2n+1)!}, \qquad \mathrm{ch}\,z = \sum_{n=0}^\infty \frac{z^{2n}}{(2n)!}$$
+
+- **$m$ 级零点**：① $f(z) = (z - z_0)^m\psi(z)$，$\psi(z_0) \ne 0$；② $f(z_0) = f'(z_0) = \cdots = f^{(m-1)}(z_0) = 0$，$f^{(m)}(z_0) \ne 0$。
+- **Laurent 定理**（☆）：$f(z) = \displaystyle\sum_{n=-\infty}^{+\infty} c_n(z - z_0)^n$，$f(z)$ 在 $R_1 < |z - z_0| < R_2$ 内解析；$c_n = \dfrac{1}{2\pi\mathrm{i}}\displaystyle\oint_C \dfrac{f(s)}{(s - z_0)^{n+1}}\,\mathrm{d}s$。
+- **e.g.** $f(z) = \dfrac{1}{(z-1)^2 z}$ 在 $|z-1| > 1$ 展开。笔记做法：令 $t = z - 1$，则 $f = \dfrac{1}{t^2(t+1)}$；对 $\dfrac{1}{t+1}$ 分区域：$|t| < 1$ 用 $\dfrac{1}{1+t} = \sum_{n=0}^\infty (-1)^n t^n$；$|t| > 1$（即 $\left|\frac1t\right| < 1$）用 $\dfrac{1}{t+1} = \dfrac{1}{t}\cdot\dfrac{1}{1 + \frac1t} = \displaystyle\sum_{n=0}^\infty \frac{(-1)^n}{t^{n+1}}$。本题 $|z-1| > 1$ 取第二支：
+
+$$f(z) = \frac{1}{t^2}\sum_{n=0}^\infty \frac{(-1)^n}{t^{n+1}} = \sum_{n=0}^\infty \frac{(-1)^n}{(z-1)^{n+3}} = \frac{1}{(z-1)^3} - \frac{1}{(z-1)^4} + \frac{1}{(z-1)^5} - \cdots$$
+
+（末步化简由AI补全；顺带：$|z-1| < 1$ 时用第一支得 $f(z) = \sum_{n=0}^\infty (-1)^n (z-1)^{n-2}$。）
+
+#### 五、留数（ch5）
+
+**孤立奇点分类**：
+
+| 类型 | 孤立奇点 $z_0$（主体 = 负幂部分） | 无穷远点 $z = \infty$（主要部分 = 正幂部分） |
+| --- | --- | --- |
+| 可去奇点 | 主体为 $0$（$C_{-k} = 0$）$\Leftrightarrow$ $\lim\limits_{z\to z_0}(z-z_0)f(z) = 0$ $\Leftrightarrow$ $\lim\limits_{z\to z_0}f(z) \ne \infty$，$f(z)$ 在 $z_0$ 邻域有界 | 主要部分为 $0$（$C_k = 0$），$\lim\limits_{z\to\infty}f(z) = f(\infty)$ |
+| $m$ 级极点 | 主体有限，$C_{-m} \ne 0$，$C_{-(m+k)} = 0$ | 主要部分有限：$C_1 z + \cdots + C_m z^m$ |
+| 本性奇点 | $\Leftrightarrow$ $\lim\limits_{z\to z_0}f(z)$ 不存在 | 主要部分无穷 |
+
+**$m$ 级极点的等价刻画**：
+
+1. $f(z) = \dfrac{\psi(z)}{(z - z_0)^m}$，$\psi(z_0) \ne 0$；
+2. $z_0$ 为 $\dfrac{1}{f(z)}$ 的 $m$ 级零点（红框强调）；
+3. $\lim\limits_{z\to z_0} f(z) = \infty$；
+4. $f(z) = \dfrac{h(z)}{g(z)}$，$z_0$ 分别为 $h$ 的 $m$ 级零点、$g$ 的 $n$ 级零点 $\Rightarrow$ $m \ge n$ 时可去，$m < n$ 时为 $n - m$ 级极点。
+
+**留数与留数定理**（☆）：
+
+$$\mathrm{Res}[f(z); z_0] = \frac{1}{2\pi\mathrm{i}}\oint_{C_\rho} f(z)\,\mathrm{d}z = C_{-1}; \qquad \oint_C f(z)\,\mathrm{d}z = 2\pi\mathrm{i}\sum_k \mathrm{Res}[f(z), z_k]$$
+
+（☆：$2\pi\mathrm{i}$ 的位置别丢。）
+
+**留数计算**（④⑤⑥ 中"$\frac{\text{分子零点级}}{\text{分母零点级}}$"指 $z_0$ 处分子、分母的零点级数）：
+
+1. 可去奇点：留数为 $0$；
+2. $m$ 级极点：$\dfrac{1}{(m-1)!}\displaystyle\lim_{z\to z_0}\dfrac{\mathrm{d}^{m-1}}{\mathrm{d}z^{m-1}}\left[(z - z_0)^m f(z)\right]$；
+3. $f(z) = \dfrac{\psi(z)}{(z - z_0)^m}$：$\dfrac{\psi^{(m-1)}(z_0)}{(m-1)!}$；
+4. $f(z) = \dfrac{P(z)}{Q(z)}$（$\frac{0}{1}$：$P(z_0) \ne 0$，$Q$ 一级零点）：$\dfrac{P(z_0)}{Q'(z_0)}$；
+5. $f(z) = \dfrac{g(z)}{h(z)}$（$\frac{k}{k+1}$）：$\dfrac{(k+1)\,g^{(k)}(z_0)}{h^{(k+1)}(z_0)}$；
+6. $f(z) = \dfrac{g(z)}{h(z)}$（$\frac{0}{2}$）：$\dfrac{2g'(z_0)}{h''(z_0)} - \dfrac{2}{3}\cdot\dfrac{g(z_0)h'''(z_0)}{[h''(z_0)]^2}$。
+
+红字批注：**偶函数在原点留数为 0**（偶函数的 Laurent 展开只含偶次幂，负一次幂系数 $C_{-1}$ 自然为 $0$）。
+
+**无穷远点**：
+
+$$\mathrm{Res}[f(z); \infty] = \frac{1}{2\pi\mathrm{i}}\oint_{C_\rho^-} f(z)\,\mathrm{d}z = -C_{-1} = -\mathrm{Res}\!\left[f\!\left(\frac{1}{z}\right)\frac{1}{z^2};\ 0\right]$$
+
+（积分沿顺时针方向，圆心在原点、半径 $\rho$；末一个等式为红框强调。）
+
+$$\sum_k \mathrm{Res}[f(z); z_k] + \mathrm{Res}[f(z); \infty] = 0 \quad (\text{全平面留数和})$$
+
+**应用**（三类典型积分）：
+
+1. $\displaystyle\int_0^{2\pi} R(\cos\theta, \sin\theta)\,\mathrm{d}\theta = 2\pi\mathrm{i}\sum\{\text{单位圆内极点的留数}\}$，其中 $f(z) = \dfrac{1}{\mathrm{i}z}R\!\left(\dfrac{z^2+1}{2z},\ \dfrac{z^2-1}{2\mathrm{i}z}\right)$（☆）。
+2. $\displaystyle\int_{-\infty}^{+\infty} f(x)\,\mathrm{d}x = 2\pi\mathrm{i}\sum\{\text{上半平面极点的留数}\} = -2\pi\mathrm{i}\sum\{\text{下半平面极点的留数}\}$，条件 $|f(z)| \le \dfrac{M}{|z|^2}$。【?：该行左侧竖排小批注（"需要/不需要"字样）难以确认】
+3. $\displaystyle\int_{-\infty}^{+\infty} \mathrm{e}^{\mathrm{i}ax}f(x)\,\mathrm{d}x = 2\pi\mathrm{i}\sum\{f(z)\mathrm{e}^{\mathrm{i}az}\ \text{上半平面极点的留数}\}$（☆☆），条件 $|f(z)| \le \dfrac{M}{|z|}$【?：旁红字批注疑为"记不住"，难以确认】；且
+
+$$\int_{-\infty}^{+\infty}\cos ax\,f(x)\,\mathrm{d}x = \mathrm{Re}\,I, \qquad \int_{-\infty}^{+\infty}\sin ax\,f(x)\,\mathrm{d}x = \mathrm{Im}\,I$$
+
+- **实轴上有极点时**（红字补充）：$\displaystyle I = 2\pi\mathrm{i}\sum\mathrm{Res}[f(z)\mathrm{e}^{\mathrm{i}az};\ \text{上半平面极点}] + \pi\mathrm{i}\sum\mathrm{Res}[f(z)\mathrm{e}^{\mathrm{i}az};\ \text{实轴上的极点}]$。
+
+#### 六、保角映射（ch6）
+
+- 保角映射 $\Leftrightarrow$ $f'(z) \ne 0$ 且 $f(z)$ 解析。
+- **基本映射速查**：$w = kz$（伸缩）；$w = \mathrm{e}^{\mathrm{i}\theta}z$（旋转）；$w = z + b$（平移）；$w = \dfrac{1}{z}$（先取共轭、再关于单位圆反演——单位圆对称 + 实轴对称）；$w = z^n$（角度扩大 $n$ 倍）；$w = \mathrm{e}^z$（水平带域 $\to$ 角域，垂直带域 $\to$ 环域）。
+- **分式线性映射**：$w = k\dfrac{z - \alpha}{z - \beta}$；或用保交比定系数：
+
+$$\frac{w - w_1}{w - w_2}\cdot\frac{w_3 - w_2}{w_3 - w_1} = \frac{z - z_1}{z - z_2}\cdot\frac{z_3 - z_2}{z_3 - z_1}$$
+
+- **上半平面 $\to$ 单位圆**：$w = \mathrm{e}^{\mathrm{i}\theta}\dfrac{z - z_0}{z - \bar z_0}$。
+- **单位圆 $\to$ 单位圆**：$w = \mathrm{e}^{\mathrm{i}\theta}\dfrac{z - z_0}{1 - \bar z_0 z}$。
+
+#### 七、Laplace 变换复习表（ch7）
+
+**定义与存在性（7.1）**：
+
+- $F(s) = \displaystyle\int_0^{+\infty} f(t)\mathrm{e}^{-st}\,\mathrm{d}t = \mathcal{L}[f(t)]$；$f(t) = \mathcal{L}^{-1}[F(s)]$。
+- $f(t) = \mathrm{e}^{kt} \Rightarrow \mathcal{L}[f(t)] = \dfrac{1}{s - k}$。
+- **存在定理**：连续 + $|f(t)| < M\mathrm{e}^{c_0 t}$ $\Rightarrow$ 存在（但不必要）。
+- **象函数求导**：$F'(s) = \mathcal{L}[(-t)f(t)]$。
+- **Gamma 函数**：$\Gamma(\alpha) = \displaystyle\int_0^{+\infty} t^{\alpha-1}\mathrm{e}^{-t}\,\mathrm{d}t$，$\Gamma(\alpha + 1) = \alpha\Gamma(\alpha)$；$f(t) = t^\alpha \Rightarrow \mathcal{L}[f(t)] = \dfrac{\Gamma(\alpha+1)}{s^{\alpha+1}}$；$f(t) = t^n \Rightarrow \mathcal{L}[f(t)] = \dfrac{n!}{s^{n+1}}$。
+
+**基本变换表（7.2）**（线性性质）：
+
+$$\mathcal{L}[\sin\omega t] = \frac{\omega}{s^2 + \omega^2}, \quad \mathcal{L}[\cos\omega t] = \frac{s}{s^2 + \omega^2}, \quad \mathcal{L}[\mathrm{sh}\,\omega t] = \frac{\omega}{s^2 - \omega^2}, \quad \mathcal{L}[\mathrm{ch}\,\omega t] = \frac{s}{s^2 - \omega^2}$$
+
+**平移性质**：
+
+- 时移：$\mathcal{L}[f(t - t_0)] = \mathrm{e}^{-st_0}F(s)$（红字：注意补写 $u(t - t_0)$）。
+- 周期函数（周期 $T$）：$\mathcal{L}[f(t)] = \dfrac{\displaystyle\int_0^T f(t)\mathrm{e}^{-st}\,\mathrm{d}t}{1 - \mathrm{e}^{-Ts}}$。
+- 频移：$\mathcal{L}[\mathrm{e}^{s_0 t}f(t)] = F(s - s_0)$；特例 $\mathcal{L}[\mathrm{e}^{-\lambda t}\sin\omega t] = \dfrac{\omega}{(s+\lambda)^2 + \omega^2}$，$\mathcal{L}[\mathrm{e}^{-\lambda t}\cos\omega t] = \dfrac{s + \lambda}{(s+\lambda)^2 + \omega^2}$。
+
+**微分性质**：
+
+- 象原函数：$\mathcal{L}[f'(t)] = sF(s) - f(0^+)$；$\mathcal{L}[f^{(n)}(t)] = s^nF(s) - s^{n-1}f(0^+) - s^{n-2}f'(0^+) - \cdots - f^{(n-1)}(0^+)$。
+- 象函数：$\mathcal{L}[(-t)^n f(t)] = F^{(n)}(s)$。
+
+**积分性质**：
+
+- 象原函数：$\mathcal{L}\!\left[\displaystyle\int_0^t f(\tau)\,\mathrm{d}\tau\right] = \dfrac{F(s)}{s}$；多次积分逐次除 $s$：$\mathcal{L}\!\left[\underbrace{\int_0^t\mathrm{d}t\int_0^t\mathrm{d}t\cdots\int_0^t}_{n\ \text{重}} f(t)\,\mathrm{d}t\right] = \dfrac{F(s)}{s^n}$。
+- 象函数：$\mathcal{L}\!\left[\dfrac{f(t)}{t}\right] = \displaystyle\int_s^{+\infty} F(u)\,\mathrm{d}u$；以及 $\displaystyle\int_0^{+\infty}\dfrac{f(t)}{t}\,\mathrm{d}t = \int_0^{+\infty}F(s)\,\mathrm{d}s$（红字批注【?】疑为"$\ln \to$ 求导"：$\ln$ 型积分靠这组公式处理）。
+
+**单位脉冲（7.4）**：$\mathcal{L}[\delta(t)] = \displaystyle\int_0^{+\infty}\mathrm{e}^{-st}\delta(t)\,\mathrm{d}t = 1$；$\mathcal{L}[\delta(t - t_0)] = \mathrm{e}^{-st_0}$；$\mathcal{L}[\delta^{(n)}(t)] = s^n$。
+
+**极限**：初值 $f(0^+) = \displaystyle\lim_{s\to\infty} sF(s)$；终值 $f(+\infty) = \displaystyle\lim_{s\to 0} sF(s)$。
+
+**卷积**：$f_1(t) * f_2(t) = \displaystyle\int_{-\infty}^{+\infty} f_1(\tau)f_2(t - \tau)\,\mathrm{d}\tau \overset{\mathcal{L}\ \text{中}}{=} \int_0^t f_1(\tau)f_2(t - \tau)\,\mathrm{d}\tau$；$\mathcal{L}[f(t) * g(t)] = F(s)\cdot G(s)$（红字批注：卷积也可逆——$F(s)G(s)$ 的反演可还原成卷积）。
+
+**反演（7.3）**：
+
+$$f(t) = \frac{1}{2\pi\mathrm{i}}\int_{\beta - \mathrm{i}\infty}^{\beta + \mathrm{i}\infty} F(s)\mathrm{e}^{st}\,\mathrm{d}s$$
+
+（☆：$2\pi\mathrm{i}$ 位置；红字：运算技巧——**拆**！）
+
+- **留数法**：$f(t) = \mathcal{L}^{-1}[F(s)] = \displaystyle\sum_{k=1}^n \mathrm{Res}[F(s)\mathrm{e}^{st};\ s_k]$（条件：所有奇点均在 $\mathrm{Re}(s) < \beta$ 内，且 $s \to \infty$ 时 $F(s) \to 0$）。
+- **展开定理**（红框强调）：若 $\displaystyle\lim_{s\to\infty}F(s) = 0$，则 $F(s) = \displaystyle\sum_{n=0}^\infty \dfrac{a_n}{s^{n+1}}$ $\Rightarrow$ $f(t) = \displaystyle\sum_{n=0}^\infty \dfrac{a_n}{n!}t^n$。
+
+<details markdown="1">
+<summary><strong>【FA：留数计算④⑤⑥ 中"$\frac{k}{k+1}$"记法与公式来历】</strong></summary>
+
+- **记法**："$\frac{0}{1}$、$\frac{k}{k+1}$、$\frac{0}{2}$"指 $z_0$ 处**分子的零点级 / 分母的零点级**。分母零点级比分子恰高一级时 $f$ 在 $z_0$ 是单极点，高两级时是二级极点。
+- **⑤ 的来历**：设 $g$ 在 $z_0$ 有 $k$ 级零点、$h$ 有 $k+1$ 级零点，则 $(z - z_0)f(z) = \dfrac{g(z)}{\frac{h(z)}{z - z_0}}$，$z \to z_0$ 时分子分母都是"$\frac{0}{0}$"，用洛必达一次得 $\dfrac{g'(z_0)}{\frac{h'(z_0)}{1}}$——对 $k$ 级 / $k+1$ 级一般化即 $\dfrac{(k+1)!/k!\cdot g^{(k)}(z_0)}{h^{(k+1)}(z_0)}$ 型，整理成笔记式 $\dfrac{(k+1)g^{(k)}(z_0)}{h^{(k+1)}(z_0)}$。验证：$g = z$、$h = z^2$（$k = 1$）时 $f = \dfrac1z$，公式给 $\dfrac{2\cdot 1}{2} = 1$ ✓。
+- **⑥ 的来历**：$h$ 在 $z_0$ 为二级零点时对 $(z - z_0)^2\dfrac{g}{h}$ 求一阶导取极限，展开 $\dfrac{h}{(z-z_0)^2} = \dfrac{h''(z_0)}{2} + \dfrac{h'''(z_0)}{6}(z - z_0) + \cdots$ 后比较一次项系数即得。前提都是 $g(z_0) \ne 0$。
+- **适用建议**：②是万能的通用式，④⑤⑥是省去求导的快捷式，分子在 $z_0$ 取值越特殊（常数、低次多项式）越好用。（FA 补充）
+
+</details>
+
