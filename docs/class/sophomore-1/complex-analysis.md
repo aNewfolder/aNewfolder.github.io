@@ -1316,8 +1316,8 @@ $$\sum_k \mathrm{Res}[f(z); z_k] + \mathrm{Res}[f(z); \infty] = 0 \quad (\text{�
 **应用**（三类典型积分）：
 
 1. $\displaystyle\int_0^{2\pi} R(\cos\theta, \sin\theta)\,\mathrm{d}\theta = 2\pi\mathrm{i}\sum\{\text{单位圆内极点的留数}\}$，其中 $f(z) = \dfrac{1}{\mathrm{i}z}R\!\left(\dfrac{z^2+1}{2z},\ \dfrac{z^2-1}{2\mathrm{i}z}\right)$（☆）。
-2. $\displaystyle\int_{-\infty}^{+\infty} f(x)\,\mathrm{d}x = 2\pi\mathrm{i}\sum\{\text{上半平面极点的留数}\} = -2\pi\mathrm{i}\sum\{\text{下半平面极点的留数}\}$，条件 $|f(z)| \le \dfrac{M}{|z|^2}$。【?：该行左侧竖排小批注（"需要/不需要"字样）难以确认】
-3. $\displaystyle\int_{-\infty}^{+\infty} \mathrm{e}^{\mathrm{i}ax}f(x)\,\mathrm{d}x = 2\pi\mathrm{i}\sum\{f(z)\mathrm{e}^{\mathrm{i}az}\ \text{上半平面极点的留数}\}$（☆☆），条件 $|f(z)| \le \dfrac{M}{|z|}$【?：旁红字批注疑为"记不住"，难以确认】；且
+2. $\displaystyle\int_{-\infty}^{+\infty} f(x)\,\mathrm{d}x = 2\pi\mathrm{i}\sum\{\text{上半平面极点的留数}\} = -2\pi\mathrm{i}\sum\{\text{下半平面极点的留数}\}$，条件 $|f(z)| \le \dfrac{M}{|z|^2}$。
+3. $\displaystyle\int_{-\infty}^{+\infty} \mathrm{e}^{\mathrm{i}ax}f(x)\,\mathrm{d}x = 2\pi\mathrm{i}\sum\{f(z)\mathrm{e}^{\mathrm{i}az}\ \text{上半平面极点的留数}\}$（☆☆），条件 $|f(z)| \le \dfrac{M}{|z|}$；且
 
 $$\int_{-\infty}^{+\infty}\cos ax\,f(x)\,\mathrm{d}x = \mathrm{Re}\,I, \qquad \int_{-\infty}^{+\infty}\sin ax\,f(x)\,\mathrm{d}x = \mathrm{Im}\,I$$
 

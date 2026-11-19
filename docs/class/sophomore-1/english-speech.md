@@ -139,3 +139,9 @@ Besides, I checked the answers of the people around me. The answers of several p
 In conclusion, it wasn't me who copied it. Because this homework was written by me myself.
 
 ## Week 8
+
+## Week 10
+parallelism 
+let freedom ring
+one hundred years later
+I have a dream

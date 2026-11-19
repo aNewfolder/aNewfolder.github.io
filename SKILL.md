@@ -71,7 +71,7 @@
 ## 2026-08-13 · 音频改托管腾讯云 COS（取代 2026-08-10 音频约定第 1 条的存放方式）
 
 1. **音频一律放 COS，不进仓库**：GitHub Pages 国内带宽极小，assets 里几十 MB 的音频播放/下载必卡，faststart 救不了带宽（1645/6251 录音多次卡顿的根因）。新流程：ffmpeg 转 64 kbps AAC + faststart（`-c:a aac -b:a 64k -movflags +faststart`）→ 用 `cos-python-sdk-v5` 上传到图床桶 `audio/` 前缀（凭据在 `%APPDATA%\picgo\data.json` 的 `picBed.tcyun`）→ 正文 `<audio>` 与下载链接都写 COS 完整 URL。CSP `media-src` 已放行 COS 域名（2026-08-13 起）。
-2. **原始录音备份**：上传 COS 后音频文件从仓库移除；未压缩原件备份到仓库外 `E:\Obsidian\仓库\Notes\Me\McDocs\录音备份\`。
+2. **原始录音备份**：上传 COS 后音频文件从仓库移除；未压缩原件备份到仓库外 `E:\Obsidian仓库\Notes\Me\McDocs\录音备份\`。
 3. 存量 1645/6251 两段即兴录音均已迁移到 COS；`docs/music/piano/assets/` 目录已删。
 
 ## 2026-08-30 · CSP frame-src 必须放行同源（PDF 内嵌在 Chromium 被拦的根因）

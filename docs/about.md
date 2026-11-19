@@ -22,6 +22,11 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-11-19</div>
+<div class="update-log-content">更新 11 月中下旬各类记录：气排球、跑步（引体测试）、游泳课与琴房练习；英语演讲页新增 Week 10 笔记，复变函数页两处批注疑问已确认定稿。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-11-15</div>
 <div class="update-log-content">复变期末、大物期中（ch9~ch14）、概统期中三章考前复习清单分别录入对应课程文档；顺带提交社发史 Week 1 笔记与钢琴练习记录更新。</div>
 </div>
