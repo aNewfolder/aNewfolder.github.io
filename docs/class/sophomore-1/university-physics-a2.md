@@ -124,6 +124,7 @@ $R\to\infty$ 得无限大平面 $E = \dfrac{\sigma}{2\varepsilon_0}$（匀强）
 $$E = kq\left[\frac{1}{(r-l/2)^2} - \frac{1}{(r+l/2)^2}\right] = \frac{2kqrl}{(r^2-l^2/4)^2} \approx \frac{2kp}{r^3}$$
 
 沿 $\vec{p}$ 方向。
+
 - 中垂线上：两电荷的场大小均为 $\dfrac{kq}{r^2+l^2/4}$，垂直于轴的分量抵消、沿轴分量相加：
 
 $$E = 2\cdot\frac{kq}{r^2+l^2/4}\cdot\frac{l/2}{\sqrt{r^2+l^2/4}} = \frac{kql}{(r^2+l^2/4)^{3/2}} \approx \frac{kp}{r^3}$$

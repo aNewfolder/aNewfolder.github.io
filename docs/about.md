@@ -22,6 +22,11 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-11-20</div>
+<div class="update-log-content">修复多个页面列表因缺空行被并成一段不渲染的问题（即兴伴奏《前进》等页），顺带清理空列表项、规范图片尺寸写法；顺带提交琴房与乒乓球 11.19 记录。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-11-19</div>
 <div class="update-log-content">更新 11 月中下旬各类记录：气排球、跑步（引体测试）、游泳课与琴房练习；英语演讲页新增 Week 10 笔记，复变函数页两处批注疑问已确认定稿。</div>
 </div>
