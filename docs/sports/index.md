@@ -20,3 +20,4 @@ hide:
 - [气排球](air-volleyball.md)
 - [羽毛球](badminton.md)
 - [健身](work-out.md)
+- [飞盘](frisbee.md)

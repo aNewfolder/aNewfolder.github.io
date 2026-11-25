@@ -146,6 +146,7 @@ nav:
       - 蒋勋说红楼梦: reading/excerpts/chinese/jiang-xun.md
       - 病隙碎笔: reading/excerpts/chinese/bing-xi-sui-bi.md
       - 皮囊: reading/excerpts/chinese/pi-nang.md
+      - 杂项: reading/excerpts/chinese/others.md
     - 英文摘抄:
       - Dead Poets Society: reading/excerpts/english/dead-poets-society.md
       - Ferryman: reading/excerpts/english/ferryman.md
@@ -218,6 +219,7 @@ nav:
     - 气排球: sports/air-volleyball.md
     - 羽毛球: sports/badminton.md
     - 健身: sports/work-out.md
+    - 飞盘: sports/frisbee.md
   - 随笔:
     - blog/index.md
     - While the Powerful Play Goes On:

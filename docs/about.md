@@ -22,6 +22,11 @@
 <div class="update-log-list" markdown>
 
 <div class="update-log-card" markdown>
+<div class="update-log-date">2026-11-25</div>
+<div class="update-log-content">补登遗漏页面：阅读摘抄《杂项》与体育《飞盘》正式上线（飞盘页清理了 emoji 与笔误）；修复读书日 2026 文章链接被误改为仓库路径的问题；顺带提交琴房记录、英语演讲 Week 11 笔记、观影与气排球记录。</div>
+</div>
+
+<div class="update-log-card" markdown>
 <div class="update-log-date">2026-11-20</div>
 <div class="update-log-content">修复多个页面列表因缺空行被并成一段不渲染的问题（即兴伴奏《前进》等页），顺带清理空列表项、规范图片尺寸写法；顺带提交琴房与乒乓球 11.19 记录。</div>
 </div>
