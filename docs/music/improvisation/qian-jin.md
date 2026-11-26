@@ -141,7 +141,30 @@
 - 7m7：7246
 -  #4 -7 dim 5：#4（？）
 
+### 11.26 Lesson 9
+就是梳理了一遍裹着心的光。
 
+- 拿到一首歌先分段，ABC 段，每一段力度可能都不一样。
+- 五线谱不要拿过来就弹，先去梳理出来和弦走向，先整体把握。
+- 有鼓的部分就不要分解，一分解把力量都分没了
+- 有鼓的部分吉他和钢琴重音都跟着鼓去走
+- 菊花台先听一下
+
+
+
+![裹着心的光 乐谱 第1页（1-9小节，前奏与主歌，课堂批注）](https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/img/20261126193231196_4d8cd7ee.jpg)
+
+![裹着心的光 乐谱 第2页（10-21小节，课堂批注）](https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/img/20261126193232233_8085b52c.jpg)
+
+![裹着心的光 乐谱 第3页（22-33小节，课堂批注）](https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/img/20261126193233368_84afd352.jpg)
+
+![裹着心的光 乐谱 第4页（34-45小节，课堂批注）](https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/img/20261126193234563_4854b967.jpg)
+
+![裹着心的光 乐谱 第5页（46-57小节，课堂批注）](https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/img/20261126193235852_dddd1de1.jpg)
+
+![裹着心的光 乐谱 第6页（58-69小节，课堂批注）](https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/img/20261126193236961_5a5c0fb3.jpg)
+
+![裹着心的光 乐谱 第7页（70小节，结尾，课堂批注）](https://kevin13579me-1422109417.cos.ap-shanghai.myqcloud.com/img/20261126193237756_e7f60a91.jpg)
 
 
 #### 示例曲目
